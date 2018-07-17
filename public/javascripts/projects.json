@@ -1,0 +1,121 @@
+{
+  "projects": {
+    "leatherbacks": {
+        "title": "LEATHERBACKS: That’s My Face!",
+        "moneyshot": "/images/leatherbacks/leatherback.png",
+        "totalReceived": 20,
+        "totalTotalNeed": 100,
+        "intro": "Using Photo ID and citizen science, we’re kicking off a research project that will allow us to better understand the leatherback sea turtle population off the coast of Central and South America. Photos of these gentle giants can be used to identify individuals using Machine Learning and a cute little pink spot on the top of the leatherbacks head. \n \n This project will allow researchers to better understand the population, analyze migration patterns, fishery interactions, nesting behaviors as well as establish local community outreach and conservation programs. \n \n Fun Fact: Leatherback Sea leatherbacks are the closest thing we have to a last-living dinosaur. Earth’s largest monster reptile, or as we like to call them #JellyfishHunters.",
+        "contactPhoto": "/leatherbacks/profile.png",
+        "contactName": "Lead Researcher: Callie Veelenturf",
+        "contactDescription": "Callie is the Leatherback Fellow at Turtle Island Restoration Network with a Masters of Science in Biology from Purdue University. She’s focused on turtle-y awesome projects from Photo ID to fishery interactions and nesting behaviors.",
+        "donors": [
+          "/donors/patagonia.jpg", 
+          "/donors/onset.png", 
+          "/donors/gopro.png",
+          "/donors/sodelicious.png",
+          "/donors/Stream2Sea-Logo.png",
+          "/donors/undersea_hunter.jpg"
+          ],
+        "itemsNeeded": [
+            {
+              "itemTitle": "RAVPower Solar Charger",
+              "itemImage": "/images/leatherbacks/Solar.jpg",
+              "itemBody": "Use: Chargin all electronics required for use on remote sites during in-field expeditions.",
+              "itemLink": "https://www.amazon.com/RAVPower-Charger-Waterproof-Foldable-Camping/dp/B00OQ0CAW6/ref=sr_1_2_sspa?s=electronics&ie=UTF8&qid=1530462031&sr=1-2-spons&keywords=solar+panels&psc=1",
+              "itemType": "Equipment",
+              "received": 20,
+              "totalNeed": 100,
+              "active": true
+            },
+            {
+              "itemTitle": "Dive Writing Slate 6 x 4 w Pencil ($8 each)",
+              "itemImage": "/images/leatherbacks/Slate.jpg",
+              "itemBody": "Use: To record date and tag IDs while doing in-water studies of turtle",
+              "itemLink": "https://www.amazon.com/Scuba-Choice-Diving-Writing-Graphite/dp/B00LOY8WVU/ref=sr_1_cc_1?s=aps&ie=UTF8&qid=1530462186&sr=1-1-catcorr&keywords=dive+slate",
+              "itemType": "Equipment",
+              "received": 58,
+              "totalNeed": 75,
+              "active": true
+            },
+            {
+              "itemTitle": "Battery Pack",
+              "itemImage": "/images/leatherbacks/Battery.jpg",
+              "itemBody": "For GoPro charging at remote field sties",
+              "itemLink": "https://www.amazon.com/dp/B01G1XH46M?aaxitk=5kPFPfajO0L92r3nyxMGGA&pd_rd_i=B01G1XH46M&pf_rd_m=ATVPDKIKX0DER&pf_rd_p=3930100107420870094&pf_rd_s=desktop-sx-top-slot&pf_rd_t=301&pf_rd_i=double+charger&hsa_cr_id=9924799620001",
+              "itemType": "Equipment",
+              "received": 53,
+              "totalNeed": 100,
+              "active": true
+            },
+            {
+              "itemTitle": "SD cards",
+              "itemImage": "/images/leatherbacks/SDCard.jpg",
+              "itemBody": "For GoPros",
+              "itemLink": "https://www.amazon.com/SanDisk-microSDHC-Standard-Packaging-SDSQUNC-032G-GN6MA/dp/B010Q57T02/ref=sr_1_8?s=electronics&ie=UTF8&qid=1530461932&sr=1-8&keywords=micro+SD+cards",
+              "itemType": "Equipment",
+              "received": 76,
+              "totalNeed": 75,
+              "active": true
+            },
+            {
+              "itemTitle": "GoPro HERO6 Black ($398 each)",
+              "itemImage": "/images/leatherbacks/GoPro.jpg",
+              "itemBody": "Use: 75 GoPros will be used by local patrollers to capture above and below water footage along Central and South America on Leatherback nesting beaches",
+              "itemLink": "https://www.amazon.com/GoPro-CHDHX-601-HERO6-Black/dp/B074X5WPC5/ref=sr_1_2?s=photo&ie=UTF8&qid=1529948282&sr=1-2&keywords=gopro+hero6",
+              "itemType": "Equipment",
+              "received": 38,
+              "totalNeed": 75,
+              "active": true
+            }
+          ],
+        "itemsGiven": [
+            {
+              "itemTitle": "Development",
+              "itemImage": "/images/leatherbacks/developer.png",
+              "itemBody": "Help Callie make a new website to track turtles in the future. 100-200 hours total",
+              "itemLink": null,
+              "itemType": "Donation",
+              "received": 100,
+              "totalNeed": 100,
+              "active": false
+            },
+            {
+              "itemTitle": "Flights",
+              "itemImage": "/images/leatherbacks/flights.png",
+              "itemBody": "Use: 75 GoPros will be used by local patrollers to capture above and below water footage along Central and South America on Leatherback nesting beaches",
+              "itemLink": null,
+              "itemType": "Funds",
+              "received": 100,
+              "totalNeed": 100,
+              "active": false
+            },
+            {
+              "itemTitle": "Uber - Airport Transfers",
+              "itemImage": "/images/leatherbacks/uber-lyft.jpg",
+              "itemBody": "Transfer to airport and back",
+              "itemLink": null,
+              "itemType": "Donation",
+              "received": 100,
+              "totalNeed": 100,
+              "active": false
+
+            }
+          ]
+    },
+    "microplastics": {
+        "title": "MICROPLASTICS: Not So Fantastic",
+        "moneyshot": "/images/microplastics/microplastics.jpg",
+        "slug": "microplastics",
+        "totalReceived": 35,
+        "totalTotalNeed": 100
+    },
+    "salmon": {
+        "title": "BULLSHARKS: The Bait n' Switch",
+        "moneyshot": "/images/bullsharks/bullshark.jpg",
+        "slug": "bullsharks",
+        "totalReceived": 78,
+        "totalTotalNeed": 100
+    }
+  }
+}

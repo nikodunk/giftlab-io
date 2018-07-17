@@ -1,0 +1,14 @@
+extends layout
+
+block content
+	div.marginBottom.row
+		div.center.marginBottom
+			img.moneyShot(src=project.moneyshot alt="Image Title")
+		h4 #{project.title}
+
+	p #{project.intro}
+
+	div
+		each val in project.itemsNeeded
+			div.box
+				p= val.itemTitle
