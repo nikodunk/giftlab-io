@@ -221,6 +221,7 @@ nav ul li a {
 }
 
 footer{
+  margin-top: 300px;
   text-align: center;
   background-color: darkblue;
   padding: 50px;
