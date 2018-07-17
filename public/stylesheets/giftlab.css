@@ -1,3 +1,187 @@
+
+body {
+    color: #6b6b6b;
+    font-size: 1.1rem;
+    font-family: 'Varela Round', sans-serif;
+    background-image: url("/static/background.png");
+    max-width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+
+.img-fluid {
+  max-width: 100%
+}
+
+input{
+  font-size: 1rem;
+  padding-top: 0;
+  margin-bottom: 30px;
+  margin-left: 10px;
+}
+
+select{
+  margin-left: 20px;
+  font-size: 1rem;
+}
+
+hr { 
+  height: 1px; 
+  padding: 0; 
+  background-color: darkgrey; 
+  border: 0; 
+  max-width: 100px; 
+  margin: 0 auto; 
+  margin-bottom: 25px;
+  margin-top: 25px;
+
+}
+
+
+.btn {
+    /*color: white;
+    padding: 10px;
+    margin: 10px;
+    height: 50px;*/
+    max-width: 150px;
+    border-radius: 10px;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    margin-bottom: 10px;
+    margin-left: 10%;
+    /*text-decoration: none;*/
+    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.1);
+    font-family: 'Varela Round', sans-serif;
+    /*font-size: 1.2rem;
+    font-weight: 700;*/
+  }
+
+.btn:hover{
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.5);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.5);   
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.5);
+    transition: all 200ms ease-in;
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+
+.btn_submit{
+  width: 100px;
+  height: 50px;
+  margin-left: 10px !important;
+}
+
+.buttonWishlist{
+  background-color: gold;
+}
+.buttonRecycle{
+  background-color: grey;
+}
+.buttonDonate{
+  background-color: lightgreen;
+}
+
+
+.marginBottom{
+  margin-bottom: 50px;
+}
+
+
+.copy{
+    margin-left: 10px;
+    text-align: left;
+  }
+
+.titlebar{
+  border-bottom: 1px solid lightgrey;
+  display: flex;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 40px;
+}
+
+.center{
+  text-align: center;
+  margin: 0 auto;
+}
+
+.projectTitle { 
+  background-color: black;
+  color: white;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.giftlab{
+  text-align: center;
+  margin-bottom: 0;
+  justify-content: middle;
+  margin-top: auto;
+  margin-bottom: auto;
+  color: darkblue;
+  text-decoration: none;
+}
+
+.subtitle{
+  text-align: center;
+  margin-bottom: 0;
+  justify-content: middle;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+nav {
+  text-align: right;
+  max-width: 400px;
+  margin-left: auto;
+}
+
+nav ul {
+      padding-left: 0px !important;
+      list-style: none;
+      display: flex;
+      margin-bottom: 20px;
+      justify-content: center
+    }
+
+.navigationLinks{
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: 15px;
+}
+
+nav ul li {
+      padding: 10px;
+    }
+
+nav ul li a {
+  color: #6b6b6b;
+  text-decoration: none !important;
+}
+
+.current {
+      border-bottom: 4px solid #6b6b6b;
+    }
+
+.box{
+  border: 1px solid lightgrey;
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 5px;
+  height: 100%;
+}
+
+
+
 .flex{
   display: flex;
 }
@@ -37,27 +221,17 @@
 }
 
 footer{
-  border-top: 1px solid grey;
-  background-color: blue;
+  text-align: center;
+  background-color: darkblue;
   padding: 50px;
-  margin-top: 50px;
   color: white !important;
 }
 
 .moneyShot {
-    max-width: 100%;
+    max-width: 500px;
     margin: 0 auto;
 }
 
-.homepageThumbnail {
-    max-width: 100%;
-    margin: 0 auto;
-
-}
-
-.contactImage{
-  width: 100%;
-}
 
 .corporateIcon {
   width: 100%;
@@ -65,194 +239,3 @@ footer{
   margin: 0 auto;
 }
 
-.affiliateIcon{
-  width: 100%;
-}
-
-
-.mainWindow{
-  padding-top: 40px;
-  max-width: 800px; 
-  margin: 0 auto;
-  
-}
-
-
-body {
-    margin: 0 auto;
-    color: #6b6b6b;
-    font-size: 1.1rem;
-    font-family: 'Varela Round', sans-serif;
-    background-image: url("/static/background.png");
-  }
-
-  input{
-    font-size: 1rem;
-    padding-top: 0;
-    margin-bottom: 30px;
-    margin-left: 10px;
-  }
-
-  select{
-    margin-left: 20px;
-    font-size: 1rem;
-  }
-
-  hr { 
-    height: 1px; 
-    padding: 0; 
-    background-color: darkgrey; 
-    border: 0; 
-    max-width: 100px; 
-    margin: 0 auto; 
-    margin-bottom: 25px;
-    margin-top: 25px;
-
-  }
-
-
-  .btn {
-      /*color: white;
-      padding: 10px;
-      margin: 10px;
-      height: 50px;*/
-      max-width: 150px;
-      border-radius: 10px;
-      margin: 0px;
-      padding: 0px;
-      border: none;
-      margin-bottom: 10px;
-      margin-left: 10%;
-      /*text-decoration: none;*/
-      box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.1);
-      font-family: 'Varela Round', sans-serif;
-      /*font-size: 1.2rem;
-      font-weight: 700;*/
-    }
-
-  .btn:hover{
-      -webkit-transition: all 200ms ease-in;
-      -webkit-transform: scale(1.5);
-      -ms-transition: all 200ms ease-in;
-      -ms-transform: scale(1.5);   
-      -moz-transition: all 200ms ease-in;
-      -moz-transform: scale(1.5);
-      transition: all 200ms ease-in;
-      transform: scale(1.03);
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
-      transition: box-shadow 0.2s ease-in-out;
-  }
-
-
-.btn_submit{
-  width: 100px;
-  height: 50px;
-  margin-left: 10px !important;
-}
-  .buttonWishlist{
-    background-color: gold;
-  }
-  .buttonRecycle{
-    background-color: grey;
-  }
-  .buttonDonate{
-    background-color: lightgreen;
-  }
-
-
-  .marginBottom{
-    margin-bottom: 50px;
-  }
-
-
-  .copy{
-      margin-left: 10px;
-      text-align: left;
-    }
-
-
-h1, h2, h3, h4 {
-  font-family: 'Black Han Sans', sans-serif;
-  color: #6b6b6b;
-}
-
-.title {
-  font-family: 'Black Han Sans', sans-serif;
-  color: white;
-}
-
-.titlebar{
-  border-bottom: 1px solid grey;
-  display: flex;
-  padding: 10px ;
-}
-
-.center{
-  text-align: center;
-  margin: 0 auto;
-}
-
-.projectTitle { 
-  background-color: black;
-  color: white;
-  width: 100%;
-  margin: 0 auto;
-  padding: 10px;
-}
-
-.giftlab{
-  text-align: center;
-  margin-bottom: 0;
-  justify-content: middle;
-  margin-top: auto;
-  margin-bottom: auto;
-  color: blue;
-}
-
-.subtitle{
-  text-align: center;
-  margin-bottom: 0;
-  justify-content: middle;
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
-nav {
-  text-align: right;
-  max-width: 400px;
-  margin-left: auto;
-}
-
-nav ul {
-      padding-left: 0px !important;
-      list-style: none;
-      display: flex;
-      margin-bottom: 20px;
-      justify-content: center
-    }
-
-.navigationLinks{
-  margin-left: auto;
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
-nav ul li {
-      padding: 10px;
-    }
-
-nav ul li a {
-  color: #6b6b6b;
-  text-decoration: none !important;
-}
-
-.current {
-      border-bottom: 4px solid #6b6b6b;
-    }
-
-.box{
-  border: 1px solid lightgrey;
-  width: 100%;
-  padding: 20px;
-  margin-bottom: 5px;
-}
