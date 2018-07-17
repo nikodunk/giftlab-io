@@ -6,7 +6,7 @@
         "totalReceived": 20,
         "totalTotalNeed": 100,
         "intro": "Using Photo ID and citizen science, we’re kicking off a research project that will allow us to better understand the leatherback sea turtle population off the coast of Central and South America. Photos of these gentle giants can be used to identify individuals using Machine Learning and a cute little pink spot on the top of the leatherbacks head. \n \n This project will allow researchers to better understand the population, analyze migration patterns, fishery interactions, nesting behaviors as well as establish local community outreach and conservation programs. \n \n Fun Fact: Leatherback Sea leatherbacks are the closest thing we have to a last-living dinosaur. Earth’s largest monster reptile, or as we like to call them #JellyfishHunters.",
-        "contactPhoto": "/leatherbacks/profile.png",
+        "contactPhoto": "/images/leatherbacks/profile.png",
         "contactName": "Lead Researcher: Callie Veelenturf",
         "contactDescription": "Callie is the Leatherback Fellow at Turtle Island Restoration Network with a Masters of Science in Biology from Purdue University. She’s focused on turtle-y awesome projects from Photo ID to fishery interactions and nesting behaviors.",
         "donors": [
