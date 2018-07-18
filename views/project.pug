@@ -34,8 +34,32 @@ block content
 							img.img-fluid(src= val)
 
 	br
+	br
+	hr
+	br
+	br
 
-	h3 HOW TO CONTRIBUTE
+	h3.center HOW TO CONTRIBUTE
+
+	br
+	br
+
+	div.row
+		div.col-md-4.center
+			p Order it for the project from
+			a(href="https://amzn.to/2mtawRT").btn.orange amazon wishlist
+		div.col-md-4.center
+			p Donate it to project now
+			a(href="/contact").btn.blue donate items
+		div.col-md-4.center
+			p See cash needs
+			a(href="https://www.engagingnetworks.net/us/").btn.green donate cash now
+
+	br
+	br
+	hr
+	br
+	br
 
 	div
 		each val in project.itemsNeeded

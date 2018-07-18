@@ -42,6 +42,17 @@ hr {
   align-items: bottom;
 }
 
+.orange {
+  background-color: orange !important;
+}
+
+.blue {
+  background-color: lightblue !important;
+}
+
+.green {
+  background-color: lightgreen !important;
+}
 
 .bullshark-image-tile{
   height: 400px;
