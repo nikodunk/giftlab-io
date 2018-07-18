@@ -1,12 +1,41 @@
-extends layout
+extends _layout
 
 block content
-	div.marginBottom.row
-		div.center.marginBottom
-			img.moneyShot(src=project.moneyshot alt="Image Title")
-			h4 #{project.title}
 
-	p #{project.intro}
+	div.row.row-eq-height
+		div.col-md-8.no-padding
+			img.img-fluid.w-100(src=project.moneyshot alt="Image Title")
+		div.col-md-4.panel
+			br
+			br
+			h3 #{project.title}
+			hr
+			h5 Research to better protect our leatherback populations in North, Central and South America
+
+	br
+
+	div.row.row-eq-height
+		div.col-md-4.panel
+			br
+			img.thumbnail(src=project.contactPhoto alt="Image Title")
+			hr
+			h3= project.contactName
+			p= project.contactDescription
+		div.col-md-8
+			div.padding
+				br
+				h3 PROJECT DETAILS
+				p #{project.intro}
+				br
+				h3 CORPORATE DONORS
+				div.row
+					each val in project.donors
+						div.col-sm-2
+							img.img-fluid(src= val)
+
+	br
+
+	h3 HOW TO CONTRIBUTE
 
 	div
 		each val in project.itemsNeeded

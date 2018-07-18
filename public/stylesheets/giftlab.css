@@ -10,11 +10,6 @@ body {
     padding: 0;
   }
 
-
-.img-fluid {
-  max-width: 100%
-}
-
 input{
   font-size: 1rem;
   padding-top: 0;
@@ -30,7 +25,6 @@ select{
 hr { 
   height: 1px; 
   padding: 0; 
-  background-color: darkgrey; 
   border: 0; 
   max-width: 100px; 
   margin: 0 auto; 
@@ -40,23 +34,61 @@ hr {
 }
 
 
+.padding {
+  padding: 30px;
+}
+
+.row-equ-height {
+  align-items: bottom;
+}
+
+
+.bullshark-image-tile{
+  height: 400px;
+  background: url("/images/bullshark.jpg") no-repeat center center fixed;
+  background-size: cover;
+  position: absolute;
+}
+
+.microplastics-image-tile{
+  height: 400px;
+  background: url("/images/microplastics/microplastics.jpg") no-repeat center center fixed;
+  background-size: cover;
+  position: absolute;
+}
+
+.img-fluid {
+  width: 100% !important;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.panel {
+  background-color: skyblue !important;
+  text-align: right;
+  color: white;
+  margin: 0;
+}
+
 .btn {
-    /*color: white;
+    color: white;
     padding: 10px;
     margin: 10px;
-    height: 50px;*/
-    max-width: 150px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     margin: 0px;
     padding: 0px;
     border: none;
     margin-bottom: 10px;
     margin-left: 10%;
-    /*text-decoration: none;*/
+    text-decoration: none;
     box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.1);
     font-family: 'Varela Round', sans-serif;
-    /*font-size: 1.2rem;
-    font-weight: 700;*/
+    font-size: 1.2rem;
+    font-weight: 700;
   }
 
 .btn:hover{
@@ -73,7 +105,7 @@ hr {
 }
 
 
-.btn_submit{
+.btn-submit{
   width: 100px;
   height: 50px;
   margin-left: 10px !important;
@@ -101,11 +133,11 @@ hr {
   }
 
 .titlebar{
-  border-bottom: 1px solid lightgrey;
   display: flex;
   padding-left: 10px;
   padding-right: 10px;
   margin-bottom: 40px;
+  
 }
 
 .center{
@@ -127,8 +159,8 @@ hr {
   justify-content: middle;
   margin-top: auto;
   margin-bottom: auto;
-  color: darkblue;
-  text-decoration: none;
+  text-decoration: none !important;
+  color: grey;
 }
 
 .subtitle{
@@ -223,7 +255,7 @@ nav ul li a {
 footer{
   margin-top: 300px;
   text-align: center;
-  background-color: darkblue;
+  background-color: skyblue;
   padding: 50px;
   color: white !important;
 }

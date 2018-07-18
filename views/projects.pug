@@ -1,17 +1,37 @@
-extends layout
+extends _layout
 
 block content
-	ul.col-md-12.row
-		a(href="/projects/leatherbacks")
-			div.col-md-4.box
-				img.img-fluid(src="/images/leatherbacks/leatherback.png" alt="Image Title")
-				h3 Leatherbacks
-		a(href="/projects/salmon")
-			div.col-md-4.box
-				img.img-fluid(src="/images/bullshark.jpg" alt="Image Title")
-				h3 Salmon
-		a(href="/projects/microplastics")
-			div.col-md-4.box
-				img.img-fluid(src="/images/microplastics/microplastics.jpg" alt="Image Title")
-				h3 Microplastics
+
+	div.row.row-eq-height
+		div.col-md-8.no-padding
+			img.img-fluid.w-100(src='/images/leatherbacks/leatherback.png')
+		div.col-md-4.panel
+			br
+			br
+			h3 LEATHERBACK SEA TURTLES: PHOTO ID
+			hr
+			h4 Research to better protect our leatherback populations in North, Central and South America
+			a.btn(href="/projects/leatherbacks") BACK THIS PROJECT
+
+	br
+
+	div.row.row-eq-height
+		div.col-4
+			div.center
+				a(href="/projects/leatherbacks")
+					img.img-fluid(src="/images/leatherbacks/leatherback.png" alt="Image Title")
+					h3 Leatherbacks
+					p BACK THIS PROJECT
+		div.col-4
+			div.center
+				a(href="/projects/salmon")
+					img.img-fluid(src="/images/bullshark.jpg" alt="Image Title")
+					h3 Salmon
+					p BACK THIS PROJECT
+		div.col-4
+			div.center
+				a(href="/projects/microplastics")
+					img.img-fluid(src="/images/microplastics/microplastics.jpg" alt="Image Title")
+					h3 Microplastics
+					p BACK THIS PROJECT
 			

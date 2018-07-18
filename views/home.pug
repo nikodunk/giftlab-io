@@ -1,28 +1,49 @@
-extends layout
+extends _layout
 
 block content
-	p Purchase equipment, donate to a budget or recycle pre-loved items and positively impact the future by helping fund incredible research projects around the world. Here you can help the causes you love, AND know exactly where your money is going.
+	div.row.row-eq-height
+		div.col-md-8.no-padding
+			img.img-fluid.w-100(src='/images/bullshark.jpg')
+		div.col-md-4.panel
+			br
+			br
+			h3 Help seed discovery and know exactly where your money is going
+			a.btn(href="/about") LEARN MORE
+
+	br
+	hr
+	br
+
+	h3.center How it works
+	br
+	div.row.row-eq-height
+		div.col-sm-4.center
+			h1 Step 1
+		div.col-sm-4.center
+			h1 Step 2
+		div.col-sm-4.center
+			h1 Step 3
+
+	br
+	hr
+	br
+
+	div.row.row-eq-height
+		div.col-md-4.panel
+			br
+			br
+			h3 Find a research project that inspires you. Help launch it.
+			a.btn(href="/projects") SEE PROJECTS
+		div.col-md-8.no-padding
+			img.img-fluid.w-100(src='/images/microplastics/microplastics.jpg')
+
+	hr
 
 	div.row
-		div.col-md-8.box
-			img.img-fluid(src="/images/bullshark.jpg" alt="Image Title")
-		div.col-md-4.box
-			a do something here
-
-	<hr>
-
-	div.row
-		div.col-sm-4.box
-			h1 benefit
-		div.col-sm-4.box
-			h1 benefit
-		div.col-sm-4.box
-			h1 benefit
-
-	<hr>
-
-	div.row
-		div.col-md-4.box
-			a do something here
-		div.col-md-8.box
-			img.img-fluid(src="/images/about/IMG_2598.JPG" alt="Image Title")
+		div.col-md-12.center
+			br
+			br
+			h3 Want to stay in the know? Subscribe to email list for all the best updates.
+			br
+			input
+			button Subscribe

@@ -9,13 +9,13 @@
         "contactPhoto": "/images/leatherbacks/profile.png",
         "contactName": "Lead Researcher: Callie Veelenturf",
         "contactDescription": "Callie is the Leatherback Fellow at Turtle Island Restoration Network with a Masters of Science in Biology from Purdue University. She’s focused on turtle-y awesome projects from Photo ID to fishery interactions and nesting behaviors.",
-        "donors": [
-          "/donors/patagonia.jpg", 
-          "/donors/onset.png", 
-          "/donors/gopro.png",
-          "/donors/sodelicious.png",
-          "/donors/Stream2Sea-Logo.png",
-          "/donors/undersea_hunter.jpg"
+        "donors": [ 
+          "/images/donors/patagonia.jpg", 
+          "/images/donors/onset.png", 
+          "/images/donors/gopro.png",
+          "/images/donors/sodelicious.png",
+          "/images/donors/Stream2Sea-Logo.png",
+          "/images/donors/undersea_hunter.jpg"
           ],
         "itemsNeeded": [
             {
