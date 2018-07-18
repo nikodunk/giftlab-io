@@ -63,5 +63,12 @@ block content
 
 	div
 		each val in project.itemsNeeded
-			div.box
-				p= val.itemTitle
+			div.row.box
+				div.col-md-2
+					img.img-thumbnail(src=val.itemImage)
+				div.col-md-2
+					h5= val.itemTitle
+				div.col-md-5
+					p= val.itemBody
+				div.col-md-3
+					a(href="https://amzn.to/2mtawRT").btn.orange amazon wishlist

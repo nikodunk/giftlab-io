@@ -3,6 +3,7 @@
     "leatherbacks": {
         "title": "LEATHERBACKS: That’s My Face!",
         "moneyshot": "/images/leatherbacks/leatherback.png",
+        "wishlistLink": "https://amzn.to/2mtawRT",
         "totalReceived": 20,
         "totalTotalNeed": 100,
         "intro": "Using Photo ID and citizen science, we’re kicking off a research project that will allow us to better understand the leatherback sea turtle population off the coast of Central and South America. Photos of these gentle giants can be used to identify individuals using Machine Learning and a cute little pink spot on the top of the leatherbacks head. \n \n This project will allow researchers to better understand the population, analyze migration patterns, fishery interactions, nesting behaviors as well as establish local community outreach and conservation programs. \n \n Fun Fact: Leatherback Sea leatherbacks are the closest thing we have to a last-living dinosaur. Earth’s largest monster reptile, or as we like to call them #JellyfishHunters.",
@@ -17,7 +18,6 @@
           "/images/donors/Stream2Sea-Logo.png",
           "/images/donors/undersea_hunter.jpg"
           ],
-        "wishlistLink": "https://amzn.to/2mtawRT",
         "itemsNeeded": [
             {
               "itemTitle": "RAVPower Solar Charger",
@@ -63,11 +63,13 @@
     },
     "microplastics": {
         "title": "MICROPLASTICS: Not So Fantastic",
-        "moneyshot": "/images/microplastics/microplastics.jpg"
+        "moneyshot": "/images/microplastics/microplastics.jpg",
+        "wishlistLink": "https://amzn.to/2L1hbSd"
     },
     "salmon": {
         "title": "BULLSHARKS: The Bait n' Switch",
-        "moneyshot": "/images/bullsharks/bullshark.jpg"
+        "moneyshot": "/images/bullsharks/bullshark.jpg",
+        "wishlistLink": "https://amzn.to/2NWXrNe"
     }
   }
 }
