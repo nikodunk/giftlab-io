@@ -1,0 +1,537 @@
+{
+  "giftlists": {
+  	"leatherbacks": [
+					  {
+					    "Bucket": "Equipment",
+					    "Item Name": "Solar Panels",
+					    "Description/Use/Justification": "Needed to charge GoPro batteries at remote field sites",
+					    "Status": "Needed",
+					    "Timeline": "Needed by October 2018",
+					    "Price/Unit USD": 63,
+					    "Quantity Needed": 25,
+					    "Total Cost USD": "$1,575",
+					    "Amazon or Example Link": "https://www.amazon.com/RAVPower-Charger-Waterproof-Foldable-Camping/dp/B00OQ0CAW6/ref=sr_1_2_sspa?s=electronics&ie=UTF8&qid=1530462031&sr=1-2-spons&keywords=solar+panels&psc=1"
+					  },
+					  {
+					    "Bucket": "Equipment",
+					    "Item Name": "Dive Slate",
+					    "Description/Use/Justification": "To record date and numerical ID number (if data is available)",
+					    "Status": "Needed",
+					    "Timeline": "Needed by October 2018",
+					    "Price/Unit USD": 8,
+					    "Quantity Needed": 75,
+					    "Total Cost USD": "$600",
+					    "Amazon or Example Link": "https://www.amazon.com/Scuba-Choice-Diving-Writing-Graphite/dp/B00LOY8WVU/ref=sr_1_cc_1?s=aps&ie=UTF8&qid=1530462186&sr=1-1-catcorr&keywords=dive+slate"
+					  },
+					  {
+					    "Bucket": "Equipment",
+					    "Item Name": "Battery Pack",
+					    "Description/Use/Justification": "For GoPro charging at remote field sties",
+					    "Status": "Needed",
+					    "Timeline": "Needed by October 2018",
+					    "Price/Unit USD": 36,
+					    "Quantity Needed": 25,
+					    "Total Cost USD": "$900",
+					    "Amazon or Example Link": "https://www.amazon.com/dp/B01G1XH46M?aaxitk=5kPFPfajO0L92r3nyxMGGA&pd_rd_i=B01G1XH46M&pf_rd_m=ATVPDKIKX0DER&pf_rd_p=3930100107420870094&pf_rd_s=desktop-sx-top-slot&pf_rd_t=301&pf_rd_i=double+charger&hsa_cr_id=9924799620001"
+					  },
+					  {
+					    "Bucket": "Equipment",
+					    "Item Name": "SD cards",
+					    "Description/Use/Justification": "For GoPros",
+					    "Status": "Needed",
+					    "Timeline": "Needed by October 2018",
+					    "Price/Unit USD": 12,
+					    "Quantity Needed": 75,
+					    "Total Cost USD": "$900",
+					    "Amazon or Example Link": "https://www.amazon.com/SanDisk-microSDHC-Standard-Packaging-SDSQUNC-032G-GN6MA/dp/B010Q57T02/ref=sr_1_8?s=electronics&ie=UTF8&qid=1530461932&sr=1-8&keywords=micro+SD+cards"
+					  },
+					  {
+					    "Bucket": "Equipment",
+					    "Item Name": "GoPro Hero 6",
+					    "Description/Use/Justification": "ex. Cameras to be used for capturing above water and in-water footage of Leatherback sea turtles for photoID projects",
+					    "Status": "Needed",
+					    "Timeline": "Needed by October 2018",
+					    "Price/Unit USD": 399,
+					    "Quantity Needed": 75,
+					    "Total Cost USD": "$29,925",
+					    "Amazon or Example Link": "https://www.amazon.com/GoPro-CHDHX-601-HERO6-Black/dp/B074X5WPC5/ref=sr_1_2?s=photo&ie=UTF8&qid=1529948282&sr=1-2&keywords=gopro+hero6"
+					  },
+					  {
+					    "Bucket": "Development",
+					    "Item Name": "Website development",
+					    "Description/Use/Justification": "To create the online leatherback photo ID database that people can upload their photos to",
+					    "Status": "Needed",
+					    "Timeline": "Needs to be completed by March 2019",
+					    "Price/Unit USD": "30/hour",
+					    "Quantity Needed": "1600 hours",
+					    "Total Cost USD": "$48,000",
+					    "Amazon or Example Link": ""
+					  },
+					  {
+					    "Bucket": "Expedition Expenses",
+					    "Item Name": "Flight - Costa Rica",
+					    "Description/Use/Justification": "To visit leatherback nesting sites and deliver equipment",
+					    "Status": "Fundraising complete",
+					    "Timeline": "Needed by October 2018",
+					    "Price/Unit USD": 600,
+					    "Quantity Needed": 1,
+					    "Total Cost USD": "$600",
+					    "Amazon or Example Link": "Engaging networks"
+					  },
+					  {
+					    "Bucket": "Expedition Expenses",
+					    "Item Name": "Flight - Panama",
+					    "Description/Use/Justification": "To visit leatherback nesting sites and deliver equipment",
+					    "Status": "Needed",
+					    "Timeline": "Needed by October 2018",
+					    "Price/Unit USD": 600,
+					    "Quantity Needed": 1,
+					    "Total Cost USD": "$600",
+					    "Amazon or Example Link": ""
+					  },
+					  {
+					    "Bucket": "Expedition Expenses",
+					    "Item Name": "Flight - Ecuador",
+					    "Description/Use/Justification": "To visit leatherback nesting sites and deliver equipment",
+					    "Status": "Needed",
+					    "Timeline": "Needed by October 2018",
+					    "Price/Unit USD": 750,
+					    "Quantity Needed": 1,
+					    "Total Cost USD": "$750",
+					    "Amazon or Example Link": ""
+					  },
+					  {
+					    "Bucket": "Expedition Expenses",
+					    "Item Name": "Flight - Mexico",
+					    "Description/Use/Justification": "To visit leatherback nesting sites and deliver equipment",
+					    "Status": "Needed",
+					    "Timeline": "Needed by October 2018",
+					    "Price/Unit USD": 500,
+					    "Quantity Needed": 1,
+					    "Total Cost USD": "$500",
+					    "Amazon or Example Link": ""
+					  },
+					  {
+					    "Bucket": "Expedition Expenses",
+					    "Item Name": "Accomodation",
+					    "Description/Use/Justification": "To stay in hostels when necessary on the way to nesting sites",
+					    "Status": "Fundraising complete",
+					    "Timeline": "Needed by October 2018",
+					    "Price/Unit USD": 500,
+					    "Quantity Needed": 1,
+					    "Total Cost USD": "$500",
+					    "Amazon or Example Link": "Engaging networks"
+					  },
+					  {
+					    "Bucket": "Expedition Expenses",
+					    "Item Name": "Shipping",
+					    "Description/Use/Justification": "Approximate shipping cost to get equipment to nesting sites where Callie will not be physically visiting",
+					    "Status": "Needed",
+					    "Timeline": "Needed by October 2018",
+					    "Price/Unit USD": 500,
+					    "Quantity Needed": 1,
+					    "Total Cost USD": "$500",
+					    "Amazon or Example Link": "Engaging networks"
+					  },
+					  {
+					    "Bucket": "Expedition Expenses",
+					    "Item Name": "Uber - Airport Transfers",
+					    "Description/Use/Justification": "Approximate cost of Uber airport transfers during various trips throughout Latin America",
+					    "Status": "Needed",
+					    "Timeline": "Needed by October 2018",
+					    "Price/Unit USD": 300,
+					    "Quantity Needed": 1,
+					    "Total Cost USD": "$300",
+					    "Amazon or Example Link": "Engaging networks"
+					  },
+					  {
+					    "Bucket": "Expedition Expenses",
+					    "Item Name": "Gas",
+					    "Description/Use/Justification": "Needed to reimburse locals or conservationists for their help with transport to nesting sites",
+					    "Status": "Needed",
+					    "Timeline": "Needed by October 2018",
+					    "Price/Unit USD": 200,
+					    "Quantity Needed": 1,
+					    "Total Cost USD": "$200",
+					    "Amazon or Example Link": "Engaging networks"
+					  }
+					],
+    "salmon": [
+				  {
+				    "Bucket": "Equipment",
+				    "Item Name": "Dry Suits",
+				    "Description/Use/Justification": "Needed for surveying fish in creek, snorkel surveys for juvenile coho salmon count",
+				    "Status": "Need",
+				    "Timeline": "Aug 2018 to Nov 2019",
+				    "Price/Unit USD": "$990",
+				    "Quantity Needed": 2,
+				    "Total Cost USD": "$1980"
+				  },
+				  {
+				    "Bucket": "Equipment",
+				    "Item Name": "Waders",
+				    "Description/Use/Justification": "Needed for work in the creek, installing woody debris habitat and relocating fish",
+				    "Status": "Have",
+				    "Timeline": "Aug 2018 to Nov 2019",
+				    "Price/Unit USD": "$300",
+				    "Quantity Needed": 5,
+				    "Total Cost USD": "$1500"
+				  },
+				  {
+				    "Bucket": "Equipment",
+				    "Item Name": "Time Lapse Camera",
+				    "Description/Use/Justification": "Needed to monitor habitat restoration work, showcase the project, and site security",
+				    "Status": "Need",
+				    "Timeline": "Aug 2018 to Nov 2019",
+				    "Price/Unit USD": "$300",
+				    "Quantity Needed": 4,
+				    "Total Cost USD": "$1200"
+				  },
+				  {
+				    "Bucket": "Salaries",
+				    "Item Name": "Project Supervosir",
+				    "Description/Use/Justification": "Project oversight and compliance tracking",
+				    "Status": "Need",
+				    "Timeline": "Aug 2018 to Nov 2019",
+				    "Price/Unit USD": "$60/hour",
+				    "Quantity Needed": 100,
+				    "Total Cost USD": "$6,000"
+				  },
+				  {
+				    "Bucket": "Salaries",
+				    "Item Name": "Project Manager",
+				    "Description/Use/Justification": "Contract/ budget managenet, projet construction oversight:",
+				    "Status": "Need",
+				    "Timeline": "Aug 2018 to Nov 2019",
+				    "Price/Unit USD": "$30/hour",
+				    "Quantity Needed": 350,
+				    "Total Cost USD": "$10,500"
+				  },
+				  {
+				    "Bucket": "Salaries",
+				    "Item Name": "Nursery Manager",
+				    "Description/Use/Justification": "Growing plants and overseeing revegetation following restoration",
+				    "Status": "Need",
+				    "Timeline": "Aug 2018 to Nov 2019",
+				    "Price/Unit USD": "$22.5/hour",
+				    "Quantity Needed": 300,
+				    "Total Cost USD": "$6,750"
+				  },
+				  {
+				    "Bucket": "Salaries",
+				    "Item Name": "Project Associate",
+				    "Description/Use/Justification": "oversee construction implementation",
+				    "Status": "Need",
+				    "Timeline": "Aug 2018 to Nov 2019",
+				    "Price/Unit USD": "$20/hour",
+				    "Quantity Needed": 400,
+				    "Total Cost USD": "$8,000"
+				  },
+				  {
+				    "Bucket": "Construction of Floodplain Features",
+				    "Item Name": "Contractor budget",
+				    "Description/Use/Justification": "These funds are used to remove fill dumped in te creek corridor, remove levees, retaining walls, and flood-control strucutres. Grade slopes to create wetland habitat features on new floodplain surfaces",
+				    "Status": "Have",
+				    "Timeline": "Aug 2018 to Nov 2019",
+				    "Price/Unit USD": "$250,000/acre",
+				    "Quantity Needed": 3.5,
+				    "Total Cost USD": "$875,000"
+				  },
+				  {
+				    "Bucket": "Construction of Floodplain Features",
+				    "Item Name": "Contractor budget",
+				    "Description/Use/Justification": "These funds are used to remove fill dumped in te creek corridor, remove levees, retaining walls, and flood-control strucutres. Grade slopes to create wetland habitat features on new floodplain surfaces",
+				    "Status": "Need",
+				    "Timeline": "Aug 2018 to Nov 2019",
+				    "Price/Unit USD": "250,000/acre",
+				    "Quantity Needed": 1.5,
+				    "Total Cost USD": "$375,000"
+				  },
+				  {
+				    "Bucket": "Construciton of Large Woody Debris Habitat Features",
+				    "Item Name": "Contractor budget",
+				    "Description/Use/Justification": "Funds are used to procure fallen trees, trim and size as needed, and place with anchored boulders at creek conflunces to help improve hydrologic conditions, habitat conplexity, and sediment metering, sorting, and attenuation.",
+				    "Status": "Have",
+				    "Timeline": "Aug 2018 to Nov 2019",
+				    "Price/Unit USD": "$50,000 each",
+				    "Quantity Needed": 8,
+				    "Total Cost USD": "$400,000"
+				  },
+				  {
+				    "Bucket": "Construciton of Large Woody Debris Habitat Features",
+				    "Item Name": "Contractor budget",
+				    "Description/Use/Justification": "Funds are used to procure fallen trees, trim and size as needed, and place with anchored boulders at creek conflunces to help improve hydrologic conditions, habitat conplexity, and sediment metering, sorting, and attenuation.",
+				    "Status": "Need",
+				    "Timeline": "Aug 2018 to Nov 2019",
+				    "Price/Unit USD": "$50,000 each",
+				    "Quantity Needed": 2,
+				    "Total Cost USD": "$100,000"
+				  },
+				  {
+				    "Bucket": "Construction of Side Channels",
+				    "Item Name": "Contractor budget",
+				    "Description/Use/Justification": "Construction funds are used to selectivly excavate seasonl side channel and backwater features that convey water acorss the floodplain areas to create slow water rearing refuge habitat for endangered juvenile salmon. These side channels occur along the main stem and create the habitats where young fish can feed and seek refuge from predators.",
+				    "Status": "Have",
+				    "Timeline": "Aug 2018 to Nov 2019",
+				    "Price/Unit USD": "$175 per linear ft",
+				    "Quantity Needed": 1200,
+				    "Total Cost USD": "$210,000"
+				  }
+				],
+	"microplastics": [
+						  {
+						    "Bucket": "Equipment",
+						    "Item Name": "Manta nets",
+						    "Description/Use/Justification": "The manta trawl nets will be used to sample the surface waters of coastal and remote pristine habitats of Costa Rica",
+						    "Status": "Needed",
+						    "Timeline": "Needed by August 2018",
+						    "Price/Unit USD": 1975,
+						    "Quantity Needed": 2,
+						    "Total Cost USD": 3950,
+						    "Amazon or Example Link": "https://www.hydrobios.de/product/manta/"
+						  },
+						  {
+						    "Bucket": "Equipment",
+						    "Item Name": "Filter paper",
+						    "Description/Use/Justification": "Needed to filter water samples",
+						    "Status": "Needed",
+						    "Timeline": "Needed by August 2018",
+						    "Price/Unit USD": 9.25,
+						    "Quantity Needed": 2,
+						    "Total Cost USD": 18.5,
+						    "Amazon or Example Link": "https://www.amazon.com/Filter-Paper-Qualitative-Fast-11cm/dp/B0019ZHJ04/ref=pd_sim_328_3?_encoding=UTF8&pd_rd_i=B0019ZHJ04&pd_rd_r=5bc7101d-8abb-11e8-acf3-4d007e1e88bd&pd_rd_w=D3dU8&pd_rd_wg=MHszD&pf_rd_i=desktop-dp-sims&pf_rd_m=ATVPDKIKX0DER&pf_rd_p=2610440344683357453&pf_rd_r=GGXF4CFWHE5QT9GDP74P&pf_rd_s=desktop-dp-sims&pf_rd_t=40701&psc=1&refRID=GGXF4CFWHE5QT9GDP74P"
+						  },
+						  {
+						    "Bucket": "Equipment",
+						    "Item Name": "Funnel",
+						    "Description/Use/Justification": "Needed to filter water samples",
+						    "Status": "Needed",
+						    "Timeline": "Needed by August 2018",
+						    "Price/Unit USD": 25.57,
+						    "Quantity Needed": 1,
+						    "Total Cost USD": 25.57,
+						    "Amazon or Example Link": "https://www.amazon.com/United-Scientific-Supplies-JBF600-Diameter/dp/B00N50MLXG/ref=pd_bxgy_328_img_3?_encoding=UTF8&pd_rd_i=B00N50MLXG&pd_rd_r=6e3fb93c-8aba-11e8-9d30-79f90a35b456&pd_rd_w=kPB0I&pd_rd_wg=QhlHK&pf_rd_i=desktop-dp-sims&pf_rd_m=ATVPDKIKX0DER&pf_rd_p=1475879231140687736&pf_rd_r=X36AS2XMBXNW6RJVPXZD&pf_rd_s=desktop-dp-sims&pf_rd_t=40701&psc=1&refRID=X36AS2XMBXNW6RJVPXZD"
+						  },
+						  {
+						    "Bucket": "Equipment",
+						    "Item Name": "Rubber stopper",
+						    "Description/Use/Justification": "Needed to filter water samples",
+						    "Status": "Needed",
+						    "Timeline": "Needed by August 2018",
+						    "Price/Unit USD": 4.95,
+						    "Quantity Needed": 1,
+						    "Total Cost USD": 4.95,
+						    "Amazon or Example Link": "https://www.amazon.com/RiteBrew-Rubber-Stopper-Size-Drilled/dp/B0057JB9XG/ref=pd_bxgy_328_img_3?_encoding=UTF8&pd_rd_i=B0057JB9XG&pd_rd_r=b1f534f8-8ab9-11e8-b77d-4ffb343ca287&pd_rd_w=nYXcK&pd_rd_wg=wUNSx&pf_rd_i=desktop-dp-sims&pf_rd_m=ATVPDKIKX0DER&pf_rd_p=1475879231140687736&pf_rd_r=987VBCBY4NKTDJXJ0CBF&pf_rd_s=desktop-dp-sims&pf_rd_t=40701&psc=1&refRID=987VBCBY4NKTDJXJ0CBF"
+						  },
+						  {
+						    "Bucket": "Equipment",
+						    "Item Name": "Petri dishes",
+						    "Description/Use/Justification": "Needed to store water microplastic samples",
+						    "Status": "Needed",
+						    "Timeline": "Needed by August 2018",
+						    "Price/Unit USD": 10.89,
+						    "Quantity Needed": 2,
+						    "Total Cost USD": 21.78,
+						    "Amazon or Example Link": "https://www.amazon.com/BIPEE-Polystyrene-Petri-Dish-Sterile/dp/B01DBBC0V6/ref=sr_1_4?s=industrial&ie=UTF8&qid=1531940950&sr=1-4&keywords=petri+dishes+120mm"
+						  },
+						  {
+						    "Bucket": "Equipment",
+						    "Item Name": "Squirt bottle",
+						    "Description/Use/Justification": "Needed to steralize filtration system",
+						    "Status": "Needed",
+						    "Timeline": "Needed by August 2018",
+						    "Price/Unit USD": 5.99,
+						    "Quantity Needed": 1,
+						    "Total Cost USD": 5.99,
+						    "Amazon or Example Link": "https://www.amazon.com/Economy-Bottle-Squeeze-Medical-Tattoo/dp/B00WTHLR2M/ref=sr_1_4?s=industrial&ie=UTF8&qid=1531946023&sr=1-4&keywords=squirt+bottle"
+						  },
+						  {
+						    "Bucket": "Equipment",
+						    "Item Name": "5 mm sieve",
+						    "Description/Use/Justification": "Needed to separate microplastics from larger marine debris and sand particles",
+						    "Status": "Needed",
+						    "Timeline": "Needed by August 2018",
+						    "Price/Unit USD": "",
+						    "Quantity Needed": "",
+						    "Total Cost USD": 0,
+						    "Amazon or Example Link": ""
+						  },
+						  {
+						    "Bucket": "Equipment",
+						    "Item Name": "Vacuum pump",
+						    "Description/Use/Justification": "Needed to filter water samples",
+						    "Status": "Needed",
+						    "Timeline": "Needed by August 2018",
+						    "Price/Unit USD": 34.16,
+						    "Quantity Needed": 1,
+						    "Total Cost USD": 34.16,
+						    "Amazon or Example Link": "https://www.amazon.com/dp/B00YW604TA/ref=sspa_dk_detail_3?psc=1&pd_rd_i=B00YW604TA"
+						  },
+						  {
+						    "Bucket": "Equipment",
+						    "Item Name": "Filtering flask",
+						    "Description/Use/Justification": "Needed to filter water samples",
+						    "Status": "Needed",
+						    "Timeline": "Needed by August 2018",
+						    "Price/Unit USD": 20.59,
+						    "Quantity Needed": 1,
+						    "Total Cost USD": 20.59,
+						    "Amazon or Example Link": "https://www.amazon.com/American-Educational-Borosilicate-1000mL-Filtering/dp/B005QDP1XC/ref=pd_sim_328_1?_encoding=UTF8&pd_rd_i=B005QDP1XC&pd_rd_r=12c49017-8ab7-11e8-9c69-252c111cdb03&pd_rd_w=ZFnvQ&pd_rd_wg=zDtqz&pf_rd_i=desktop-dp-sims&pf_rd_m=ATVPDKIKX0DER&pf_rd_p=2610440344683357453&pf_rd_r=XF6GBT959Q7CY4ZHCKVX&pf_rd_s=desktop-dp-sims&pf_rd_t=40701&psc=1&refRID=XF6GBT959Q7CY4ZHCKVX"
+						  },
+						  {
+						    "Bucket": "Equipment",
+						    "Item Name": "Scoop",
+						    "Description/Use/Justification": "Needed to collect sand samples",
+						    "Status": "Needed",
+						    "Timeline": "Needed by August 2018",
+						    "Price/Unit USD": 5.95,
+						    "Quantity Needed": 1,
+						    "Total Cost USD": 5.95,
+						    "Amazon or Example Link": "https://www.amazon.com/New-Star-34660-Aluminum-Utility/dp/B009L5HZRG/ref=sr_1_35?s=industrial&ie=UTF8&qid=1531938685&sr=1-35&keywords=scoop"
+						  },
+						  {
+						    "Bucket": "Equipment",
+						    "Item Name": "1 L large mouthed Nalgene bottles",
+						    "Description/Use/Justification": "Needed to collect water samples",
+						    "Status": "Needed",
+						    "Timeline": "Needed by August 2018",
+						    "Price/Unit USD": 84.52,
+						    "Quantity Needed": 1,
+						    "Total Cost USD": 84.52,
+						    "Amazon or Example Link": "https://www.amazon.com/Nalgene-2104-0032-Wide-Mouth-Bottle-1000mL/dp/B003OBYV02/ref=pd_sbs_328_3?_encoding=UTF8&pd_rd_i=B003OBYV02&pd_rd_r=bd868ca7-8ab7-11e8-abf4-0dab813930ac&pd_rd_w=ad0AY&pd_rd_wg=s7y0T&pf_rd_i=desktop-dp-sims&pf_rd_m=ATVPDKIKX0DER&pf_rd_p=8702255303818932494&pf_rd_r=5C1NT69P9QPC11H3EJRN&pf_rd_s=desktop-dp-sims&pf_rd_t=40701&psc=1&refRID=5C1NT69P9QPC11H3EJRN"
+						  },
+						  {
+						    "Bucket": "Equipment",
+						    "Item Name": "Measuring tape",
+						    "Description/Use/Justification": "Measuring tape is needed to measure transect distances on beaches",
+						    "Status": "Needed",
+						    "Timeline": "Needed by August 2018",
+						    "Price/Unit USD": 19.78,
+						    "Quantity Needed": 1,
+						    "Total Cost USD": 19.78,
+						    "Amazon or Example Link": "https://www.amazon.com/FM050CME-2-Sided-English-164-Foot-Fiberglass/dp/B001R1UFU6/ref=sr_1_4?ie=UTF8&qid=1531612600&sr=8-4&keywords=50+m+measuring+tape"
+						  },
+						  {
+						    "Bucket": "Equipment",
+						    "Item Name": "Plastic bags",
+						    "Description/Use/Justification": "Plastic bags for storing and organizing samples",
+						    "Status": "Needed",
+						    "Timeline": "Needed by August 2018",
+						    "Price/Unit USD": 15.78,
+						    "Quantity Needed": 1,
+						    "Total Cost USD": 15.78,
+						    "Amazon or Example Link": "https://www.amazon.com/Ziploc-Storage-Bags-Gallon-Mega/dp/B00UASJHV0/ref=sr_1_2_sspa?s=hi&ie=UTF8&qid=1531613104&sr=1-2-spons&keywords=ziploc%2Bbags&th=1"
+						  },
+						  {
+						    "Bucket": "Equipment",
+						    "Item Name": "Wide mouthed bottles (16 oz) - Pack of 6",
+						    "Description/Use/Justification": "Needed to separate and store samples of microplastics from various sites and sampling dates",
+						    "Status": "Needed",
+						    "Timeline": "Needed by August 2018",
+						    "Price/Unit USD": 10.35,
+						    "Quantity Needed": 3,
+						    "Total Cost USD": 31.05,
+						    "Amazon or Example Link": "https://www.amazon.com/Plastic-Stackable-Straight-Canisters-Bathroom/dp/B01MYZEHJA/ref=sr_1_7?s=home-garden&ie=UTF8&qid=1531609641&sr=1-7&keywords=16+oz+containers"
+						  },
+						  {
+						    "Bucket": "Equipment",
+						    "Item Name": "Wide mouthed bottles (8 oz) - Pack of 6",
+						    "Description/Use/Justification": "Needed to separate and store samples of microplastics from various sites and sampling dates",
+						    "Status": "Needed",
+						    "Timeline": "Needed by August 2018",
+						    "Price/Unit USD": 13.5,
+						    "Quantity Needed": 3,
+						    "Total Cost USD": 40.5,
+						    "Amazon or Example Link": "https://www.amazon.com/Plastic-Cosmetic-Containers-Aluminum-Ointments/dp/B01MTBXSAO/ref=pd_day0_hl_79_3?_encoding=UTF8&pd_rd_i=B01MTBXSAO&pd_rd_r=50e917b4-87ba-11e8-8eba-d3010db8df62&pd_rd_w=xVx6z&pd_rd_wg=kxgBc&pf_rd_i=desktop-dp-sims&pf_rd_m=ATVPDKIKX0DER&pf_rd_p=4014010564823900592&pf_rd_r=M624CN09P80P0KS48M91&pf_rd_s=desktop-dp-sims&pf_rd_t=40701&psc=1&refRID=M624CN09P80P0KS48M91"
+						  },
+						  {
+						    "Bucket": "Equipment",
+						    "Item Name": "Microscope",
+						    "Description/Use/Justification": "Microscope needed to further examine small pieces of marine debris",
+						    "Status": "Needed",
+						    "Timeline": "Needed by August 2018",
+						    "Price/Unit USD": 93.99,
+						    "Quantity Needed": 1,
+						    "Total Cost USD": 93.99,
+						    "Amazon or Example Link": "https://www.amazon.com/AmScope-M150C-PS25-Magnification-Illumination-Brightfield/dp/B00A6LY5JA/ref=sr_1_1_sspa?s=office-products&ie=UTF8&qid=1531609312&sr=1-1-spons&keywords=microscope&psc=1"
+						  },
+						  {
+						    "Bucket": "Equipment",
+						    "Item Name": "Tweasers",
+						    "Description/Use/Justification": "Needed to separate small pieces of marine debris",
+						    "Status": "Needed",
+						    "Timeline": "Needed by August 2018",
+						    "Price/Unit USD": 8.69,
+						    "Quantity Needed": 2,
+						    "Total Cost USD": 17.38,
+						    "Amazon or Example Link": "https://www.amazon.com/Marbles-MR406-BRK-Magnifying-Tweezers/dp/B00099ZUYS/ref=sr_1_30?s=office-products&ie=UTF8&qid=1531609236&sr=1-30&keywords=tweezers"
+						  },
+						  {
+						    "Bucket": "Equipment",
+						    "Item Name": "Sharpies (box of 12)",
+						    "Description/Use/Justification": "Sharpies will be used to label bottles with data regarding containing sample",
+						    "Status": "Needed",
+						    "Timeline": "Needed by August 2018",
+						    "Price/Unit USD": 7.56,
+						    "Quantity Needed": 1,
+						    "Total Cost USD": 7.56,
+						    "Amazon or Example Link": "https://www.amazon.com/Sharpie-30001-Permanent-Markers-Point/dp/B00006IFHD/ref=sr_1_1_sspa?s=office-products&ie=UTF8&qid=1531609052&sr=1-1-spons&keywords=sharpie+markers&smid=ATVPDKIKX0DER&psc=1"
+						  },
+						  {
+						    "Bucket": "Equipment",
+						    "Item Name": "Alcohol bottle (pack of 3)",
+						    "Description/Use/Justification": "Alcohol is needed to clean micoplastic samples before weighing and storage",
+						    "Status": "Needed",
+						    "Timeline": "Needed by August 2018",
+						    "Price/Unit USD": 12.91,
+						    "Quantity Needed": 1,
+						    "Total Cost USD": 12.91,
+						    "Amazon or Example Link": "https://www.amazon.com/Swan-Isoprophyl-Alcohol-70-Pack/dp/B007SO5JD4/ref=sr_1_7_a_it?ie=UTF8&qid=1531608973&sr=8-7&keywords=bottle+of+isopropyl+alcohol"
+						  },
+						  {
+						    "Bucket": "Expedition Expenses",
+						    "Item Name": "Flights",
+						    "Description/Use/Justification": "Todd and Callie need to arrive in Costa Rica in August and December for these research expeditions",
+						    "Status": "Needed",
+						    "Timeline": "Needed by August 2018",
+						    "Price/Unit USD": 600,
+						    "Quantity Needed": 2,
+						    "Total Cost USD": 1200,
+						    "Amazon or Example Link": ""
+						  },
+						  {
+						    "Bucket": "Expedition Expenses",
+						    "Item Name": "Accomodation",
+						    "Description/Use/Justification": "Todd and Callie will stay at a hotel/hostel the night before and after the Cocos Island expedition",
+						    "Status": "Needed",
+						    "Timeline": "Needed by August 2018",
+						    "Price/Unit USD": 100,
+						    "Quantity Needed": 4,
+						    "Total Cost USD": 400,
+						    "Amazon or Example Link": ""
+						  },
+						  {
+						    "Bucket": "Expedition Expenses",
+						    "Item Name": "Uber - Airport Transfers",
+						    "Description/Use/Justification": "Todd and Callie will need to be transported to and from the airport on either end of the August and December expeditions to Cocos Island, Costa Rica",
+						    "Status": "Acquired",
+						    "Timeline": "Will be used August and December 2018",
+						    "Price/Unit USD": 20,
+						    "Quantity Needed": 4,
+						    "Total Cost USD": 80,
+						    "Amazon or Example Link": ""
+						  },
+						  {
+						    "Bucket": "Expedition Expenses",
+						    "Item Name": "Permits",
+						    "Description/Use/Justification": "The time required to write the permit and submit it for approval to the national park of Cocos Island",
+						    "Status": "Acquired",
+						    "Timeline": "Permit will be submitted July 16",
+						    "Price/Unit USD": 200,
+						    "Quantity Needed": 1,
+						    "Total Cost USD": 200,
+						    "Amazon or Example Link": ""
+						  }
+						]
+  	}
+}

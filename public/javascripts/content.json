@@ -1,0 +1,27 @@
+{
+  "projects": {
+    "leatherbacks": [
+                        {
+                          "Title": "Leatherbacks Photo ID",
+                          "Researcher": "Callie Veelenturf",
+                          "Project Description": "That's my face! We will be using photo identification, citizen science, and Machine Learning (Artificial Intelligence) to better estimate critically endangered East Pacific leatherback sea turtle population size, internesting movements, migration patterns, fisheries interactions, and nesting behavior while simultaneously providing a platform for community outreach, fundraising, and conservation campaigns.",
+                          "Researcher profile": "In August 2017 I graduated from Purdue University with a Masters of Science in Biology, and I received a Bachelors of Science in Marine Biology with a minor in Wildlife Conservation Biology from the University of Rhode Island in 2014. I have always wanted to have a career in endangered species conservation and ever since seeing my first photo of a leatherback sea turtles, I have been hooked - simply fascinated. At first I wanted to see one in person, then to work on various leatherback nesting beaches, then to receive my master's studying them, and now I work full time as a Marine Biologist and Leatherback Fellow for the Turtle Island Restoration Network. I spend my days determining how we can be more efficient in our study and conservation of this incredible species. Leatherbacks speciated around 110 million years, according to the fossil record. This means that leatherbacks were swimming around and thriviing in the same waters as the dinosaurs. Only now after persistent pressure from the human race are they facing extirpation from various ocean basins. They can dive deeper than many whale species (to 4000 feet!!!), are the largest reptile by weight, and eat ONLY jellyfish! Originally there were 8 distinct subpopulations of leatherbacks, but the one that occupied the South China Sea is already funcionally extinct. It is my goal not to lose another one! The East Pacific subpopulation only had an estimated 633 individuals in 2013 and is projected to experience a 99% population decline by 2040, making it one of the most endangered subpopulations of turtles in the entire world. At TIRN we are focusing our energies in this regionto make sure that we don't lose yet another subpopulation.",
+                          "Project impact": "This project will allow us to keep track of the remaining individuals in this subpopulation and eventually all of the subpopulations. Conventional methods of individual identification are costly and require training, making it difificul to take advantage of all leatherback sightings for maximum data collection. Local fishermen or property owners viewing leatherbacks won't have an identification scanner or tag ready to partake in typical research practices. Simply taking a photo of the turtle and sending it to the photo ID database be sufficient for gaining valuable population data! If a fisherman catches a turtle in his or her gear and is able to simply take a photo, we can understand what region the turtle nests in! If the turtle has passed, we will know what rookery has lost a precious adult female. We will distribute these GoPros to all the leatherback nesting projects in the East Pacific to facilitate their contribution to the database.Not only will this photo ID database help us to fill in important population-wide data gaps, but it will also provide a platform for fundraising, community involvement, and public awareness.",
+                          "When do you need equipment delivered by?": "The equipment needs to be delivered before October and the website design completed by March 2019",
+                          "When does the project start?": "The project will begin in October 2018 and continue indefinitely",
+                          "How long will the project run for?": "This project will be an accumulation of individual turtle photos that hopefully, as the population continues to grow, will be indefinitely growing and expanding. The hope is that this project eventually includes leatherbacks from all ocean basins and all major nesting grounds.",
+                          "If equipment is purchased for you, where will offset budget go?": "The budget savings from receiving purchases will go to supporting the salaries of on-the-ground local conservationists, and vital equipment for sea turtle population monitoring from Mexico-Ecuador."
+                        }
+                      ],
+    "microplastics": {
+        "title": "MICROPLASTICS: Not So Fantastic",
+        "moneyshot": "/images/microplastics/microplastics.jpg",
+        "wishlistLink": "https://amzn.to/2L1hbSd"
+    },
+    "salmon": {
+        "title": "BULLSHARKS: The Bait n' Switch",
+        "moneyshot": "/images/bullsharks/bullshark.jpg",
+        "wishlistLink": "https://amzn.to/2NWXrNe"
+    }
+  }
+}
