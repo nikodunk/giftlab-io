@@ -10,6 +10,17 @@ body {
     padding: 0;
   }
 
+.panel{
+  min-height: 500px;
+}
+
+.showcase-img{
+  background-size: cover; !important
+  
+
+}
+
+
 input{
   font-size: 1rem;
   padding-top: 0;
