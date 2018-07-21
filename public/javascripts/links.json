@@ -1,0 +1,27 @@
+{  
+  "leatherbacks": {
+        "moneyshot": "/images/leatherbacks/leatherback.png",
+        "AmazonWishlistLink": "https://amzn.to/2mtawRT",
+        "contactPhoto": "/images/leatherbacks/profile.png",
+        "donors": [ 
+          "/images/donors/patagonia.jpg", 
+          "/images/donors/onset.png", 
+          "/images/donors/gopro.png",
+          "/images/donors/sodelicious.png",
+          "/images/donors/Stream2Sea-Logo.png",
+          "/images/donors/undersea_hunter.jpg"
+          ]
+    },
+    "microplastics": {
+        "moneyshot": "/images/microplastics/microplastics.jpg",
+        "AmazonWishlistLink": "https://amzn.to/2L1hbSd",
+        "contactPhoto": null,
+        "donors": []
+    },
+    "salmon": {
+        "moneyshot": "/images/salmon/salmon.jpg",
+        "AmazonWishlistLink": "https://amzn.to/2NWXrNe",
+        "contactPhoto": null,
+        "donors": []
+    }
+}

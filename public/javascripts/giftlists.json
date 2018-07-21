@@ -1,5 +1,4 @@
 {
-  "giftlists": {
   	"leatherbacks": [
 					  {
 					    "Bucket": "Equipment",
@@ -533,5 +532,4 @@
 						    "Amazon or Example Link": ""
 						  }
 						]
-  	}
 }

@@ -7,7 +7,6 @@ var logger = require('morgan');
 var homeRouter = require('./routes/home');
 var projectsRouter = require('./routes/projects');
 
-var data = require('./public/javascripts/projects.json')
 
 var app = express();
 

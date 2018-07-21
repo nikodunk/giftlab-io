@@ -4,11 +4,11 @@ block content
 
 	div.row.row-eq-height
 		div.col-md-8.no-padding
-			img.img-fluid.w-100(src=project.moneyshot alt="Image Title")
+			img.img-fluid.w-100(src=links.moneyshot alt="Image Title")
 		div.col-md-4.panel
 			br
 			br
-			h3 #{project.title}
+			h3 #{content.Title}
 			hr
 			h5 Research to better protect our leatherback populations in North, Central and South America
 
@@ -17,19 +17,19 @@ block content
 	div.row.row-eq-height
 		div.col-md-4.panel
 			br
-			img.thumbnail(src=project.contactPhoto alt="Image Title")
+			img.thumbnail(src=links.contactPhoto alt="Image Title")
 			hr
-			h3= project.contactName
-			p= project.contactDescription
+			h3= content["Researcher"]
+			p= content["Researcher profile"]
 		div.col-md-8
 			div.padding
 				br
-				h3 PROJECT DETAILS
-				p #{project.intro}
+				h3 DETAILS
+				p #{content["Project Description"]}
 				br
 				h3 CORPORATE DONORS
 				div.row
-					each val in project.donors
+					each val in links.donors
 						div.col-sm-2
 							img.img-fluid(src= val)
 
@@ -46,10 +46,10 @@ block content
 
 	div.row
 		div.col-md-4.center
-			p Order it for the project from
+			p Order it for the content.from
 			a(href="https://amzn.to/2mtawRT").btn.orange amazon wishlist
 		div.col-md-4.center
-			p Donate it to project now
+			p Donate it to content.now
 			a(href="/contact").btn.blue donate items
 		div.col-md-4.center
 			p See cash needs
@@ -62,13 +62,20 @@ block content
 	br
 
 	div
-		each val in project.itemsNeeded
+		each val in giftlist
 			div.row.box
 				div.col-md-2
 					img.img-thumbnail(src=val.itemImage)
 				div.col-md-2
-					h5= val.itemTitle
+					h5= val["Item Name"]
 				div.col-md-5
-					p= val.itemBody
-				div.col-md-3
-					a(href="https://amzn.to/2mtawRT").btn.orange amazon wishlist
+					p= val["Description/Use/Justification"]
+				if val.Bucket == "Equipment"
+					div.col-md-3
+						a(href="https://amzn.to/2mtawRT").btn.orange amazon wishlist
+				else if val.Bucket == "Expedition Expenses"
+					div.col-md-3
+						a(href="https://www.engagingnetworks.net/us/").btn.green donate cash now
+				else
+					div.col-md-3
+						a(href="/contact").btn.blue donate items

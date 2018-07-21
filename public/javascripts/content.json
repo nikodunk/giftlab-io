@@ -1,5 +1,4 @@
 {
-  "projects": {
     "leatherbacks": [
                         {
                           "Title": "Leatherbacks Photo ID",
@@ -13,15 +12,30 @@
                           "If equipment is purchased for you, where will offset budget go?": "The budget savings from receiving purchases will go to supporting the salaries of on-the-ground local conservationists, and vital equipment for sea turtle population monitoring from Mexico-Ecuador."
                         }
                       ],
-    "microplastics": {
-        "title": "MICROPLASTICS: Not So Fantastic",
-        "moneyshot": "/images/microplastics/microplastics.jpg",
-        "wishlistLink": "https://amzn.to/2L1hbSd"
-    },
-    "salmon": {
-        "title": "BULLSHARKS: The Bait n' Switch",
-        "moneyshot": "/images/bullsharks/bullshark.jpg",
-        "wishlistLink": "https://amzn.to/2NWXrNe"
-    }
-  }
+    "salmon": [
+                        {
+                          "Title": "Coho Salmon Restoration Project",
+                          "Researcher": "Preston Brown",
+                          "Project Description": "This project will implement one of the largest restoration projects in the Lagunitas Creek Watershed, this project will restore 1 mile of stream habitat for endangered coho salmon and steelhead recovery, as well as for the benefit of other endnagered wildlife includeing CA freshwater shrimp and CA red-legged frogs.",
+                          "Researcher profile": "My name is Preston Brown, I have BS in Restoration Ecology from CO State Univ. My passion is restoring rivers and the species that depend on them, particularly pacific salmon and trout. This project is important to me becuase with such a large project comes a significant impact and a real chance at improving the habitat and survival of coho salmon and steelhead in the last stronghold for these fish in central CA. I beleive this project will make a differnece and have a significant benefit to the heallth of Lagunitas Creek and it's struggling salmon and steelhead populations.",
+                          "Project impact": "This project will address the limiting factors for salmon and steelhead survival in the region and will increase the area of floodplains/backwaters/sidechannels by 50% through the mile-long strech and removing 13K cu yards dirt and debris that was dumped in the creek cooridor decades ago. Adding these important habitat areas to the creek, and removing the debris and dirt from a former development will improve the abiltiy of the creek to behave naturally-unimpeded by hard man-made strucutres and will allow healthy habitats to be created and maintaned by a naturally-functioning creek.",
+                          "When do you need equipment delivered by?": "The dray suits and cameras are needed by August 13, 2018. The salaries are needed by December 2018.",
+                          "When does the project start?": "The project will begin in Aug 2018",
+                          "How long will the project run for?": "It will last just over one year, finishing in November of 2019",
+                          "If equipment is purchased for you, where will offset budget go?": "The budget savings from receiving purchases will go to incresing the scope of the project, including adding more habitat features and strucutres, adding more plants to the restoration, and allow us to do more pre-post project monitoring."
+                        }
+                      ],
+    "microplastics": [
+                        {
+                          "Title": "Microplastics",
+                          "Researcher": "",
+                          "Project Description": "This project will provide data for a comparison of oceanic microplastic concentrations between Cocos Island and Coastal areas in Costa Rica. We will pull “manta nets” behind our research vessels for set time frames and at set velocities, to determine the average concentration of microplastics in the surface waters. Many threatened and endangered marine species are filter feeders, meaning they indiscriminately swallow large quantities of water and filter out nutrient rich phytoplankton and algae. Studies have shown that filter feeds can be especially vulnerable to microplastics, as their body fats absorb high concentrations of toxic plastic byproducts. We will also sample beaches at the high tide line and the break zone for microplastics. We hope to bring attention to this issue at the pristine national park at Cocos Island, in an effort to encourage the already environmentally-conscious government of Costa Rica to decrease their utilization of single-use plastics.",
+                          "Researcher profile": "Todd Steiner is the Execute Director and Founder of the Turtle Island Restoration Network. He has a MS in Biology and previously worked as a wildlife biologist at the South Florida Research Center, Everglades National Park, and radio-tracked the threatened indigo snake at Archbold Biological Field Station. He is currently involved in research and monitoring of endangered coho salmon and threatened steelhead in California, and initiated the an ongoing study of sea turtles at Cocos Island National Park. He has more than 40 years experience protecting and restoring endangered species and habitats, 11 years working and diving at Cocos Island (initiating 22 previous Cocos research expeditions), 41 years diving, 11 years tagging sharks and turtles. Todd is currently working on several different conservation projects at Cocos Island, but this would be the first study to focus on pollution at Cocos Island.",
+                          "Project impact": "We hope to sample coastal and pristine island marine environments for micoplastic presence to evaluate spatial threats to marine species from plastic pollution. Our results will be used to encourage the Costa Rican government to increase plastic and pollution reduction measures.",
+                          "When do you need equipment delivered by?": "The equipment needs to be delivered as soon as possible, as we will be attempting to collect samples in August 2018, but it is definitely needed by October 2018.",
+                          "When does the project start?": "The project will begin in August 2018 and continue for two years.",
+                          "How long will the project run for?": "",
+                          "If equipment is purchased for you, where will offset budget go?": "The budget savings from receiving purchases will go towards increasing protection for the threatened and endangered shark and turtle species that occupy the Cocos Island National Park. We can use saved funds for satellite and acoustic tagging individuals to better undesrtsand their habitat use and ocean movements. As we learn more abouthot these species are using ocean habitats, we can better delineate no-take and closure zones in the East Pacific. We are in the process of creating the Cocos-Galapagos Swimway, a 95,000 square mile swath of marine protected area between Cocos Island and the Galapaos Islands. To do this we need to continue to gather evidence that endangered species use this migration cooridor as part of their regular movements."
+                        }
+                      ]
 }

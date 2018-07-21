@@ -1,49 +1,71 @@
 extends _layout
 
 block content
-	div.row.row-eq-height
-		div.col-md-8.no-padding
-			img.img-fluid.w-100(src='/images/bullshark.jpg')
-		div.col-md-4.panel
-			br
-			br
-			h3 Help seed discovery and know exactly where your money is going
-			a.btn(href="/about") LEARN MORE
+	// Image Showcases
+	section.showcase
+		.container-fluid.p-0
+			.row.no-gutters.panel
+				.col-lg-6.text-white.showcase-img(style="background-image: url('/images/bullshark.jpg');")
+				.col-lg-6.my-auto.showcase-text
+					h2 Help seed discovery
+					p.lead.mb-0
+						| and know exactly where your money is going
+					br
+					a.btn.btn-lg.btn-primary(href="/about") LEARN MORE
 
-	br
-	hr
-	br
 
-	h3.center How it works
-	br
-	div.row.row-eq-height
-		div.col-sm-4.center
-			h1 Step 1
-		div.col-sm-4.center
-			h1 Step 2
-		div.col-sm-4.center
-			h1 Step 3
 
-	br
-	hr
-	br
-
-	div.row.row-eq-height
-		div.col-md-4.panel
+	// Icons Grid
+	section.features-icons.bg-light.text-center
+			h3.center How it works
 			br
 			br
-			h3 Find a research project that inspires you. Help launch it.
-			a.btn(href="/projects") SEE PROJECTS
-		div.col-md-8.no-padding
-			img.img-fluid.w-100(src='/images/microplastics/microplastics.jpg')
+			br
+			.container
+				.row
+					.col-lg-4
+						.features-icons-item.mx-auto.mb-5.mb-lg-0.mb-lg-3
+							.features-icons-icon.d-flex
+								i.icon-screen-desktop.m-auto.text-primary
+							h3 Step 1
+							p.lead.mb-0 This theme will look great on any device, no matter the size!
+					.col-lg-4
+						.features-icons-item.mx-auto.mb-5.mb-lg-0.mb-lg-3
+							.features-icons-icon.d-flex
+								i.icon-layers.m-auto.text-primary
+							h3 Step 2
+							p.lead.mb-0 This theme will look great on any device, no matter the size!
+					.col-lg-4
+						.features-icons-item.mx-auto.mb-0.mb-lg-3
+							.features-icons-icon.d-flex
+								i.icon-check.m-auto.text-primary
+							h3 Step 3
+							p.lead.mb-0 This theme will look great on any device, no matter the size!
 
-	hr
+	// Image Showcases
+	section.showcase
+		.container-fluid.p-0
+			.row.no-gutters.panel
+				.col-lg-6.order-lg-2.text-white.showcase-img(style="background-image: url('/images/microplastics/microplastics.jpg');")
+				.col-lg-6.order-lg-1.my-auto.showcase-text
+					h2 Find a research project that inspires you. 
+					p.lead.mb-0
+						| Help launch it.
+					br
+					a.btn.btn-lg.btn-primary(href="/projects") SEE PROJECTS
 
-	div.row
-		div.col-md-12.center
-			br
-			br
-			h3 Want to stay in the know? Subscribe to email list for all the best updates.
-			br
-			input
-			button Subscribe
+
+	// Call to Action
+	section.call-to-action.text-white.text-center
+		.overlay
+		.container
+			.row
+				.col-xl-9.mx-auto
+					h2.mb-4 Want to stay in the know? Subscribe to email list for all the best updates.
+				.col-md-10.col-lg-8.col-xl-7.mx-auto
+					form
+						.form-row
+							.col-12.col-md-9.mb-2.mb-md-0
+								input.form-control.form-control-lg(type='email', placeholder='Enter your email...')
+							.col-12.col-md-3
+								button.btn.btn-block.btn-lg.btn-primary(type='submit') Sign up!

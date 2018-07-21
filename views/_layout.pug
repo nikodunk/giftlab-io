@@ -13,26 +13,117 @@ html
     
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
 
+    <!-- Bootstrap core CSS -->
+    //- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/landing-page.min.css" rel="stylesheet">
+
 
   body
-    div.container
-        div.titlebar
-            div.title
-                h1
-                    a(href="/").giftlab 
-                        small The 
-                        span Gift Lab
-            h5.navigationLinks
-                a.navigationLinks(href="/") Home 
-                nbsp | 
-                a.navigationLinks(href="/projects") Projects 
-                nbsp | 
-                a.navigationLinks(href="/about") Our Story 
-
-    div.container
+    
+        // Navigation
+        nav.navbar.navbar-light.bg-light.static-top
+            .container
+                a.navbar-brand(href='/') The Gift Lab
+                a(href='/') Home
+                a(href='/projects') Projects
+                a(href='/about') Our Story
+        //- // Masthead
+        //- header.masthead.text-white.text-center
+        //-     .overlay
+        //-     .container
+        //-         .row
+        //-             .col-xl-9.mx-auto
+        //-                 h1.mb-5 Build a landing page for your business or project and generate more leads!
+        //-             .col-md-10.col-lg-8.col-xl-7.mx-auto
+        //-                 form
+        //-                     .form-row
+        //-                         .col-12.col-md-9.mb-2.mb-md-0
+        //-                             input.form-control.form-control-lg(type='email', placeholder='Enter your email...')
+        //-                         .col-12.col-md-3
+        //-                             button.btn.btn-block.btn-lg.btn-primary(type='submit') Sign up!
+        
         block content
 
-    footer
-        p.center
-          small &copy; giftlab 2018
-        a.navigationLinks(href="/contact") Contact 
+        //- // Image Showcases
+        //- section.showcase
+        //-     .container-fluid.p-0
+        //-         .row.no-gutters
+        //-             .col-lg-6.order-lg-2.text-white.showcase-img(style="background-image: url('img/bg-showcase-1.jpg');")
+        //-             .col-lg-6.order-lg-1.my-auto.showcase-text
+        //-                 h2 Fully Responsive Design
+        //-                 p.lead.mb-0
+        //-                     | When you use a theme created by Start Bootstrap, you know that the theme will look great on any device, whether it's a phone, tablet, or desktop the page will behave responsively!
+        //-         .row.no-gutters
+        //-             .col-lg-6.text-white.showcase-img(style="background-image: url('img/bg-showcase-2.jpg');")
+        //-             .col-lg-6.my-auto.showcase-text
+        //-                 h2 Updated For Bootstrap 4
+        //-                 p.lead.mb-0
+        //-                     | Newly improved, and full of great utility classes, Bootstrap 4 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 4!
+        //-         .row.no-gutters
+        //-             .col-lg-6.order-lg-2.text-white.showcase-img(style="background-image: url('img/bg-showcase-3.jpg');")
+        //-             .col-lg-6.order-lg-1.my-auto.showcase-text
+        //-                 h2 Easy to Use & Customize
+        //-                 p.lead.mb-0
+        //-                     | Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing page will be ready to go!
+        //- // Testimonials
+        //- section.testimonials.text-center.bg-light
+        //-     .container
+        //-         h2.mb-5 What people are saying...
+        //-         .row
+        //-             .col-lg-4
+        //-                 .testimonial-item.mx-auto.mb-5.mb-lg-0
+        //-                     img.img-fluid.rounded-circle.mb-3(src='img/testimonials-1.jpg', alt='')
+        //-                     h5 Margaret E.
+        //-                     p.font-weight-light.mb-0 "This is fantastic! Thanks so much guys!"
+        //-             .col-lg-4
+        //-                 .testimonial-item.mx-auto.mb-5.mb-lg-0
+        //-                     img.img-fluid.rounded-circle.mb-3(src='img/testimonials-2.jpg', alt='')
+        //-                     h5 Fred S.
+        //-                     p.font-weight-light.mb-0
+        //-                         | "Bootstrap is amazing. I've been using it to create lots of super nice landing pages."
+        //-             .col-lg-4
+        //-                 .testimonial-item.mx-auto.mb-5.mb-lg-0
+        //-                     img.img-fluid.rounded-circle.mb-3(src='img/testimonials-3.jpg', alt='')
+        //-                     h5 Sarah    W.
+        //-                     p.font-weight-light.mb-0 "Thanks so much for making these free resources available to us!"
+        
+        // Footer
+        footer.footer.bg-light
+            .container
+                .row
+                    .col-lg-6.h-100.text-center.text-lg-left.my-auto
+                        ul.list-inline.mb-2
+                            li.list-inline-item
+                                a(href='#') About
+                            li.list-inline-item ⋅
+                            li.list-inline-item
+                                a(href='#') Contact
+                            li.list-inline-item ⋅
+                            li.list-inline-item
+                                a(href='#') Terms of Use
+                            li.list-inline-item ⋅
+                            li.list-inline-item
+                                a(href='#') Privacy Policy
+                        p.text-muted.small.mb-4.mb-lg-0 © The Gift Lab 2018. All Rights Reserved.
+                    .col-lg-6.h-100.text-center.text-lg-right.my-auto
+                        ul.list-inline.mb-0
+                            li.list-inline-item.mr-3
+                                a(href='#')
+                                    i.fa.fa-facebook.fa-2x.fa-fw
+                            li.list-inline-item.mr-3
+                                a(href='#')
+                                    i.fa.fa-twitter.fa-2x.fa-fw
+                            li.list-inline-item
+                                a(href='#')
+                                    i.fa.fa-instagram.fa-2x.fa-fw
+        // Bootstrap core JavaScript
+        script(src='vendor/jquery/jquery.min.js')
+        script(src='vendor/bootstrap/js/bootstrap.bundle.min.js')
+

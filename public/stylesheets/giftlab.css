@@ -82,7 +82,7 @@ hr {
   color: white;
   margin: 0;
 }
-
+/*
 .btn {
     color: white;
     padding: 10px;
@@ -114,7 +114,7 @@ hr {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
     transition: box-shadow 0.2s ease-in-out;
 }
-
+*/
 
 .btn-submit{
   width: 100px;
@@ -182,34 +182,6 @@ hr {
   margin-bottom: auto;
 }
 
-nav {
-  text-align: right;
-  max-width: 400px;
-  margin-left: auto;
-}
-
-nav ul {
-      padding-left: 0px !important;
-      list-style: none;
-      display: flex;
-      margin-bottom: 20px;
-      justify-content: center
-    }
-
-.navigationLinks{
-  margin-left: auto;
-  margin-top: auto;
-  margin-bottom: 15px;
-}
-
-nav ul li {
-      padding: 10px;
-    }
-
-nav ul li a {
-  color: #6b6b6b;
-  text-decoration: none !important;
-}
 
 .current {
       border-bottom: 4px solid #6b6b6b;
@@ -263,13 +235,6 @@ nav ul li a {
   border-radius: 5px;
 }
 
-footer{
-  margin-top: 300px;
-  text-align: center;
-  background-color: skyblue;
-  padding: 50px;
-  color: white !important;
-}
 
 .moneyShot {
     max-width: 500px;
