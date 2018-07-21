@@ -1,13 +1,6 @@
 
 body {
-    color: #6b6b6b;
-    font-size: 1.1rem;
-    font-family: 'Varela Round', sans-serif;
-    background-image: url("/static/background.png");
-    max-width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
+    
   }
 
 .panel{
@@ -46,7 +39,7 @@ hr {
 
 
 .padding {
-  padding: 30px !important;
+  padding: 50px !important;
 }
 
 .row-equ-height {
@@ -68,23 +61,8 @@ hr {
   border: none !important;
 }
 
-.bullshark-image-tile{
-  height: 400px;
-  background: url("/images/bullshark.jpg") no-repeat center center fixed;
-  background-size: cover;
-  position: absolute;
-}
 
-.microplastics-image-tile{
-  height: 400px;
-  background: url("/images/microplastics/microplastics.jpg") no-repeat center center fixed;
-  background-size: cover;
-  position: absolute;
-}
 
-.img-fluid {
-  width: 100% !important;
-}
 
 .no-padding {
   padding: 0 !important;
@@ -95,55 +73,6 @@ hr {
   text-align: right;
   color: white;
   margin: 0;
-}
-/*
-.btn {
-    color: white;
-    padding: 10px;
-    margin: 10px;
-    height: 50px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    margin: 0px;
-    padding: 0px;
-    border: none;
-    margin-bottom: 10px;
-    margin-left: 10%;
-    text-decoration: none;
-    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.1);
-    font-family: 'Varela Round', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-  }
-
-.btn:hover{
-    -webkit-transition: all 200ms ease-in;
-    -webkit-transform: scale(1.5);
-    -ms-transition: all 200ms ease-in;
-    -ms-transform: scale(1.5);   
-    -moz-transition: all 200ms ease-in;
-    -moz-transform: scale(1.5);
-    transition: all 200ms ease-in;
-    transform: scale(1.03);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
-    transition: box-shadow 0.2s ease-in-out;
-}
-*/
-/*
-.btn-submit{
-  width: 100px;
-  height: 50px;
-  margin-left: 10px !important;
-}*/
-
-.buttonWishlist{
-  background-color: gold;
-}
-.buttonRecycle{
-  background-color: grey;
-}
-.buttonDonate{
-  background-color: lightgreen;
 }
 
 
@@ -157,76 +86,11 @@ hr {
     text-align: left;
   }
 
-.titlebar{
-  display: flex;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-bottom: 40px;
-  
-}
+
 
 .center{
   text-align: center;
   margin: 0 auto;
-}
-
-.projectTitle { 
-  background-color: black;
-  color: white;
-  width: 100%;
-  margin: 0 auto;
-  padding: 10px;
-}
-
-.giftlab{
-  text-align: center;
-  margin-bottom: 0;
-  justify-content: middle;
-  margin-top: auto;
-  margin-bottom: auto;
-  text-decoration: none !important;
-  color: grey;
-}
-
-.subtitle{
-  text-align: center;
-  margin-bottom: 0;
-  justify-content: middle;
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
-
-.current {
-      border-bottom: 4px solid #6b6b6b;
-    }
-
-.box{
-  border: 1px solid lightgrey;
-  width: 100%;
-  padding: 20px;
-  margin-bottom: 5px;
-  height: 100%;
-}
-
-
-
-.flex{
-  display: flex;
-}
-
-
-.progress {
-    text-align:center;
-    background-color: grey;
-}
-
-
-.progress-value {
-    position:absolute;
-    right:0;
-    left:0;
-    color: white;
 }
 
 .roundedCorners{
@@ -250,15 +114,10 @@ hr {
 }
 
 
-.moneyShot {
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-
-.corporateIcon {
+.box{
+  border: 1px solid lightgrey;
   width: 100%;
-  max-width: 150px;
-  margin: 0 auto;
+  padding: 20px;
+  margin-bottom: 5px;
+  height: 100%;
 }
-
