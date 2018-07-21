@@ -1,37 +1,36 @@
 extends _layout
 
 block content
-
-	div.row.row-eq-height
-		div.col-md-8.no-padding
-			img.img-fluid.w-100(src=links.leatherbacks.moneyshot)
-		div.col-md-4.panel
-			br
-			br
-			h3 #{content.leatherbacks[0].Title}
-			hr
-			h4 Research to better protect our leatherback populations in North, Central and South America
-			a.btn(href="/projects/leatherbacks") BACK THIS PROJECT
-
+	// Image Showcases
+	section.showcase
+		.container-fluid.p-0
+			.row.no-gutters.panel
+				.col-lg-6.text-white.showcase-img(style="background-image: url('/images/leatherbacks/leatherback.png');")
+				.col-lg-6.my-auto.showcase-text
+					h2 #{content.leatherbacks[0].Title}
+					p.lead.mb-0
+						| Research to better protect our leatherback populations in North, Central and South America
+					br
+					a.btn.btn-lg.btn-primary(href="/projects/leatherbacks") LEARN MORE
 	br
-
+	
 	div.row.row-eq-height
 		div.col-4
 			div.center
 				a(href="/projects/leatherbacks")
 					img.img-fluid(src=links.leatherbacks.moneyshot)
 					h3 #{content.leatherbacks[0].Title}
-					p BACK THIS PROJECT
+					p.btn.btn-lg.btn-primary Back This Project
 		div.col-4
 			div.center
 				a(href="/projects/salmon")
 					img.img-fluid(src=links.salmon.moneyshot)
 					h3 #{content.salmon[0].Title}
-					p BACK THIS PROJECT
+					p.btn.btn-lg.btn-primary Back This Project
 		div.col-4
 			div.center
 				a(href="/projects/microplastics")
 					img.img-fluid(src=links.microplastics.moneyshot)
 					h3 #{content.microplastics[0].Title}
-					p BACK THIS PROJECT
+					p.btn.btn-lg.btn-primary Back This Project
 			

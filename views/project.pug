@@ -1,81 +1,80 @@
 extends _layout
 
 block content
+		// Image Showcases
+		section.showcase
+			.container-fluid.p-0
+				.row.no-gutters.panel
+					.col-lg-6.text-white.showcase-img(style="background-image: url(' "+links.moneyshot+" ')")
+					.col-lg-6.my-auto.showcase-text.padding
+						h2 #{content.Title}
+						p.lead.mb-0
+							| #{content["Project Description"]}
+						br
+						br
 
-	div.row.row-eq-height
-		div.col-md-8.no-padding
-			img.img-fluid.w-100(src=links.moneyshot alt="Image Title")
-		div.col-md-4.panel
-			br
-			br
-			h3 #{content.Title}
-			hr
-			h5 Research to better protect our leatherback populations in North, Central and South America
-
-	br
-
-	div.row.row-eq-height
-		div.col-md-4.panel
-			br
-			img.thumbnail(src=links.contactPhoto alt="Image Title")
-			hr
-			h3= content["Researcher"]
-			p= content["Researcher profile"]
-		div.col-md-8
-			div.padding
+		div.row.row-eq-height
+			div.col-md-5.panel.padding
 				br
-				h3 DETAILS
-				p #{content["Project Description"]}
-				br
-				h3 CORPORATE DONORS
-				div.row
-					each val in links.donors
-						div.col-sm-2
-							img.img-fluid(src= val)
+				img.thumbnail(src=links.contactPhoto alt="Image Title")
+				hr
+				h3= content["Researcher"]
+				p= content["Researcher profile"]
+			div.col-md-7
+				div.padding
+					br
+					h3 DETAILS
+					p #{content["Project Description"]}
+					br
+					h3 CORPORATE DONORS
+					div.row
+						each val in links.donors
+							div.col-sm-2
+								img.img-fluid(src= val)
 
-	br
-	br
-	hr
-	br
-	br
+		br
+		br
+		hr
+		br
+		br
 
-	h3.center HOW TO CONTRIBUTE
+		h3.center HOW TO CONTRIBUTE
 
-	br
-	br
+		br
+		br
 
-	div.row
-		div.col-md-4.center
-			p Order it for the content.from
-			a(href="https://amzn.to/2mtawRT").btn.orange amazon wishlist
-		div.col-md-4.center
-			p Donate it to content.now
-			a(href="/contact").btn.blue donate items
-		div.col-md-4.center
-			p See cash needs
-			a(href="https://www.engagingnetworks.net/us/").btn.green donate cash now
+		div.row
+			div.col-md-4.center
+				p Order it for the content.from
+				a.btn.btn-lg.btn-primary.orange(href="https://amzn.to/2mtawRT") Amazon Wishlist
+			div.col-md-4.center
+				p Donate it to content.now
+				a.btn.btn-lg.btn-primary.blue(href="/contact") donate items
+			div.col-md-4.center
+				p See cash needs
+				a.btn.btn-lg.btn-primary.green(href="https://www.engagingnetworks.net/us/") donate cash now
 
-	br
-	br
-	hr
-	br
-	br
+		br
+		br
+		hr
+		br
+		br
 
-	div
-		each val in giftlist
-			div.row.box
-				div.col-md-2
-					img.img-thumbnail(src=val.itemImage)
-				div.col-md-2
-					h5= val["Item Name"]
-				div.col-md-5
-					p= val["Description/Use/Justification"]
-				if val.Bucket == "Equipment"
-					div.col-md-3
-						a(href="https://amzn.to/2mtawRT").btn.orange amazon wishlist
-				else if val.Bucket == "Expedition Expenses"
-					div.col-md-3
-						a(href="https://www.engagingnetworks.net/us/").btn.green donate cash now
-				else
-					div.col-md-3
-						a(href="/contact").btn.blue donate items
+		div
+			each val in giftlist
+				div.row.box
+					div.col-md-2
+						img.img-thumbnail(src=val.itemImage)
+					div.col-md-2
+						h5= val["Item Name"]
+					div.col-md-5
+						p= val["Description/Use/Justification"]
+					if val.Bucket == "Equipment"
+						div.col-md-3
+							a(href="https://amzn.to/2mtawRT").btn.orange amazon wishlist
+					else if val.Bucket == "Expedition Expenses"
+						div.col-md-3
+							a(href="https://www.engagingnetworks.net/us/").btn.green donate cash now
+					else
+						div.col-md-3
+							a(href="/contact").btn.blue donate items

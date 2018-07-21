@@ -35,7 +35,7 @@ hr {
 
 
 .padding {
-  padding: 30px;
+  padding: 30px !important;
 }
 
 .row-equ-height {
@@ -115,12 +115,12 @@ hr {
     transition: box-shadow 0.2s ease-in-out;
 }
 */
-
+/*
 .btn-submit{
   width: 100px;
   height: 50px;
   margin-left: 10px !important;
-}
+}*/
 
 .buttonWishlist{
   background-color: gold;
