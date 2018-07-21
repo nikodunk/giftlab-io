@@ -34,7 +34,6 @@ block content
 
 	br
 	br
-	hr
 	br
 	br
 
@@ -45,18 +44,17 @@ block content
 
 	div.row
 		div.col-md-4.center
-			p Order it for the content.from
-			a.btn.btn-lg.btn-primary.orange(href="https://amzn.to/2mtawRT") Amazon Wishlist
+			p Order items for the project
+			a.btn.btn-lg.btn-primary.orange(href=links.AmazonWishlistLink) Amazon Wishlist
 		div.col-md-4.center
-			p Donate it to content.now
-			a.btn.btn-lg.btn-primary.blue(href="/contact") donate items
+			p Prefer to cover cash needs of the project?
+			a.btn.btn-lg.btn-primary.green(href=links.Cash) Cover Cash Needs
 		div.col-md-4.center
-			p See cash needs
-			a.btn.btn-lg.btn-primary.green(href="https://www.engagingnetworks.net/us/") donate cash now
+			p Have items already? Donate it to the project
+			a.btn.btn-lg.btn-primary.blue(href="/contact") Donate Items
 
 	br
 	br
-	hr
 	br
 	br
 
@@ -71,10 +69,14 @@ block content
 					p= val["Description/Use/Justification"]
 				if val.Bucket == "Equipment"
 					div.col-md-3
-						a(href="https://amzn.to/2mtawRT").btn.orange amazon wishlist
+						a(href=links.AmazonWishlistLink).btn.btn-primary.orange Amazon Wishlist
 				else if val.Bucket == "Expedition Expenses"
 					div.col-md-3
-						a(href="https://www.engagingnetworks.net/us/").btn.green donate cash now
+						a(href=links.Cash).btn.btn-primary.green Donate Cash Now
 				else
 					div.col-md-3
-						a(href="/contact").btn.blue donate items
+						a(href="/contact").btn.btn-primary.blue Donate Items
+	br
+	br
+	br
+	br

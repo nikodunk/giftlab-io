@@ -1,7 +1,8 @@
 {  
   "leatherbacks": {
         "moneyshot": "/images/leatherbacks/leatherback.png",
-        "AmazonWishlistLink": "https://amzn.to/2mtawRT",
+        "AmazonWishlistLink": "https://amzn.to/2uE3P46",
+        "Cash": "http://engagingnetworks.net/leatherbacks",
         "contactPhoto": "/images/leatherbacks/profile.png",
         "donors": [ 
           "/images/donors/patagonia.jpg", 
@@ -14,13 +15,15 @@
     },
     "microplastics": {
         "moneyshot": "/images/microplastics/microplastics.jpg",
-        "AmazonWishlistLink": "https://amzn.to/2L1hbSd",
+        "AmazonWishlistLink": "https://amzn.to/2LCG1E4",
+        "Cash": "http://engagingnetworks.net/microplastics",
         "contactPhoto": null,
         "donors": []
     },
     "salmon": {
         "moneyshot": "/images/salmon/salmon.jpg",
-        "AmazonWishlistLink": "https://amzn.to/2NWXrNe",
+        "AmazonWishlistLink": "https://amzn.to/2NAoDAF",
+        "Cash": "http://engagingnetworks.net/salmon",
         "contactPhoto": null,
         "donors": []
     }

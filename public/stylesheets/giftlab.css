@@ -55,14 +55,17 @@ hr {
 
 .orange {
   background-color: orange !important;
+  border: none !important;
 }
 
 .blue {
   background-color: lightblue !important;
+  border: none !important;
 }
 
 .green {
   background-color: lightgreen !important;
+  border: none !important;
 }
 
 .bullshark-image-tile{
