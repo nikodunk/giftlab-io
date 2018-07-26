@@ -5,22 +5,17 @@ block content
 	section.showcase
 		.container-fluid.p-0
 			.row.no-gutters.panel
-				.col-lg-7.text-white.showcase-img(style="background-image: url(' "+links.moneyshot+" ')")
 				.col-lg-5.my-auto.showcase-text.padding
 					h2 #{content.Title}
 					p.lead.mb-0
 						| #{content["Project Description"]}
 					br
 					br
+				.col-lg-7.text-white.showcase-img(style="background-image: url(' "+links.moneyshot+" ')")
+				
 
 	section.row.row-eq-height
-		div.col-md-5.panel.padding
-			br
-			img.thumbnail(src=links.contactPhoto alt="Image Title")
-			hr
-			h3= content["Researcher"]
-			p= content["Researcher profile"]
-		div.col-md-7
+		div.col-md-6
 			div.padding
 				br
 				h3 DETAILS
@@ -31,6 +26,13 @@ block content
 					each val in links.donors
 						div.col-4.col-md-2
 							img.img-fluid(src= val)
+		div.col-md-6.panel.padding
+			br
+			img.thumbnail(src=links.contactPhoto alt="Image Title")
+			hr
+			h3= content["Researcher"]
+			p= content["Researcher profile"]
+		
 
 	
 	// Icons Grid
@@ -59,7 +61,7 @@ block content
 	br
 	br
 
-	div.container
+	section.container
 		each val in giftlist
 			div.row.box
 				div.col-md-2
@@ -77,7 +79,7 @@ block content
 				else
 					div.col-md-3
 						a(href="/contact").btn.btn-primary.blue Donate Items
-	br
-	br
-	br
-	br
+		br
+		br
+		br
+		br

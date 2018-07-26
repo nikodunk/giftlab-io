@@ -2,7 +2,6 @@ doctype html
 html
   head
     title The Gift Lab
-    link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/stylesheets/giftlab.css')
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
@@ -17,15 +16,15 @@ html
     //- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+    <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
     <!-- Custom styles for this template -->
-    <link href="css/landing-page.min.css" rel="stylesheet">
+    <link href="/css/landing-page.min.css" rel="stylesheet">
 
 
-  body
+    body
     
         // Navigation
         nav.navbar.navbar-light.bg-light.static-top
@@ -33,7 +32,7 @@ html
                 a.navbar-brand(href='/') The Gift Lab
                 a.ml-auto(href='/') Home  
                 span  &nbsp;&nbsp;| &nbsp;
-                a.float-right(href='/projects') Projects
+                a.float-right(href='/#projects') Projects
                 span  &nbsp;&nbsp;| &nbsp;
                 a.float-right(href='/about') Our Story  
         //- // Masthead
@@ -97,35 +96,36 @@ html
         //-                     p.font-weight-light.mb-0 "Thanks so much for making these free resources available to us!"
         
         // Footer
-        footer.footer.bg-light
-            .container
-                .row
-                    .col-lg-6.h-100.text-center.text-lg-left.my-auto
-                        ul.list-inline.mb-2
-                            li.list-inline-item
-                                a(href='#') About
-                            li.list-inline-item ⋅
-                            li.list-inline-item
-                                a(href='#') Contact
-                            li.list-inline-item ⋅
-                            li.list-inline-item
-                                a(href='#') Terms of Use
-                            li.list-inline-item ⋅
-                            li.list-inline-item
-                                a(href='#') Privacy Policy
-                        p.text-muted.small.mb-4.mb-lg-0 © The Gift Lab 2018. All Rights Reserved.
-                    .col-lg-6.h-100.text-center.text-lg-right.my-auto
-                        ul.list-inline.mb-0
-                            li.list-inline-item.mr-3
-                                a(href='#')
-                                    i.fa.fa-facebook.fa-2x.fa-fw
-                            li.list-inline-item.mr-3
-                                a(href='#')
-                                    i.fa.fa-twitter.fa-2x.fa-fw
-                            li.list-inline-item
-                                a(href='#')
-                                    i.fa.fa-instagram.fa-2x.fa-fw
+    footer.footer.bg-light
+        .container
+            .row
+                .col-lg-6.h-100.text-center.text-lg-left.my-auto
+                    ul.list-inline.mb-2
+                        li.list-inline-item
+                            a(href='#') About
+                        li.list-inline-item ⋅
+                        li.list-inline-item
+                            a(href='#') Contact
+                        li.list-inline-item ⋅
+                        li.list-inline-item
+                            a(href='#') Terms of Use
+                        li.list-inline-item ⋅
+                        li.list-inline-item
+                            a(href='#') Privacy Policy
+                    p.text-muted.small.mb-4.mb-lg-0 © The Gift Lab 2018. All Rights Reserved.
+                .col-lg-6.h-100.text-center.text-lg-right.my-auto
+                    ul.list-inline.mb-0
+                        li.list-inline-item.mr-3
+                            a(href='#')
+                                i.fa.fa-facebook.fa-2x.fa-fw
+                        li.list-inline-item.mr-3
+                            a(href='#')
+                                i.fa.fa-twitter.fa-2x.fa-fw
+                        li.list-inline-item
+                            a(href='#')
+                                i.fa.fa-instagram.fa-2x.fa-fw
+                                    
         // Bootstrap core JavaScript
-        script(src='vendor/jquery/jquery.min.js')
-        script(src='vendor/bootstrap/js/bootstrap.bundle.min.js')
+        script(src='/vendor/jquery/jquery.min.js')
+        script(src='/vendor/bootstrap/js/bootstrap.bundle.min.js')
 

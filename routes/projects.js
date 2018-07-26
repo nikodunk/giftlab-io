@@ -5,15 +5,6 @@ var giftlists = require('../public/javascripts/giftlists.json')
 var links = require('../public/javascripts/links.json')
 
 
-router.get('/', function(req, res, next) {
-  res.render('projects',
-              { 
-                content: content,
-                giftlist: giftlists,
-                links: links
-              });
-});
-
 
 
 router.get('/leatherbacks/', function(req, res, next) {
