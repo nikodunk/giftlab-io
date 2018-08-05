@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var homeRouter = require('./routes/home');
 var projectsRouter = require('./routes/projects');
+var paypalRouter = require('./routes/paypal');
 
 
 var app = express();
@@ -21,8 +22,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 app.use('/', homeRouter);
 app.use('/projects', projectsRouter);
+app.use('/paypal', paypalRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
