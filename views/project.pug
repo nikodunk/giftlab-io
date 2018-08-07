@@ -80,7 +80,7 @@ block content
 								//label(for="amount") Amount to pay in USD (1 - 9, default 1)
 								//input(id="amount" class="form-control col-4" type="number" name="amount" value=' val["Price/Unit USD"] ' min="1" max="val['Price/Unit USD']")
 							.form-group
-								input(name="amount" value="val["Price/Unit USD"]")
+								input(name="amount" value="#{val['Price/Unit USD']}")
 								// label(for="description") Payment description
 								//input#description.form-control(type="text" name="description" maxlength="100" placeholder="Optional")
 							button(class="btn btn-primary btn-lg" type="submit") Pay with PayPal
