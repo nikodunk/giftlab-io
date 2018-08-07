@@ -84,7 +84,7 @@ block content
 									label(id="amount") #{val["Price/Unit USD"]}
 								// label(for="description") Payment description
 								//input#description.form-control(type="text" name="description" maxlength="100" placeholder="Optional")
-							button(class="btn btn-primary btn-lg" type="submit") Pay with PayPal
+							a(class="btn btn-primary btn-lg" href="/submit/#{val["Price/Unit USD"]}") Pay with PayPal
 				else
 					div.col-md-3
 						a(href="/contact").btn.btn-primary.blue Donate Items
