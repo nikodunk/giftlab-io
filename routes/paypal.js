@@ -10,9 +10,9 @@ paypal.configure({
 
 
 
-router.post('/submit/:amount/', (req, res) => {
+router.post('/submit', (req, res) => {
   let description = req.body.description ? req.body.description : 'This is the payment description'
-  let amount = req.params.amount
+  let amount = req.body.amount
   let host = req.protocol + '://' + req.get('host')
   let createPaymentJson = {
     intent: "sale", // authorize
