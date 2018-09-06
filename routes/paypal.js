@@ -38,7 +38,7 @@ router.post('/submit', (req, res) => {
         total: amount
       },
       payee: {
-            email: 'payments@TIRN.com'
+            email: 'info@seaturtles.org'
         },
       description: 'Your donation to this location'
     }]
