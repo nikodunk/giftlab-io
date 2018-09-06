@@ -70,7 +70,7 @@ block content
 					h5= val["Item Name"]
 				div.col-md-5
 					p= val["Description/Use/Justification"]
-					p Per Unit: $#{val['Price/Unit USD']} | Total Cost: $#{val['Total Cost USD']}
+					p Per Unit: $#{val['Price/Unit USD']} | Total Cost: #{val['Total Cost USD']}
 				if val.Bucket == "Equipment"
 					div.col-md-3
 						a(href=links.AmazonWishlistLink).btn.btn-primary.orange Amazon Wishlist
