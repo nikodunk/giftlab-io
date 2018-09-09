@@ -38,7 +38,7 @@ router.post( '/signup', function (req, res) {
       if (err) throw err;
       client.end();
   });	
-  res.send('added')
+  res.render('home');
 })
 
 
