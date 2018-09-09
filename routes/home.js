@@ -34,7 +34,7 @@ router.get('/contact', function(req, res, next) {
 
 
 
-router.post( '/signup', function (req, res) {
+router.post( '/signup', function (req, result) {
 	client.query(`SELECT * FROM marketing WHERE email = '`+req.body.email+`';`, (err, res) => {
       //if (err) throw err;
       if (res.rowCount === 0){ 
@@ -42,7 +42,7 @@ router.post( '/signup', function (req, res) {
               if (err) throw err;
               client.end();
           }); 
-            res.render('home', { 
+            result.render('home', { 
                   content: content,
                   giftlist: giftlists,
                   links: links
@@ -50,7 +50,7 @@ router.post( '/signup', function (req, res) {
       }
       // IF THE ACCOUNT EXISTS ALREADY DO NOTHING AND RESPOND
         else{
-            res.render('home', { 
+            result.render('home', { 
                   content: content,
                   giftlist: giftlists,
                   links: links
