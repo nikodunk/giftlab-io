@@ -3,9 +3,14 @@ var router = express.Router();
 var content = require('../public/javascripts/content.json')
 var giftlists = require('../public/javascripts/giftlists.json')
 var links = require('../public/javascripts/links.json')
-const { Pool } = require('pg')
-const pool = new Pool()
 
+const { Client } = require('pg');
+const client = new Client({
+  connectionString: process.env.DATABASE_URL,
+  ssl: true,
+});
+
+client.connect();
 
 
 /* GET home page. */
@@ -29,12 +34,14 @@ router.get('/contact', function(req, res, next) {
 
 
 router.post( '/signup', function (req, res) {
-	pool.connect(process.env.DATABASE_URL, function(err, client, done) {
-		client.query(`INSERT INTO marketing VALUES ('`+req.body.email+`');`)
-		done();
-		res.send( 'added' )
-	})	
+	client.query(`INSERT INTO marketing VALUES ('`+req.body.email+`');`, (err, res) => {
+      if (err) throw err;
+      client.end();
+      res.send( 'added' )
+  });	
 })
+
+
 
 
 module.exports = router;
