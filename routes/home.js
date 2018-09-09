@@ -3,7 +3,6 @@ var router = express.Router();
 var content = require('../public/javascripts/content.json')
 var skus = require('../public/javascripts/skus.json')
 var links = require('../public/javascripts/links.json')
-var $ = jQuery = require('jquery')
 
 const { Client } = require('pg');
 const client = new Client({
