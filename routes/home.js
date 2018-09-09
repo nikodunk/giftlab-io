@@ -52,8 +52,8 @@ router.post( '/signup', function (req, result) {
           console.log('exists')
       }
       client.end();
-      result.redirect('/home_success#signup');
   }); 
+  result.redirect('/home_success#signup');
 })
 
 
