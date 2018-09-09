@@ -3,6 +3,7 @@ var router = express.Router();
 var content = require('../public/javascripts/content.json')
 var giftlists = require('../public/javascripts/giftlists.json')
 var links = require('../public/javascripts/links.json')
+var $ = jQuery = require('jquery')
 
 const { Client } = require('pg');
 const client = new Client({
@@ -34,15 +35,29 @@ router.get('/contact', function(req, res, next) {
 
 
 router.post( '/signup', function (req, res) {
-	client.query(`INSERT INTO marketing VALUES ('`+req.body.email+`');`, (err, res) => {
+	client.query(`SELECT * FROM marketing WHERE email = '`+req.body.email+`';`, (err, res) => {
       if (err) throw err;
-      client.end();
-  });	
-  res.render('home', { 
+      if (queryResult.rowCount === 0){ 
+        client.query(`INSERT INTO marketing VALUES ('`+req.body.email+`');`, (err, res) => {
+              if (err) throw err;
+              client.end();
+          }); 
+            res.render('home', { 
                   content: content,
                   giftlist: giftlists,
                   links: links
                 });
+      }
+      // IF THE ACCOUNT EXISTS ALREADY DO NOTHING AND RESPOND
+        else{
+            res.render('home', { 
+                  content: content,
+                  giftlist: giftlists,
+                  links: links
+                });
+        }
+      client.end();
+  }); 
 })
 
 
