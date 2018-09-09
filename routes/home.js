@@ -38,7 +38,11 @@ router.post( '/signup', function (req, res) {
       if (err) throw err;
       client.end();
   });	
-  res.render('home');
+  res.render('home', { 
+                  content: content,
+                  giftlist: giftlists,
+                  links: links
+                });
 })
 
 
