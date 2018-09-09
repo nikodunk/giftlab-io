@@ -7,7 +7,7 @@ var pg = require('pg');
 
 router.get('/leatherbacks/', function(req, res, next) {
   res.render('project', 
-              { content: content["leatherbacks"][0],
+              { content: content[0],
                 giftlist: giftlists["leatherbacks"],
                 links: links["leatherbacks"]
               }
@@ -16,7 +16,7 @@ router.get('/leatherbacks/', function(req, res, next) {
 
 router.get('/salmon/', function(req, res, next) {
   res.render('project', 
-              { content: content["salmon"][0],
+              { content: content[1],
   							giftlist: giftlists["salmon"],
   							links: links["salmon"]
               }
@@ -25,7 +25,7 @@ router.get('/salmon/', function(req, res, next) {
 
 router.get('/microplastics/', function(req, res, next) {
   res.render('project', 
-              { content: content["microplastics"][0],
+              { content: content[2],
                 giftlist: giftlists["microplastics"],
                 links: links["microplastics"]
               }

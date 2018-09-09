@@ -3,28 +3,18 @@
         "moneyshot": "/images/leatherbacks/leatherback.png",
         "AmazonWishlistLink": "https://amzn.to/2uE3P46",
         "Cash": "http://engagingnetworks.net/leatherbacks",
-        "contactPhoto": "/images/leatherbacks/profile.png",
-        "donors": [ 
-          "/images/donors/patagonia.jpg", 
-          "/images/donors/onset.png", 
-          "/images/donors/gopro.png",
-          "/images/donors/sodelicious.png",
-          "/images/donors/Stream2Sea-Logo.png",
-          "/images/donors/undersea_hunter.jpg"
-          ]
+        "contactPhoto": "/images/leatherbacks/profile.png"
     },
     "microplastics": {
         "moneyshot": "/images/microplastics/microplastics.jpg",
         "AmazonWishlistLink": "https://amzn.to/2LCG1E4",
         "Cash": "http://engagingnetworks.net/microplastics",
-        "contactPhoto": null,
-        "donors": []
+        "contactPhoto": null
     },
     "salmon": {
         "moneyshot": "/images/salmon/salmon.jpg",
         "AmazonWishlistLink": "https://amzn.to/2NAoDAF",
         "Cash": "http://engagingnetworks.net/salmon",
-        "contactPhoto": null,
-        "donors": []
+        "contactPhoto": null
     }
 }

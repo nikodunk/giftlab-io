@@ -69,7 +69,7 @@ hr {
 }
 
 .panel {
-  background-color: skyblue !important;
+  background-image: linear-gradient(#00AFE1, #0C3C83) !important;
   text-align: right;
   color: white;
   margin: 0;
@@ -120,4 +120,25 @@ hr {
   height: 100%;
   max-width: 900px;
   margin: 5px auto !important;
+}
+
+.nolinks{
+  text-decoration: none !important;
+  color: black;
+}
+
+.brand{
+  max-width: 200px !important;
+}
+
+
+.jumbotronbutton{
+  background-color: rgba(0,0,0,0) !important;
+  border: 2px solid rgba(255,255,255,1) !important;
+}
+
+.jumbotronbutton:hover{
+  background-color: rgba(0,0,0,0) !important;
+  border: 2px solid rgba(255,255,255,.6) !important;
+  color: rgba(255,255,255,.6) !important;
 }
