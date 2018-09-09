@@ -31,7 +31,10 @@ router.get('/contact', function(req, res, next) {
 });
 
 router.get('/home_success', function(req, res, next) {
-  res.render('home_success');
+  res.render('home_success', { 
+                content: content,
+                skus: skus
+              });
 });
 
 
