@@ -36,8 +36,8 @@ router.get('/contact', function(req, res, next) {
 
 router.post( '/signup', function (req, res) {
 	client.query(`SELECT * FROM marketing WHERE email = '`+req.body.email+`';`, (err, res) => {
-      if (err) throw err;
-      if (queryResult.rowCount === 0){ 
+      //if (err) throw err;
+      if (res.rowCount === 0){ 
         client.query(`INSERT INTO marketing VALUES ('`+req.body.email+`');`, (err, res) => {
               if (err) throw err;
               client.end();
