@@ -47,7 +47,7 @@ router.post( '/signup', function (req, result) {
           console.log('exists')
       }
       client.end();
-      result.render('home', { 
+      router.render('home_success', { 
             content: content,
             giftlist: giftlists,
             links: links

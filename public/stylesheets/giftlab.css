@@ -116,8 +116,8 @@ hr {
 
 .box{
   border: 1px solid lightgrey;
-  width: 100%;
   padding: 20px;
-  margin: 5px !important;
   height: 100%;
+  max-width: 900px;
+  margin: 5px auto !important;
 }
