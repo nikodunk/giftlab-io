@@ -1,14 +1,14 @@
 var express = require('express');
 var router = express.Router();
 var content = require('../public/javascripts/content.json')
-var giftlists = require('../public/javascripts/giftlists.json')
+var skus = require('../public/javascripts/skus.json')
 var links = require('../public/javascripts/links.json')
 var pg = require('pg');
 
 router.get('/leatherbacks/', function(req, res, next) {
   res.render('project', 
               { content: content[0],
-                giftlist: giftlists["leatherbacks"],
+                skus: skus,
                 links: links["leatherbacks"]
               }
             );
@@ -17,7 +17,7 @@ router.get('/leatherbacks/', function(req, res, next) {
 router.get('/salmon/', function(req, res, next) {
   res.render('project', 
               { content: content[1],
-  							giftlist: giftlists["salmon"],
+  							skus: skus,
   							links: links["salmon"]
               }
             );
@@ -26,7 +26,7 @@ router.get('/salmon/', function(req, res, next) {
 router.get('/microplastics/', function(req, res, next) {
   res.render('project', 
               { content: content[2],
-                giftlist: giftlists["microplastics"],
+                skus: skus,
                 links: links["microplastics"]
               }
             );

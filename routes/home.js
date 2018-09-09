@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var content = require('../public/javascripts/content.json')
-var giftlists = require('../public/javascripts/giftlists.json')
+var skus = require('../public/javascripts/skus.json')
 var links = require('../public/javascripts/links.json')
 var $ = jQuery = require('jquery')
 
@@ -18,7 +18,7 @@ client.connect();
 router.get('/', function(req, res, next) {
   res.render('home', { 
                 content: content,
-                giftlist: giftlists,
+                skus: skus,
                 links: links
               });
 });
@@ -49,7 +49,7 @@ router.post( '/signup', function (req, result) {
       client.end();
       result.render('home_success', { 
             content: content,
-            giftlist: giftlists,
+            skus: skus,
             links: links
           });
   }); 

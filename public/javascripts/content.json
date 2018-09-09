@@ -1,5 +1,3 @@
-
-
 [
   {
     "ProjectID": 1,
@@ -9,7 +7,11 @@
     "Project Description - Long": "With your donations we will conduct research to better understand prehistoric giants; the Eastern Pacific leatherback sea turtle. For our research we will study these incredible creatures above and below the water to better estimate their population size, movements and behaviors, migration patterns, fishery interations and nesting behaviors. The footage and learnings from these studies will also be used to create a platform for community outreach, fundraising and conservation campaigns.",
     "Researcher profile": "Armed with a Masters of Science in Biology, Callie is determined to prevent the Eastern Pacific Leatherback sea turtle from extinction. As a research fellow at the Turtle Island Restoration Network in California, she spends her days researching and collecting data on these incredible animals in order to understand how to best protect them and influence government policy change for their long-term survival.",
     "Project Deadline": "October 3rd, 2018",
-    "Status": "Active"
+    "Status": "Active",
+    "image": "/images/leatherbacks/leatherback.png",
+    "slug": "/projects/leatherbacks",
+    "wishlistlink": "https://amzn.to/2uE3P46",
+    "paypal": "info@seaturtles.org"
   },
   {
     "ProjectID": 2,
@@ -19,7 +21,11 @@
     "Project Description - Long": "Who doesn’t love salmon? This project is one of the largest restoration projects currently planned for the Lagunitas Creek Watershed. With over 1 mile of stream habitat ready to be restored, donations to this project will help the recovery of struggling endangered Coho and Steelhead salmon populations. As an added bonus, endangered wildlife such as the California freshwater shrimp and the California red-legged frogs will also benefit.",
     "Researcher profile": "Preston Brown is a watershed biologist and Director of Watershed Conservation with Turtle Island Restoration Network’s Salmon Protection And Watershed Network (SPAWN). With a B.S. in Natural Resources Management, he is focused on developing and facilitating stream restoration projects and administrating salmonID population monitoring programs.",
     "Project Deadline": "December 1st, 2018",
-    "Status": "Active"
+    "Status": "Active",
+    "image": "/images/microplastics/microplastics.jpg",
+    "slug": "/projects/salmon",
+    "wishlistlink": "https://amzn.to/2LCG1E4",
+    "paypal": "info@seaturtles.org"
   },
   {
     "ProjectID": 3,
@@ -29,7 +35,11 @@
     "Project Description - Long": "This project is an effort to better understand the impact of plastic in our oceans to both raise awareness and influence governmental change, starting in Costa Rica. We will collect data on microplastic concentrations between Isla Del Cocos and coastal areas of Costa Rica in an effort to encourage the Costa Rican government to decrease consumption of single-use plastic through policy change.",
     "Researcher profile": "Todd is the Executive Director and Founder of the Turtle Island Restoration Network and has over 40 years experience protecting and restoring endangered species and habitats. With his lifetime of knowledge, and a Masters in Biology, Todd’s current focus is supporting his fellow marine conservationists and researchers as well as conservation projects at Cocos Island in Costa Rica.",
     "Project Deadline": "November 15th, 2018",
-    "Status": "Active"
+    "Status": "Active",
+    "image": "/images/salmon/salmon.jpg",
+    "slug": "/projects/microplastics",
+    "wishlistlink": "https://amzn.to/2NAoDAF",
+    "paypal": "info@seaturtles.org"
   },
   {
     "ProjectID": 4,
@@ -39,7 +49,11 @@
     "Project Description - Long": "A shark-related fatality in Isla Del Coco in Costa Rica in November 2017 has drawn attention to tiger sharks in the region. This project utilizes non-invasive research techniques to understand tiger shark feeding behaviors and identify population sizes. The goal of this project is to identify tiger sharks and create protocols for protecting both tiger sharks and island tourism.",
     "Researcher profile": "Todd is the Executive Director and Founder of the Turtle Island Restoration Network and has over 40 years experience protecting and restoring endangered species and habitats. With his lifetime of knowledge, and a Masters in Biology, Todd’s current focus is supporting his fellow marine conservationists and researchers as well as conservation projects at Cocos Island in Costa Rica.",
     "Project Deadline": "July 31st, 2018",
-    "Status": "Complete"
+    "Status": "Complete",
+    "image": "/images/tigersharks/bullshark.jpg",
+    "slug": "/",
+    "wishlistlink": "",
+    "paypal": ""
   },
   {
     "ProjectID": 5,
@@ -49,6 +63,10 @@
     "Project Description - Long": "",
     "Researcher profile": "Armed with a Masters of Science in Biology, Callie is determined to prevent the Eastern Pacific Leatherback sea turtle from extinction. As a research fellow at the Turtle Island Restoration Network in California, she spends her days researching and collecting data on these incredible animals in order to understand how to best protect them and influence government policy change for their long-term survival.",
     "Project Deadline": "March 1st, 2019",
-    "Status": "Planned"
+    "Status": "Planned",
+    "image": "",
+    "slug": "/",
+    "wishlistlink": "",
+    "paypal": ""
   }
 ]

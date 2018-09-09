@@ -5,7 +5,7 @@ block content
 	section.showcase
 		.container-fluid.p-0
 			.row.no-gutters.panel
-				.col-lg-8.text-white.showcase-img(style="background-image: url('/images/bullshark.jpg');")
+				.col-lg-8.text-white.showcase-img(style="background-image: url('/images/home/bullshark.jpg');")
 				.col-lg-4.my-auto.showcase-text
 					h2 Help seed discovery
 					p.lead.mb-0
@@ -23,7 +23,7 @@ block content
 				.row
 					.col-lg-4
 						.features-icons-item.mx-auto.mb-5.mb-lg-0.mb-lg-3
-							img.img-fluid(src="./images/FindProject.png")
+							img.img-fluid(src="./images/home/FindProject.png")
 							br
 							br
 							h3 Find a project
@@ -31,7 +31,7 @@ block content
 
 					.col-lg-4
 						.features-icons-item.mx-auto.mb-5.mb-lg-0.mb-lg-3
-							img.img-fluid(src="./images/GiveDirectly.png")
+							img.img-fluid(src="./images/home/GiveDirectly.png")
 							br
 							br
 							h3 Give directly
@@ -39,7 +39,7 @@ block content
 
 					.col-lg-4
 						.features-icons-item.mx-auto.mb-0.mb-lg-3
-							img.img-fluid(src="./images/Thanks.png")
+							img.img-fluid(src="./images/home/Thanks.png")
 							br
 							br
 							h3 Stay updated
@@ -61,34 +61,17 @@ block content
 	br
 	br
 
-	div.container
+	section.container
 		section.row.row-eq-height
-			div.col-md-4
-				a(href="/projects/leatherbacks").nolinks
-					div.center.box
-						img.img-fluid(src=links.leatherbacks.moneyshot)
-						br
-						br
-						h3 #{content[0].ProjectName}
-						p #{content[0]["Project Description - Short"]}
-
-			div.col-md-4
-				a(href="/projects/salmon").nolinks
-					div.center.box
-						img.img-fluid(src=links.salmon.moneyshot)
-						br
-						br
-						h3 #{content[1].ProjectName}
-						p #{content[1]["Project Description - Short"]}
-
-			div.col-md-4
-				a(href="/projects/microplastics").nolinks
-					div.center.box
-						img.img-fluid(src=links.microplastics.moneyshot)
-						br
-						br
-						h3 #{content[2].ProjectName}
-						p #{content[2]["Project Description - Short"]}
+			each val in content
+				div.col-md-4(style="padding: 10px")
+					a(href=val.slug).nolinks
+						div.center.box
+							img.img-fluid(src=val.image)
+							br
+							br
+							h3 #{val.ProjectName}
+							p #{val["Project Description - Short"]}
 
 	hr
 

@@ -6,9 +6,9 @@ block content
 		.container-fluid.p-0
 			.row.no-gutters.panel
 				.col-lg-5.my-auto.showcase-text.padding
-					h2 #{content.Title}
+					h2 #{content.ProjectName}
 					p.lead.mb-0
-						| #{content["Project Description"]}
+						| #{content["Project Description - Short"]}
 					br
 					br
 				.col-lg-7.text-white.showcase-img(style="background-image: url(' "+links.moneyshot+" ')")
@@ -19,7 +19,7 @@ block content
 			div.padding
 				br
 				h3 DETAILS
-				p #{content["Project Description"]}
+				p #{content["Project Description - Long"]}
 				br
 				//- h3 CORPORATE DONORS
 				//- div.row
@@ -37,24 +37,28 @@ block content
 	
 	// Icons Grid
 	section.features-icons.bg-light.text-center.padding
-			h3.center HOW TO CONTRIBUTE
-			br
-			br
-			br
 			.container
+				hr
+				h3.center HOW TO CONTRIBUTE
+				br
+				p The Gift Lab is about giving our donors the power to control where their generous donations go. Below is a list of all the different things that go into this research project. From expedition equipment to flights, and a breakdown of the elusive “admin fees”. 
+				br
+				hr
+
 				.row
 					.col-lg-4
 						.features-icons-item.mx-auto.mb-5.mb-lg-0.mb-lg-3
-							h3 Order items for the project
+							h3 Purchase and ship a specific item directly
 							a.btn.btn-lg.btn-primary.orange(href=links.AmazonWishlistLink) Amazon Wishlist
 					.col-lg-4
 						.features-icons-item.mx-auto.mb-5.mb-lg-0.mb-lg-3
-							h3 Prefer to cover cash needs of the project?
+							h3 Donate money to specific budgets
 							a.btn.btn-lg.btn-primary.green(href=links.Cash) Cover Cash Needs
 					.col-lg-4
 						.features-icons-item.mx-auto.mb-0.mb-lg-3
-							h3 Have items already? Donate it to the project
+							h3 Recycle an item to give it a second life
 							a.btn.btn-lg.btn-primary.blue(href="/contact") Donate Items	
+				hr
 
 	br
 	br
@@ -62,28 +66,36 @@ block content
 	br
 
 	section.container
-		each val in giftlist
+		each val in skus
 			div.row.box
 				//- div.col-md-2
 				//- 	img.img-thumbnail(src=val.itemImage)
 				div.col-md-2
-					h5= val["Item Name"]
+					h5= val["sku_name"]
+					p= val["Bucket"]
 				div.col-md-6
 					p= val["Description/Use/Justification"]
-					p Per Unit: $#{val['Price/Unit USD']} | Total Cost: #{val['Total Cost USD']}
+					p Per Unit: $#{val['Price/Unit USD']} | Quantity Needed: #{val['Quantity Needed']} | Total Cost: $#{val['Total Cost USD']}
+					progress(width="50%")
+
 				if val.Bucket == "Equipment"
 					div.col-md-4
 						a(href=links.AmazonWishlistLink).btn.btn-primary.orange.pull-right Amazon Wishlist
+
+				
 				else if val.Bucket == "Expedition Expenses"
 					div.col-md-4
 						form(action="/paypal/submit" method="POST")
 							.form-group.row
-								input(id="amount" class="form-control col-4 pull-right" type="number" name="amount" value=val['Price/Unit USD'] min="1" max="999")
+								input(id="amount" class="form-control col-4 pull-right" type="number" name="amount" value="0" min="0" max="val['Price/Unit USD']")
 								div.col-1
 								button(class="btn btn-primary green col-6 pull-right" type="submit") Pay with PayPal
+						a(href="/contact").pull-right other
+				
 				else
 					div.col-md-4
 						a(href="/contact").btn.btn-primary.blue.pull-right Donate Items
+
 		br
 		br
 		br
