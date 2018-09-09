@@ -30,6 +30,10 @@ router.get('/contact', function(req, res, next) {
   res.render('contact');
 });
 
+router.get('/home_success', function(req, res, next) {
+  res.render('home_success');
+});
+
 
 
 router.post( '/signup', function (req, result) {
@@ -45,10 +49,7 @@ router.post( '/signup', function (req, result) {
           console.log('exists')
       }
       client.end();
-      result.render('home_success', { 
-            content: content,
-            skus: skus
-          });
+      result.redirect('/home_success#signup');
   }); 
 })
 
