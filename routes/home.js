@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var content = require('../public/javascripts/content.json')
 var skus = require('../public/javascripts/skus.json')
-var links = require('../public/javascripts/links.json')
+var orders = require('../public/javascripts/orders.json')
 
 const { Client } = require('pg');
 const client = new Client({
@@ -17,8 +17,7 @@ client.connect();
 router.get('/', function(req, res, next) {
   res.render('home', { 
                 content: content,
-                skus: skus,
-                links: links
+                skus: skus
               });
 });
 
@@ -48,8 +47,7 @@ router.post( '/signup', function (req, result) {
       client.end();
       result.render('home_success', { 
             content: content,
-            skus: skus,
-            links: links
+            skus: skus
           });
   }); 
 })

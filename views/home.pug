@@ -64,14 +64,25 @@ block content
 	section.container
 		section.row.row-eq-height
 			each val in content
-				div.col-md-4(style="padding: 10px")
-					a(href=val.slug).nolinks
-						div.center.box
-							img.img-fluid(src=val.image)
-							br
+				if val.Status === "Active"
+					div.col-md-4(style="padding: 10px")
+						a(href=val.slug).nolinks
+							div.center.box
+								img.img-fluid(src=val.image)
+								br
+								br
+								h3 #{val.ProjectName}
+								p #{val["Project Description - Short"]}
+								p(style="color: lightgreen") Status: #{val["Status"]}
+
+				else
+					div.col-md-4(style="padding: 10px")
+						div.center.box(style="color: grey")
 							br
 							h3 #{val.ProjectName}
-							p #{val["Project Description - Short"]}
+							//- p #{val["Project Description - Short"]}
+							p Status: #{val["Status"]}
+
 
 	hr
 

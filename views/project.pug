@@ -11,7 +11,7 @@ block content
 						| #{content["Project Description - Short"]}
 					br
 					br
-				.col-lg-7.text-white.showcase-img(style="background-image: url(' "+links.moneyshot+" ')")
+				.col-lg-7.text-white.showcase-img(style="background-image: url(' "+content.image+" ')")
 				
 
 	section.row.row-eq-height
@@ -21,14 +21,9 @@ block content
 				h3 DETAILS
 				p #{content["Project Description - Long"]}
 				br
-				//- h3 CORPORATE DONORS
-				//- div.row
-				//- 	each val in links.donors
-				//- 		div.col-4.col-md-2
-				//- 			img.img-fluid(src= val)
 		div.col-md-6.panel.padding
 			br
-			img.thumbnail(src=links.contactPhoto alt="Image Title")
+			img.thumbnail(src=content.researcherimage alt="Image Title")
 			hr
 			h3= content["Researcher"]
 			p= content["Researcher profile"]
@@ -49,11 +44,11 @@ block content
 					.col-lg-4
 						.features-icons-item.mx-auto.mb-5.mb-lg-0.mb-lg-3
 							h3 Purchase and ship a specific item directly
-							a.btn.btn-lg.btn-primary.orange(href=links.AmazonWishlistLink) Amazon Wishlist
+							a.btn.btn-lg.btn-primary.orange(href=content.wishlistlink) Amazon Wishlist
 					.col-lg-4
 						.features-icons-item.mx-auto.mb-5.mb-lg-0.mb-lg-3
 							h3 Donate money to specific budgets
-							a.btn.btn-lg.btn-primary.green(href=links.Cash) Cover Cash Needs
+							a.btn.btn-lg.btn-primary.green(href="#") Cover Cash Needs
 					.col-lg-4
 						.features-icons-item.mx-auto.mb-0.mb-lg-3
 							h3 Recycle an item to give it a second life
@@ -79,7 +74,7 @@ block content
 
 					if val.Bucket == "Equipment"
 						div.col-md-4
-							a(href=links.AmazonWishlistLink).btn.btn-primary.orange.pull-right Amazon Wishlist
+							a(href=content.wishlistlink).btn.btn-primary.orange.pull-right Amazon Wishlist
 
 					
 					else if val.Bucket == "Expedition Expenses"

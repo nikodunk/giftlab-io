@@ -9,8 +9,9 @@
     "Project Deadline": "October 3rd, 2018",
     "Status": "Active",
     "image": "/images/leatherbacks/leatherback.png",
+    "researcherimage": "/images/leatherbacks/profile.png",
     "slug": "/projects/leatherbacks",
-    "wishlistlink": "https://amzn.to/2uE3P46",
+    "wishlistlink": "http://a.co/8FApoMH",
     "paypal": "info@seaturtles.org"
   },
   {
@@ -23,6 +24,7 @@
     "Project Deadline": "December 1st, 2018",
     "Status": "Active",
     "image": "/images/microplastics/microplastics.jpg",
+    "researcherimage": "",
     "slug": "/projects/salmon",
     "wishlistlink": "https://amzn.to/2LCG1E4",
     "paypal": "info@seaturtles.org"
@@ -37,6 +39,7 @@
     "Project Deadline": "November 15th, 2018",
     "Status": "Active",
     "image": "/images/salmon/salmon.jpg",
+    "researcherimage": "",
     "slug": "/projects/microplastics",
     "wishlistlink": "https://amzn.to/2NAoDAF",
     "paypal": "info@seaturtles.org"
@@ -50,8 +53,9 @@
     "Researcher profile": "Todd is the Executive Director and Founder of the Turtle Island Restoration Network and has over 40 years experience protecting and restoring endangered species and habitats. With his lifetime of knowledge, and a Masters in Biology, Todd’s current focus is supporting his fellow marine conservationists and researchers as well as conservation projects at Cocos Island in Costa Rica.",
     "Project Deadline": "July 31st, 2018",
     "Status": "Complete",
-    "image": "/images/tigersharks/bullshark.jpg",
-    "slug": "/",
+    "image": "",
+    "researcherimage": "",
+    "slug": "",
     "wishlistlink": "",
     "paypal": ""
   },
@@ -65,7 +69,8 @@
     "Project Deadline": "March 1st, 2019",
     "Status": "Planned",
     "image": "",
-    "slug": "/",
+    "researcherimage": "",
+    "slug": "",
     "wishlistlink": "",
     "paypal": ""
   }
