@@ -5,16 +5,16 @@ block content
 	section.showcase
 		.container-fluid.p-0
 			.row.no-gutters.panel
-				.col-lg-7.text-white.showcase-img(style="background-image: url('/images/bullshark.jpg');")
-				.col-lg-5.my-auto.showcase-text
+				.col-lg-8.text-white.showcase-img(style="background-image: url('/images/home/bullshark.jpg');")
+				.col-lg-4.my-auto.showcase-text
 					h2 Help seed discovery
 					p.lead.mb-0
 						| and know exactly where your money is going
 					br
-					a.btn.btn-lg.btn-primary(href="/about") LEARN MORE
+					a.btn.btn-lg.btn-primary(href="/about").jumbotronbutton LEARN MORE
 
 	// Icons Grid
-	section.features-icons.bg-light.text-center
+	section.features-icons.bg-light.text-center(id="howitworks")
 			h3.center How it works
 			br
 			br
@@ -23,29 +23,35 @@ block content
 				.row
 					.col-lg-4
 						.features-icons-item.mx-auto.mb-5.mb-lg-0.mb-lg-3
-							.features-icons-icon.d-flex
-								i.icon-screen-desktop.m-auto.text-primary
-							h3 Step 1
-							p.lead.mb-0 This theme will look great on any device, no matter the size!
+							img.img-fluid(src="./images/home/FindProject.png")
+							br
+							br
+							h3 Find a project
+							p.lead.mb-0 Pick a project you’d like to support. These are not-for-profits, so your gifts are tax-deductible.
+
 					.col-lg-4
 						.features-icons-item.mx-auto.mb-5.mb-lg-0.mb-lg-3
-							.features-icons-icon.d-flex
-								i.icon-layers.m-auto.text-primary
-							h3 Step 2
-							p.lead.mb-0 This theme will look great on any device, no matter the size!
+							img.img-fluid(src="./images/home/GiveDirectly.png")
+							br
+							br
+							h3 Give directly
+							p.lead.mb-0 Be in control how you are gifting: 1) purchase an item, 2) donate to a budget, or 3) recycle an item.
+
 					.col-lg-4
 						.features-icons-item.mx-auto.mb-0.mb-lg-3
-							.features-icons-icon.d-flex
-								i.icon-check.m-auto.text-primary
-							h3 Step 3
-							p.lead.mb-0 This theme will look great on any device, no matter the size!
+							img.img-fluid(src="./images/home/Thanks.png")
+							br
+							br
+							h3 Stay updated
+							p.lead.mb-0 We’ll update you as the project owners receive their gifts and kick start their efforts.
+
 
 	// Image Showcases
 	section.showcase(id="projects")
 		.container-fluid.p-0
 			.row.no-gutters.panel
-				.col-lg-7.order-lg-2.text-white.showcase-img(style="background-image: url('/images/microplastics/microplastics.jpg');")
-				.col-lg-5.order-lg-1.my-auto.showcase-text
+				.col-lg-8.order-lg-2.text-white.showcase-img(style="background-image: url('/images/microplastics/microplastics.jpg');")
+				.col-lg-4.order-lg-1.my-auto.showcase-text
 					h2 Find a research project that inspires you. 
 					p.lead.mb-0
 						| Help launch it.
@@ -55,33 +61,32 @@ block content
 	br
 	br
 
+	section.container
+		section.row.row-eq-height
+			each val in content
+				if val.Status === "Active"
+					div.col-md-4(style="padding: 10px")
+						a(href=val.slug).nolinks
+							div.center.box
+								img.img-fluid(src=val.image)
+								br
+								br
+								h3 #{val.ProjectName}
+								p Status: 
+									span(style="color: lightgreen") #{val["Status"]}
+								p(style="color: grey") #{val["Project Description - Short"]}
 
-	section.row.row-eq-height
-		div.col-md-4
-			div.center
-				a(href="/projects/leatherbacks")
-					img.img-fluid(src=links.leatherbacks.moneyshot)
-					h3 #{content.leatherbacks[0].Title}
-				br
-				br
-		div.col-md-4
-			div.center
-				a(href="/projects/salmon")
-					img.img-fluid(src=links.salmon.moneyshot)
-					h3 #{content.salmon[0].Title}
-				br
-				br
-		div.col-md-4
-			div.center
-				a(href="/projects/microplastics")
-					img.img-fluid(src=links.microplastics.moneyshot)
-					h3 #{content.microplastics[0].Title}
-				br
-				br
+				else
+					div.col-md-4(style="padding: 10px")
+						div.center.box(style="color: grey")
+							br
+							h3 #{val.ProjectName}
+							//- p #{val["Project Description - Short"]}
+							p Status: #{val["Status"]}
+
 
 	hr
-
-
+							
 	// Call to Action
 	section.call-to-action.text-white.text-center(id="signup")
 		.overlay
