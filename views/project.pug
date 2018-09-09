@@ -66,30 +66,31 @@ block content
 				div.row.box
 					div.col-md-2
 						h5= val["sku_name"]
-						p= val["Bucket"]
-					div.col-md-6
+						p(style="color:grey")= val["Bucket"]
+					div.col-md-7
 						p= val["Description/Use/Justification"]
-						p Per Unit: $#{val['Price/Unit USD']} | Quantity Needed: #{val['Quantity Needed']} | Total Cost: $#{val['Total Cost USD']}
-						p Given so far: Coming Soon | Still needed: Coming Soon
+						p(style="color:grey") Per Unit: $#{val['Price/Unit USD']} | Quantity Needed: #{val['Quantity Needed']} | Total Cost: $#{val['Total Cost USD']}
+						p(style="color:grey") Given so far: Coming Soon | Still needed: Coming Soon
 						meter(value="50" min="0" max=val['Total Cost USD'] style="width: 80%")
+						br
+						br
 
 					if val.Bucket == "Equipment"
-						div.col-md-4
-							a(href=content.wishlistlink).btn.btn-primary.orange.pull-right Amazon Wishlist
+						div.col-md-3
+							a(href=content.wishlistlink).btn.btn-primary.orange.pull-right(style="width: 100%") Amazon Wishlist
 
 					
-					else if val.Bucket == "Expedition Expenses"
-						div.col-md-4
+					else if val.Bucket == "Budget"
+						div.col-md-3
 							form(action="/paypal/submit" method="POST")
 								.form-group.row
-									input(id="amount" class="form-control col-4 pull-right" type="number" name="amount" value="0" min="0" max="val['Price/Unit USD']")
-									div.col-1
-									button(class="btn btn-primary green col-6 pull-right" type="submit") Pay with PayPal
+									input(id="amount" class="form-control col-4" type="number" name="amount" value="0" min="0" max="val['Price/Unit USD']")
+									button(class="btn btn-primary green col-7" type="submit") Pay with PayPal
 							a(href="/contact").pull-right other
 					
 					else
-						div.col-md-4
-							a(href="/contact").btn.btn-primary.blue.pull-right Donate Items
+						div.col-md-3
+							a(href="/contact").btn.btn-primary.blue.pull-right(style="width: 100%") Donate Items
 
 		br
 		br
