@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var paypal = require('paypal-rest-sdk');
+var pg = require('pg');
 
 paypal.configure({
   'mode': 'sandbox', //sandbox or live

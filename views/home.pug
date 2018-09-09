@@ -13,8 +13,6 @@ block content
 					br
 					a.btn.btn-lg.btn-primary(href="/about") LEARN MORE
 
-
-
 	// Icons Grid
 	section.features-icons.bg-light.text-center
 			h3.center How it works
@@ -98,9 +96,21 @@ block content
 				.col-xl-9.mx-auto
 					h2.mb-4 Want to stay in the know? Subscribe to email list for all the best updates.
 				.col-md-10.col-lg-8.col-xl-7.mx-auto
-					form
+					form(action='/signup',method='post')
 						.form-row
 							.col-12.col-md-9.mb-2.mb-md-0
-								input.form-control.form-control-lg(type='email', placeholder='Enter your email...')
+								input.form-control.form-control-lg(type='email', placeholder='Enter your email...', name='email')
 							.col-12.col-md-3
 								button.btn.btn-block.btn-lg.btn-primary(type='submit') Sign up!
+
+
+								//- fetch('https://healthnotes.herokuapp.com/email/', {
+								//-     method: 'POST',
+								//-     headers: {
+								//-       Accept: 'application/json',
+								//-       'Content-Type': 'application/json',
+								//-     },
+								//-     body: JSON.stringify({
+								//-       email: email
+								//-     }),
+								//- })								
