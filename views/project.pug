@@ -70,7 +70,8 @@ block content
 					div.col-md-6
 						p= val["Description/Use/Justification"]
 						p Per Unit: $#{val['Price/Unit USD']} | Quantity Needed: #{val['Quantity Needed']} | Total Cost: $#{val['Total Cost USD']}
-						progress(width="50%")
+						p Given so far: Coming Soon | Still needed: Coming Soon
+						meter(value="50" min="0" max=val['Total Cost USD'] style="width: 80%")
 
 					if val.Bucket == "Equipment"
 						div.col-md-4

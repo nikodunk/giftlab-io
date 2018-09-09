@@ -72,8 +72,9 @@ block content
 								br
 								br
 								h3 #{val.ProjectName}
-								p #{val["Project Description - Short"]}
-								p(style="color: lightgreen") Status: #{val["Status"]}
+								p Status: 
+									span(style="color: lightgreen") #{val["Status"]}
+								p(style="color: grey") #{val["Project Description - Short"]}
 
 				else
 					div.col-md-4(style="padding: 10px")
