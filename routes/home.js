@@ -37,7 +37,6 @@ router.post( '/signup', function (req, res) {
 	client.query(`INSERT INTO marketing VALUES ('`+req.body.email+`');`, (err, res) => {
       if (err) throw err;
       client.end();
-      res.send( 'added' )
   });	
 })
 
