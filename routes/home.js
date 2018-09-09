@@ -41,22 +41,17 @@ router.post( '/signup', function (req, result) {
       if (res.rows.length === 0){ 
         console.log('doesnt exist')
         client.query(`INSERT INTO marketing VALUES ('`+req.body.email+`');`, (err, res) => {}); 
-            result.render('home', { 
-                  content: content,
-                  giftlist: giftlists,
-                  links: links
-                });
       }
       // IF THE ACCOUNT EXISTS ALREADY DO NOTHING AND RESPOND
-        else{
-            console.log('does exist')
-            result.render('home', { 
-                  content: content,
-                  giftlist: giftlists,
-                  links: links
-                });
-        }
+      else{
+          console.log('exists')
+      }
       client.end();
+      result.render('home', { 
+            content: content,
+            giftlist: giftlists,
+            links: links
+          });
   }); 
 })
 
