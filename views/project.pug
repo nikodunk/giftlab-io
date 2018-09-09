@@ -67,34 +67,33 @@ block content
 
 	section.container
 		each val in skus
-			div.row.box
-				//- div.col-md-2
-				//- 	img.img-thumbnail(src=val.itemImage)
-				div.col-md-2
-					h5= val["sku_name"]
-					p= val["Bucket"]
-				div.col-md-6
-					p= val["Description/Use/Justification"]
-					p Per Unit: $#{val['Price/Unit USD']} | Quantity Needed: #{val['Quantity Needed']} | Total Cost: $#{val['Total Cost USD']}
-					progress(width="50%")
+			if val.ProjectID === content["ProjectID"]
+				div.row.box
+					div.col-md-2
+						h5= val["sku_name"]
+						p= val["Bucket"]
+					div.col-md-6
+						p= val["Description/Use/Justification"]
+						p Per Unit: $#{val['Price/Unit USD']} | Quantity Needed: #{val['Quantity Needed']} | Total Cost: $#{val['Total Cost USD']}
+						progress(width="50%")
 
-				if val.Bucket == "Equipment"
-					div.col-md-4
-						a(href=links.AmazonWishlistLink).btn.btn-primary.orange.pull-right Amazon Wishlist
+					if val.Bucket == "Equipment"
+						div.col-md-4
+							a(href=links.AmazonWishlistLink).btn.btn-primary.orange.pull-right Amazon Wishlist
 
-				
-				else if val.Bucket == "Expedition Expenses"
-					div.col-md-4
-						form(action="/paypal/submit" method="POST")
-							.form-group.row
-								input(id="amount" class="form-control col-4 pull-right" type="number" name="amount" value="0" min="0" max="val['Price/Unit USD']")
-								div.col-1
-								button(class="btn btn-primary green col-6 pull-right" type="submit") Pay with PayPal
-						a(href="/contact").pull-right other
-				
-				else
-					div.col-md-4
-						a(href="/contact").btn.btn-primary.blue.pull-right Donate Items
+					
+					else if val.Bucket == "Expedition Expenses"
+						div.col-md-4
+							form(action="/paypal/submit" method="POST")
+								.form-group.row
+									input(id="amount" class="form-control col-4 pull-right" type="number" name="amount" value="0" min="0" max="val['Price/Unit USD']")
+									div.col-1
+									button(class="btn btn-primary green col-6 pull-right" type="submit") Pay with PayPal
+							a(href="/contact").pull-right other
+					
+					else
+						div.col-md-4
+							a(href="/contact").btn.btn-primary.blue.pull-right Donate Items
 
 		br
 		br
