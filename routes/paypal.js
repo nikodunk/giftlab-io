@@ -12,7 +12,7 @@ var pg = require('pg');
 
 var CLIENT = process.env.PAYPAL_ID
 var SECRET = process.env.PAYPAL_CLIENT_SECRET
-var PAYPAL_API = 'https://api.sandbox.paypal.com';
+var PAYPAL_API = 'https://api.paypal.com';
 
 
 router.post('/create-payment/', function(req, res)
