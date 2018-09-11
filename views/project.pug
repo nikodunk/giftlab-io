@@ -110,7 +110,7 @@ block content
 				// 1. Add a payment callback
 				payment: function(data, actions) {
 					// 2. Make a request to your server
-					return actions.request.post('/my-api/create-payment/')
+					return actions.request.post('/paypal/create-payment/')
 					.then(function(res) {
 					// 3. Return res.id from the response
 						return res.id;
@@ -120,7 +120,7 @@ block content
 				// 1. Add an onAuthorize callback
 				onAuthorize: function(data, actions) {
 					// 2. Make a request to your server
-					return actions.request.post('/my-api/execute-payment/', {
+					return actions.request.post('/paypal/execute-payment/', {
 						paymentID: data.paymentID,
 						payerID:   data.payerID
 					})

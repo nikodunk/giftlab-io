@@ -15,7 +15,7 @@ const SECRET = process.env.PAYPAL_CLIENT_SECRET
 const PAYPAL_API = 'https://api.sandbox.paypal.com';
 
 
-router.post('/my-api/create-payment/', function(req, res)
+router.post('/create-payment/', function(req, res)
   {
     // 2. Call /v1/payments/payment to set up the payment
     request.post(PAYPAL_API + '/v1/payments/payment',
@@ -63,7 +63,7 @@ router.post('/my-api/create-payment/', function(req, res)
   })
   // Execute the payment:
   // 1. Set up a URL to handle requests from the PayPal button.
-  .post('/my-api/execute-payment/', function(req, res)
+  .post('/execute-payment/', function(req, res)
   {
     // 2. Get the payment ID and the payer ID from the request body.
     var paymentID = req.body.paymentID;
