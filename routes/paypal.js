@@ -112,9 +112,18 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
         // 4. Return a success response to the client
         res.json(
         {
-          status: 'success'
+          status: 'success',
+          response: response.body
         });
+
+        // SAVE TO DATABASE
         console.log(response.body)
+        // client.query('INSERT INTO orders VALUES ($1, $2, $3)', (response.body.amount, response.body.sku), (err, res) => {
+        //     }
+        //     client.end();
+        // });
+
+
       });
   })
 
