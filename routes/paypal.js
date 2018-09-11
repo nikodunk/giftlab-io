@@ -5,12 +5,6 @@ var pg = require('pg');
 var request = require('request');
 
 
-// paypal.configure({
-//   'mode': 'sandbox', //sandbox or live
-//   'client_id': process.env.PAYPAL_ID,
-//   'client_secret': process.env.PAYPAL_CLIENT_SECRET
-// });
-
 
 var CLIENT = // process.env.PAYPAL_ID;
    'AUJoKVGO3q1WA1tGgAKRdY6qx0qQNIQ6vl6D3k7y64T4qh5WozIQ7V3dl3iusw5BwXYg_T5FzLCRguP8';
@@ -76,7 +70,7 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
   // 1. Set up a URL to handle requests from the PayPal button.
   router.post('/execute-payment/:sku/:amount/', function(req, res) {
     
-    console.log('THIS IS THE SKU'+ req.params.sku)
+    // console.log('THIS IS THE SKU'+ req.params.sku)
 
     // 2. Get the payment ID and the payer ID from the request body.
     var paymentID = req.body.paymentID;
@@ -93,13 +87,24 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
         body:
         {
           payer_id: payerID,
-          transactions: [
-          {
-            amount:
-            {
+          transactions: [{
+            amount: {
               total: req.params.amount,
               currency: 'USD'
-            }
+            },
+            item_list: {
+              items: [{
+                name: "Donation",
+                sku: req.params.sku,
+                price: req.params.amount,
+                currency: "USD",
+                quantity: 1
+              }]
+            },
+            payee: {
+                  email: 'info@seaturtles.org'
+              },
+            description: 'Your donation to this location'
           }]
         },
         json: true
@@ -128,6 +133,14 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
 
       });
   })
+
+
+  // paypal.configure({
+  //   'mode': 'sandbox', //sandbox or live
+  //   'client_id': process.env.PAYPAL_ID,
+  //   'client_secret': process.env.PAYPAL_CLIENT_SECRET
+  // });
+
 
 // router.post('/submit', (req, res) => {
 //   let description = req.body.description ? req.body.description : 'This is the payment description'

@@ -71,7 +71,8 @@ block content
 						p(style="color:grey")= val["Bucket"]
 					div.col-md-7
 						p= val["Description/Use/Justification"]
-						p(style="color:grey") Per Unit: $#{val['Price/Unit USD']} | Quantity Needed: #{val['Quantity Needed']} | Total Cost: $#{val['Total Cost USD']}
+						p Per Unit: $#{val['Price/Unit USD']}
+						p(style="color:grey") Quantity Needed: #{val['Quantity Needed']} | Total Cost: $#{val['Total Cost USD']}
 						p(style="color:grey") Given so far: Coming Soon | Still needed: Coming Soon
 						meter(value="50" min="0" max=val['Total Cost USD'] style="width: 80%")
 						br
@@ -86,11 +87,11 @@ block content
 						div.col-md-3
 							//form
 							// 	.form-group.row
-							input(id="amount" class="form-control col-4" type="number" name="amount" value="0" min="0" max=val['Price/Unit USD'])
+							//input(id="amount" class="form-control col-4" type="number" name="amount" value="0" min="0" max=val['Price/Unit USD'])
 							// 		input(name="sku" value=val['sku'] style="display: none")
 							// 		button(class="btn btn-primary green col-7" type="submit") Pay with PayPal
 							// a(href="/contact").pull-right other
-							div(class="paypal-button" id=val['sku'] data-sku=val['sku'] data-price=val['sku'])
+							div(class="paypal-button" id=val['sku'] data-sku=val['sku'] data-price=val['Price/Unit USD'])
 					
 					else
 						div.col-md-3
@@ -131,7 +132,7 @@ block content
 					// 1. Add an onAuthorize callback
 					onAuthorize: function(data, actions) {
 						// 2. Make a request to your server
-						return actions.request.post('/paypal/execute-payment/'+selector.dataset.sku+'/'+'420', {
+						return actions.request.post('/paypal/execute-payment/'+selector.dataset.sku+'/'+selector.dataset.sku, {
 							paymentID: data.paymentID,
 							payerID:   data.payerID
 						})
