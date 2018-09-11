@@ -14,33 +14,36 @@ paypal.configure({
 router.post('/submit', (req, res) => {
   let description = req.body.description ? req.body.description : 'This is the payment description'
   let amount = req.body.amount
-  // let host = req.protocol + '://' + req.get('host')
-  var create_payment_json = {
-      "intent": "sale",
-      "payer": {
-          "payment_method": "paypal"
+  let host = req.protocol + '://' + req.get('host')
+  let createPaymentJson = {
+    intent: "sale", // authorize
+    payer: {
+      payment_method: "paypal"
+    },
+    redirect_urls: {
+      return_url: host + '/paypal/payment-return',
+      cancel_url: host + '/paypal/payment-cancel'
+    },
+    transactions: [{
+      item_list: {
+        items: [{
+          name: "Donation",
+          sku: "d1",
+          price: amount,
+          currency: "USD",
+          quantity: 1
+        }]
       },
-      "redirect_urls": {
-          "return_url": "http://return.com",
-          "cancel_url": "http://cancel.com"
+      amount: {
+        currency: "USD",
+        total: amount
       },
-      "transactions": [{
-          "item_list": {
-              "items": [{
-                  "name": "item",
-                  "sku": "item",
-                  "price": "1.00",
-                  "currency": "USD",
-                  "quantity": 1
-              }]
-          },
-          "amount": {
-              "currency": "USD",
-              "total": "1.00"
-          },
-          "description": "This is the payment description."
-      }]
-  };
+      payee: {
+            email: 'info@seaturtles.org'
+        },
+      description: 'Your donation to this location'
+    }]
+  }
 
   // SAVE TO DATABASE
     // create orderID = 'timestamp'
@@ -50,7 +53,7 @@ router.post('/submit', (req, res) => {
     // });
 
   // Call PayPal to process the payment
-  paypal.payment.create(create_payment_json, function (error, payment) {
+  paypal.payment.create(createPaymentJson, function (error, payment) {
       if (error) {
           throw error;
       } else {
@@ -58,7 +61,7 @@ router.post('/submit', (req, res) => {
           console.log(payment);
       }
   });
-
+  
 })
 
 router.get('/payment-return', function(req, res, next) {
