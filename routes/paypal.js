@@ -115,7 +115,7 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
           status: 'success',
           response: response
         });
-        // console.log(response)
+        console.log(response)
       });
   })
 
