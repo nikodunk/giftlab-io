@@ -49,10 +49,11 @@ router.post('/create-payment/', function(req, res)
       json: true
     }, function(err, response)
     {
+
       if (err)
       {
         console.error(err);
-        return res.sendStatus(500);
+        // return res.sendStatus(500);
       }
       // 3. Return the payment ID to the client
       res.json(
