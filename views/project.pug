@@ -2,6 +2,8 @@ extends _layout
 
 block content
 	// Image Showcases
+	<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+
 	section.showcase
 		.container-fluid.p-0
 			.row.no-gutters.panel
@@ -88,7 +90,7 @@ block content
 							// 		input(name="sku" value=val['sku'] style="display: none")
 							// 		button(class="btn btn-primary green col-7" type="submit") Pay with PayPal
 							// a(href="/contact").pull-right other
-							div(id="paypal-button")
+							div(class="paypal-button" data-my-attribute=val['sku'])
 					
 					else
 						div.col-md-3
@@ -99,35 +101,64 @@ block content
 		br
 		br
 
-		<script src="https://www.paypalobjects.com/api/checkout.js"></script>
-
 		
-
+			
 		script.
-			paypal.Button.render({
-				env: 'sandbox', // Or 'production'
-				// Set up the payment:
-				// 1. Add a payment callback
-				payment: function(data, actions) {
-					// 2. Make a request to your server
-					return actions.request.post('/paypal/create-payment/')
-					.then(function(res) {
-					// 3. Return res.id from the response
+			document.querySelectorAll('.paypal-button').forEach(function(selector) {
+				paypal.Button.render({
+					env: 'sandbox', // Or 'production'
+					// Set up the payment:
+					// 1. Add a payment callback
+					payment: function(data, actions) {
+						// 2. Make a request to your server
+						return actions.request.post('/paypal/create-payment/')
+						.then(function(res) {
+						// 3. Return res.id from the response
 
-						return res.id;
-					});
-				},
-				// Execute the payment:
-				// 1. Add an onAuthorize callback
-				onAuthorize: function(data, actions) {
-					// 2. Make a request to your server
-					return actions.request.post('/paypal/execute-payment/', {
-						paymentID: data.paymentID,
-						payerID:   data.payerID
-					})
-					.then(function(res) {
-						// 3. Show the buyer a confirmation message.
-						console.log(res)
+							return res.id;
 						});
-				}
-			}, '#paypal-button');
+					},
+					// Execute the payment:
+					// 1. Add an onAuthorize callback
+					onAuthorize: function(data, actions) {
+						// 2. Make a request to your server
+						return actions.request.post('/paypal/execute-payment/', {
+							paymentID: data.paymentID,
+							payerID:   data.payerID
+						})
+						.then(function(res) {
+							// 3. Show the buyer a confirmation message.
+							console.log(res)
+							});
+					}
+				}, selector);
+			})
+
+		//- script.
+		//- 	paypal.Button.render({
+		//- 		env: 'sandbox', // Or 'production'
+		//- 		// Set up the payment:
+		//- 		// 1. Add a payment callback
+		//- 		payment: function(data, actions) {
+		//- 			// 2. Make a request to your server
+		//- 			return actions.request.post('/paypal/create-payment/')
+		//- 			.then(function(res) {
+		//- 			// 3. Return res.id from the response
+
+		//- 				return res.id;
+		//- 			});
+		//- 		},
+		//- 		// Execute the payment:
+		//- 		// 1. Add an onAuthorize callback
+		//- 		onAuthorize: function(data, actions) {
+		//- 			// 2. Make a request to your server
+		//- 			return actions.request.post('/paypal/execute-payment/', {
+		//- 				paymentID: data.paymentID,
+		//- 				payerID:   data.payerID
+		//- 			})
+		//- 			.then(function(res) {
+		//- 				// 3. Show the buyer a confirmation message.
+		//- 				console.log(res)
+		//- 				});
+		//- 		}
+		//- 	}, '#paypal-button');
