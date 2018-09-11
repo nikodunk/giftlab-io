@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var paypal = require('paypal-rest-sdk');
 var pg = require('pg');
+var request = require('request');
+
 
 // paypal.configure({
 //   'mode': 'sandbox', //sandbox or live
@@ -10,12 +12,18 @@ var pg = require('pg');
 // });
 
 
-var CLIENT = process.env.PAYPAL_ID
+var CLIENT = process.env.PAYPAL_ID;
+  // 'AUJoKVGO3q1WA1tGgAKRdY6qx0qQNIQ6vl6D3k7y64T4qh5WozIQ7V3dl3iusw5BwXYg_T5FzLCRguP8';
 var SECRET = process.env.PAYPAL_CLIENT_SECRET
-var PAYPAL_API = 'https://api.paypal.com';
+  // 'EOw8LNwDhM7esrQ3nHfzKc7xiWnJc83Eawln4YLfUgivfx1LGzu9Mj0F5wlarilXDqdK9Q5aHVo-VGjJ';
+var PAYPAL_API = 'https://api.sandbox.paypal.com';
 
 
-router.post('/create-payment/', function(req, res)
+
+
+  // Set up the payment:
+  // 1. Set up a URL to handle requests from the PayPal button
+  router.post('/create-payment/', function(req, res)
   {
     // 2. Call /v1/payments/payment to set up the payment
     request.post(PAYPAL_API + '/v1/payments/payment',
@@ -49,11 +57,10 @@ router.post('/create-payment/', function(req, res)
       json: true
     }, function(err, response)
     {
-
       if (err)
       {
         console.error(err);
-        // return res.sendStatus(500);
+        return res.sendStatus(500);
       }
       // 3. Return the payment ID to the client
       res.json(
@@ -65,11 +72,9 @@ router.post('/create-payment/', function(req, res)
 
 
 
-
-
   // Execute the payment:
   // 1. Set up a URL to handle requests from the PayPal button.
-router.post('/execute-payment/', function(req, res)
+  router.post('/execute-payment/', function(req, res)
   {
     // 2. Get the payment ID and the payer ID from the request body.
     var paymentID = req.body.paymentID;
@@ -107,11 +112,12 @@ router.post('/execute-payment/', function(req, res)
         // 4. Return a success response to the client
         res.json(
         {
-          status: 'success'
+          status: 'success',
+          response: response
         });
+        // console.log(response)
       });
   })
-
 
 // router.post('/submit', (req, res) => {
 //   let description = req.body.description ? req.body.description : 'This is the payment description'

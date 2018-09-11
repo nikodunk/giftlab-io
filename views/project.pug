@@ -113,6 +113,7 @@ block content
 					return actions.request.post('/paypal/create-payment/')
 					.then(function(res) {
 					// 3. Return res.id from the response
+
 						return res.id;
 					});
 				},
