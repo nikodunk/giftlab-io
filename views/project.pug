@@ -81,6 +81,7 @@ block content
 					if val.Bucket == "Equipment"
 						div.col-md-3
 							a(href=content.wishlistlink).btn.btn-primary.orange.pull-right(style="width: 100%") Amazon Wishlist
+							a(href="/contact").pull-right or donate directly
 
 					
 					else if val.Bucket == "Budget"
@@ -89,9 +90,10 @@ block content
 							// 	.form-group.row
 							//input(id="amount" class="form-control col-4" type="number" name="amount" value="0" min="0" max=val['Price/Unit USD'])
 							// 		input(name="sku" value=val['sku'] style="display: none")
+							div(class="paypal-button pull-right" id=val['sku'] data-sku=val['sku'] data-price=val['Price/Unit USD'])
 							// 		button(class="btn btn-primary green col-7" type="submit") Pay with PayPal
-							// a(href="/contact").pull-right other
-							div(class="paypal-button" id=val['sku'] data-sku=val['sku'] data-price=val['Price/Unit USD'])
+							a(href="/contact").pull-right or donate directly
+							
 					
 					else
 						div.col-md-3
