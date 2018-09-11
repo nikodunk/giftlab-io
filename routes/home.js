@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var content = require('../public/javascripts/content.json')
 var skus = require('../public/javascripts/skus.json')
-var orders = require('../public/javascripts/orders.json')
 
 const { Client } = require('pg');
 const client = new Client({

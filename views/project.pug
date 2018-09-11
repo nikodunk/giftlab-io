@@ -85,6 +85,7 @@ block content
 							form(action="/paypal/submit" method="POST")
 								.form-group.row
 									input(id="amount" class="form-control col-4" type="number" name="amount" value="0" min="0" max="val['Price/Unit USD']")
+									p(name="sku" value="val['sku']")
 									button(class="btn btn-primary green col-7" type="submit") Pay with PayPal
 							a(href="/contact").pull-right other
 					

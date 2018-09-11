@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var content = require('../public/javascripts/content.json')
 var skus = require('../public/javascripts/skus.json')
-var orders = require('../public/javascripts/orders.json')
 var pg = require('pg');
 
 router.get('/leatherbacks/', function(req, res, next) {

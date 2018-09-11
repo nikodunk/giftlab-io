@@ -28,7 +28,7 @@ router.post('/submit', (req, res) => {
       item_list: {
         items: [{
           name: "Donation",
-          sku: "item_1",
+          sku: "d1",
           price: amount,
           currency: "USD",
           quantity: 1
@@ -44,32 +44,40 @@ router.post('/submit', (req, res) => {
       description: 'Your donation to this location'
     }]
   }
+
+  // SAVE TO DATABASE
+    // create orderID = 'timestamp'
+    // client.query(`INSERT INTO orders VALUES ('`+req.body.amount+`,`+req.body.sku+`');`, (err, res) => {
+    //     }
+    //     client.end();
+    // });
+
   // Call PayPal to process the payment
   paypal.payment.create(createPaymentJson, (err, payment) => {
-    if (err) {
-      console.log(err.response.error_description)
-      throw err
-    } else {
+    // if (err) {
+    //   console.log(err.response.error_description)
+    //   throw err
+    // } else {
       console.log("Create Payment response...")
       console.log(payment)
-      let redirectUrl
-      payment.links.forEach((link) => {
-        if (link.method === 'REDIRECT') {
-          redirectUrl = link.href
-        }
-      })
-      if (redirectUrl) {
-        res.status(200).redirect(redirectUrl)
-      } else {
-        logger.error('Cannot find redirect url from paypal payment result!')
-      }
-    }
-  })
+      // let redirectUrl
+      // payment.links.forEach((link) => {
+      //   if (link.method === 'REDIRECT') {
+      //     redirectUrl = link.href
+      //   }
+      // })
+      // if (redirectUrl) {
+      //   res.status(200).redirect(redirectUrl)
+      // } else {
+      //   logger.error('Cannot find redirect url from paypal payment result!')
+      // }
+    // }
+   })
+  
 })
 
 router.get('/payment-return', function(req, res, next) {
-  res.render('thanks'
-            );
+  res.render('thanks')
 });
 
 
