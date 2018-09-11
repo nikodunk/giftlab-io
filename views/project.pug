@@ -84,13 +84,13 @@ block content
 					
 					else if val.Bucket == "Budget"
 						div.col-md-3
-							// form(action="/paypal/submit" method="POST")
+							//form
 							// 	.form-group.row
-							// 		input(id="amount" class="form-control col-4" type="number" name="amount" value="0" min="0" max=val['Price/Unit USD'])
+							input(id="amount" class="form-control col-4" type="number" name="amount" value="0" min="0" max=val['Price/Unit USD'])
 							// 		input(name="sku" value=val['sku'] style="display: none")
 							// 		button(class="btn btn-primary green col-7" type="submit") Pay with PayPal
 							// a(href="/contact").pull-right other
-							div(class="paypal-button" data-my-attribute=val['sku'])
+							div(class="paypal-button" id=val['sku'] data-sku=val['sku'] data-price=val['sku'])
 					
 					else
 						div.col-md-3
@@ -105,24 +105,33 @@ block content
 			
 		script.
 			document.querySelectorAll('.paypal-button').forEach(function(selector) {
+
+				// console.log(selector.dataset.sku)
+
 				paypal.Button.render({
-					env: 'sandbox', // Or 'production'
+					env: 'sandbox', 		// Or 'production'
+			        style: { 				// Specify the style of the button
+			            label: 'pay',
+			            size:  'small',    // small | medium | large | responsive
+			            shape: 'pill',     // pill | rect
+			            color: 'blue',		// gold | blue | silver | black
+			            tagline: 'false'      
+			        },
 					// Set up the payment:
 					// 1. Add a payment callback
 					payment: function(data, actions) {
 						// 2. Make a request to your server
 						return actions.request.post('/paypal/create-payment/')
-						.then(function(res) {
-						// 3. Return res.id from the response
-
-							return res.id;
-						});
+							.then(function(res) {
+							// 3. Return res.id from the response
+								return res.id;
+							});
 					},
 					// Execute the payment:
 					// 1. Add an onAuthorize callback
 					onAuthorize: function(data, actions) {
 						// 2. Make a request to your server
-						return actions.request.post('/paypal/execute-payment/', {
+						return actions.request.post('/paypal/execute-payment/'+selector.dataset.sku+'/'+'420', {
 							paymentID: data.paymentID,
 							payerID:   data.payerID
 						})
