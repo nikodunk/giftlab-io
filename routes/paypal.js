@@ -112,10 +112,9 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
         // 4. Return a success response to the client
         res.json(
         {
-          status: 'success',
-          response: response
+          status: 'success'
         });
-        console.log(response)
+        console.log(response.body)
       });
   })
 
