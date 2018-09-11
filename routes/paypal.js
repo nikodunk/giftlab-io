@@ -60,17 +60,17 @@ router.post('/submit', (req, res) => {
     } else {
       console.log("Create Payment response...")
       console.log(payment)
-      let redirectUrl
-      payment.links.forEach((link) => {
-        if (link.method === 'REDIRECT') {
-          redirectUrl = link.href
-        }
-      })
-      if (redirectUrl) {
-        res.status(200).redirect(redirectUrl)
-      } else {
-        logger.error('Cannot find redirect url from paypal payment result!')
-      }
+      // let redirectUrl
+      // payment.links.forEach((link) => {
+      //   if (link.method === 'REDIRECT') {
+      //     redirectUrl = link.href
+      //   }
+      // })
+      // if (redirectUrl) {
+      //   res.status(200).redirect(redirectUrl)
+      // } else {
+      //   logger.error('Cannot find redirect url from paypal payment result!')
+      // }
     }
    })
   
