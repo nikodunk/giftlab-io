@@ -116,20 +116,24 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
           console.error(err);
           return res.sendStatus(500);
         }
+
+        // SAVE TO DATABASE
+        console.log(response.body.id)
+        console.log(response.body.payer.payer_info.email)
+        console.log(response.body.transactions[0].amount.total)
+        // client.query('INSERT INTO orders VALUES ($1, $2, $3)', (response.body.amount, response.body.sku), (err, res) => {
+        //     }
+        //     client.end();
+        // });
+
+
+
         // 4. Return a success response to the client
         res.json(
         {
           status: 'success',
           response: response.body
         });
-
-        // SAVE TO DATABASE
-        console.log(response.body)
-        // client.query('INSERT INTO orders VALUES ($1, $2, $3)', (response.body.amount, response.body.sku), (err, res) => {
-        //     }
-        //     client.end();
-        // });
-
 
       });
   })
