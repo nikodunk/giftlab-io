@@ -1,8 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var content = require('../public/javascripts/content.json')
-var skus = require('../public/javascripts/skus.json')
-
 const { Client } = require('pg');
 const client = new Client({
   connectionString: process.env.DATABASE_URL,
@@ -10,6 +7,9 @@ const client = new Client({
 });
 
 client.connect();
+
+var content = require('../public/javascripts/content.json')
+var skus = require('../public/javascripts/skus.json')
 
 
 /* GET home page. */

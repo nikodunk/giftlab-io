@@ -1,8 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var paypal = require('paypal-rest-sdk');
-var request = require('request');
-
 const { Client } = require('pg');
 const client = new Client({
   connectionString: process.env.DATABASE_URL,
@@ -10,6 +7,10 @@ const client = new Client({
 });
 
 client.connect();
+
+var paypal = require('paypal-rest-sdk');
+var request = require('request');
+
 
 
 
