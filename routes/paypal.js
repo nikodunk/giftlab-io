@@ -41,13 +41,14 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
         {
           payment_method: 'paypal'
         },
-        transactions: [
-        {
-          amount:
-          {
+        transactions: [{
+          amount: {
             total: '5.99',
             currency: 'USD'
-          }
+          },
+          payee: {
+                  email: 'info@seaturtles.org'
+              }
         }],
         redirect_urls:
         {
@@ -103,7 +104,7 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
               items: [{
                 name: "Donation",
                 sku: req.params.sku,
-                price: req.params.amount,
+                price: req.params.amount*100,
                 currency: "USD",
                 quantity: 1
               }]
