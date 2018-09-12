@@ -126,7 +126,7 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
 
         // SAVE TO DATABASE
         console.log(response.body.id, response.body.payer.payer_info.email, response.body.transactions[0].amount.total)
-        client.query("INSERT INTO orders VALUES ('"+$1+"','"+$2+"',"+ $3+");", [ response.body.id, response.body.payer.payer_info.email, response.body.transactions[0].amount.total])
+        client.query(`INSERT INTO orders VALUES ('$1','$2', $3);`, [ response.body.id, response.body.payer.payer_info.email, response.body.transactions[0].amount.total])
 
         // 4. Return a success response to the client
         res.json(
