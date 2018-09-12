@@ -130,8 +130,8 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
         client.query(`INSERT INTO orders VALUES ('`+
                         response.body.id+`','`+
                         response.body.payer.payer_info.email+`',`+
-                        response.body.transactions[0].amount.total  +`',`+
-                        response.body.transactions[0].item_list.items[0].sku+`);`)
+                        response.body.transactions[0].amount.total  +`','`+
+                        response.body.transactions[0].item_list.items[0].sku+`');`)
 
         // 4. Return a success response to the client
         res.json(
