@@ -126,9 +126,9 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
         }
 
         // SAVE TO DATABASE
-        console.log(  response.body.id, response.body.payer.payer_info.email, response.body.transactions[0].amount.total)
+        //console.log(  response.body.id, response.body.payer.payer_info.email, response.body.transactions[0].amount.total)
         //, response.body.transactions[0].item_list.items[0].sku
-        
+
         client.query(`INSERT INTO orders VALUES (
                         '`+ response.body.id+`',
                         '`+ response.body.payer.payer_info.email+`',
