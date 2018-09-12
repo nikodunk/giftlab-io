@@ -13,10 +13,10 @@ client.connect();
 
 
 
-var PAYPAL_ID = // process.env.PAYPAL_ID;
-   'AUJoKVGO3q1WA1tGgAKRdY6qx0qQNIQ6vl6D3k7y64T4qh5WozIQ7V3dl3iusw5BwXYg_T5FzLCRguP8';
-var PAYPAL_CLIENT_SECRET = // process.env.PAYPAL_CLIENT_SECRET
-   'EOw8LNwDhM7esrQ3nHfzKc7xiWnJc83Eawln4YLfUgivfx1LGzu9Mj0F5wlarilXDqdK9Q5aHVo-VGjJ';
+var PAYPAL_ID =  process.env.PAYPAL_ID;
+   //'AUJoKVGO3q1WA1tGgAKRdY6qx0qQNIQ6vl6D3k7y64T4qh5WozIQ7V3dl3iusw5BwXYg_T5FzLCRguP8';
+var PAYPAL_CLIENT_SECRET =  process.env.PAYPAL_CLIENT_SECRET
+   // 'EOw8LNwDhM7esrQ3nHfzKc7xiWnJc83Eawln4YLfUgivfx1LGzu9Mj0F5wlarilXDqdK9Q5aHVo-VGjJ';
 var PAYPAL_API = 'https://api.sandbox.paypal.com';
 
 
@@ -47,7 +47,10 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
           {
             total: '5.99',
             currency: 'USD'
-          }
+          },
+          payee: {
+                  email: 'info@seaturtles.org'
+              },
         }],
         redirect_urls:
         {
@@ -125,7 +128,7 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
         }
 
         // SAVE TO DATABASE
-        console.log(response.body.id, response.body.payer.payer_info.email, response.body.transactions[0].amount.total)
+        console.log(response.body.id, response.body.payer.payer_info.email, response.body.transactions[0].amount.total, response.body.transactions[0].item_list.items[0].sku)
         client.query(`INSERT INTO orders VALUES ('`+response.body.id+`','`+response.body.payer.payer_info.email+`',`+response.body.transactions[0].amount.total+`);`)
 
         // 4. Return a success response to the client
