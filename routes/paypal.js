@@ -1,14 +1,21 @@
 var express = require('express');
 var router = express.Router();
 var paypal = require('paypal-rest-sdk');
-var pg = require('pg');
 var request = require('request');
 
+const { Client } = require('pg');
+const client = new Client({
+  connectionString: process.env.DATABASE_URL,
+  ssl: true,
+});
+
+client.connect();
 
 
-var CLIENT = // process.env.PAYPAL_ID;
+
+var PAYPAL_ID = // process.env.PAYPAL_ID;
    'AUJoKVGO3q1WA1tGgAKRdY6qx0qQNIQ6vl6D3k7y64T4qh5WozIQ7V3dl3iusw5BwXYg_T5FzLCRguP8';
-var SECRET = // process.env.PAYPAL_CLIENT_SECRET
+var PAYPAL_CLIENT_SECRET = // process.env.PAYPAL_CLIENT_SECRET
    'EOw8LNwDhM7esrQ3nHfzKc7xiWnJc83Eawln4YLfUgivfx1LGzu9Mj0F5wlarilXDqdK9Q5aHVo-VGjJ';
 var PAYPAL_API = 'https://api.sandbox.paypal.com';
 
@@ -24,8 +31,8 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
     {
       auth:
       {
-        user: CLIENT,
-        pass: SECRET
+        user: PAYPAL_ID,
+        pass: PAYPAL_CLIENT_SECRET
       },
       body:
       {
@@ -81,8 +88,8 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
       {
         auth:
         {
-          user: CLIENT,
-          pass: SECRET
+          user: PAYPAL_ID,
+          pass: PAYPAL_CLIENT_SECRET
         },
         body:
         {
@@ -116,20 +123,17 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
           console.error(err);
           return res.sendStatus(500);
         }
+
+        // SAVE TO DATABASE
+        console.log(response.body.id, response.body.payer.payer_info.email, response.body.transactions[0].amount.total)
+        client.query(`INSERT INTO orders VALUES ('$1','$2', $3);`, [ response.body.id, response.body.payer.payer_info.email, response.body.transactions[0].amount.total])
+
         // 4. Return a success response to the client
         res.json(
         {
           status: 'success',
           response: response.body
         });
-
-        // SAVE TO DATABASE
-        console.log(response.body)
-        // client.query('INSERT INTO orders VALUES ($1, $2, $3)', (response.body.amount, response.body.sku), (err, res) => {
-        //     }
-        //     client.end();
-        // });
-
 
       });
   })
