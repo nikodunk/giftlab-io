@@ -103,7 +103,7 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
               items: [{
                 name: "Donation",
                 sku: req.params.sku,
-                price: req.params.amount*100,
+                price: req.params.amount,
                 currency: "USD",
                 quantity: 1
               }]
