@@ -41,14 +41,13 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
         {
           payment_method: 'paypal'
         },
-        transactions: [{
-          amount: {
+        transactions: [
+        {
+          amount:
+          {
             total: '5.99',
             currency: 'USD'
-          },
-          payee: {
-                  email: 'info@seaturtles.org'
-              }
+          }
         }],
         redirect_urls:
         {
@@ -97,14 +96,14 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
           payer_id: payerID,
           transactions: [{
             amount: {
-              total: req.params.amount*100,
+              total: req.params.amount,
               currency: 'USD'
             },
             item_list: {
               items: [{
                 name: "Donation",
                 sku: req.params.sku,
-                price: req.params.amount,
+                price: req.params.amount*100,
                 currency: "USD",
                 quantity: 1
               }]
@@ -126,15 +125,8 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
         }
 
         // SAVE TO DATABASE
-        //console.log(  response.body.id, response.body.payer.payer_info.email, response.body.transactions[0].amount.total)
-        //, response.body.transactions[0].item_list.items[0].sku
-
-        client.query(`INSERT INTO orders VALUES ('`+ 
-                        response.body.id+`','`+ 
-                        response.body.payer.payer_info.email+`',`+
-                        response.body.transactions[0].amount.total +`);`)
-                        //+`','`+ response.body.transactions[0].item_list.items[0].sku +`'` 
-                        
+        console.log(response.body.id, response.body.payer.payer_info.email, response.body.transactions[0].amount.total)
+        client.query(`INSERT INTO orders VALUES ('`+response.body.id+`','`+response.body.payer.payer_info.email+`',`+response.body.transactions[0].amount.total+`);`)
 
         // 4. Return a success response to the client
         res.json(
