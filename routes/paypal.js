@@ -49,7 +49,11 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
           payee: {
                   email: 'info@seaturtles.org'
               },
-        }]
+        }],
+        redirect_urls: {
+            return_url: host + '/paypal/payment-return',
+            cancel_url: host + '/paypal/payment-cancel'
+          },
       },
       json: true
     }, function(err, response)
@@ -107,11 +111,7 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
             payee: {
                   email: 'info@seaturtles.org'
               },
-            description: 'Your donation to this location',
-            redirect_urls: {
-              return_url: host + '/paypal/payment-return',
-              cancel_url: host + '/paypal/payment-cancel'
-          },
+            description: 'Your donation to this location'
           }]
         },
         json: true
@@ -210,7 +210,6 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
 //    })
 
 // })
-
 
 router.get('/payment-return', function(req, res, next) {
   res.render('thanks')
