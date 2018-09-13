@@ -50,6 +50,8 @@ router.get('/microplastics/', function(req, res, next) {
                               skuList.push(sku);
                           }
 
+                    console.log(skuList)
+
                     res.render('project', 
                                 { content: content[2],
                                   skus: skuList
