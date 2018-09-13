@@ -47,7 +47,9 @@ function getData(projectNumber){
 }
 
 router.get('/leatherbacks/', function(req, res, next) {
-    getData(1, (result) => {res.render('project', 
+    getData(1, (result) => {
+                              console.log('this ran')
+                              res.render('project', 
                                   { content: content[0],
                                     skus: result
                                   }
