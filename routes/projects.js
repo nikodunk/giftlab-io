@@ -35,7 +35,7 @@ router.get('/salmon/', function(req, res, next) {
 router.get('/microplastics/', function(req, res, next) {
   client.query(`
                     SELECT skus.sku, skus.sku_name, skus.bucket, skus.description, skus.status, skus.timeline, skus.priceperunitusd, skus.quantityneeded, skus.totalcostusd, sum(orders.amount) FROM skus 
-                    JOIN orders ON (skus.sku = orders.sku) 
+                    FULL OUTER JOIN orders ON (skus.sku = orders.sku) 
                     WHERE projectid = '3'
                     GROUP BY skus.sku;`, (err, queryResult) => {
 
