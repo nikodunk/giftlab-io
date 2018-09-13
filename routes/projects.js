@@ -14,19 +14,23 @@ var content = require('../public/javascripts/content.json')
 
 
 router.get('/leatherbacks/', function(req, res, next) {
-  res.render('project', 
-              { content: content[0],
-                skus: skus
-              }
-            );
+    getData(1, (res) => {res.render('project', 
+                                  { content: content[0],
+                                    skus: res
+                                  }
+                            );
+                        } 
+    )
 });
 
 router.get('/salmon/', function(req, res, next) {
-  res.render('project', 
-              { content: content[1],
-  							skus: skus
-              }
-            );
+    getData(2, (res) => {res.render('project', 
+                                  { content: content[1],
+                                    skus: res
+                                  }
+                            );
+                        } 
+    )
 });
 
 
@@ -100,13 +104,9 @@ getData(projectNumber){
                                 skuList.push(sku);
                             }
 
-                      console.log(skuList)
+                      // console.log(skuList)
 
-                      res.render('project', 
-                                  { content: content[projectNumber - 1],
-                                    skus: skuList
-                                  }
-                                );
+                      return skuList
 
                       client.end();
 
