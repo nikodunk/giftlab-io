@@ -9,14 +9,13 @@ const client = new Client({
 client.connect();
 
 var content = require('../public/javascripts/content.json')
-var skus = require('../public/javascripts/skus.json')
+
 
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('home', { 
-                content: content,
-                skus: skus
+                content: content
               });
 });
 
@@ -31,8 +30,7 @@ router.get('/contact', function(req, res, next) {
 
 router.get('/home_success', function(req, res, next) {
   res.render('home_success', { 
-                content: content,
-                skus: skus
+                content: content
               });
 });
 
