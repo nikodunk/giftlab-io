@@ -98,6 +98,10 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
         body:
         {
           payer_id: payerID,
+          redirect_urls: {
+                return_url: '/paypal/payment-return',
+                cancel_url: '/paypal/payment-cancel'
+              },
           transactions: [{
             amount: {
               total: req.params.amount,
