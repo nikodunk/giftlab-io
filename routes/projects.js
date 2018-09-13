@@ -9,89 +9,24 @@ const client = new Client({
 client.connect();
 
 var content = require('../public/javascripts/content.json')
-var skus = require('../public/javascripts/skus.json')
 
 
 
 
 router.get('/leatherbacks/', function(req, res, next) {
-  client.query(`
-                      SELECT skus.sku, skus.sku_name, skus.bucket, skus.description, skus.status, skus.timeline, skus.priceperunitusd, skus.quantityneeded, skus.totalcostusd, sum(orders.amount) FROM skus 
-                      FULL OUTER JOIN orders ON (skus.sku = orders.sku) 
-                      WHERE projectid = '1'
-                      GROUP BY skus.sku;`, (err, queryResult) => {
-
-                      var skuList = []
-
-                      for (let row of queryResult.rows) {
-                                // Create an object to save current row's data
-                                var sku = {
-                                  'sku_name': row.sku_name,
-                                  'bucket': row.bucket,
-                                  "sku": row.sku,
-                                  "description": row.description,
-                                  "status": row.status,
-                                  "timeline": row.timeline,
-                                  "priceperunitusd": row.priceperunitusd,
-                                  "quantityneeded": row.quantityneeded,
-                                  "totalcostusd": row.totalcostusd,
-                                  "donatedsofar": row.sum
-                                }
-                                // Add object into array
-                                skuList.push(sku);
-                            }
-
-                      console.log(skuList)
-
-                      res.render('project', 
-                                  { content: content[0],
-                                    skus: skuList
-                                  }
-                                );
-
-                      client.end();
-
-                      })
+  res.render('project', 
+              { content: content[0],
+                skus: skus
+              }
+            );
 });
 
 router.get('/salmon/', function(req, res, next) {
-  client.query(`
-                      SELECT skus.sku, skus.sku_name, skus.bucket, skus.description, skus.status, skus.timeline, skus.priceperunitusd, skus.quantityneeded, skus.totalcostusd, sum(orders.amount) FROM skus 
-                      FULL OUTER JOIN orders ON (skus.sku = orders.sku) 
-                      WHERE projectid = '2'
-                      GROUP BY skus.sku;`, (err, queryResult) => {
-
-                      var skuList = []
-
-                      for (let row of queryResult.rows) {
-                                // Create an object to save current row's data
-                                var sku = {
-                                  'sku_name': row.sku_name,
-                                  'bucket': row.bucket,
-                                  "sku": row.sku,
-                                  "description": row.description,
-                                  "status": row.status,
-                                  "timeline": row.timeline,
-                                  "priceperunitusd": row.priceperunitusd,
-                                  "quantityneeded": row.quantityneeded,
-                                  "totalcostusd": row.totalcostusd,
-                                  "donatedsofar": row.sum
-                                }
-                                // Add object into array
-                                skuList.push(sku);
-                            }
-
-                      console.log(skuList)
-
-                      res.render('project', 
-                                  { content: content[1],
-                                    skus: skuList
-                                  }
-                                );
-
-                      client.end();
-
-                      })
+  res.render('project', 
+              { content: content[1],
+  							skus: skus
+              }
+            );
 });
 
 
@@ -138,7 +73,45 @@ router.get('/microplastics/', function(req, res, next) {
 });
 
 
+getData(projectNumber){
+    client.query(`
+                      SELECT skus.sku, skus.sku_name, skus.bucket, skus.description, skus.status, skus.timeline, skus.priceperunitusd, skus.quantityneeded, skus.totalcostusd, sum(orders.amount) FROM skus 
+                      FULL OUTER JOIN orders ON (skus.sku = orders.sku) 
+                      WHERE projectid = '`projectNumber`'
+                      GROUP BY skus.sku;`, (err, queryResult) => {
 
+                      var skuList = []
+
+                      for (let row of queryResult.rows) {
+                                // Create an object to save current row's data
+                                var sku = {
+                                  'sku_name': row.sku_name,
+                                  'bucket': row.bucket,
+                                  "sku": row.sku,
+                                  "description": row.description,
+                                  "status": row.status,
+                                  "timeline": row.timeline,
+                                  "priceperunitusd": row.priceperunitusd,
+                                  "quantityneeded": row.quantityneeded,
+                                  "totalcostusd": row.totalcostusd,
+                                  "donatedsofar": row.sum
+                                }
+                                // Add object into array
+                                skuList.push(sku);
+                            }
+
+                      console.log(skuList)
+
+                      res.render('project', 
+                                  { content: content[projectNumber - 1],
+                                    skus: skuList
+                                  }
+                                );
+
+                      client.end();
+
+                      })
+}
 
 
 
