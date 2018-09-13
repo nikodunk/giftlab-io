@@ -55,8 +55,8 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
         }],
         redirect_urls:
         {
-          return_url: 'https://www.mysite.com',
-          cancel_url: 'https://www.mysite.com'
+          return_url: '/paypal/payment-return',
+          cancel_url: '/paypal/payment-cancel',
         }
       },
       json: true
