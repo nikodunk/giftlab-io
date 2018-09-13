@@ -37,12 +37,10 @@ function getData(projectNumber){
                                 skuList.push(sku);
                             }
 
-                      // console.log(skuList)
-
-                      return skuList
-
                       client.end();
 
+                      console.log(skuList)
+                      return skuList
                       })
 }
 
