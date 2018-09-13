@@ -53,7 +53,7 @@ router.get('/microplastics/', function(req, res, next) {
                                 "priceperunitusd": row.priceperunitusd,
                                 "quantityneeded": row.quantityneeded,
                                 "totalcostusd": row.totalcostusd,
-                                "donated": row.sum
+                                "donatedsofar": row.sum
                               }
                               // Add object into array
                               skuList.push(sku);
