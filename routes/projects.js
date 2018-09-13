@@ -39,7 +39,7 @@ router.get('/microplastics/', function(req, res, next) {
                     WHERE projectid = '3'
                     GROUP BY skus.sku;`, (err, queryResult) => {
 
-                    var skuList
+                    var skuList = []
 
                     for (let row of queryResult.rows) {
                               // Create an object to save current row's data
