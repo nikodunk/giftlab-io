@@ -62,14 +62,14 @@ block content
 		h1.center Item Needs
 		br
 		each val in skus
-			if val.ProjectID === content["ProjectID"]
-				if val.Bucket == "Equipment"
+			// if val.ProjectID === content["ProjectID"]
+			// 	if val.Bucket == "Equipment"
 					div.row.box(style="background-color: white") 
 						div.col-12
 							h5 #{val["sku_name"]} ($#{val['Price/Unit USD']} each)
 							// p(style="color:grey")= val["Bucket"]
 						div.col-md-8
-							p= val["Description/Use/Justification"]
+							p= val["description"]
 							p Need: #{val['Quantity Needed']}&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Total Cost: $#{val['Total Cost USD']}
 							meter(min="0" value="50" max=val['Total Cost USD'] style="width: 100%").pull-right
 							br

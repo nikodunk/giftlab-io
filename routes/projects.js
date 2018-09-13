@@ -33,16 +33,30 @@ router.get('/salmon/', function(req, res, next) {
 
 
 router.get('/microplastics/', function(req, res, next) {
-  res.render('project', 
-              { content: client.query(`
-                    SELECT skus.sku, sum(orders.amount), skus.totalcostusd FROM skus 
+  client.query(`
+                    SELECT skus.sku, skus.sku_name, sum(orders.amount), skus.totalcostusd FROM skus 
                     JOIN orders ON (skus.sku = orders.sku) 
                     WHERE projectid = '3'
                     GROUP BY skus.sku;
-                    `),
-                skus: skus
-              }
-            );
+                    `, ((err, rows, fields) => {
+
+                      for (var i = 0; i < rows.length; i++) {
+
+                                // Create an object to save current row's data
+                                var sku = {
+                                  'sku_name':rows[i].sku_name,
+                                }
+                                // Add object into array
+                                skuList.push(person);
+                            }
+
+                      res.render('project', 
+                                  { content: content[2],
+                                    skus: skuList
+                                  }
+                                );
+                    }))
+  
 });
 
 
