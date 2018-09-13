@@ -12,12 +12,13 @@ var content = require('../public/javascripts/content.json')
 
 
 function getData(projectNumber){
+    var skuList = []
     client.query(` SELECT skus.sku, skus.sku_name, skus.bucket, skus.description, skus.status, skus.timeline, skus.priceperunitusd, skus.quantityneeded, skus.totalcostusd, sum(orders.amount) FROM skus 
                       FULL OUTER JOIN orders ON (skus.sku = orders.sku) 
                       WHERE projectid = '`+projectNumber+`'
                       GROUP BY skus.sku;`, (err, queryResult) => {
 
-                      var skuList = []
+                      
 
                       for (let row of queryResult.rows) {
                                 // Create an object to save current row's data
@@ -39,9 +40,10 @@ function getData(projectNumber){
 
                       client.end();
 
-                      console.log(skuList)
-                      return skuList
+                      
                       })
+    console.log(skuList)
+    return skuList
 }
 
 router.get('/leatherbacks/', function(req, res, next) {
