@@ -47,9 +47,9 @@ function getData(projectNumber){
 }
 
 router.get('/leatherbacks/', function(req, res, next) {
-    getData(1, (res) => {res.render('project', 
+    getData(1, (result) => {res.render('project', 
                                   { content: content[0],
-                                    skus: res
+                                    skus: result
                                   }
                             );
                         } 
@@ -57,9 +57,9 @@ router.get('/leatherbacks/', function(req, res, next) {
 });
 
 router.get('/salmon/', function(req, res, next) {
-    getData(2, (res) => {res.render('project', 
+    getData(2, (result) => {res.render('project', 
                                   { content: content[1],
-                                    skus: res
+                                    skus: result
                                   }
                             );
                         } 
