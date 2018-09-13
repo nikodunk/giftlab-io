@@ -6,7 +6,7 @@ block content
 		.container-fluid.p-0
 			.row.no-gutters.panel
 				.col-lg-8.text-white.showcase-img(style="background-image: url('/images/home/bullshark.jpg');")
-				.col-lg-4.my-auto.showcase-text
+				.col-lg-4.my-auto.padding
 					h2 Help seed discovery
 					p.lead.mb-0
 						| and know exactly where your money is going
@@ -14,7 +14,7 @@ block content
 					a.btn.btn-lg.btn-primary(href="/#projects").jumbotronbutton LEARN MORE
 
 	// Icons Grid
-	section.features-icons.bg-light.text-center(id="howitworks")
+	section.features-icons.bg-light.text-center(id="howitworks").bg-white
 			h3.center How it works
 			br
 			br
@@ -51,7 +51,7 @@ block content
 		.container-fluid.p-0
 			.row.no-gutters.panel
 				.col-lg-8.order-lg-2.text-white.showcase-img(style="background-image: url('/images/microplastics/microplastics.jpg');")
-				.col-lg-4.order-lg-1.my-auto.showcase-text
+				.col-lg-4.order-lg-1.my-auto.padding
 					h2 Find a research project that inspires you. 
 					p.lead.mb-0
 						| Help launch it.
@@ -61,13 +61,15 @@ block content
 	br
 	br
 
-	section.container(id="projects")
+	section.container
+		section.row
+			h1(id="projects") Projects
 		section.row.row-eq-height
 			each val in content
 				if val.Status === "Active"
 					div.col-md-4(style="padding: 10px")
 						a(href=val.slug).nolinks
-							div.center.box
+							div.center.box.bg-white
 								img.img-fluid(src=val.image)
 								br
 								br
@@ -102,3 +104,8 @@ block content
 								input.form-control.form-control-lg(type='email', placeholder='Enter your email...', name='email')
 							.col-12.col-md-3
 								button.btn.btn-block.btn-lg.btn-primary(type='submit') Sign up!
+
+	br
+	br
+	br
+	br

@@ -14,7 +14,7 @@ block content
 					a.btn.btn-lg.btn-primary(href="/#projects").jumbotronbutton LEARN MORE
 
 	// Icons Grid
-	section.features-icons.bg-light.text-center(id="howitworks")
+	section.features-icons.bg-light.text-center(id="howitworks").bg-white
 			h3.center How it works
 			br
 			br
@@ -61,13 +61,15 @@ block content
 	br
 	br
 
-	section.container(id="projects")
+	section.container
+		section.row
+			h1(id="projects") Projects
 		section.row.row-eq-height
 			each val in content
 				if val.Status === "Active"
 					div.col-md-4(style="padding: 10px")
 						a(href=val.slug).nolinks
-							div.center.box
+							div.center.box.bg-white
 								img.img-fluid(src=val.image)
 								br
 								br
@@ -96,3 +98,8 @@ block content
 				.col-xl-9.mx-auto
 					h2.mb-4 Successfully signed up!
 				.col-md-10.col-lg-8.col-xl-7.mx-auto
+
+	br
+	br
+	br
+	br

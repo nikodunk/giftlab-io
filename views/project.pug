@@ -5,8 +5,7 @@ block content
 	<script src="https://www.paypalobjects.com/api/checkout.js"></script>
 
 	section.showcase
-		.container-fluid.p-0
-			.row.no-gutters.panel
+			.row.panel
 				.col-lg-5.my-auto.showcase-text.padding
 					h2 #{content.ProjectName}
 					p.lead.mb-0
@@ -16,7 +15,7 @@ block content
 				.col-lg-7.text-white.showcase-img(style="background-image: url(' "+content.image+" ')")
 				
 
-	section.row.row-eq-height
+	section.row.row-eq-height.bg-white
 		div.col-md-6
 			div.padding
 				br
@@ -34,19 +33,17 @@ block content
 	
 	// Icons Grid
 	section.features-icons.bg-light.text-center.padding
-			.container
-				hr
+			.container.bg-white(style="padding: 20px")
 				h3.center HOW TO CONTRIBUTE
 				br
 				p The Gift Lab is about giving our donors the power to control where their generous donations go. Below is a list of all the different things that go into this research project. From expedition equipment to flights, and a breakdown of the elusive “admin fees”. 
 				br
-				hr
 
 				.row
 					.col-lg-4
 						.features-icons-item.mx-auto.mb-5.mb-lg-0.mb-lg-3
 							h3 Purchase and ship a specific item directly
-							a.btn.btn-lg.btn-primary.orange(href=content.wishlistlink target="_blank") Amazon Wishlist
+							a.btn.btn-lg.btn-primary.orange(href=content.wishlistlink target="_blank" style="padding: 20px") Amazon Wishlist
 					.col-lg-4
 						.features-icons-item.mx-auto.mb-5.mb-lg-0.mb-lg-3
 							h3 Donate money to specific budgets
@@ -59,33 +56,54 @@ block content
 
 	br
 	br
-	br
-	br
+	
 
 	section.container
+		h1.center Item Needs
+		br
 		each val in skus
 			if val.ProjectID === content["ProjectID"]
-				div.row.box
-					div.col-md-2
-						h5= val["sku_name"]
-						p(style="color:grey")= val["Bucket"]
-					div.col-md-7
-						p= val["Description/Use/Justification"]
-						p Per Unit: $#{val['Price/Unit USD']}
-						p(style="color:grey") Quantity Needed: #{val['Quantity Needed']} | Total Cost: $#{val['Total Cost USD']}
-						p(style="color:grey") Given so far: Coming Soon | Still needed: Coming Soon
-						meter(min="0" value="50" max=val['Total Cost USD'] style="width: 80%")
-						br
-						br
-
-					if val.Bucket == "Equipment"
-						div.col-md-3
-							a(href=content.wishlistlink target="_blank").btn.btn-primary.orange.pull-right(style="width: 100%") Amazon Wishlist
+				if val.Bucket == "Equipment"
+					div.row.box(style="background-color: white") 
+						div.col-12
+							h5 #{val["sku_name"]} ($#{val['Price/Unit USD']} each)
+							// p(style="color:grey")= val["Bucket"]
+						div.col-md-8
+							p= val["Description/Use/Justification"]
+							p Need: #{val['Quantity Needed']}&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Total Cost: $#{val['Total Cost USD']}
+							meter(min="0" value="50" max=val['Total Cost USD'] style="width: 100%").pull-right
+							br
+							p(style="text-align: right") Gifted: XXX | Remaining: YYY
+						div.col-md-4
+							a(href=content.wishlistlink target="_blank").btn.btn-primary.orange.pull-right(style="width: 100%; padding: 20px" ) Amazon Wishlist
+							br
+							br
 							a(href="/contact").pull-right or donate directly
 
-					
-					else if val.Bucket == "Budget"
-						div.col-md-3
+	br
+	br
+	br
+	br
+	
+							
+	section.container
+		h1.center Cash Needs
+		p(style="color: grey; max-width: 800px; margin: 0 auto; text-align: center") If your donation can not be utilized for the intended cause, the non-profit reserves the right to use the donation for another purpose within their organization.
+		br
+		each val in skus
+			if val.ProjectID === content["ProjectID"]
+				if val.Bucket == "Budget"
+					div.row.box(style="background-color: white")
+						div.col-12
+							h5 #{val["sku_name"]}
+							// p(style="color:grey")= val["Bucket"]
+						div.col-md-8
+							p= val["Description/Use/Justification"]
+							p Total Budget: $#{val['Total Cost USD']}
+							meter(min="0" value="50" max=val['Total Cost USD'] style="width: 100%").pull-right
+							br
+							p(style="text-align: right") Gifted: XXX | Remaining: YYY
+						div.col-md-4
 							//form
 							// 	.form-group.row
 							//input(id="amount" class="form-control col-4" type="number" name="amount" value="0" min="0" max=val['Price/Unit USD'])
@@ -94,10 +112,8 @@ block content
 							// 		button(class="btn btn-primary green col-7" type="submit") Pay with PayPal
 							a(href="/contact").pull-right or donate directly
 							
-					
-					else
-						div.col-md-3
-							a(href="/contact").btn.btn-primary.blue.pull-right(style="width: 100%") Donate Items
+									
+
 
 		br
 		br
@@ -112,10 +128,10 @@ block content
 				// console.log(selector.dataset.sku)
 
 				paypal.Button.render({
-					env: 'sandbox', 		// Or 'production'
+					env: 'sandbox', 		// Or 'production' or 'sandbox'
 			        style: { 				// Specify the style of the button
 			            label: 'pay',
-			            size:  'small',    // small | medium | large | responsive
+			            size:  'medium',    // small | medium | large | responsive
 			            shape: 'pill',     // pill | rect
 			            color: 'blue',		// gold | blue | silver | black
 			            tagline: 'false'      

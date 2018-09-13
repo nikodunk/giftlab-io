@@ -1,6 +1,6 @@
 
 body {
-    
+    background-color: #f8f9fa !important;
   }
 
 .panel{
@@ -38,9 +38,6 @@ hr {
 }
 
 
-.padding {
-  padding: 50px !important;
-}
 
 .row-equ-height {
   align-items: bottom;
@@ -61,7 +58,9 @@ hr {
   border: none !important;
 }
 
-
+.padding{
+  padding: 50px !important;
+}
 
 
 .no-padding {
@@ -120,6 +119,7 @@ hr {
   height: 100%;
   max-width: 900px;
   margin: 5px auto !important;
+  background-image: white !important;
 }
 
 .nolinks{
@@ -141,4 +141,8 @@ hr {
   background-color: rgba(0,0,0,0) !important;
   border: 2px solid rgba(255,255,255,.6) !important;
   color: rgba(255,255,255,.6) !important;
+}
+
+.bg-white{
+  background-color: white !important;
 }
