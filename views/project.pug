@@ -72,7 +72,7 @@ block content
 						p Need: #{val['quantityneeded']}&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Total Cost: $#{val['totalcostusd']}
 						meter(min="0" value=val['donatedsofar'] max=val['Total Cost USD'] style="width: 100%").pull-right
 						br
-						p(style="text-align: right") Gifted: val['donatedsofar'] | Remaining: YYY
+						p(style="text-align: right") Gifted: #{val['donatedsofar']} | Remaining: YYY
 					div.col-md-4
 						a(href=content.wishlistlink target="_blank").btn.btn-primary.orange.pull-right(style="width: 100%; padding: 20px" ) Amazon Wishlist
 						br
@@ -101,7 +101,7 @@ block content
 						p Total Budget: $#{val['totalcostusd']}
 						meter(min="0" val['donatedsofar'] max=val['totalcostusd'] style="width: 100%").pull-right
 						br
-						p(style="text-align: right") Gifted: val['donatedsofar'] | Remaining: YYY
+						p(style="text-align: right") Gifted: #{val['donatedsofar']} | Remaining: YYY
 					div.col-md-4
 						//form
 						// 	.form-group.row
