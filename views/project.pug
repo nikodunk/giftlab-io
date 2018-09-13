@@ -99,7 +99,7 @@ block content
 					div.col-md-8
 						p= val["description"]
 						p Total Budget: $#{val['totalcostusd']}
-						meter(min="0" val['donatedsofar'] max=val['totalcostusd'] style="width: 100%").pull-right
+						meter(min="0" value=val['donatedsofar'] max=val['totalcostusd'] style="width: 100%").pull-right
 						br
 						p(style="text-align: right") Gifted: #{val['donatedsofar']} | Remaining: YYY
 					div.col-md-4
