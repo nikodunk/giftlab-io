@@ -11,7 +11,7 @@ block content
 					p.lead.mb-0
 						| and know exactly where your money is going
 					br
-					a.btn.btn-lg.btn-primary(href="/about").jumbotronbutton LEARN MORE
+					a.btn.btn-lg.btn-primary(href="/#projects").jumbotronbutton LEARN MORE
 
 	// Icons Grid
 	section.features-icons.bg-light.text-center(id="howitworks")
@@ -47,7 +47,7 @@ block content
 
 
 	// Image Showcases
-	section.showcase(id="projects")
+	section.showcase
 		.container-fluid.p-0
 			.row.no-gutters.panel
 				.col-lg-8.order-lg-2.text-white.showcase-img(style="background-image: url('/images/microplastics/microplastics.jpg');")
@@ -56,12 +56,12 @@ block content
 					p.lead.mb-0
 						| Help launch it.
 					br
-					// a.btn.btn-lg.btn-primary(href="/projects") SEE PROJECTS
+					// a.btn.btn-lg.btn-primary(href="/#projects") SEE PROJECTS
 
 	br
 	br
 
-	section.container
+	section.container(id="projects")
 		section.row.row-eq-height
 			each val in content
 				if val.Status === "Active"
@@ -86,7 +86,8 @@ block content
 
 
 	hr
-							
+
+
 	// Call to Action
 	section.call-to-action.text-white.text-center(id="signup")
 		.overlay

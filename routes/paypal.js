@@ -14,10 +14,10 @@ var request = require('request');
 
 
 
-var PAYPAL_ID =  process.env.PAYPAL_ID;
-   //'AUJoKVGO3q1WA1tGgAKRdY6qx0qQNIQ6vl6D3k7y64T4qh5WozIQ7V3dl3iusw5BwXYg_T5FzLCRguP8';
-var PAYPAL_CLIENT_SECRET =  process.env.PAYPAL_CLIENT_SECRET
-   // 'EOw8LNwDhM7esrQ3nHfzKc7xiWnJc83Eawln4YLfUgivfx1LGzu9Mj0F5wlarilXDqdK9Q5aHVo-VGjJ';
+var PAYPAL_ID =  // process.env.PAYPAL_ID;
+   'AUJoKVGO3q1WA1tGgAKRdY6qx0qQNIQ6vl6D3k7y64T4qh5WozIQ7V3dl3iusw5BwXYg_T5FzLCRguP8';
+var PAYPAL_CLIENT_SECRET =  // process.env.PAYPAL_CLIENT_SECRET
+    'EOw8LNwDhM7esrQ3nHfzKc7xiWnJc83Eawln4YLfUgivfx1LGzu9Mj0F5wlarilXDqdK9Q5aHVo-VGjJ';
 var PAYPAL_API = 'https://api.sandbox.paypal.com';
 
 
@@ -55,8 +55,8 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
         }],
         redirect_urls:
         {
-          return_url: 'https://giftlab.io/paypal/payment-return',
-          cancel_url: 'https://www.giftlab.io'
+          return_url: 'https://placeholder.com',
+          cancel_url: 'https://placeholder.com'
         }
       },
       json: true
@@ -214,10 +214,6 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
 //    })
 
 // })
-
-// router.get('/payment-return', function(req, res, next) {
-//   res.render('thanks')
-// });
 
 
 module.exports = router;

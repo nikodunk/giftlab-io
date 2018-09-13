@@ -36,7 +36,9 @@ router.get('/home_success', function(req, res, next) {
               });
 });
 
-
+router.get('/thanks/', function(req, res, next) {
+  res.render('thanks')
+});
 
 router.post( '/signup', function (req, result) {
 	client.query(`SELECT * FROM marketing WHERE email = '`+req.body.email+`';`, (err, res) => {
