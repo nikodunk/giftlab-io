@@ -11,7 +11,7 @@ client.connect();
 var content = require('../public/javascripts/content.json')
 
 
-var getData = function(projectNumber){
+function getData(projectNumber){
     client.query(`
                       SELECT skus.sku, skus.sku_name, skus.bucket, skus.description, skus.status, skus.timeline, skus.priceperunitusd, skus.quantityneeded, skus.totalcostusd, sum(orders.amount) FROM skus 
                       FULL OUTER JOIN orders ON (skus.sku = orders.sku) 
