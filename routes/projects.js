@@ -40,15 +40,17 @@ router.get('/microplastics/', function(req, res, next) {
                     GROUP BY skus.sku;
                     `, ((err, rows, fields) => {
 
-                      for (var i = 0; i < rows.length; i++) {
+                    var skuList
+                    
+                    for (var i = 0; i < rows.length; i++) {
 
-                                // Create an object to save current row's data
-                                var sku = {
-                                  'sku_name':rows[i].sku_name,
-                                }
-                                // Add object into array
-                                skuList.push(person);
-                            }
+                              // Create an object to save current row's data
+                              var sku = {
+                                'sku_name':rows[i].sku_name,
+                              }
+                              // Add object into array
+                              skuList.push(sku);
+                          }
 
                       res.render('project', 
                                   { content: content[2],
