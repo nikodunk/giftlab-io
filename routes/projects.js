@@ -34,7 +34,7 @@ router.get('/salmon/', function(req, res, next) {
 
 router.get('/microplastics/', function(req, res, next) {
   client.query(`
-                    SELECT skus.sku, skus.sku_name, sum(orders.amount), skus.totalcostusd FROM skus 
+                    SELECT skus.sku, skus.sku_name, skus.bucket, skus.description, skus.status, skus.timeline, skus.priceperunitusd, skus.quantityneeded, skus.totalcostusd, sum(orders.amount) FROM skus 
                     JOIN orders ON (skus.sku = orders.sku) 
                     WHERE projectid = '3'
                     GROUP BY skus.sku;`, (err, queryResult) => {
@@ -44,7 +44,16 @@ router.get('/microplastics/', function(req, res, next) {
                     for (let row of queryResult.rows) {
                               // Create an object to save current row's data
                               var sku = {
-                                'sku_name': row.sku_name
+                                'sku_name': row.sku_name,
+                                'bucket': row.bucket,
+                                "sku": row.sku,
+                                "description": row.description,
+                                "status": row.status,
+                                "timeline": row.timeline,
+                                "priceperunitusd": row.priceperunitusd,
+                                "quantityneeded": row.quantityneeded,
+                                "totalcostusd": row.totalcostusd,
+                                "donated": row.sum
                               }
                               // Add object into array
                               skuList.push(sku);
