@@ -37,12 +37,10 @@ router.get('/microplastics/', function(req, res, next) {
                     SELECT skus.sku, skus.sku_name, sum(orders.amount), skus.totalcostusd FROM skus 
                     JOIN orders ON (skus.sku = orders.sku) 
                     WHERE projectid = '3'
-                    GROUP BY skus.sku;
-                    `, ((err, rows, fields) => {
+                    GROUP BY skus.sku;`, (err, queryResult) => {
 
                     var skuList
-                    
-                    for (var i = 0; i < rows.length; i++) {
+                    for (let row of queryResult.rows) {
 
                               // Create an object to save current row's data
                               var sku = {
@@ -57,9 +55,11 @@ router.get('/microplastics/', function(req, res, next) {
                                     skus: skuList
                                   }
                                 );
-                    }))
+                    })
   
 });
+
+
 
 
 
