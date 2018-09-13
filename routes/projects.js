@@ -44,7 +44,7 @@ router.get('/microplastics/', function(req, res, next) {
                     for (let row of queryResult.rows) {
                               // Create an object to save current row's data
                               var sku = {
-                                sku_name: rows[i].sku_name
+                                'sku_name': row.sku_name
                               }
                               // Add object into array
                               skuList.push(sku);
