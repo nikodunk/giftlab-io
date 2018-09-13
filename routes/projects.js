@@ -38,7 +38,7 @@ function getData(projectNumber, res){
                                 // Add object into array
                                 skuList.push(sku);
                             }
-                      client.end();        
+                             
                       res.render('project', 
                           { content: content[projectNumber-1],
                             skus: skuList
