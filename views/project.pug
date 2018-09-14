@@ -97,10 +97,10 @@ block content
 					div.col-12
 						h5 #{val["sku_name"]}
 						// p(style="color:grey")= val["Bucket"]
-					div.col-md-8
+					div.col-md-8(class=val['sku'])
 						p= val["description"]
 						p Total Budget: $#{val['totalcostusd']}
-						meter(min="0" value=val['donatedsofar'] name=val['sku'] max=val['totalcostusd'] style="width: 100%").pull-right
+						meter(min="0" value=val['donatedsofar']  max=val['totalcostusd'] style="width: 100%").pull-right
 						br
 						if val.donatedsofar == null
 							p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining']}
@@ -169,8 +169,11 @@ block content
 							selector.innerHTML = '<br><br><h3>THANK YOU</h3><br><img class="thumbnail" style="max-width: 100%" src="/images/thanks/octo.gif" alt="Octo" /><br><br>' 
 
 							});
-							var newValue = parseInt(document.getElementsByClassName(selector.dataset.sku)[0].value) + document.getElementById(selector.dataset.sku).value
-							document.getElementsByClassName(selector.dataset.sku)[0].setAttribute("value", newValue);
+							$('.'+selector.dataset.sku).load(window.location.href, function() {
+							           /// can add another function here
+							      });
+							// var newValue = parseInt(document.getElementsByClassName(selector.dataset.sku)[0].value) + document.getElementById(selector.dataset.sku).value
+							// document.getElementsByClassName(selector.dataset.sku)[0].setAttribute("value", newValue);
 					}
 				}, selector);
 			})
