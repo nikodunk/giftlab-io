@@ -109,7 +109,7 @@ block content
 					div.col-md-4
 						div.row
 							p.col-3 $
-							input(id=val['sku'] class="form-control col-8" type="number" name="amount" value="20" min="0" max=val['totalcostusd'])
+							input.form-control.col-8(id=val['sku'] type="number" name="amount" value="20" min="0" max=val['totalcostusd'])
 						div.row
 							div(class="paypal-button pull-right" id=val['sku'] data-sku=val['sku'])
 							a(href="/contact").pull-right or donate directly
