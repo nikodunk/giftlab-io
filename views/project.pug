@@ -109,8 +109,9 @@ block content
 					div.col-md-4
 						//form
 						// 	.form-group.row
-						p $
-							input(id=val['sku'] class="form-control col-4" type="number" name="amount" value="20" min="0" max=val['totalcostusd'])
+						div.col-4
+							p $
+							input(id=val['sku'] class="form-control " type="number" name="amount" value="20" min="0" max=val['totalcostusd'])
 						// 		input(name="sku" value=val['sku'] style="display: none")
 						div(class="paypal-button pull-right" id=val['sku'] data-sku=val['sku'])
 						// 		button(class="btn btn-primary green col-7" type="submit") Pay with PayPal
