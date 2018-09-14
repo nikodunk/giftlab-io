@@ -97,7 +97,7 @@ block content
 					div.col-12
 						h5 #{val["sku_name"]}
 						// p(style="color:grey")= val["Bucket"]
-					div.col-md-8(class=val['sku'])
+					div.col-md-8(id=val['sku'])
 						p= val["description"]
 						p Total Budget: $#{val['totalcostusd']}
 						meter(min="0" value=val['donatedsofar'] max=val['totalcostusd'] style="width: 100%").pull-right
@@ -109,12 +109,12 @@ block content
 					div.col-md-4
 						div.row
 							p.col-3 $
-							input.form-control.col-8(id=val['sku'] type="number" name="amount" value="20" min="0" max=val['totalcostusd'])
+							input.form-control.col-8(type="number" name="amount" value="20" min="0" max=val['totalcostusd'])
 						br
 						br
 						div.row
-							div(class="paypal-button pull-right" id=val['sku'] data-sku=val['sku'])
-							a(href="/contact").pull-right or donate directly
+							div( class=val['sku'] data-sku=val['sku'])
+							a(href="/contact").pull-right.paypal-button or donate directly
 							
 									
 
@@ -145,8 +145,8 @@ block content
 					// 1. Add a payment callback
 					payment: function(data, actions) {
 						// 2. Make a request to your server
-						// console.log(document.getElementById(selector.dataset.sku).value)
-						return actions.request.post('/paypal/create-payment/'+selector.dataset.sku+'/'+document.getElementById(selector.dataset.sku).value)
+						// console.log(document.getElementsByClassName(selector.dataset.sku)[0].value)
+						return actions.request.post('/paypal/create-payment/'+selector.dataset.sku+'/'+document.document.getElementsByClassName(selector.dataset.sku)[0].value)
 							.then(function(res) {
 								console.log(res)
 							// 3. Return res.id from the response
@@ -157,7 +157,7 @@ block content
 					// 1. Add an onAuthorize callback
 					onAuthorize: function(data, actions) {
 						// 2. Make a request to your server
-						return actions.request.post('/paypal/execute-payment/'+selector.dataset.sku+'/'+document.getElementById(selector.dataset.sku).value, {
+						return actions.request.post('/paypal/execute-payment/'+selector.dataset.sku+'/'+document.getElementsByClassName(selector.dataset.sku)[0].value, {
 							paymentID: data.paymentID,
 							payerID:   data.payerID
 						})
@@ -169,8 +169,7 @@ block content
 							selector.innerHTML = '<br><br><h3>THANK YOU</h3><br><img class="thumbnail" style="max-width: 100%" src="/images/thanks/octo.gif" alt="Octo" /><br><br>' 
 
 							});
-							var newValue = parseInt(document.getElementsByClassName(selector.dataset.sku)[0].value) + document.getElementById(selector.dataset.sku).value
-							document.getElementsByClassName(selector.dataset.sku)[0].reload()
+							$('#'+selector.dataset.sku).load(document.URL+'#'+selector.dataset.sku);
 					}
 				}, selector);
 			})
