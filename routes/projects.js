@@ -33,7 +33,8 @@ function getData(projectNumber, res){
                                   "priceperunitusd": row.priceperunitusd,
                                   "quantityneeded": row.quantityneeded,
                                   "totalcostusd": row.totalcostusd,
-                                  "donatedsofar": row.sum
+                                  "donatedsofar": row.sum,
+                                  "remaining": row.totalcostusd - totalrow.sum
                                 }
                                 // Add object into array
                                 skuList.push(sku);

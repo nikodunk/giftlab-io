@@ -102,7 +102,7 @@ block content
 						p Total Budget: $#{val['totalcostusd']}
 						meter(min="0" value=val['donatedsofar'] max=val['totalcostusd'] style="width: 100%").pull-right
 						br
-						p(style="text-align: right") Gifted: #{val['donatedsofar']} | Remaining: YYY
+						p(style="text-align: right") Gifted: $#{val['donatedsofar']} | Remaining: $#{val['remaining']}
 					div.col-md-4
 						//form
 						// 	.form-group.row
