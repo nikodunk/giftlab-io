@@ -140,7 +140,9 @@ block content
 					// 1. Add a payment callback
 					payment: function(data, actions) {
 						// 2. Make a request to your server
-						console.log(document.getElementById('amount-'+selector.dataset.sku).value)
+						var currentID = 'amount-'+selector.dataset.sku
+						console.log(currentID)
+						console.log(document.getElementById(currentID).value)
 						return actions.request.post('/paypal/create-payment/'+selector.dataset.sku+'/'+document.getElementById('amount').value)
 							.then(function(res) {
 							// 3. Return res.id from the response
