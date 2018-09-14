@@ -33,7 +33,7 @@ function getData(projectNumber, res){
                                   "priceperunitusd": row.priceperunitusd,
                                   "quantityneeded": row.quantityneeded,
                                   "totalcostusd": row.totalcostusd,
-                                  "donatedsofar": 0 + row.sum,
+                                  "donatedsofar": 0 + parseInt(row.sum),
                                   "remaining": row.totalcostusd - row.sum
                                 }
                                 // Add object into array
