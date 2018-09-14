@@ -25,7 +25,7 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
 
   // Set up the payment:
   // 1. Set up a URL to handle requests from the PayPal button
-  router.post('/create-payment/', function(req, res)
+  router.post('/create-payment/:sku/:amount/', function(req, res)
   {
     // 2. Call /v1/payments/payment to set up the payment
     request.post(PAYPAL_API + '/v1/payments/payment',
@@ -46,7 +46,7 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
         {
           amount:
           {
-            total: '20',
+            total: req.params.amount,
             currency: 'USD'
           },
           payee: {
