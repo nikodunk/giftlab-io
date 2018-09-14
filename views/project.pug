@@ -103,20 +103,15 @@ block content
 						meter(min="0" value=val['donatedsofar'] max=val['totalcostusd'] style="width: 100%").pull-right
 						br
 						if val.donatedsofar == null
-							p(style="text-align: right") Gifted: $0 
-							// | Remaining: $#{val['remaining']}
+							p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining']}
 						else
-							p(style="text-align: right") Gifted: $#{val['donatedsofar']} 
-							// | Remaining: $#{val['remaining']}
+							p(style="text-align: right") Gifted: $#{val['donatedsofar']} | Remaining: $#{val['remaining']}
 					div.col-md-4
-						//form
-						// 	.form-group.row
-						p $
-						input(id=val['sku'] class="form-control " type="number" name="amount" value="20" min="0" max=val['totalcostusd'])
-						// 		input(name="sku" value=val['sku'] style="display: none")
-						div(class="paypal-button pull-right" id=val['sku'] data-sku=val['sku'])
-						// 		button(class="btn btn-primary green col-7" type="submit") Pay with PayPal
-						a(href="/contact").pull-right or donate directly
+						div.row
+							p $
+							input(id=val['sku'] class="form-control " type="number" name="amount" value="20" min="0" max=val['totalcostusd'])
+							div(class="paypal-button pull-right" id=val['sku'] data-sku=val['sku'])
+							a(href="/contact").pull-right or donate directly
 							
 									
 
