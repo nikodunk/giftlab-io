@@ -80,7 +80,7 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
 
   // Execute the payment:
   // 1. Set up a URL to handle requests from the PayPal button.
-  router.post('/execute-payment/:sku/:amount/', function(req, res) {
+  router.post('/execute-payment/', function(req, res) {
 
     // 2. Get the payment ID and the payer ID from the request body.
     var paymentID = req.body.paymentID;

@@ -153,7 +153,7 @@ block content
 					// 1. Add an onAuthorize callback
 					onAuthorize: function(data, actions) {
 						// 2. Make a request to your server
-						return actions.request.post('/paypal/execute-payment/'+selector.dataset.sku+'/'+document.getElementById('amount').value, {
+						return actions.request.post('/paypal/execute-payment/'+selector.dataset.sku+'/'+document.getElementById(selector.dataset.sku).value, {
 							paymentID: data.paymentID,
 							payerID:   data.payerID
 						})
