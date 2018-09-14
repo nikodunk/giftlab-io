@@ -141,9 +141,10 @@ block content
 					// 1. Add a payment callback
 					payment: function(data, actions) {
 						// 2. Make a request to your server
-						console.log(document.getElementById(selector.dataset.sku).value)
+						// console.log(document.getElementById(selector.dataset.sku).value)
 						return actions.request.post('/paypal/create-payment/'+selector.dataset.sku+'/'+document.getElementById(selector.dataset.sku).value)
 							.then(function(res) {
+								console.log(res)
 							// 3. Return res.id from the response
 								return res.id;
 							});
@@ -158,8 +159,9 @@ block content
 						})
 						.then(function(res) {
 							// 3. Show the buyer a confirmation message.
-							window.location.replace("/thanks");
 							console.log(res)
+							window.location.replace("/thanks");
+							
 							});
 					}
 				}, selector);
