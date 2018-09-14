@@ -39,7 +39,7 @@ function getData(projectNumber, res){
                                 // Add object into array
                                 skuList.push(sku);
                             }
-                            console.log(skuList)
+                            // console.log(skuList)
                       res.render('project', 
                           { content: content[projectNumber-1],
                             skus: skuList
