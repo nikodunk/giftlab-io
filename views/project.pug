@@ -146,7 +146,7 @@ block content
 					payment: function(data, actions) {
 						// 2. Make a request to your server
 						// console.log(document.getElementsByClassName(selector.dataset.sku)[0].value)
-						return actions.request.post('/paypal/create-payment/'+selector.dataset.sku+'/'+document.document.getElementsByClassName(selector.dataset.sku)[0].value)
+						return actions.request.post('/paypal/create-payment/'+selector.dataset.sku+'/'+document.getElementsByClassName(selector.dataset.sku)[0].value)
 							.then(function(res) {
 								console.log(res)
 							// 3. Return res.id from the response
