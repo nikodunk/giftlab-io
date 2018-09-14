@@ -34,7 +34,7 @@ function getData(projectNumber, res){
                                   "quantityneeded": row.quantityneeded,
                                   "totalcostusd": row.totalcostusd,
                                   "donatedsofar": row.sum,
-                                  "remaining": parseInt(row.totalcostusd) - parseInt(row.sum)
+                                  "remaining": parseInt(row.totalcostusd) - (row.sum ? row.sum : 0)
                                 }
                                 // Add object into array
                                 skuList.push(sku);
