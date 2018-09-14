@@ -161,9 +161,11 @@ block content
 						})
 						.then(function(res) {
 							// 3. Show the buyer a confirmation message.
-							selector.innerHTML = 'THANK YOU'
-							// window.location.reload();
-							// console.log(res)
+							
+							window.location.reload();
+							console.log(res)
+							selector.innerHTML = '<br><br><h3>THANK YOU<h3><br><br>' 
+
 							});
 					}
 				}, selector);
