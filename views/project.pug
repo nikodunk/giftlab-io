@@ -97,23 +97,24 @@ block content
 					div.col-12
 						h5 #{val["sku_name"]}
 						// p(style="color:grey")= val["Bucket"]
-					div.col-md-8(id=val['sku'])
-						p= val["description"]
-						p Total Budget: $#{val['totalcostusd']}
-						meter(min="0" value=val['donatedsofar'] max=val['totalcostusd'] style="width: 100%").pull-right
-						br
-						if val.donatedsofar == null
-							p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining']}
-						else
-							p(style="text-align: right") Gifted: $#{val['donatedsofar']} | Remaining: $#{val['remaining']}
+					div.col-md-8
+						div(id=val['sku'])
+							p= val["description"]
+							p Total Budget: $#{val['totalcostusd']}
+							meter(min="0" value=val['donatedsofar'] max=val['totalcostusd'] style="width: 100%").pull-right
+							br
+							if val.donatedsofar == null
+								p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining']}
+							else
+								p(style="text-align: right") Gifted: $#{val['donatedsofar']} | Remaining: $#{val['remaining']}
 					div.col-md-4
 						div.row
 							p.col-3 $
-							input.form-control.col-8(type="number" name="amount" value="20" min="0" max=val['totalcostusd'])
+							input.form-control.col-8(type="number" name="amount" value="20" min="0" max=val['totalcostusd'] class=val['sku'])
 						br
 						br
 						div.row
-							div( class=val['sku'] data-sku=val['sku'])
+							div(  data-sku=val['sku'])
 							a(href="/contact").pull-right.paypal-button or donate directly
 							
 									
