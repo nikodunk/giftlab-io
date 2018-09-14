@@ -46,7 +46,7 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
         {
           amount:
           {
-            total: req.params.amount,
+            total: '420.00',
             currency: 'USD'
           },
           payee: {
