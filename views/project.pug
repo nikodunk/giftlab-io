@@ -43,11 +43,11 @@ block content
 					.col-lg-4
 						.features-icons-item.mx-auto.mb-5.mb-lg-0.mb-lg-3
 							h3 Gift an item directly
-							a.btn.btn-lg.btn-primary.orange(href=content.wishlistlink target="_blank" style="padding: 20px") See Wishlist
+							a.btn.btn-lg.btn-primary.orange(href="#items" target="_blank" style="padding: 20px") See Wishlist
 					.col-lg-4
 						.features-icons-item.mx-auto.mb-5.mb-lg-0.mb-lg-3
 							h3 Donate to a budget
-							a.btn.btn-lg.btn-primary.green(href="#") Give via Paypal
+							a.btn.btn-lg.btn-primary.green(href="#budgets") Give via Paypal
 					.col-lg-4
 						.features-icons-item.mx-auto.mb-0.mb-lg-3
 							h3 Give differently
@@ -58,7 +58,7 @@ block content
 	br
 	
 
-	section.container
+	section.container(id="items")
 		h1.center Items in Need
 		br
 		each val in skus
@@ -85,7 +85,7 @@ block content
 	br
 	
 							
-	section.container
+	section.container(id="budgets")
 		h1.center Project Budgets
 		p.lead.mb-0 Our project teams have worked hard to give the best estimates possible, but budgets and prices of items can fluctuate. Should something change, your monetary donation will be used for another aspect of this project.
 		br
