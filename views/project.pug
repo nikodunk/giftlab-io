@@ -107,7 +107,7 @@ block content
 						// 	.form-group.row
 						input(id="amount" class="form-control col-4" type="number" name="amount" value="0" min="0" max=val['totalcostusd'])
 						// 		input(name="sku" value=val['sku'] style="display: none")
-						div(class="paypal-button pull-right" id=val['sku'] data-sku=val['sku'] data-price=val['priceperunitusd'])
+						div(class="paypal-button pull-right" id=val['sku'] data-sku=val['sku'])
 						// 		button(class="btn btn-primary green col-7" type="submit") Pay with PayPal
 						a(href="/contact").pull-right or donate directly
 							
@@ -150,7 +150,7 @@ block content
 					// 1. Add an onAuthorize callback
 					onAuthorize: function(data, actions) {
 						// 2. Make a request to your server
-						return actions.request.post('/paypal/execute-payment/'+selector.dataset.sku+'/'+selector.dataset.price, {
+						return actions.request.post('/paypal/execute-payment/'+selector.dataset.sku+'/'+document.getElementById('amount').value, {
 							paymentID: data.paymentID,
 							payerID:   data.payerID
 						})
