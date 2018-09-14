@@ -169,7 +169,8 @@ block content
 							selector.innerHTML = '<br><br><h3>THANK YOU</h3><br><img class="thumbnail" style="max-width: 100%" src="/images/thanks/octo.gif" alt="Octo" /><br><br>' 
 
 							});
-							document.getElementsByClassName(selector.dataset.sku)[0].setAttribute("value", value);
+							newValue = parseInt(document.getElementsByClassName(selector.dataset.sku)[0].value) + document.getElementById(selector.dataset.sku).value
+							document.getElementsByClassName(selector.dataset.sku)[0].setAttribute("value", newValue);
 					}
 				}, selector);
 			})
