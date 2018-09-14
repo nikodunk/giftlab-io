@@ -46,7 +46,7 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
         {
           amount:
           {
-            total: '420.00',
+            total: req.params.amount,
             currency: 'USD'
           },
           payee: {
@@ -68,6 +68,7 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
         return res.sendStatus(500);
       }
       // 3. Return the payment ID to the client
+      console.log(response.body)
       res.json(
       {
         id: response.body.id
