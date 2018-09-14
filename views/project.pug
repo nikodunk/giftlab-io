@@ -110,6 +110,8 @@ block content
 						div.row
 							p.col-3 $
 							input.form-control.col-8(id=val['sku'] type="number" name="amount" value="20" min="0" max=val['totalcostusd'])
+						br
+						br
 						div.row
 							div(class="paypal-button pull-right" id=val['sku'] data-sku=val['sku'])
 							a(href="/contact").pull-right or donate directly
@@ -162,7 +164,7 @@ block content
 						.then(function(res) {
 							// 3. Show the buyer a confirmation message.
 							
-							window.location.reload();
+							//window.location.reload();
 							console.log(res)
 							selector.innerHTML = '<br><br><h3>THANK YOU</h3><br><br>' 
 
