@@ -112,7 +112,6 @@ block content
 							p.col-3 $
 							input.form-control.col-8(type="number" name="amount" value="20" min="0" max=val['totalcostusd'] class=val['sku'])
 						br
-						br
 						div.row
 							div(data-sku=val['sku']).paypal-button.pull-right
 							a(href="/contact").pull-right or donate directly
@@ -167,7 +166,7 @@ block content
 							
 							//window.location.reload();
 							console.log(res)
-							selector.innerHTML = '<br><br><h3>THANK YOU</h3><br><img class="thumbnail" style="max-width: 60px" src="/images/thanks/octo.gif" alt="Octo" /><br><br>' 
+							selector.innerHTML = '<br><br><h3>THANK YOU</h3><br><img class="thumbnail" style="max-width: 200px" src="/images/thanks/octo.gif" alt="Octo" /><br><br>' 
 							});
 							window.setTimeout(function(){window.location.reload()},3000)
 							// $('#'+selector.dataset.sku).load(document.URL+'#'+selector.dataset.sku);
