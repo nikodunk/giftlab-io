@@ -105,7 +105,7 @@ block content
 					div.col-md-4
 						//form
 						// 	.form-group.row
-						input(id="amount" class="form-control col-4" type="number" name="amount-#{val.sku}" value="0" min="0" max=val['totalcostusd'])
+						input(id="amount" class="form-control col-4" type="number" name="amount-#{val.sku}" value="20" min="0" max=val['totalcostusd'])
 						// 		input(name="sku" value=val['sku'] style="display: none")
 						div(class="paypal-button pull-right" id=val['sku'] data-sku=val['sku'])
 						// 		button(class="btn btn-primary green col-7" type="submit") Pay with PayPal
@@ -140,8 +140,8 @@ block content
 					// 1. Add a payment callback
 					payment: function(data, actions) {
 						// 2. Make a request to your server
-						console.log(document.getElementById('amount').value)
-						return actions.request.post('/paypal/create-payment/'+selector.dataset.sku+'/'+document.getElementById('amount-'+selector.dataset.sku).value)
+						console.log(document.getElementById('amount-'+selector.dataset.sku).value)
+						return actions.request.post('/paypal/create-payment/'+selector.dataset.sku+'/'+document.getElementById('amount').value)
 							.then(function(res) {
 							// 3. Return res.id from the response
 								return res.id;
