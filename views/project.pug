@@ -100,7 +100,7 @@ block content
 					div.col-md-8
 						p= val["description"]
 						p Total Budget: $#{val['totalcostusd']}
-						meter(min="0" value=val['donatedsofar'] max=val['totalcostusd'] style="width: 100%").pull-right
+						meter(min="0" value=val['donatedsofar'] name=val['sku'] max=val['totalcostusd'] style="width: 100%").pull-right
 						br
 						if val.donatedsofar == null
 							p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining']}
@@ -166,9 +166,10 @@ block content
 							
 							//window.location.reload();
 							console.log(res)
-							selector.innerHTML = '<br><br><h3>THANK YOU</h3><br><img class="thumbnail" src="/images/thanks/octo.gif" alt="Octo" /><br><br>)' 
+							selector.innerHTML = '<br><br><h3>THANK YOU</h3><br><img class="thumbnail" style="max-width: 100%" src="/images/thanks/octo.gif" alt="Octo" /><br><br>' 
 
 							});
+							document.getElementsByClassName(selector.dataset.sku)[0].setAttribute("value", value);
 					}
 				}, selector);
 			})
