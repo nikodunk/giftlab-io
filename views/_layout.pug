@@ -40,14 +40,13 @@ html
         // Navigation
         nav.navbar.navbar-light.bg-light.static-top(id="home" style="padding: 15px;").bg-white
             .container(style="max-width: 1024px")
-                a.navbar-brand(href='/#home')
-                    img.img-fluid(src="../images/GiftLab_Logo.png" style="max-height: 30px").brand
-                a.float-right(href='/#howitworks' style="color: black") HOW IT WORKS
-                span  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                a.float-right(href='/#projects' style="color: black") PROJECTS
-                span  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                a.float-right(href='/about' style="color: black") ABOUT
-
+                div.col-4.col-sm-4
+                    a.navbar-brand(href='/#home')
+                        img.img-fluid(src="../images/GiftLab_Logo.png" style="max-height: 30px; max-width: 100% !important").brand
+                div.col-8.col-sm-8
+                    a.float-right(href='/about' style="color: black; padding: 10px") ABOUT
+                    a.float-right(href='/#projects' style="color: black; padding: 10px") PROJECTS
+                    a.float-right(href='/#howitworks' style="color: black; padding: 10px") HOW IT WORKS
 
 
 
