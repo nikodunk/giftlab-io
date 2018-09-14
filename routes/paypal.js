@@ -114,7 +114,7 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
             payee: {
                   email: 'info@seaturtles.org'
               },
-            description: 'Your donation to this location'
+            description: 'Your donation to SKU Number '+req.params.sku
           }]
         },
         json: true
