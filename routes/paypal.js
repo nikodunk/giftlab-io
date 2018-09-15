@@ -110,7 +110,7 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
                 currency: "USD",
                 quantity: 1
               }],
-              "shipping_address": {
+              shipping_address: {
                 recipient_name: "Turtle Island Restoration Project",
                 line1: "4th Floor",
                 line2: "Unit #34",
