@@ -80,11 +80,15 @@ block content
 
 				else if val.Status === "Ended"
 					div.col-md-4(style="padding: 10px")
-						div.center.box(style="color: grey")
-							br
-							h3 #{val.ProjectName}
-							//- p #{val["Project Description - Short"]}
-							p Status: #{val["Status"]}
+						a(href=val.slug).nolinks
+							div.center.box.bg-white
+								img.img-fluid(src=val.image)
+								br
+								br
+								h3 #{val.ProjectName}
+								p Status: 
+									span(style="color: lightgreen") #{val["Status"]}
+								p(style="color: grey") #{val["Project Description - Short"]}
 
 
 	hr
