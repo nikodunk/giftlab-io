@@ -19,7 +19,8 @@ function getData(projectNumber, res){
                       skus.sku_name, 
                       skus.bucket, 
                       skus.description, 
-                      skus.unit_cost, 
+                      skus.unit_cost,
+                      skus.total_need,
                       skus.quantity_need, 
                       skus.total_value, 
                       sum(orders.amount) as orderssofar 
