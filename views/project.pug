@@ -6,23 +6,23 @@ block content
 
 	section.showcase
 			.row.panel
-				.col-lg-5.my-auto.showcase-text.padding
+				.col-lg-4.my-auto.showcase-text.padding
 					h2 #{content.ProjectName}
 					p.lead.mb-0
 						| #{content["Project Description - Short"]}
 					hr
 					p #{content["Project Description - Long"]}
 					br
-				.col-lg-7.text-white.showcase-img(style="background-image: url(' "+content.image+" ')")
+				.col-lg-8.text-white.showcase-img(style="background-image: url(' "+content.image+" ')")
 				
 
 	section.row.row-eq-height.bg-white
-		div.col-md-6
+		div.col-md-4
 			div.padding.center
 				br
 				img.thumbnail(src=content.researcherimage alt="Image Title").center
 				br
-		div.col-md-6.panel.padding
+		div.col-md-8.panel.padding
 			h3= content["Researcher"]
 			p= content["Researcher profile"]
 		
