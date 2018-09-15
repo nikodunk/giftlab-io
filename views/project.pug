@@ -70,7 +70,7 @@ block content
 							// p(style="color:grey")= val["Bucket"]
 						div.col-md-8
 							p= val["description"]
-							p Need: #{val['quantity_need']}&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Total Cost: $#{val['total_value']}
+							p Need: #{val['quantity_need']}&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Total Cost: #{val['total_value']}
 							meter(min="0" value=val['donatedsofar'] max=val['Total Cost USD'] style="width: 100%").pull-right
 							br
 							p(style="text-align: right") Gifted: #{val['donatedsofar']} | Remaining: $#{val['remaining']}
@@ -81,13 +81,13 @@ block content
 							a(href="/contact").pull-right or donate directly
 
 				else
-					div.row.box(style="background-color: #c6ebd5") 
+					div.row.box(style="background-color: lightgrey") 
 						div.col-12
 							h5 #{val["sku_name"]} ($#{val['unit_cost']} each)
 							// p(style="color:grey")= val["Bucket"]
 						div.col-md-8
 							p= val["description"]
-							p Need: #{val['quantity_need']}&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Total Cost: $#{val['total_value']}
+							p Need: #{val['quantity_need']}&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Total Cost: #{val['total_value']}
 							meter(min="0" value=val['donatedsofar'] max=val['Total Cost USD'] style="width: 100%").pull-right
 							br
 							p(style="text-align: right") Gifted: #{val['donatedsofar']} | Remaining: $#{val['remaining']}
@@ -138,7 +138,7 @@ block content
 								a(href="/contact").pull-right or donate directly
 
 				else
-					div.row.box(style="background-color: #c6ebd5")
+					div.row.box(style="background-color: lightgrey")
 						div.col-12
 							h5 #{val["sku_name"]}
 							// p(style="color:grey")= val["Bucket"]
