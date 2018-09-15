@@ -73,21 +73,27 @@ block content
 								img.img-fluid(src=val.image)
 								br
 								br
-								h3 #{val.ProjectName}
-								p Status: 
-									span(style="color: lightgreen") #{val["Status"]}
+								h5 #{val.ProjectName}
+								//- p Status: 
+								//- 	span(style="color: lightgreen") #{val["Status"]}
 								p(style="color: grey") #{val["Project Description - Short"]}
 
-				else if val.Status === "Complete"
+		br
+		br
+		section.row
+			h1(id="projects") Complete
+		section.row.row-eq-height
+			each val in content
+				if val.Status === "Complete"
 					div.col-md-4(style="padding: 10px")
 						a(href=val.slug).nolinks
-							div.center.box(style="background-color: lightgrey")
+							div.center.box.bg-white
 								img.img-fluid(src=val.image)
 								br
 								br
-								h3 #{val.ProjectName}
-								p Status: 
-									span(style="color: lightgreen") #{val["Status"]}
+								h5 #{val.ProjectName}
+								//- p Status: 
+								//- 	span(style="color: lightgreen") #{val["Status"]}
 								p(style="color: grey") #{val["Project Description - Short"]}
 
 
