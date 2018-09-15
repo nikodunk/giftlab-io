@@ -10,7 +10,8 @@ block content
 					h2 #{content.ProjectName}
 					p.lead.mb-0
 						| #{content["Project Description - Short"]}
-					br
+					hr
+					p #{content["Project Description - Long"]}
 					br
 				.col-lg-7.text-white.showcase-img(style="background-image: url(' "+content.image+" ')")
 				
@@ -19,12 +20,10 @@ block content
 		div.col-md-6
 			div.padding
 				br
-				h3 DETAILS
-				p #{content["Project Description - Long"]}
+				img.thumbnail(src=content.researcherimage alt="Image Title")
 				br
 		div.col-md-6.panel.padding
 			br
-			img.thumbnail(src=content.researcherimage alt="Image Title")
 			hr
 			h3= content["Researcher"]
 			p= content["Researcher profile"]
