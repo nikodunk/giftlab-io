@@ -29,7 +29,6 @@ function getData(projectNumber, res){
                                   "sku": row.sku,
                                   "description": row.description,
                                   "status": (parseInt(row.total_value) - (row.orderssofar ? row.orderssofar : 0) ? "Active" : "Complete"),
-                                  "timeline": row.timeline,
                                   "unit_cost": row.unit_cost,
                                   "quantity_need": row.quantity_need,
                                   "total_value": row.total_value,
