@@ -39,12 +39,12 @@ function getData(projectNumber, res){
                                   'bucket': row.bucket,
                                   "sku": row.sku,
                                   "description": row.description,
-                                  "status": (parseInt(row.total_need) - (row.orderssofar ? row.orderssofar : 0) ? "Active" : "Complete"),
+                                  "status": (parseInt(row.total_need) - (row.orderssofar ? row.orderssofar : 0) > 0 ? "Active" : "Complete"),
                                   "unit_cost": row.unit_cost,
                                   "quantity_need": row.quantity_need,
                                   "total_value": row.total_value,
                                   "donatedsofar": row.orderssofar,
-                                  "remaining": row.total_need - (row.orderssofar ? row.orderssofar : 0),
+                                  "remaining": parseInt(row.total_need) - (row.orderssofar ? parseInt(row.orderssofar) : 0),
                                 }
                                 // Add object into array
                                 skuList.push(sku);
