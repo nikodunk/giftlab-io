@@ -10,6 +10,7 @@
     "Status": "Active",
     "image": "/images/1_leatherbacks/Leatherback_Main.jpeg",
     "researcherimage": "/images/1_leatherbacks/profile.png",
+    "slug": "/projects/leatherbacks",
     "wishlistlink": "https://amzn.to/2xdhOy6"
   },
   {
@@ -23,6 +24,7 @@
     "Status": "Active",
     "image": "/images/2_salmon/Salmon_Main.jpg",
     "researcherimage": "/images/2_salmon/profile.png",
+    "slug": "/projects/salmon",
     "wishlistlink": "https://amzn.to/2pa7rrD"
   },
   {
@@ -36,6 +38,7 @@
     "Status": "Active",
     "image": "/images/3_microplastics/Microplastic_Main.jpg",
     "researcherimage": "/images/3_microplastics/profile.png",
+    "slug": "/projects/microplastics",
     "wishlistlink": "https://amzn.to/2p4MHRG"
   },
   {
@@ -49,6 +52,7 @@
     "Status": "Complete",
     "image": "/images/4_tigersharks/TigerShark_Project_Main.jpg",
     "researcherimage": "/images/4_tigersharks/profile.png",
+    "slug": "/projects/tigersharks",
     "wishlistlink": ""
   },
   {
@@ -62,6 +66,7 @@
     "Status": "Planned",
     "image": "",
     "researcherimage": "",
+    "slug": "",
     "wishlistlink": ""
   }
 ]
