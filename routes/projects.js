@@ -35,7 +35,6 @@ function getData(projectNumber, res){
 
                       for (let row of queryResult.rows) {
                                 // Create an object to save current row's data
-                                console.log(row.total_need, row.orderssofar)
                                 var sku = {
                                   "sku": row.sku,
                                   'sku_name': row.sku_name,
