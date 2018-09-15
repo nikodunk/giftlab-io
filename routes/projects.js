@@ -48,6 +48,8 @@ function getData(projectNumber, res){
                 })
 }
 
+
+
 router.get('/leatherbacks/', function(req, res, next) {
     getData(1, res)
 });
@@ -62,7 +64,7 @@ router.get('/microplastics/', function(req, res, next) {
 });
 
 router.get('/tigersharks/', function(req, res, next) {
-  // getData(4, res)
+  getData(4, res)
 });
 
 
