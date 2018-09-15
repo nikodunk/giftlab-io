@@ -61,7 +61,9 @@ router.get('/microplastics/', function(req, res, next) {
   getData(3, res)
 });
 
-
+router.get('/tigersharks/', function(req, res, next) {
+  getData(4, res)
+});
 
 
 
