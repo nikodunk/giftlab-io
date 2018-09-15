@@ -129,7 +129,7 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
 
         // SAVE TO DATABASE
         console.log(response.body.id, response.body.payer.payer_info.email, response.body.transactions[0].amount.total, response.body.transactions[0].item_list.items[0].sku)
-        client.query(`INSERT INTO orders VALUES ('`
+        client.query({ `INSERT INTO orders VALUES ('`
                             Date.now()+`','`+
                             response.body.transactions[0].item_list.items[0].sku+`','`+
                             response.body.transactions[0].amount.total+`','`+
@@ -147,7 +147,7 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
                             response.body.create_time+`','`+
                             response.body.payer.payer_info.payer_id+`','`+
                             response.body.shipping_address.postal_code+`','`+
-                            response.body.transactions[0].payee.email+`');`)
+                            response.body.transactions[0].payee.email+`');`})
 
         // 4. Return a success response to the client
         res.json(
