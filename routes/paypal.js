@@ -140,13 +140,13 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
                             response.body.payer.payer_info.last_name+`','`+
                             response.body.create_time+`','`+
                             'Paypal'+`','`+
-                            response.body.shipping_address.country_code+`','`+
+                            response.body.payer.payer_info.shipping_address.country_code+`','`+
                             response.body.transactions[0].amount.currency+`','`+
                             ''+`','`+ //thankyou_link
                             ''+`','`+ //donation_receipt
                             response.body.create_time+`','`+
                             response.body.payer.payer_info.payer_id+`','`+
-                            response.body.shipping_address.postal_code+`','`+
+                            response.body.payer.payer_info.shipping_address.postal_code+`','`+
                             response.body.transactions[0].payee.email+`');`)
 
         // 4. Return a success response to the client
