@@ -109,7 +109,17 @@ var PAYPAL_API = 'https://api.sandbox.paypal.com';
                 price: req.params.amount,
                 currency: "USD",
                 quantity: 1
-              }]
+              }],
+              "shipping_address": {
+                recipient_name: "Turtle Island Restoration Project",
+                line1: "4th Floor",
+                line2: "Unit #34",
+                city: "San Jose",
+                state: "CA",
+                phone: "011862212345678",
+                postal_code: "95131",
+                country_code: "US"
+              }
             },
             payee: {
                   email: 'info@seaturtles.org'
