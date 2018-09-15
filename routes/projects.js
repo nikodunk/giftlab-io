@@ -37,15 +37,15 @@ function getData(projectNumber, res){
                                 // Create an object to save current row's data
                                 console.log(row.total_need, row.orderssofar)
                                 var sku = {
+                                  "sku": row.sku,
                                   'sku_name': row.sku_name,
                                   'bucket': row.bucket,
-                                  "sku": row.sku,
                                   "description": row.description,
-                                  "status": (parseInt(row.total_need) - (row.orderssofar ? row.orderssofar : 0) > 0 ? "Active" : "Complete"),
                                   "unit_cost": row.unit_cost,
                                   "quantity_need": row.quantity_need,
                                   "total_value": row.total_value,
                                   "donatedsofar": row.orderssofar,
+                                  "status": (parseInt(row.total_need) - (row.orderssofar ? row.orderssofar : 0) > 0 ? "Active" : "Complete"),
                                   "remaining": parseInt(row.total_need) - (row.orderssofar ? parseInt(row.orderssofar) : 0),
                                 }
                                 // Add object into array
