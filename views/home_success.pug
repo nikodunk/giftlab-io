@@ -7,17 +7,18 @@ block content
 			.row.no-gutters.panel
 				.col-lg-8.text-white.showcase-img(style="background-image: url('/images/home/bullshark.jpg');")
 				.col-lg-4.my-auto.padding
-					h2 Help seed discovery
+					h2 Support great causes
 					p.lead.mb-0
 						| and know exactly where your money is going
 					br
-					a.btn.btn-lg.btn-primary(href="/#projects").jumbotronbutton LEARN MORE
+					a.btn.btn-lg.btn-primary(href="/#howitworks").jumbotronbutton LEARN MORE
 
 	// Icons Grid
 	section.features-icons.bg-light.text-center(id="howitworks").bg-white
-			h3.center How it works
-			br
-			br
+			div.padding
+				h3.center How it works
+				br
+				p.lead.mb-0 At Gift Lab we're empowering you to be in full control of your donations. With itemized lists, we're providing transparency, control, and a platform for you to think creatively in the way you give. It's up to you; simply donate money to a project budget, purchase an item from Amazon, or donate differently like recycling or gifting airline miles. 
 			br
 			.container
 				.row
@@ -34,7 +35,7 @@ block content
 							img.img-fluid(src="./images/home/GiveDirectly.png")
 							br
 							br
-							h3 Give directly
+							h3 Donate differently
 							p.lead.mb-0 Be in control how you are gifting: 1) purchase an item, 2) donate to a budget, or 3) recycle an item.
 
 					.col-lg-4
@@ -50,20 +51,19 @@ block content
 	section.showcase
 		.container-fluid.p-0
 			.row.no-gutters.panel
-				.col-lg-8.order-lg-2.text-white.showcase-img(style="background-image: url('/images/microplastics/microplastics.jpg');")
+				.col-lg-8.order-lg-2.text-white.showcase-img(style="background-image: url('/images/about/IMG_2598.JPG');")
 				.col-lg-4.order-lg-1.my-auto.padding
-					h2 Find a research project that inspires you. 
-					p.lead.mb-0
-						| Help launch it.
+					h2 Find a project
+					p.lead.mb-0 that you're passionate about and help launch it
 					br
-					// a.btn.btn-lg.btn-primary(href="/#projects") SEE PROJECTS
+					a.btn.btn-lg.btn-primary(href="/#projects").jumbotronbutton SEE PROJECTS
 
 	br
 	br
 
 	section.container
 		section.row
-			h1(id="projects") Projects
+			h1(id="projects") Current Projects
 		section.row.row-eq-height
 			each val in content
 				if val.Status === "Active"
@@ -80,11 +80,15 @@ block content
 
 				else if val.Status === "Complete"
 					div.col-md-4(style="padding: 10px")
-						div.center.box(style="color: grey")
-							br
-							h3 #{val.ProjectName}
-							//- p #{val["Project Description - Short"]}
-							p Status: #{val["Status"]}
+						a(href=val.slug).nolinks
+							div.center.box(style="background-color: lightgrey")
+								img.img-fluid(src=val.image)
+								br
+								br
+								h3 #{val.ProjectName}
+								p Status: 
+									span(style="color: lightgreen") #{val["Status"]}
+								p(style="color: grey") #{val["Project Description - Short"]}
 
 
 	hr

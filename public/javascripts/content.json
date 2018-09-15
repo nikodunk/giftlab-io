@@ -8,11 +8,9 @@
     "Researcher profile": "Armed with a Masters of Science in Biology, Callie is determined to prevent the Eastern Pacific Leatherback sea turtle from extinction. As a research fellow at the Turtle Island Restoration Network in California, she spends her days researching and collecting data on these incredible animals in order to understand how to best protect them and influence government policy change for their long-term survival.",
     "Project Deadline": "October 3rd, 2018",
     "Status": "Active",
-    "image": "/images/leatherbacks/leatherback.png",
-    "researcherimage": "/images/leatherbacks/profile.png",
-    "slug": "/projects/leatherbacks",
-    "wishlistlink": "https://amzn.to/2xdhOy6",
-    "paypal": "info@seaturtles.org"
+    "image": "/images/1_leatherbacks/Leatherback_Main.jpeg",
+    "researcherimage": "/images/1_leatherbacks/profile.png",
+    "wishlistlink": "https://amzn.to/2xdhOy6"
   },
   {
     "ProjectID": 2,
@@ -23,11 +21,9 @@
     "Researcher profile": "Preston Brown is a watershed biologist and Director of Watershed Conservation with Turtle Island Restoration Network’s Salmon Protection And Watershed Network (SPAWN). With a B.S. in Natural Resources Management, he is focused on developing and facilitating stream restoration projects and administrating salmonID population monitoring programs.",
     "Project Deadline": "December 1st, 2018",
     "Status": "Active",
-    "image": "/images/salmon/salmon.jpg",
-    "researcherimage": "/images/salmon/profile.png",
-    "slug": "/projects/salmon",
-    "wishlistlink": "https://amzn.to/2pa7rrD",
-    "paypal": "info@seaturtles.org"
+    "image": "/images/2_salmon/Salmon_Main.jpg",
+    "researcherimage": "/images/2_salmon/profile.png",
+    "wishlistlink": "https://amzn.to/2pa7rrD"
   },
   {
     "ProjectID": 3,
@@ -38,11 +34,9 @@
     "Researcher profile": "Todd is the Executive Director and Founder of the Turtle Island Restoration Network (TIRN) and has over 40 years experience protecting and restoring endangered species and habitats. With a lifetime of knowledge, and a Masters in Biology, Todd’s current focus is turning research into policy that protects and restores endangered marine species and ocean ecosystems.  Currently, he is focused on creating the bi-national Cocos-Galapagos Swimway, and a range of other high profile TIRN initiatives.",
     "Project Deadline": "November 15th, 2018",
     "Status": "Active",
-    "image": "/images/microplastics/microplastics.jpg",
-    "researcherimage": "/images/microplastics/profile.png",
-    "slug": "/projects/microplastics",
-    "wishlistlink": "https://amzn.to/2p4MHRG",
-    "paypal": "info@seaturtles.org"
+    "image": "/images/3_microplastics/Microplastic_Main.jpg",
+    "researcherimage": "/images/3_microplastics/profile.png",
+    "wishlistlink": "https://amzn.to/2p4MHRG"
   },
   {
     "ProjectID": 4,
@@ -53,11 +47,9 @@
     "Researcher profile": "Todd is the Executive Director and Founder of the Turtle Island Restoration Network (TIRN) and has over 40 years experience protecting and restoring endangered species and habitats. With a lifetime of knowledge, and a Masters in Biology, Todd’s current focus is turning research into policy that protects and restores endangered marine species and ocean ecosystems.  Currently, he is focused on creating the bi-national Cocos-Galapagos Swimway, and a range of other high profile TIRN initiatives.",
     "Project Deadline": "July 31st, 2018",
     "Status": "Complete",
-    "image": "/images/tigersharks/TigerShark_Project_Main.jpg",
-    "researcherimage": "/images/tigersharks/ToddSteiner_Profile.png",
-    "slug": "/projects/tigersharks",
-    "wishlistlink": "",
-    "paypal": ""
+    "image": "/images/4_tigersharks/TigerShark_Project_Main.jpg",
+    "researcherimage": "/images/4_tigersharks/profile.png",
+    "wishlistlink": ""
   },
   {
     "ProjectID": 5,
@@ -70,8 +62,6 @@
     "Status": "Planned",
     "image": "",
     "researcherimage": "",
-    "slug": "",
-    "wishlistlink": "",
-    "paypal": ""
+    "wishlistlink": ""
   }
 ]
