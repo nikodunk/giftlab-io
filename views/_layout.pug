@@ -40,13 +40,28 @@ html
         // Navigation
         nav.navbar.navbar-light.bg-light.static-top(id="home" style="padding: 15px;").bg-white
             .container(style="max-width: 1024px")
-                div.col-4.col-sm-4
+
+                //normal layout
+                div.col-sm-4.d-none.d-sm-block
                     a.navbar-brand(href='/#home')
                         img.img-fluid(src="../images/GiftLab_Logo.png" style="max-height: 30px; max-width: 100% !important").brand
-                div.col-8.col-sm-8
-                    a.float-right(href='/about' style="color: black; padding: 10px") ABOUT
-                    a.float-right(href='/#projects' style="color: black; padding: 10px") PROJECTS
-                    a.float-right(href='/#howitworks' style="color: black; padding: 10px") HOW IT WORKS
+                div.col-sm-8.d-none.d-sm-block
+                    a.float-right(href='/about' style="color: black; padding: 5px") ABOUT
+                    a.float-right(href='/#projects' style="color: black; padding: 5px") PROJECTS
+                    a.float-right(href='/#howitworks' style="color: black; padding: 5px") HOW IT WORKS
+
+                //mobile layout
+                div.d-sm-block.d-md-none.center
+                    div.col-12.center
+                        a.navbar-brand(href='/#home').center
+                            img.img-fluid(src="../images/GiftLab_Logo.png" style="max-height: 30px; max-width: 100% !important").brand
+                        br
+                        br
+                        a.center(href='/about' style="color: black; padding: 5px") ABOUT
+                        br
+                        a.center(href='/#projects' style="color: black; padding: 5px") PROJECTS
+                        br
+                        a.center(href='/#howitworks' style="color: black; padding: 5px") HOW IT WORKS
 
 
 
