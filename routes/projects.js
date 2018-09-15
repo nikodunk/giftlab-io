@@ -13,7 +13,7 @@ var content = require('../public/javascripts/content.json')
 
 function getData(projectNumber, res){
     
-    client.query(` SELECT skus.sku, skus.sku_name, skus.bucket, skus.description, skus.unit_cost, skus.quantity_need, skus.total_value, sum(orders.amount) FROM skus 
+    client.query(` SELECT skus.sku, skus.sku_name, skus.bucket, skus.description, skus.unit_cost, skus.quantity_need, skus.total_value, sum(orders.amount) as orderssofar FROM skus 
                       FULL OUTER JOIN orders ON (skus.sku = orders.sku) 
                       WHERE projectid = '`+projectNumber+`'
                       GROUP BY skus.sku;`, (err, queryResult) => {
@@ -28,13 +28,13 @@ function getData(projectNumber, res){
                                   'bucket': row.bucket,
                                   "sku": row.sku,
                                   "description": row.description,
-                                  "status": (parseInt(row.total_value) - (row.sum ? row.sum : 0) ? "Active" : "Complete"),
+                                  "status": (parseInt(row.total_value) - (row.orderssofar ? row.orderssofar : 0) ? "Active" : "Complete"),
                                   "timeline": row.timeline,
                                   "unit_cost": row.unit_cost,
                                   "quantity_need": row.quantity_need,
                                   "total_value": row.total_value,
-                                  "donatedsofar": row.sum,
-                                  "remaining": parseInt(row.total_need) - (row.sum ? row.sum : 0),
+                                  "donatedsofar": row.orderssofar,
+                                  "remaining": parseInt(row.total_need) - (row.orderssofar ? row.orderssofar : 0),
                                 }
                                 // Add object into array
                                 skuList.push(sku);
