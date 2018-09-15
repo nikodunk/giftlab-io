@@ -63,22 +63,39 @@ block content
 		br
 		each val in skus
 			if val.bucket == "Item"
-				div.row.box(style="background-color: white") 
-					div.col-12
-						h5 #{val["sku_name"]} ($#{val['priceperunitusd']} each)
-						// p(style="color:grey")= val["Bucket"]
-					div.col-md-8
-						p= val["description"]
-						p Need: #{val['quantityneeded']}&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Total Cost: $#{val['totalcostusd']}
-						meter(min="0" value=val['donatedsofar'] max=val['Total Cost USD'] style="width: 100%").pull-right
-						br
-						p(style="text-align: right") Gifted: #{val['donatedsofar']} | Remaining: YYY
-					div.col-md-4
-						a(href=content.wishlistlink target="_blank").btn.btn-primary.orange.pull-right(style="width: 100%; padding: 20px" ) Amazon Wishlist
-						br
-						br
-						a(href="/contact").pull-right or donate directly
-			
+				if val.status == "Active"
+					div.row.box(style="background-color: white") 
+						div.col-12
+							h5 #{val["sku_name"]} ($#{val['priceperunitusd']} each)
+							// p(style="color:grey")= val["Bucket"]
+						div.col-md-8
+							p= val["description"]
+							p Need: #{val['quantityneeded']}&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Total Cost: $#{val['totalcostusd']}
+							meter(min="0" value=val['donatedsofar'] max=val['Total Cost USD'] style="width: 100%").pull-right
+							br
+							p(style="text-align: right") Gifted: #{val['donatedsofar']} | Remaining: YYY
+						div.col-md-4
+							a(href=content.wishlistlink target="_blank").btn.btn-primary.orange.pull-right(style="width: 100%; padding: 20px" ) Amazon Wishlist
+							br
+							br
+							a(href="/contact").pull-right or donate directly
+
+				else
+					div.row.box(style="background-color: lightgrey") 
+						div.col-12
+							h5 #{val["sku_name"]} ($#{val['priceperunitusd']} each)
+							// p(style="color:grey")= val["Bucket"]
+						div.col-md-8
+							p= val["description"]
+							p Need: #{val['quantityneeded']}&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Total Cost: $#{val['totalcostusd']}
+							meter(min="0" value=val['donatedsofar'] max=val['Total Cost USD'] style="width: 100%").pull-right
+							br
+							p(style="text-align: right") Gifted: #{val['donatedsofar']} | Remaining: YYY
+						div.col-md-4
+							// a(href=content.wishlistlink target="_blank").btn.btn-primary.orange.pull-right(style="width: 100%; padding: 20px" ) Amazon Wishlist
+							// br
+							// br
+							// a(href="/contact").pull-right or donate directly
 
 	br
 	br
@@ -96,28 +113,53 @@ block content
 
 		each val in skus
 			if val.bucket == "Budget"
-				div.row.box(style="background-color: white")
-					div.col-12
-						h5 #{val["sku_name"]}
-						// p(style="color:grey")= val["Bucket"]
-					div.col-md-8
-						div(id=val['sku'])
-							p= val["description"]
-							p Total Budget: $#{val['totalcostusd']}
-							meter(min="0" value=val['donatedsofar'] max=val['totalcostusd'] style="width: 100%").pull-right
+				if val.status == "Active"
+					div.row.box(style="background-color: white")
+						div.col-12
+							h5 #{val["sku_name"]}
+							// p(style="color:grey")= val["Bucket"]
+						div.col-md-8
+							div(id=val['sku'])
+								p= val["description"]
+								p Total Budget: $#{val['totalcostusd']}
+								meter(min="0" value=val['donatedsofar'] max=val['totalcostusd'] style="width: 100%").pull-right
+								br
+								if val.donatedsofar == null
+									p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining']}
+								else
+									p(style="text-align: right") Gifted: $#{val['donatedsofar']} | Remaining: $#{val['remaining']}
+						div.col-md-4
+							div.row
+								p.col-3 $
+								input.form-control.col-8(type="number" name="amount" value="20" min="0" max=val['totalcostusd'] class=val['sku'])
 							br
-							if val.donatedsofar == null
-								p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining']}
-							else
-								p(style="text-align: right") Gifted: $#{val['donatedsofar']} | Remaining: $#{val['remaining']}
-					div.col-md-4
-						div.row
-							p.col-3 $
-							input.form-control.col-8(type="number" name="amount" value="20" min="0" max=val['totalcostusd'] class=val['sku'])
-						br
-						div.row
-							div(data-sku=val['sku']).paypal-button.pull-right
-							a(href="/contact").pull-right or donate directly
+							div.row
+								div(data-sku=val['sku']).paypal-button.pull-right
+								a(href="/contact").pull-right or donate directly
+
+				else
+					div.row.box(style="background-color: lightgrey")
+						div.col-12
+							h5 #{val["sku_name"]}
+							// p(style="color:grey")= val["Bucket"]
+						div.col-md-8
+							div(id=val['sku'])
+								p= val["description"]
+								p Total Budget: $#{val['totalcostusd']}
+								meter(min="0" value=val['donatedsofar'] max=val['totalcostusd'] style="width: 100%").pull-right
+								br
+								if val.donatedsofar == null
+									p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining']}
+								else
+									p(style="text-align: right") Gifted: $#{val['donatedsofar']} | Remaining: $#{val['remaining']}
+						div.col-md-4
+							// div.row
+							// 	p.col-3 $
+							// 	input.form-control.col-8(type="number" name="amount" value="20" min="0" max=val['totalcostusd'] class=val['sku'])
+							// br
+							// div.row
+							// 	div(data-sku=val['sku']).paypal-button.pull-right
+							// 	a(href="/contact").pull-right or donate directly
 							
 									
 

@@ -28,13 +28,13 @@ function getData(projectNumber, res){
                                   'bucket': row.bucket,
                                   "sku": row.sku,
                                   "description": row.description,
-                                  "status": row.status,
+                                  "status": (parseInt(row.totalcostusd) - (row.sum ? row.sum : 0) ? "Active" : "Complete"),
                                   "timeline": row.timeline,
                                   "priceperunitusd": row.priceperunitusd,
                                   "quantityneeded": row.quantityneeded,
                                   "totalcostusd": row.totalcostusd,
                                   "donatedsofar": row.sum,
-                                  "remaining": parseInt(row.totalcostusd) - (row.sum ? row.sum : 0)
+                                  "remaining": parseInt(row.totalcostusd) - (row.sum ? row.sum : 0),
                                 }
                                 // Add object into array
                                 skuList.push(sku);
