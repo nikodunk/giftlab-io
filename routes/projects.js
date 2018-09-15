@@ -13,7 +13,7 @@ var content = require('../public/javascripts/content.json')
 
 function getData(projectNumber, res){
     
-    client.query(` SELECT skus.sku, skus.sku_name, skus.bucket, skus.description, skus.status, skus.timeline, skus.unit_cost, skus.quantity_need, skus.total_value, sum(orders.amount) FROM skus 
+    client.query(` SELECT skus.sku, skus.sku_name, skus.bucket, skus.description, skus.unit_cost, skus.quantity_need, skus.total_value, sum(orders.amount) FROM skus 
                       FULL OUTER JOIN orders ON (skus.sku = orders.sku) 
                       WHERE projectid = '`+projectNumber+`'
                       GROUP BY skus.sku;`, (err, queryResult) => {
