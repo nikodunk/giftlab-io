@@ -39,7 +39,7 @@ function getData(projectNumber, res){
                                   'bucket': row.bucket,
                                   "sku": row.sku,
                                   "description": row.description,
-                                  "status": (parseInt(row.total_value) - (row.orderssofar ? row.orderssofar : 0) ? "Active" : "Complete"),
+                                  "status": (parseInt(row.total_need) - (row.orderssofar ? row.orderssofar : 0) ? "Active" : "Complete"),
                                   "unit_cost": row.unit_cost,
                                   "quantity_need": row.quantity_need,
                                   "total_value": row.total_value,
