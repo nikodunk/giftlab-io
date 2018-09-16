@@ -115,7 +115,17 @@ hr {
 }
 
 
-.box{
+.box-home{
+  border: 1px solid lightgrey;
+  /*padding: 20px;*/
+  height: 100%;
+  max-width: 900px;
+  margin: 5px auto !important;
+  background-image: white !important;
+  /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3)*/
+}
+
+.box-project{
   border: 1px solid lightgrey;
   padding: 20px;
   height: 100%;
