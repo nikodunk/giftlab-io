@@ -22,7 +22,7 @@ block content
 					br
 					img.thumbnail(src=content.researcherimage alt="Image Title").center
 					br
-			div.col-md-8.panel.padding
+			div.col-md-8.panel.padding(style="background-color: black !important")
 				h3= content["Researcher"]
 				p= content["Researcher profile"]
 			
@@ -95,9 +95,8 @@ block content
 			
 		
 								
-		section.showcase.bg-white(id="budgets")
-			br
-			br
+		section.showcase.bg-white(id="budgets").padding
+
 			h3.center Project Budgets
 			p.lead.mb-0.center Our project teams have worked hard to give the best estimates possible, but budgets and prices of items can fluctuate. Should something change, your monetary donation will be used for another aspect of this project.
 			br
@@ -154,7 +153,7 @@ block content
 								// 	div(data-sku=val['sku']).paypal-button.pull-right
 								// 	a(href="/contact").pull-right or donate directly					
 										
-		section.row.row-eq-height.bg-white
+		section.showcase.bg-white
 			br
 		
 			
