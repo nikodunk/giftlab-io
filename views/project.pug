@@ -63,14 +63,14 @@ block content
 						div.col-md-8
 							p= val["description"]
 							// p Need: #{val['quantity_need']}&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Total Cost: #{val['total_value']}
-							meter(min="0" value=val['donatedsofar'] max=val['Total Cost USD'] style="width: 100%").pull-right
+							meter(min="0" value=val['donatedsofar'] max=val['Total Cost USD'] style="width: 100%")
 							br
 							p(style="text-align: right") Gifted: #{val['donatedsofar']} | Remaining: #{val['remaining']}
 						div.col-md-4
-							a(href=content.wishlistlink target="_blank").btn.btn-primary.orange.pull-right(style="width: 100%; padding: 20px" ) Gift via Amazon
+							a(href=content.wishlistlink target="_blank").btn.btn-primary.orange.float-right(style="width: 100%; padding: 20px" ) Gift via Amazon
 							br
 							br
-							a(href="/contact" style="color: black").pull-right or donate directly
+							a(href="/contact" style="color: black").float-right or donate directly
 
 				else
 					div.row.box(style="background-color: lightgrey") 
@@ -80,7 +80,7 @@ block content
 						div.col-md-8
 							p= val["description"]
 							// p Need: #{val['quantity_need']}&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Total Cost: #{val['total_value']}
-							meter(min="0" value=val['donatedsofar'] max=val['Total Cost USD'] style="width: 100%").pull-right
+							meter(min="0" value=val['donatedsofar'] max=val['Total Cost USD'] style="width: 100%")
 							br
 							p(style="text-align: right") Gifted: #{val['donatedsofar']} | Remaining: #{val['remaining']}
 						div.col-md-4
@@ -110,7 +110,7 @@ block content
 							div(id=val['sku'])
 								p= val["description"]
 								// p Total Budget: $#{val['total_value']}
-								meter(min="0" value=val['donatedsofar'] max=val['total_value'] style="width: 100%").pull-right
+								meter(min="0" value=val['donatedsofar'] max=val['total_value'] style="width: 100%").float-right
 								br
 								if val.donatedsofar == null
 									p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining']}
@@ -122,7 +122,7 @@ block content
 									input.myInput(type="number" name="amount" value="20" min="0" max=val['total_value'] class=val['sku'])
 							br
 							div.row
-								div(data-sku=val['sku']).paypal-button.pull-right
+								div(data-sku=val['sku']).paypal-button.float-right
 							// div.row
 							// 	a(href="/contact").pull-right or donate differently
 
@@ -135,7 +135,7 @@ block content
 							div(id=val['sku'])
 								p= val["description"]
 								// p Total Budget: $#{val['total_value']}
-								meter(min="0" value=val['donatedsofar'] max=val['total_value'] style="width: 100%").pull-right
+								meter(min="0" value=val['donatedsofar'] max=val['total_value'] style="width: 100%").float-right
 								br
 								if val.donatedsofar == null
 									p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining']}
