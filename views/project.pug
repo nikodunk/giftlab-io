@@ -28,7 +28,7 @@ block content
 
 	
 	// Icons Grid
-	section.row.row-eq-height.bg-white
+	section.row.row-eq-height
 			.container(style="padding: 20px")
 				h3.center How to contribute
 				br
@@ -48,7 +48,7 @@ block content
 
 	
 
-	section.container(id="items").bg-white
+	section.container(id="items")
 		h3.center Items in Need
 		br
 		each val in skus
@@ -63,7 +63,10 @@ block content
 							// p Need: #{val['quantity_need']}&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Total Cost: #{val['total_value']}
 							meter(min="0" value=val['donatedsofar'] max=val['Total Cost USD'] style="width: 100%; background-color: lightblue")
 							br
-							p(style="text-align: right") Gifted: #{val['donatedsofar']} | Remaining: #{val['remaining']}
+							if val.donatedsofar == null
+								p(style="text-align: right") Gifted: 0 | Remaining: #{val['remaining']}
+							else
+								p(style="text-align: right") Gifted: #{val['donatedsofar']} | Remaining: #{val['remaining']}
 						div.col-md-4
 							a(href=content.wishlistlink target="_blank").btn.btn-primary.orange.float-right(style="width: 100%; padding: 20px" ) Gift via Amazon
 							br
@@ -93,7 +96,7 @@ block content
 		
 	
 							
-	section.container(id="budgets").bg-white
+	section.container(id="budgets")
 		br
 		br
 		h3.center Project Budgets
