@@ -31,6 +31,8 @@ block content
 		// Icons Grid
 		section.row.row-eq-height.bg-white
 				.container(style="padding: 20px")
+					br
+					br
 					h3.center How to contribute
 					br
 					p.lead.mb-0.center All donations to this project are tax deductible, simply select an item you'd like to purchase or a budget you'd like to donate to. If you have another idea on how you can fufill this need, contact us by completing the "donate differently" form. 
@@ -49,7 +51,9 @@ block content
 
 		
 
-		section.container(id="items").bg-white
+		section.row.row-eq-height.bg-white(id="items")
+			br
+			br
 			h3.center Items in Need
 			br
 			each val in skus
@@ -72,7 +76,7 @@ block content
 								a(href="/contact" style="color: black").float-right or donate directly
 
 					else
-						div.row.box-project(style="background-color: lightgrey") 
+						div.row.box-project(style="background-color: #f8f9fa	") 
 							div.col-12
 								h5 #{val["sku_name"]} ($#{val['unit_cost']} each)
 								// p(style="color:grey")= val["Bucket"]
@@ -91,7 +95,7 @@ block content
 			
 		
 								
-		section.container(id="budgets").bg-white
+		section.row.row-eq-height.bg-white(id="budgets")
 			br
 			br
 			h3.center Project Budgets
@@ -127,7 +131,7 @@ block content
 								// 	a(href="/contact").pull-right or donate differently
 
 					else
-						div.row.box-project(style="background-color: lightgrey")
+						div.row.box-project(style="background-color: #f8f9fa")
 							div.col-12
 								h5 #{val["sku_name"]}
 								// p(style="color:grey")= val["Bucket"]
@@ -150,7 +154,7 @@ block content
 								// 	div(data-sku=val['sku']).paypal-button.pull-right
 								// 	a(href="/contact").pull-right or donate directly					
 										
-		section.container.bg-white
+		section.row.row-eq-height.bg-white
 			br
 		
 			
