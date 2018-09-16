@@ -43,19 +43,15 @@ router.post( '/signup', function (req, result) {
       console.log(res.rows.length)
       if (res.rows.length === 0){ 
         console.log('doesnt exist')
-        client.query(`INSERT INTO marketing VALUES ('`+req.body.email+`');`, (err, res) => {
-          if (err) throw err;
-          result.send('done')
-        }); 
+        client.query(`INSERT INTO marketing VALUES ('`+req.body.email+`');`); 
       }
       // IF THE ACCOUNT EXISTS ALREADY DO NOTHING AND RESPOND
       else{
           console.log('exists')
-          result.send('done')
       }
       client.end();
   }); 
-  
+  result.send('done')
 })
 
 
