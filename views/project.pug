@@ -91,7 +91,7 @@ block content
 						div.col-md-8
 							p= val["description"]
 							// p Need: #{val['quantity_need']}&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Total Cost: #{val['total_value']}
-							meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%")
+							meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: grey")
 							br
 							if val.donatedsofar == null
 								p(style="text-align: right") Gifted: 0 | Remaining: #{val['remaining_pretty']}
@@ -125,7 +125,7 @@ block content
 							div(id=val['sku'])
 								p= val["description"]
 								// p Total Budget: $#{val['total_value']}
-								meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%").float-right
+								meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: lightblue").float-right
 								br
 								if val.donatedsofar == null
 									p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining_pretty']}
@@ -150,7 +150,7 @@ block content
 							div(id=val['sku'])
 								p= val["description"]
 								// p Total Budget: $#{val['total_value']}
-								meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%").float-right
+								meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: grey").float-right
 								br
 								if val.donatedsofar == null
 									p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining_pretty']}
