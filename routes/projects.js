@@ -21,8 +21,6 @@ function getData(projectNumber, res){
                       skus.description, 
                       skus.unit_cost,
                       skus.total_need,
-                      skus.quantity_need, 
-                      skus.total_value, 
                       sum(orders.amount) as orderssofar 
 
                       FROM skus 
@@ -42,9 +40,8 @@ function getData(projectNumber, res){
                                   'bucket': row.bucket,
                                   "description": row.description,
                                   "unit_cost": row.unit_cost,
-                                  "quantity_need": row.quantity_need,
-                                  "total_value": row.total_value,
                                   "donatedsofar": row.orderssofar,
+                                  "total_need": row.total_need,
                                   "status": (parseInt(row.total_need) - (row.orderssofar ? row.orderssofar : 0) > 0 ? "Active" : "Complete"),
                                   "remaining": parseInt(row.total_need) - (row.orderssofar ? parseInt(row.orderssofar) : 0),
                                 }

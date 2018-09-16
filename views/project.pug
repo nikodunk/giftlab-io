@@ -23,7 +23,8 @@ block content
 		div.col-md-8.panel.padding
 			h3= content["Researcher"]
 			p= content["Researcher profile"]
-			a(href="https://seaturtles.org" target="_blank") Learn more about the Turtle Island Restoration Network
+			p Learn more about the
+				a(href="https://seaturtles.org" target="_blank") Turtle Island Restoration Network
 		
 
 	
@@ -61,7 +62,7 @@ block content
 						div.col-md-8
 							p= val["description"]
 							// p Need: #{val['quantity_need']}&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Total Cost: #{val['total_value']}
-							meter(min="0" value=val['donatedsofar'] max=val['Total Cost USD'] style="width: 100%; background-color: lightblue")
+							meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: lightblue")
 							br
 							if val.donatedsofar == null
 								p(style="text-align: right") Gifted: 0 | Remaining: #{val['remaining']}
@@ -81,7 +82,7 @@ block content
 						div.col-md-8
 							p= val["description"]
 							// p Need: #{val['quantity_need']}&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Total Cost: #{val['total_value']}
-							meter(min="0" value=val['donatedsofar'] max=val['Total Cost USD'] style="width: 100%")
+							meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%")
 							br
 							if val.donatedsofar == null
 								p(style="text-align: right") Gifted: 0 | Remaining: #{val['remaining']}
@@ -115,7 +116,7 @@ block content
 							div(id=val['sku'])
 								p= val["description"]
 								// p Total Budget: $#{val['total_value']}
-								meter(min="0" value=val['donatedsofar'] max=val['total_value'] style="width: 100%").float-right
+								meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%").float-right
 								br
 								if val.donatedsofar == null
 									p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining']}
@@ -124,7 +125,7 @@ block content
 						div.col-md-4(style="text-align: right")
 							div.row
 								div.test
-									input.myInput(type="number" name="amount" value="20" min="0" max=val['total_value'] class=val['sku'])
+									input.myInput(type="number" name="amount" value="20" min="0" max=val['total_need'] class=val['sku'])
 							br
 							div.row
 								div(data-sku=val['sku']).paypal-button.float-right
@@ -140,7 +141,7 @@ block content
 							div(id=val['sku'])
 								p= val["description"]
 								// p Total Budget: $#{val['total_value']}
-								meter(min="0" value=val['donatedsofar'] max=val['total_value'] style="width: 100%").float-right
+								meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%").float-right
 								br
 								if val.donatedsofar == null
 									p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining']}
