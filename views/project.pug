@@ -124,8 +124,8 @@ block content
 									p(style="text-align: right") Gifted: $#{val['donatedsofar']} | Remaining: $#{val['remaining']}
 						div.col-md-4
 							div.row
-								p.pull-right $
-								input.form-control.pull-right(type="number" name="amount" value="20" min="0" max=val['total_value'] class=val['sku'])
+								div.test
+									input.form-control.pull-right(type="number" name="amount" value="20" min="0" max=val['total_value'] class=val['sku'])
 							br
 							div.row
 								div(data-sku=val['sku']).paypal-button.pull-right

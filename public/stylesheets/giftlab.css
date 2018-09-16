@@ -149,3 +149,19 @@ hr {
 .bg-white{
   background-color: white !important;
 }
+
+
+
+.test {
+    position: relative;
+    display: inline;
+}
+
+.test:before {
+    content: '$';
+    position: absolute;
+    top: 0;
+    left: 40px;
+    z-index: 1;
+}
+
