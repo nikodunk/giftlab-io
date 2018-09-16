@@ -161,7 +161,14 @@ hr {
     content: '$';
     position: absolute;
     top: 0;
-    left: 40px;
+    left: 20px;
     z-index: 1;
+}
+
+
+.myInput{
+  padding: 5px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
 }
 
