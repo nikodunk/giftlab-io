@@ -15,7 +15,7 @@ block content
 
 	// Icons Grid
 	section.features-icons.bg-light.text-center(id="howitworks").bg-white
-			div.padding
+			div(style="margin-left: 70px !important; margin-right: 70px !important;")
 				h3.center How it works
 				br
 				p.lead.mb-0 At Gift Lab we're empowering you to be in full control of your donations. With itemized lists, we're providing transparency, control, and a platform for you to think creatively in the way you give. It's up to you; simply donate money to a project budget, purchase an item from Amazon, or donate differently like recycling or gifting airline miles. 
@@ -58,45 +58,42 @@ block content
 					br
 					a.btn.btn-lg.btn-primary(href="/#projects").jumbotronbutton SEE PROJECTS
 
-	br
-	br
 
-	section.container
-		section.row
-			h3(id="projects") Current Projects
-		section.row.row-eq-height
-			each val in content
-				if val.Status === "Active"
-					div.col-md-4(style="padding: 10px")
-						a(href=val.slug).nolinks
-							div.center.box.bg-white
-								img.img-fluid(src=val.image)
-								br
-								br
-								h5 #{val.ProjectName}
-								//- p Status: 
-								//- 	span(style="color: lightgreen") #{val["Status"]}
-								p(style="color: grey") #{val["Project Description - Short"]}
+	section.showcase.bg-white
+		div.container.padding
+			section.row
+				h3(id="projects") Current Projects
+			section.row.row-eq-height
+				each val in content
+					if val.Status === "Active"
+						div.col-md-4(style="padding: 10px")
+							a(href=val.slug).nolinks
+								div.center.box-home.bg-white
+									img.img-fluid(src=val.image)
+									br
+									br
+									h5(style="padding-left: 20px; padding-right: 20px") #{val.ProjectName}
+									//- p Status: 
+									//- 	span(style="color: lightgreen") #{val["Status"]}
+									p(style="color: grey; padding-left: 20px; padding-right: 20px") #{val["Project Description - Short"]}
 
-		br
-		br
-		section.row
-			h3(id="projects") Complete
-		section.row.row-eq-height
-			each val in content
-				if val.Status === "Complete"
-					div.col-md-4(style="padding: 10px")
-						a(href=val.slug).nolinks
-							div.center.box.bg-white
-								img.img-fluid(src=val.image)
-								br
-								br
-								h5 #{val.ProjectName}
-								//- p Status: 
-								//- 	span(style="color: lightgreen") #{val["Status"]}
-								p(style="color: grey") #{val["Project Description - Short"]}
-
-
+			br
+			br
+			section.row
+				h3(id="projects") Complete
+			section.row.row-eq-height
+				each val in content
+					if val.Status === "Complete"
+						div.col-md-4(style="padding: 10px")
+							a(href=val.slug).nolinks
+								div.center.box-home.bg-white
+									img.img-fluid(src=val.image)
+									br
+									br
+									h5 #{val.ProjectName}
+									//- p Status: 
+									//- 	span(style="color: lightgreen") #{val["Status"]}
+									p(style="color: grey") #{val["Project Description - Short"]}
 
 	// Call to Action
 	section.call-to-action.text-white.text-center(id="signup")
@@ -107,7 +104,3 @@ block content
 					h2.mb-4 Successfully signed up!
 				.col-md-10.col-lg-8.col-xl-7.mx-auto
 
-	br
-	br
-	br
-	br

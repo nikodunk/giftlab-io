@@ -28,8 +28,8 @@ block content
 
 	
 	// Icons Grid
-	section.features-icons.bg-light.text-center.padding
-			.container.bg-white(style="padding: 20px")
+	section.features-icons.bg-light.text-center.padding.bg-white
+			.container(style="padding: 20px")
 				h3.center How to contribute
 				br
 				p All donations to this project are tax deductible, simply select an item you'd like to purchase or a budget you'd like to donate to. If you have another idea on how you can fufill this need, contact us by completing the "donate differently" form. 
@@ -46,11 +46,11 @@ block content
 						.features-icons-item.mx-auto.mb-0.mb-lg-3
 							a.btn.btn-lg.btn-primary.blue(href="/contact"  style="padding: 20px") Give Differently
 
-	br
-	br
+		br
+		br
 	
 
-	section.container(id="items")
+	section.container(id="items").bg-white
 		h3.center Items in Need
 		br
 		each val in skus
@@ -89,11 +89,11 @@ block content
 							// br
 							// a(href="/contact").pull-right or donate directly
 
-	br
-	br
+		br
+		br
 	
 							
-	section.container(id="budgets")
+	section.container(id="budgets").bg-white
 		h3.center Project Budgets
 		p.lead.mb-0 Our project teams have worked hard to give the best estimates possible, but budgets and prices of items can fluctuate. Should something change, your monetary donation will be used for another aspect of this project.
 		br
@@ -153,10 +153,10 @@ block content
 									
 
 
-		br
-		br
-		br
-		br
+	br
+	br
+	br
+	br
 
 		
 			
