@@ -38,24 +38,20 @@ block content
 				.row
 					.col-lg-4
 						.features-icons-item.mx-auto.mb-5.mb-lg-0.mb-lg-3
-							h3 Gift an item directly
-							a.btn.btn-lg.btn-primary.orange(href="#items" style="padding: 20px") See Wishlist
+							a.btn.btn-lg.btn-primary.orange(href="#items" style="padding: 20px") Gift Items in Need
 					.col-lg-4
 						.features-icons-item.mx-auto.mb-5.mb-lg-0.mb-lg-3
-							h3 Donate to a budget
-							a.btn.btn-lg.btn-primary.green(href="#budgets"  style="padding: 20px") Give via Paypal
+							a.btn.btn-lg.btn-primary.green(href="#budgets"  style="padding: 20px") Donate to a Budget
 					.col-lg-4
 						.features-icons-item.mx-auto.mb-0.mb-lg-3
-							h3 Give differently
-							a.btn.btn-lg.btn-primary.blue(href="/contact"  style="padding: 20px") Contact us
-				hr
+							a.btn.btn-lg.btn-primary.blue(href="/contact"  style="padding: 20px") Give Differently
 
 	br
 	br
 	
 
 	section.container(id="items")
-		h1.center Items in Need
+		h3.center Items in Need
 		br
 		each val in skus
 			if val.bucket == "Item"
@@ -95,12 +91,10 @@ block content
 
 	br
 	br
-	br
-	br
 	
 							
 	section.container(id="budgets")
-		h1.center Project Budgets
+		h3.center Project Budgets
 		p.lead.mb-0 Our project teams have worked hard to give the best estimates possible, but budgets and prices of items can fluctuate. Should something change, your monetary donation will be used for another aspect of this project.
 		br
 
@@ -125,7 +119,7 @@ block content
 						div.col-md-4
 							div.row
 								div.test
-									input.form-control.pull-right(type="number" name="amount" value="20" min="0" max=val['total_value'] class=val['sku'])
+									input(type="number" name="amount" value="20" min="0" max=val['total_value'] class=val['sku'])
 							br
 							div.row
 								div(data-sku=val['sku']).paypal-button.pull-right
