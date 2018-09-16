@@ -38,6 +38,14 @@ router.get('/thanks/', function(req, res, next) {
   res.render('thanks')
 });
 
+
+
+router.get('/.well-known/acme-challenge/lxIQYmqIiRMjUctSRzM6IhB9c3_CpQCQ5ux3vY-z8mE', (req, res)=>{
+ res.send('lxIQYmqIiRMjUctSRzM6IhB9c3_CpQCQ5ux3vY-z8mE.XnHIB3tAEZqwZCdaZIqn6YtQlH_dDr4Jh8N68fy_sXA');
+})
+
+
+
 router.post( '/signup', function (req, result) {
 	client.query(`SELECT * FROM marketing WHERE email = '`+req.body.email+`';`, (err, res) => {
       //if (err) throw err;
