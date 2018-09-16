@@ -15,7 +15,7 @@ h6 {
 header.masthead {
   position: relative;
   background-color: #343a40;
-  background: url("../img/bg-masthead.jpg") no-repeat center center;
+  background: url("/images/0_home/Subscribe.jpeg") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -101,7 +101,7 @@ header.masthead h1 {
 .call-to-action {
   position: relative;
   background-color: #343a40;
-  background: url("../img/bg-masthead.jpg") no-repeat center center;
+  background: url("/images/0_home/Subscribe.jpeg") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -110,7 +110,7 @@ header.masthead h1 {
   padding-bottom: 7rem;
 }
 
-.call-to-action .overlay {
+/*.call-to-action .overlay {
   position: absolute;
   background-color: #212529;
   height: 100%;
@@ -118,7 +118,7 @@ header.masthead h1 {
   top: 0;
   left: 0;
   opacity: 0.3;
-}
+}*/
 
 footer.footer {
   padding-top: 4rem;

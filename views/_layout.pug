@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title The Gift Lab
+    title Gift Lab
     link(rel='stylesheet', href='/stylesheets/giftlab.css')
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     
@@ -29,7 +29,7 @@ html
 
     <meta property="og:url"                content="http://giftlab.io" />
     <meta property="og:type"               content="brand" />
-    <meta property="og:title"              content="The Gift Lab" />
+    <meta property="og:title"              content="Gift Lab" />
     <meta property="og:description"        content="helps you give directly to the causes you love" />
     <meta property="og:image"              content="./images/4_tigersharks/TigerShark_Main.jpg" />
     <meta name="description" content="Welcome" />
@@ -98,7 +98,15 @@ html
     // Footer
     footer.footer.bg-light.center(style="")
         .container
-            .row
+            div.row.h-100
+                ul.list-inline(style="margin: 0 auto !important; padding-bottom: 20px !important")
+                    li.list-inline-item
+                        a(href='https://www.facebook.com/giftlab.io/')
+                            i.fa.fa-facebook.fa-2x.fa-fw(style="color: darkgrey !important")
+                    li.list-inline-item
+                        a(href='https://www.instagram.com/giftlab.io/')
+                            i.fa.fa-instagram.fa-2x.fa-fw(style="color: darkgrey !important")
+            div.row
                 .col-12.h-100.text-center.my-auto
                     ul.list-inline.center
                         li.list-inline-item
@@ -112,24 +120,14 @@ html
                         //- li.list-inline-item ⋅
                         //- li.list-inline-item
                         //-     a(href='#') Privacy Policy
-                    p.small.mb-4.mb-lg-0(style="color: grey") © The Gift Lab 2018. All Rights Reserved.
+                    p.small.mb-4.mb-lg-0(style="color: grey") © Gift Lab 2018. All Rights Reserved.
                     
                     hr
                     
-            p.small.mb-4.mb-lg-0(style="color: grey; margin: 0 auto; max-width: 800px") The Gift Lab is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to amazon.com
+            p.small.mb-4.mb-lg-0(style="color: grey; margin: 0 auto; max-width: 800px") Gift Lab is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to amazon.com
 
 
-                //- .col-lg-6.h-100.text-center.text-lg-right.my-auto
-                //-     ul.list-inline.mb-0
-                //-         li.list-inline-item.mr-3
-                //-             a(href='#')
-                //-                 i.fa.fa-facebook.fa-2x.fa-fw
-                //-         li.list-inline-item.mr-3
-                //-             a(href='#')
-                //-                 i.fa.fa-twitter.fa-2x.fa-fw
-                //-         li.list-inline-item
-                //-             a(href='#')
-                //-                 i.fa.fa-instagram.fa-2x.fa-fw
+            
                                     
         // Bootstrap core JavaScript
         script(src='/vendor/jquery/jquery.min.js')
