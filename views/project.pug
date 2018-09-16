@@ -4,8 +4,7 @@ block content
 	// Image Showcases
 	<script src="https://www.paypalobjects.com/api/checkout.js"></script>
 
-	div.bg-white
-		section.showcase
+	section.showcase
 			.row.panel
 				.col-lg-4.my-auto.showcase-text.padding
 					h2 #{content.ProjectName}
@@ -16,145 +15,144 @@ block content
 				.col-lg-8.text-white.showcase-img(style="background-image: url(' "+content.image+" ')")
 				
 
-		section.row.row-eq-height.bg-white
-			div.col-md-4
-				div.padding.center
-					br
-					img.thumbnail(src=content.researcherimage alt="Image Title").center
-					br
-			div.col-md-8.panel.padding(style="background-color: black; background-image: none !important;")
-				h3= content["Researcher"]
-				p= content["Researcher profile"]
-			
-
-		
-		// Icons Grid
-		section.row.row-eq-height.bg-white
-				.container(style="padding: 20px")
-					br
-					br
-					h3.center How to contribute
-					br
-					p.lead.mb-0.center All donations to this project are tax deductible, simply select an item you'd like to purchase or a budget you'd like to donate to. If you have another idea on how you can fufill this need, contact us by completing the "donate differently" form. 
-					br
-
-					.row
-						.col-lg-4
-							.features-icons-item.mx-auto.mb-5.mb-lg-0.mb-lg-3
-								a.btn.btn-lg.btn-primary.orange(href="#items" style="padding: 20px") Gift Items in Need
-						.col-lg-4
-							.features-icons-item.mx-auto.mb-5.mb-lg-0.mb-lg-3
-								a.btn.btn-lg.btn-primary.green(href="#budgets"  style="padding: 20px") Donate to a Budget
-						.col-lg-4
-							.features-icons-item.mx-auto.mb-0.mb-lg-3
-								a.btn.btn-lg.btn-primary.blue(href="/contact"  style="padding: 20px") Give Differently
-
+	section.row.row-eq-height.bg-white
+		div.col-md-4
+			div.padding.center
+				br
+				img.thumbnail(src=content.researcherimage alt="Image Title").center
+				br
+		div.col-md-8.panel.padding
+			h3= content["Researcher"]
+			p= content["Researcher profile"]
 		
 
-		section.showcase.bg-white(id="items")
-			br
-			br
-			h3.center Items in Need
-			br
-			each val in skus
-				if val.bucket == "Item"
-					if val.status == "Active"
-						div.row.box-project(style="background-color: white") 
-							div.col-12
-								h5 #{val["sku_name"]} ($#{val['unit_cost']} each)
-								// p(style="color:grey")= val["Bucket"]
-							div.col-md-8
-								p= val["description"]
-								// p Need: #{val['quantity_need']}&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Total Cost: #{val['total_value']}
-								meter(min="0" value=val['donatedsofar'] max=val['Total Cost USD'] style="width: 100%; background-color: lightblue")
-								br
+	
+	// Icons Grid
+	section.row.row-eq-height.bg-white
+			.container(style="padding: 20px")
+				h3.center How to contribute
+				br
+				p.lead.mb-0.center All donations to this project are tax deductible, simply select an item you'd like to purchase or a budget you'd like to donate to. If you have another idea on how you can fufill this need, contact us by completing the "donate differently" form. 
+				br
+
+				.row
+					.col-lg-4
+						.features-icons-item.mx-auto.mb-5.mb-lg-0.mb-lg-3
+							a.btn.btn-lg.btn-primary.orange(href="#items" style="padding: 20px") Gift Items in Need
+					.col-lg-4
+						.features-icons-item.mx-auto.mb-5.mb-lg-0.mb-lg-3
+							a.btn.btn-lg.btn-primary.green(href="#budgets"  style="padding: 20px") Donate to a Budget
+					.col-lg-4
+						.features-icons-item.mx-auto.mb-0.mb-lg-3
+							a.btn.btn-lg.btn-primary.blue(href="/contact"  style="padding: 20px") Give Differently
+
+	
+
+	section.container(id="items").bg-white
+		h3.center Items in Need
+		br
+		each val in skus
+			if val.bucket == "Item"
+				if val.status == "Active"
+					div.row.box-project(style="background-color: white") 
+						div.col-12
+							h5 #{val["sku_name"]} ($#{val['unit_cost']} each)
+							// p(style="color:grey")= val["Bucket"]
+						div.col-md-8
+							p= val["description"]
+							// p Need: #{val['quantity_need']}&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Total Cost: #{val['total_value']}
+							meter(min="0" value=val['donatedsofar'] max=val['Total Cost USD'] style="width: 100%; background-color: lightblue")
+							br
+							p(style="text-align: right") Gifted: #{val['donatedsofar']} | Remaining: #{val['remaining']}
+						div.col-md-4
+							a(href=content.wishlistlink target="_blank").btn.btn-primary.orange.float-right(style="width: 100%; padding: 20px" ) Gift via Amazon
+							br
+							br
+							a(href="/contact" style="color: black").float-right or donate directly
+
+				else
+					div.row.box-project(style="background-color: lightgrey") 
+						div.col-12
+							h5 #{val["sku_name"]} ($#{val['unit_cost']} each)
+							// p(style="color:grey")= val["Bucket"]
+						div.col-md-8
+							p= val["description"]
+							// p Need: #{val['quantity_need']}&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Total Cost: #{val['total_value']}
+							meter(min="0" value=val['donatedsofar'] max=val['Total Cost USD'] style="width: 100%")
+							br
+							if val.donatedsofar == null
+								p(style="text-align: right") Gifted: 0 | Remaining: #{val['remaining']}
+							else
 								p(style="text-align: right") Gifted: #{val['donatedsofar']} | Remaining: #{val['remaining']}
-							div.col-md-4
-								a(href=content.wishlistlink target="_blank").btn.btn-primary.orange.float-right(style="width: 100%; padding: 20px" ) Gift via Amazon
-								br
-								br
-								a(href="/contact" style="color: black").float-right or donate directly
+						div.col-md-4
+							// a(href=content.wishlistlink target="_blank").btn.btn-primary.orange.pull-right(style="width: 100%; padding: 20px" ) Gift via Amazon
+							// br
+							// br
+							// a(href="/contact").pull-right or donate directly
 
-					else
-						div.row.box-project(style="background-color: #f8f9fa	") 
-							div.col-12
-								h5 #{val["sku_name"]} ($#{val['unit_cost']} each)
-								// p(style="color:grey")= val["Bucket"]
-							div.col-md-8
-								p= val["description"]
-								// p Need: #{val['quantity_need']}&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Total Cost: #{val['total_value']}
-								meter(min="0" value=val['donatedsofar'] max=val['Total Cost USD'] style="width: 100%")
-								br
-								p(style="text-align: right") Gifted: #{val['donatedsofar']} | Remaining: #{val['remaining']}
-							div.col-md-4
-								// a(href=content.wishlistlink target="_blank").btn.btn-primary.orange.pull-right(style="width: 100%; padding: 20px" ) Gift via Amazon
-								// br
-								// br
-								// a(href="/contact").pull-right or donate directly
-
-			
 		
-								
-		section.showcase.bg-white(id="budgets").padding
+	
+							
+	section.container(id="budgets").bg-white
+		br
+		br
+		h3.center Project Budgets
+		p.lead.mb-0.center Our project teams have worked hard to give the best estimates possible, but budgets and prices of items can fluctuate. Should something change, your monetary donation will be used for another aspect of this project.
+		br
 
-			h3.center Project Budgets
-			p.lead.mb-0.center Our project teams have worked hard to give the best estimates possible, but budgets and prices of items can fluctuate. Should something change, your monetary donation will be used for another aspect of this project.
-			br
 
-
-			each val in skus
-				if val.bucket == "Budget"
-					if val.status == "Active"
-						div.row.box-project(style="background-color: white")
-							div.col-12
-								h5 #{val["sku_name"]}
-								// p(style="color:grey")= val["Bucket"]
-							div.col-md-8
-								div(id=val['sku'])
-									p= val["description"]
-									// p Total Budget: $#{val['total_value']}
-									meter(min="0" value=val['donatedsofar'] max=val['total_value'] style="width: 100%").float-right
-									br
-									if val.donatedsofar == null
-										p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining']}
-									else
-										p(style="text-align: right") Gifted: $#{val['donatedsofar']} | Remaining: $#{val['remaining']}
-							div.col-md-4(style="text-align: right")
-								div.row
-									div.test
-										input.myInput(type="number" name="amount" value="20" min="0" max=val['total_value'] class=val['sku'])
+		each val in skus
+			if val.bucket == "Budget"
+				if val.status == "Active"
+					div.row.box-project(style="background-color: white")
+						div.col-12
+							h5 #{val["sku_name"]}
+							// p(style="color:grey")= val["Bucket"]
+						div.col-md-8
+							div(id=val['sku'])
+								p= val["description"]
+								// p Total Budget: $#{val['total_value']}
+								meter(min="0" value=val['donatedsofar'] max=val['total_value'] style="width: 100%").float-right
 								br
-								div.row
-									div(data-sku=val['sku']).paypal-button.float-right
-								// div.row
-								// 	a(href="/contact").pull-right or donate differently
+								if val.donatedsofar == null
+									p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining']}
+								else
+									p(style="text-align: right") Gifted: $#{val['donatedsofar']} | Remaining: $#{val['remaining']}
+						div.col-md-4(style="text-align: right")
+							div.row
+								div.test
+									input.myInput(type="number" name="amount" value="20" min="0" max=val['total_value'] class=val['sku'])
+							br
+							div.row
+								div(data-sku=val['sku']).paypal-button.float-right
+							// div.row
+							// 	a(href="/contact").pull-right or donate differently
 
-					else
-						div.row.box-project(style="background-color: #f8f9fa")
-							div.col-12
-								h5 #{val["sku_name"]}
-								// p(style="color:grey")= val["Bucket"]
-							div.col-md-8
-								div(id=val['sku'])
-									p= val["description"]
-									// p Total Budget: $#{val['total_value']}
-									meter(min="0" value=val['donatedsofar'] max=val['total_value'] style="width: 100%").float-right
-									br
-									if val.donatedsofar == null
-										p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining']}
-									else
-										p(style="text-align: right") Gifted: $#{val['donatedsofar']} | Remaining: $#{val['remaining']}
-							div.col-md-4
-								// div.row
-								// 	p.col-3 $
-								// 	input.form-control.col-8(type="number" name="amount" value="20" min="0" max=val['total_value'] class=val['sku'])
-								// br
-								// div.row
-								// 	div(data-sku=val['sku']).paypal-button.pull-right
-								// 	a(href="/contact").pull-right or donate directly					
-										
-		section.showcase.bg-white
-			br
+				else
+					div.row.box-project(style="background-color: lightgrey")
+						div.col-12
+							h5 #{val["sku_name"]}
+							// p(style="color:grey")= val["Bucket"]
+						div.col-md-8
+							div(id=val['sku'])
+								p= val["description"]
+								// p Total Budget: $#{val['total_value']}
+								meter(min="0" value=val['donatedsofar'] max=val['total_value'] style="width: 100%").float-right
+								br
+								if val.donatedsofar == null
+									p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining']}
+								else
+									p(style="text-align: right") Gifted: $#{val['donatedsofar']} | Remaining: $#{val['remaining']}
+						div.col-md-4
+							// div.row
+							// 	p.col-3 $
+							// 	input.form-control.col-8(type="number" name="amount" value="20" min="0" max=val['total_value'] class=val['sku'])
+							// br
+							// div.row
+							// 	div(data-sku=val['sku']).paypal-button.pull-right
+							// 	a(href="/contact").pull-right or donate directly					
+									
+
 		
 			
 		script.
