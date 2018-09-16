@@ -60,7 +60,6 @@ router.post( '/signup', function (req, result) {
       }
       client.end();
   }); 
-  result.redirect('/home_success#signup');
 })
 
 
