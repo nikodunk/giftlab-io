@@ -10,7 +10,7 @@ var paypalRouter = require('./routes/paypal');
 
 const expressGa = require('express-ga-middleware');
 
-app.use(expressGa('UA-121905544-1'));
+
 // var expressGoogleAnalytics = require('express-google-analytics');
 // var analytics = expressGoogleAnalytics('UA-121905544-1');
 
@@ -28,7 +28,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // app.use(analytics);
-
+app.use(expressGa('UA-121905544-1'));
 
 app.use('/', homeRouter);
 app.use('/projects', projectsRouter);
