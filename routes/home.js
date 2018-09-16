@@ -40,8 +40,8 @@ router.get('/thanks/', function(req, res, next) {
 
 
 
-router.get('/.well-known/acme-challenge/lxIQYmqIiRMjUctSRzM6IhB9c3_CpQCQ5ux3vY-z8mE', (req, res)=>{
- res.send('jO-F5psy_N7zi9Oh8CVUjPFSmgmKoIa0GQqLZ40SZMU.XnHIB3tAEZqwZCdaZIqn6YtQlH_dDr4Jh8N68fy_sXA');
+router.get('/.well-known/acme-challenge/jxvKfAiNHcyEsrIl8ArTE4OOLFneo4coRc6VqkNYvvo', (req, res)=>{
+ res.send('jxvKfAiNHcyEsrIl8ArTE4OOLFneo4coRc6VqkNYvvo.XnHIB3tAEZqwZCdaZIqn6YtQlH_dDr4Jh8N68fy_sXA');
 })
 
 
