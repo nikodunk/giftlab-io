@@ -27,7 +27,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// app.use(analytics);
+app.use(expressGa('UA-121905544-1'));
 
+
+app.use('/', homeRouter);
+app.use('/projects', projectsRouter);
+app.use('/paypal', paypalRouter);
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -35,13 +41,6 @@ app.use(function(req, res, next) {
   next();
 });
 
-
-// app.use(analytics);
-app.use(expressGa('UA-121905544-1'));
-
-app.use('/', homeRouter);
-app.use('/projects', projectsRouter);
-app.use('/paypal', paypalRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
