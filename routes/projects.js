@@ -29,7 +29,7 @@ function getData(projectNumber, res){
                       FULL OUTER JOIN orders ON (skus.sku = orders.sku) 
                       WHERE projectid = '`+projectNumber+`'
                       GROUP BY skus.sku
-                      SORT BY orderssofar;`, (err, queryResult) => {
+                      ORDER BY orderssofar;`, (err, queryResult) => {
                       if(err){console.log(err)}
 
                       var skuList = []
