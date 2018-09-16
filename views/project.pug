@@ -61,7 +61,7 @@ block content
 						div.col-md-8
 							p= val["description"]
 							// p Need: #{val['quantity_need']}&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Total Cost: #{val['total_value']}
-							meter(min="0" value=val['donatedsofar'] max=val['Total Cost USD'] style="width: 100%")
+							meter(min="0" value=val['donatedsofar'] max=val['Total Cost USD'] style="width: 100%; background-color: lightblue")
 							br
 							p(style="text-align: right") Gifted: #{val['donatedsofar']} | Remaining: #{val['remaining']}
 						div.col-md-4
@@ -148,7 +148,9 @@ block content
 							// div.row
 							// 	div(data-sku=val['sku']).paypal-button.pull-right
 							// 	a(href="/contact").pull-right or donate directly
-							
+		br
+		br
+		br					
 									
 
 		
