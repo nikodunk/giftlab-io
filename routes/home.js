@@ -28,16 +28,6 @@ router.get('/contact', function(req, res, next) {
   res.render('contact');
 });
 
-router.get('/home_success', function(req, res, next) {
-  res.render('home_success', { 
-                content: content
-              });
-});
-
-router.get('/thanks/', function(req, res, next) {
-  res.render('thanks')
-});
-
 
 
 router.get('/.well-known/acme-challenge/jxvKfAiNHcyEsrIl8ArTE4OOLFneo4coRc6VqkNYvvo', (req, res)=>{
@@ -47,6 +37,7 @@ router.get('/.well-known/acme-challenge/jxvKfAiNHcyEsrIl8ArTE4OOLFneo4coRc6VqkNY
 
 
 router.post( '/signup', function (req, result) {
+  console.log(req.body.email)
 	client.query(`SELECT * FROM marketing WHERE email = '`+req.body.email+`';`, (err, res) => {
       //if (err) throw err;
       console.log(res.rows.length)
@@ -60,6 +51,7 @@ router.post( '/signup', function (req, result) {
       }
       client.end();
   }); 
+  result.send('working')
 })
 
 

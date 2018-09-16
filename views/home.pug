@@ -104,7 +104,7 @@ block content
 				.col-xl-9.mx-auto
 					h2.mb-4 Subscribe to our newsletter for all the best updates
 				.col-md-10.col-lg-8.col-xl-7.mx-auto
-					form
+					form(id="asdf" action="/signup" method="post")
 						.form-row
 							.col-12.col-md-9.mb-2.mb-md-0
 								input.form-control.form-control-lg(type='email', placeholder='Enter your email', name='email' id="email")
@@ -112,21 +112,23 @@ block content
 								button.btn.btn-lg.btn-primary( id="register").jumbotronbutton SUBMIT
 
 	script.
-		$(document).ready(function(event) {
-			$("#register").click(function() {
-				console.log('asdf')
-				$.ajax({
-				  type: "POST",
-				  url: 'http://giftlab.io/signup',
-				  data: 'asdf',
-				  success: function (data){
-					$( "#signupform" ).replaceWith( "<br><br><h3 style='color: white'>Successfully signed up!</h3><br><br><br>" )
-					}
-				});
-				event.preventDefault();
-				//- $("#email").val(),
-			})
-		})
+		$("#asdf").submit(function(e) {
+		    var form = $(this);
+		    var url = form.attr('action');
+		    console.log(url, $('#email').val())
+		    $.ajax({
+		           type: "POST",
+		           url: url,
+		           data: {email: $('#email').val()}, // serializes the form's elements.
+		           success: function(data)
+		           {
+		               $( "#signupform" ).replaceWith( "<br><br><h3 style='color: white'>Successfully signed up!</h3><br><br><br>" )
+					
+		           }
+		         });
+
+		    e.preventDefault(); // avoid to execute the actual submit of the form.
+		});
 		
 		  
 		
