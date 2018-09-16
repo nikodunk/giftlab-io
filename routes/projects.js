@@ -43,7 +43,7 @@ function getData(projectNumber, res){
                                   'bucket': row.bucket,
                                   "description": row.description,
                                   "unit_cost": row.unit_cost,
-                                  "donatedsofar": numberWithCommas(row.orderssofar),
+                                  "donatedsofar": numberWithCommas(parseInt(row.orderssofar)),
                                   "total_need": row.total_need,
                                   "status": (parseInt(row.total_need) - (row.orderssofar ? row.orderssofar : 0) > 0 ? "Active" : "Complete"),
                                   "remaining": numberWithCommas(parseInt(row.total_need) - (row.orderssofar ? parseInt(row.orderssofar) : 0)),
