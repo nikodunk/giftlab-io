@@ -160,8 +160,8 @@ hr {
 .test:before {
     content: '$';
     position: absolute;
-    top: 0;
-    left: 10px;
+    top: 5px;
+    left: 15px;
     z-index: 1;
 }
 
