@@ -39,11 +39,12 @@ router.get('/.well-known/acme-challenge/jxvKfAiNHcyEsrIl8ArTE4OOLFneo4coRc6VqkNY
 router.post( '/signup', function (req, result) {
   console.log(req.body.email)
 	client.query(`SELECT * FROM marketing WHERE email = '`+req.body.email+`';`, (err, res) => {
-      //if (err) throw err;
+      if (err) throw err;
       console.log(res.rows.length)
       if (res.rows.length === 0){ 
         console.log('doesnt exist')
         client.query(`INSERT INTO marketing VALUES ('`+req.body.email+`');`, (err, res) => {
+          if (err) throw err;
           result.send('done')
         }); 
       }
