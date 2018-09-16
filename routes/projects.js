@@ -10,6 +10,10 @@ client.connect();
 
 var content = require('../public/javascripts/content.json')
 
+const numberWithCommas = (x) => {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 
 function getData(projectNumber, res){
     
@@ -42,7 +46,7 @@ function getData(projectNumber, res){
                                   "donatedsofar": row.orderssofar,
                                   "total_need": row.total_need,
                                   "status": (parseInt(row.total_need) - (row.orderssofar ? row.orderssofar : 0) > 0 ? "Active" : "Complete"),
-                                  "remaining": parseInt(row.total_need) - (row.orderssofar ? parseInt(row.orderssofar) : 0),
+                                  "remaining": numberWithCommas(parseInt(row.total_need) - (row.orderssofar ? parseInt(row.orderssofar) : 0)),
                                 }
                                 // Add object into array
                                 skuList.push(sku);
