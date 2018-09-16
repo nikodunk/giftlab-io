@@ -41,7 +41,7 @@ router.get('/thanks/', function(req, res, next) {
 
 
 router.get('/.well-known/acme-challenge/lxIQYmqIiRMjUctSRzM6IhB9c3_CpQCQ5ux3vY-z8mE', (req, res)=>{
- res.send('lxIQYmqIiRMjUctSRzM6IhB9c3_CpQCQ5ux3vY-z8mE.XnHIB3tAEZqwZCdaZIqn6YtQlH_dDr4Jh8N68fy_sXA');
+ res.send('jO-F5psy_N7zi9Oh8CVUjPFSmgmKoIa0GQqLZ40SZMU.XnHIB3tAEZqwZCdaZIqn6YtQlH_dDr4Jh8N68fy_sXA');
 })
 
 
