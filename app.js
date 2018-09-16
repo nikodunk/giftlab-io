@@ -8,8 +8,11 @@ var homeRouter = require('./routes/home');
 var projectsRouter = require('./routes/projects');
 var paypalRouter = require('./routes/paypal');
 
-var expressGoogleAnalytics = require('express-google-analytics');
-var analytics = expressGoogleAnalytics('UA-121905544-1');
+const expressGa = require('express-ga-middleware');
+
+app.use(expressGa('UA-121905544-1'));
+// var expressGoogleAnalytics = require('express-google-analytics');
+// var analytics = expressGoogleAnalytics('UA-121905544-1');
 
 var app = express();
 
@@ -24,7 +27,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(analytics);
+// app.use(analytics);
 
 
 app.use('/', homeRouter);
