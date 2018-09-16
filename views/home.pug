@@ -63,7 +63,7 @@ block content
 
 	section.container
 		section.row
-			h1(id="projects") Current Projects
+			h3(id="projects") Current Projects
 		section.row.row-eq-height
 			each val in content
 				if val.Status === "Active"
@@ -81,7 +81,7 @@ block content
 		br
 		br
 		section.row
-			h1(id="projects") Complete
+			h3(id="projects") Complete
 		section.row.row-eq-height
 			each val in content
 				if val.Status === "Complete"
@@ -96,8 +96,8 @@ block content
 								//- 	span(style="color: lightgreen") #{val["Status"]}
 								p(style="color: grey") #{val["Project Description - Short"]}
 
-
-	hr
+	br
+	br
 
 
 	// Call to Action
@@ -113,7 +113,7 @@ block content
 							.col-12.col-md-9.mb-2.mb-md-0
 								input.form-control.form-control-lg(type='email', placeholder='Enter your email', name='email')
 							.col-12.col-md-3
-								button.btn.btn-block.btn-lg.btn-primary(type='submit') SUBMIT
+								button.btn.btn-lg.btn-primary(type='submit').jumbotronbutton SUBMIT
 
 	br
 	br
