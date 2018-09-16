@@ -5,7 +5,7 @@ block content
 	section.showcase
 		.container-fluid.p-0
 			.row.no-gutters.panel
-				.col-lg-8.text-white.showcase-img(style="background-image: url('/images/home/bullshark.jpg');")
+				.col-lg-8.text-white.showcase-img(style="background-image: url('/images/0_home/Main_About.jpg');")
 				.col-lg-4.my-auto.padding
 					h2 Support great causes
 					p.lead.mb-0
@@ -24,7 +24,7 @@ block content
 				.row
 					.col-lg-4
 						.features-icons-item.mx-auto.mb-5.mb-lg-0.mb-lg-3
-							img.img-fluid(src="./images/home/FindProject.png")
+							img.img-fluid(src="./images/0_home/FindProject.png")
 							br
 							br
 							h3 Find a project
@@ -32,7 +32,7 @@ block content
 
 					.col-lg-4
 						.features-icons-item.mx-auto.mb-5.mb-lg-0.mb-lg-3
-							img.img-fluid(src="./images/home/GiveDirectly.png")
+							img.img-fluid(src="./images/0_home/GiveDirectly.png")
 							br
 							br
 							h3 Donate differently
@@ -40,7 +40,7 @@ block content
 
 					.col-lg-4
 						.features-icons-item.mx-auto.mb-0.mb-lg-3
-							img.img-fluid(src="./images/home/Thanks.png")
+							img.img-fluid(src="./images/0_home/Thanks.png")
 							br
 							br
 							h3 Stay updated
@@ -51,7 +51,7 @@ block content
 	section.showcase
 		.container-fluid.p-0
 			.row.no-gutters.panel
-				.col-lg-8.order-lg-2.text-white.showcase-img(style="background-image: url('/images/about/IMG_2598.JPG');")
+				.col-lg-8.order-lg-2.text-white.showcase-img(style="background-image: url('/images/0_home/Main_Projects.jpg');")
 				.col-lg-4.order-lg-1.my-auto.padding
 					h2 Find a project
 					p.lead.mb-0 that you're passionate about and help launch it
@@ -63,7 +63,7 @@ block content
 
 	section.container
 		section.row
-			h1(id="projects") Current Projects
+			h3(id="projects") Current Projects
 		section.row.row-eq-height
 			each val in content
 				if val.Status === "Active"
@@ -73,25 +73,28 @@ block content
 								img.img-fluid(src=val.image)
 								br
 								br
-								h3 #{val.ProjectName}
-								p Status: 
-									span(style="color: lightgreen") #{val["Status"]}
+								h5 #{val.ProjectName}
+								//- p Status: 
+								//- 	span(style="color: lightgreen") #{val["Status"]}
 								p(style="color: grey") #{val["Project Description - Short"]}
 
-				else if val.Status === "Complete"
+		br
+		br
+		section.row
+			h3(id="projects") Complete
+		section.row.row-eq-height
+			each val in content
+				if val.Status === "Complete"
 					div.col-md-4(style="padding: 10px")
 						a(href=val.slug).nolinks
-							div.center.box(style="background-color: lightgrey")
+							div.center.box.bg-white
 								img.img-fluid(src=val.image)
 								br
 								br
-								h3 #{val.ProjectName}
-								p Status: 
-									span(style="color: lightgreen") #{val["Status"]}
+								h5 #{val.ProjectName}
+								//- p Status: 
+								//- 	span(style="color: lightgreen") #{val["Status"]}
 								p(style="color: grey") #{val["Project Description - Short"]}
-
-
-	hr
 
 
 
