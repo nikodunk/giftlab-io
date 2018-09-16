@@ -74,9 +74,9 @@ block content
 							meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: lightblue")
 							br
 							if val.donatedsofar == null
-								p(style="text-align: right") Gifted: 0 | Remaining: #{val['remaining']}
+								p(style="text-align: right") Gifted: 0 | Remaining: #{val['remaining_pretty']}
 							else
-								p(style="text-align: right") Gifted: #{val['donatedsofar_pretty']} | Remaining: #{val['remaining']}
+								p(style="text-align: right") Gifted: #{val['donatedsofar_pretty']} | Remaining: #{val['remaining_pretty']}
 						div.col-md-4
 							a(href=content.wishlistlink target="_blank").btn.btn-primary.orange.float-right(style="width: 100%; padding: 20px" ) Gift via Amazon
 							br
@@ -94,9 +94,9 @@ block content
 							meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%")
 							br
 							if val.donatedsofar == null
-								p(style="text-align: right") Gifted: 0 | Remaining: #{val['remaining']}
+								p(style="text-align: right") Gifted: 0 | Remaining: #{val['remaining_pretty']}
 							else
-								p(style="text-align: right") Gifted: #{val['donatedsofar_pretty']} | Remaining: #{val['remaining']}
+								p(style="text-align: right") Gifted: #{val['donatedsofar_pretty']} | Remaining: #{val['remaining_pretty']}
 						div.col-md-4
 							// a(href=content.wishlistlink target="_blank").btn.btn-primary.orange.pull-right(style="width: 100%; padding: 20px" ) Gift via Amazon
 							// br
@@ -128,9 +128,9 @@ block content
 								meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%").float-right
 								br
 								if val.donatedsofar == null
-									p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining']}
+									p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining_pretty']}
 								else
-									p(style="text-align: right") Gifted: $#{val['donatedsofar_pretty']} | Remaining: $#{val['remaining']}
+									p(style="text-align: right") Gifted: $#{val['donatedsofar_pretty']} | Remaining: $#{val['remaining_pretty']}
 						div.col-md-4(style="text-align: right")
 							div.row
 								div.test
@@ -153,9 +153,9 @@ block content
 								meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%").float-right
 								br
 								if val.donatedsofar == null
-									p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining']}
+									p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining_pretty']}
 								else
-									p(style="text-align: right") Gifted: $#{val['donatedsofar_pretty']} | Remaining: $#{val['remaining']}
+									p(style="text-align: right") Gifted: $#{val['donatedsofar_pretty']} | Remaining: $#{val['remaining_pretty']}
 						div.col-md-4
 							// div.row
 							// 	p.col-3 $
