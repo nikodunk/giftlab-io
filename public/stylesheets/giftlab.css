@@ -161,7 +161,7 @@ hr {
     content: '$';
     position: absolute;
     top: 5px;
-    left: 15px;
+    left: 10px;
     z-index: 1;
 }
 
@@ -170,6 +170,6 @@ hr {
   padding: 5px;
   border: 1px solid lightgrey;
   border-radius: 3px;
-  padding-left: 20px;
+  padding-left: 25px;
 }
 
