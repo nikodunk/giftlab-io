@@ -9,10 +9,11 @@ const client = new Client({
 client.connect();
 
 var Mixpanel = require('mixpanel');
+var mixpanel = Mixpanel.init('bba2c237fccc04b19cec51dee15cf123');
 
 var content = require('../public/javascripts/content.json')
 
-var mixpanel = Mixpanel.init('bba2c237fccc04b19cec51dee15cf123');
+
 
 
 
@@ -28,11 +29,13 @@ router.get('/', function(req, res, next) {
 router.get('/about', function(req, res, next) {
   // visitor.pageview("/about", "http://giftlab.io", "Welcome").send();
   res.render('about');
+  mixpanel.track('about_loaded');
 });
 
 
 router.get('/contact', function(req, res, next) {
   res.render('contact');
+  mixpanel.track('contact_loaded');
 });
 
 
@@ -46,6 +49,7 @@ router.get('/.well-known/acme-challenge/jxvKfAiNHcyEsrIl8ArTE4OOLFneo4coRc6VqkNY
 router.post( '/signup', function (req, result) {
   console.log(req.body.email)
   client.query(`INSERT INTO marketing VALUES ('`+req.body.email+`');`); 
+  mixpanel.track('signup_clicked');
 	// client.query(`SELECT * FROM marketing WHERE email = '`+req.body.email+`';`, (err, res) => {
  //      if (err) throw err;
  //      console.log(res)

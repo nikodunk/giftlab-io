@@ -10,6 +10,11 @@ client.connect();
 
 var content = require('../public/javascripts/content.json')
 
+var Mixpanel = require('mixpanel');
+var mixpanel = Mixpanel.init('bba2c237fccc04b19cec51dee15cf123');
+
+
+
 const numberWithCommas = (x) => {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
@@ -66,19 +71,23 @@ function getData(projectNumber, res){
 
 router.get('/leatherbacks/', function(req, res, next) {
     getData(1, res)
+    mixpanel.track('leatherbacks_loaded');
 });
 
 router.get('/salmon/', function(req, res, next) {
     getData(2, res)
+    mixpanel.track('salmon_loaded');
 });
 
 
 router.get('/microplastics/', function(req, res, next) {
   getData(3, res)
+  mixpanel.track('microplastics_loaded');
 });
 
 router.get('/tigersharks/', function(req, res, next) {
   getData(4, res)
+  mixpanel.track('tigersharks_loaded');
 });
 
 
