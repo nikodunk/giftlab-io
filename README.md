@@ -2,4 +2,4 @@
 
 To run locally:
 
-	DEBUG=thegiftlab:* npm start
+	npm start
