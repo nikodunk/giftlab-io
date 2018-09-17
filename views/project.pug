@@ -226,5 +226,5 @@ block content
 			})
 
 			$( document ).ready(function() {
-			    mixpanel.track(window.location.pathname.substr(10) + '_loaded');
+			    mixpanel.track('project_page_loaded', {project: window.location.pathname.substr(10)});
 			});
