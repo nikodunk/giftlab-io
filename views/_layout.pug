@@ -34,10 +34,15 @@ html
     <meta property="og:image"              content="./images/0_home/Main_About.jpg" />
     <meta name="description" content="Welcome" />
 
+    script.
+	    var host = "www.giftlab.io";
+	    if ((host == window.location.host) && (window.location.protocol != "https:")){
+	    window.location.protocol = "https";
+	    }
     
     
 
-    script.
+    
         window['_fs_debug'] = false;
         window['_fs_host'] = 'fullstory.com';
         window['_fs_org'] = 'EX8TC';
