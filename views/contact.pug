@@ -30,3 +30,9 @@ block content
 										button.btn.btn-block.btn-lg.btn-primary(type='submit') Send
 		br
 		br
+
+
+	script.
+		$( document ).ready(function() {
+		    mixpanel.track('contact');
+		});

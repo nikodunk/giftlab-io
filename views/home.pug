@@ -94,6 +94,11 @@ block content
 									//- p Status: 
 									//- 	span(style="color: lightgreen") #{val["Status"]}
 									p(style="color: grey; padding-left: 20px; padding-right: 20px") #{val["Project Description - Short"]}
+	
+	script.
+		$( document ).ready(function() {
+		    mixpanel.track("new_homepage_loaded");
+		});
 
 
 

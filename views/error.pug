@@ -5,3 +5,10 @@ block content
   h2= message
   h2= error.status
   pre #{error.stack}
+
+
+
+ script.
+ 	$( document ).ready(function() {
+ 	    mixpanel.track('error!');
+ 	});

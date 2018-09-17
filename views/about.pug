@@ -81,4 +81,7 @@ block content
 							li Contact details and main point of contact
 						p From here one of our team will be in touch to discuss the process of listing and next steps. Keep in mind we are a small team so it may take us a few days to respond.  
 
-
+	script.
+		$( document ).ready(function() {
+		    mixpanel.track('about');
+		});

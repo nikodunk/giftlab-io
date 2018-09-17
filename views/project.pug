@@ -191,6 +191,8 @@ block content
 					payment: function(data, actions) {
 						// 2. Make a request to your server
 						// console.log(document.getElementsByClassName(selector.dataset.sku)[0].value)
+						mixpanel.track('paypal_clicked');
+						
 						return actions.request.post('/paypal/create-payment/'+selector.dataset.sku+'/'+document.getElementsByClassName(selector.dataset.sku)[0].value)
 							.then(function(res) {
 								console.log(res)
@@ -202,13 +204,14 @@ block content
 					// 1. Add an onAuthorize callback
 					onAuthorize: function(data, actions) {
 						// 2. Make a request to your server
+
 						return actions.request.post('/paypal/execute-payment/'+selector.dataset.sku+'/'+document.getElementsByClassName(selector.dataset.sku)[0].value, {
 							paymentID: data.paymentID,
 							payerID:   data.payerID
 						})
 						.then(function(res) {
 							// 3. Show the buyer a confirmation message.
-							
+							mixpanel.track('paypal_finished');
 							window.setTimeout(function() {
 								window.location.reload();
 								}, 6000);
@@ -221,3 +224,7 @@ block content
 					}
 				}, selector);
 			})
+
+		$( document ).ready(function() {
+		    mixpanel.track(content.ProjectName);
+		});

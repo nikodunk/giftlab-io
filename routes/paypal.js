@@ -11,8 +11,8 @@ client.connect();
 var paypal = require('paypal-rest-sdk');
 var request = require('request');
 
-var Mixpanel = require('mixpanel');
-var mixpanel = Mixpanel.init('bba2c237fccc04b19cec51dee15cf123');
+// var Mixpanel = require('mixpanel');
+// var mixpanel = Mixpanel.init('bba2c237fccc04b19cec51dee15cf123');
 
 
 var PAYPAL_ID =  process.env.PAYPAL_ID;
@@ -28,7 +28,7 @@ var PAYPAL_API = 'https://api.paypal.com';
   // 1. Set up a URL to handle requests from the PayPal button
   router.post('/create-payment/:sku/:amount/', function(req, res){
 
-    mixpanel.track('paypal_clicked');
+    // mixpanel.track('paypal_clicked');
     // 2. Call /v1/payments/payment to set up the payment
     request.post(PAYPAL_API + '/v1/payments/payment',
     {
@@ -152,7 +152,7 @@ var PAYPAL_API = 'https://api.paypal.com';
                             response.body.transactions[0].payee.email+`');`)
 
         // 4. Return a success response to the client
-        mixpanel.track('paypal_finished');
+        // mixpanel.track('paypal_finished');
         res.json(
         {
           status: 'success',
