@@ -8,7 +8,12 @@ const client = new Client({
 
 client.connect();
 
+var Mixpanel = require('mixpanel');
+
 var content = require('../public/javascripts/content.json')
+
+var mixpanel = Mixpanel.init('bba2c237fccc04b19cec51dee15cf123');
+
 
 
 
@@ -17,9 +22,11 @@ router.get('/', function(req, res, next) {
   res.render('home', { 
                 content: content
               });
+  mixpanel.track('homepage_loaded');
 });
 
 router.get('/about', function(req, res, next) {
+  // visitor.pageview("/about", "http://giftlab.io", "Welcome").send();
   res.render('about');
 });
 
