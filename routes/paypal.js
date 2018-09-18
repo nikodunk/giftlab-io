@@ -22,7 +22,7 @@ var PAYPAL_CLIENT_SECRET =  process.env.PAYPAL_CLIENT_SECRET
 var PAYPAL_API = 'https://api.paypal.com';
 
 
-
+// STRIPE WILL BE INTEGRATED HERE?
 
   // Set up the payment:
   // 1. Set up a URL to handle requests from the PayPal button
