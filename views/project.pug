@@ -170,37 +170,33 @@ block content
 									
 
 		
-		
+		<script src="https://checkout.stripe.com/checkout.js"></script>
+
+
 		script.
-			$( document ).ready(function() {
-				    mixpanel.track('project_page_loaded', {project: window.location.pathname.substr(10)});
-				});
-
-
-			var checkout = StripeCheckout.configure({
-				key: '#{accessKey}',
-				token: function(token) {
-					window.location.replace('/stripe/charge/' + token.id)
-				},
-				image: 'https://www.simonho.net/MyImg150x150.jpg',
-				locale: 'en-US'
+			var handler = StripeCheckout.configure({
+			  key: 'pk_test_ydRKo3Vg1C9THBrpoftH1HbD',
+			  image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+			  locale: 'auto',
+			  token: function(token) {
+			    // You can access the token ID with `token.id`.
+			    // Get the token ID to your server-side code for use.
+			  }
 			});
 
-			// Open Checkout when the link is clicked
-			$('#pay').on('click', function(evt) {
-				checkout.open({
-					name: 'simonho288',
-					email: 'go@simonho.net',
-					description: 'Test Payment 2',
-					currency: 'usd',
-					amount: 100
-				});
-				evt.preventDefault();
+			document.getElementById('customButton').addEventListener('click', function(e) {
+			  // Open Checkout with further options:
+			  handler.open({
+			    name: 'giftlab.io',
+			    description: '2 widgets',
+			    amount: 2000
+			  });
+			  e.preventDefault();
 			});
 
 			// Close Checkout on page navigation:
 			window.addEventListener('popstate', function() {
-				checkout.close();
+			  handler.close();
 			});
 
 
