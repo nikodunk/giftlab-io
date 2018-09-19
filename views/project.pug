@@ -4,6 +4,7 @@ block content
 	
 	<script src="https://checkout.stripe.com/checkout.js"></script>
 
+
 	section.showcase
 			.row.panel
 				.col-lg-4.my-auto.showcase-text.padding
@@ -140,7 +141,7 @@ block content
 									input.myInput(type="number" name="amount" value="20" min="0" max=val['total_need'] class=val['sku'])
 							br
 							div.row
-								a(class="btn btn-primary stripe" id=val['sku'] data-sku=val['sku'] href="") Give with Card now
+								<button id="customButton">Purchase</button>
 
 							// div.row
 							// 	a(href="/contact").pull-right or donate differently
@@ -185,11 +186,13 @@ block content
 			  }
 			});
 
+			
+
 			document.querySelectorAll('.stripe').forEach(function(selector) {
 
 				console.log(selector.dataset.sku)
 
-				document.getElementById(selector.dataset.sku).addEventListener('click', function(e) {
+				document.getElementById('customButton').addEventListener('click', function(e) {
 				  // Open Checkout with further options:
 				  handler.open({
 				    name: 'giftlab.io',
