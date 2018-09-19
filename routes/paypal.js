@@ -9,11 +9,12 @@ const client = new Client({
 client.connect();
 
 // See your keys here: https://dashboard.stripe.com/account/apikeys
-var stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
+var stripe = require("stripe")("sk_test_FufIvJxq2f94m1QAt1T12wMR");
 
 
-  router.get('/charge/:token', (req, res) => {
-    let token = req.params.token
+
+  router.get('/charge/', (req, res) => {
+    let token = request.body.stripeToken;
     console.assert(token)
     const amount = CHARGE_AMOUNT * 100
     stripe.charges.create({
