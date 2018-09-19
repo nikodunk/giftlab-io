@@ -185,7 +185,9 @@ block content
 			  }
 			});
 
-			document.querySelectorAll('.stripe').forEach(function(selector) {
+			document.querySelectorAll('.stripe').forEach((selector) => {
+
+				console.log(selector.dataset.sku)
 
 				document.getElementById(selector.dataset.sku).addEventListener('click', function(e) {
 				  // Open Checkout with further options:
