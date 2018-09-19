@@ -187,7 +187,7 @@ block content
 
 			document.querySelectorAll('.stripe').forEach(function(selector) {
 
-				document.getElementById(selector).addEventListener('click', function(e) {
+				selector.addEventListener('click', function(e) {
 				  // Open Checkout with further options:
 				  handler.open({
 				    name: 'giftlab.io',
