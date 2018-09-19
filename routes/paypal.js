@@ -8,6 +8,8 @@ const client = new Client({
 
 client.connect();
 
+// See your keys here: https://dashboard.stripe.com/account/apikeys
+var stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
 
 
   // Set up the payment:
@@ -15,9 +17,7 @@ client.connect();
   router.post('/create-payment/:sku/:amount/', function(req, res){
 
     
-    // See your keys here: https://dashboard.stripe.com/account/apikeys
-    var stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
-
+  
     stripe.charges.create({
       amount: 1000,
       currency: "usd",

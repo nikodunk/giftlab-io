@@ -140,7 +140,7 @@ block content
 									input.myInput(type="number" name="amount" value="20" min="0" max=val['total_need'] class=val['sku'])
 							br
 							div.row
-								div(data-sku=val['sku']).paypal-button.float-right
+								div(data-sku=val['sku'] style="background-color: blue; height: 80px; width: 200px").paypal-button.float-right
 							// div.row
 							// 	a(href="/contact").pull-right or donate differently
 
@@ -175,17 +175,6 @@ block content
 			document.querySelectorAll('.paypal-button').forEach(function(selector) {
 
 				// console.log(selector.dataset.sku)
-
-				paypal.Button.render({
-					commit: true,
-					env: 'production', 		// Or 'production' or 'sandbox'
-			        style: { 				// Specify the style of the button
-			            label: 'pay',
-			            size:  'medium',    // small | medium | large | responsive
-			            shape: 'rect',     // pill | rect
-			            color: 'blue',		// gold | blue | silver | black
-			            tagline: 'false'      
-			        },
 					// Set up the payment:
 					// 1. Add a payment callback
 					payment: function(data, actions) {
