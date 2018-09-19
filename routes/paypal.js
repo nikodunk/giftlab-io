@@ -31,7 +31,7 @@ var stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
     });
 
 
-
+  })
 
   // Execute the payment:
   // 1. Set up a URL to handle requests from the PayPal button.
