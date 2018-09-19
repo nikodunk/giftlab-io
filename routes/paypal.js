@@ -17,7 +17,9 @@ var stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
   router.post('/create-payment/:sku/:amount/', function(req, res){
 
     
-  
+    console.log('WORKING BACKEND')
+
+
     stripe.charges.create({
       amount: 1000,
       currency: "usd",
