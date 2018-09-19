@@ -181,11 +181,12 @@ block content
 					var checkout = StripeCheckout.configure({
 					    key: '#{accessKey}',
 					    token: function(token) {
-					        window.location.replace('/stripe/charge/' + token.id)
+					        window.location.replace('/paypal/charge/' + token.id)
 					    },
 					    image: 'https://www.simonho.net/MyImg150x150.jpg',
 					    locale: 'en-US'
 					});
+
 					// Open Checkout when the link is clicked
 					$('#pay').on('click', function(evt) {
 					    checkout.open({
