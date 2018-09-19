@@ -140,7 +140,7 @@ block content
 									input.myInput(type="number" name="amount" value="20" min="0" max=val['total_need'] class=val['sku'])
 							br
 							div.row
-								a(class="btn btn-primary stripe" id="pay" href="") Give with Card now
+								a(class="btn btn-primary stripe" id=val['sku'] data-sku=val['sku'] href="") Give with Card now
 
 							// div.row
 							// 	a(href="/contact").pull-right or donate differently
@@ -187,7 +187,7 @@ block content
 
 			document.querySelectorAll('.stripe').forEach(function(selector) {
 
-				document.getElementById(selector).addEventListener('click', function(e) {
+				document.getElementById(selector.dataset.sku).addEventListener('click', function(e) {
 				  // Open Checkout with further options:
 				  handler.open({
 				    name: 'giftlab.io',
