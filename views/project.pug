@@ -141,7 +141,16 @@ block content
 									input.myInput(type="number" name="amount" value="20" min="0" max=val['total_need'] class=val['sku'])
 							br
 							div.row
-								<button id="customButton">Purchase</button>
+								form( action="/" method="POST")
+									script(
+									src="https://checkout.stripe.com/checkout.js" 
+									class="stripe-button"
+									data-key="pk_test_ydRKo3Vg1C9THBrpoftH1HbD"
+									data-amount="999"
+									data-name="giftlab.io"
+									data-description="Widget"
+									data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+									data-locale="auto")
 
 							// div.row
 							// 	a(href="/contact").pull-right or donate differently
@@ -176,32 +185,6 @@ block content
 
 
 		script.
-			var handler = StripeCheckout.configure({
-			  key: 'pk_test_ydRKo3Vg1C9THBrpoftH1HbD',
-			  image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
-			  locale: 'auto',
-			  token: function(token) {
-			    // You can access the token ID with `token.id`.
-			    // Get the token ID to your server-side code for use.
-			  }
-			});
-
-			document.getElementById('customButton').addEventListener('click', function(e) {
-			  // Open Checkout with further options:
-			  handler.open({
-			    name: 'giftlab.io',
-			    description: '2 widgets',
-			    amount: 2000
-			  });
-			  e.preventDefault();
-			});
-
-			// Close Checkout on page navigation:
-			window.addEventListener('popstate', function() {
-			  handler.close();
-			});
-			
-
 			document.querySelectorAll('.stripe').forEach(function(selector) {
 
 				console.log(selector.dataset.sku)
