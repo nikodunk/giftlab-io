@@ -192,7 +192,7 @@ block content
 
 				console.log(selector.dataset.sku)
 
-				document.getElementById('customButton').addEventListener('click', function(e) {
+				document.getElementById(selector.dataset.sku).addEventListener('click', function(e) {
 				  // Open Checkout with further options:
 				  handler.open({
 				    name: 'giftlab.io',
