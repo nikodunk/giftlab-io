@@ -2,6 +2,7 @@ extends _layout
 
 block content
 	
+	<script src="https://checkout.stripe.com/checkout.js"></script>
 
 	section.showcase
 			.row.panel
@@ -139,7 +140,7 @@ block content
 									input.myInput(type="number" name="amount" value="20" min="0" max=val['total_need'] class=val['sku'])
 							br
 							div.row
-								a(class="btn btn-primary" id="pay" href="") Give with Card now
+								a(class="btn btn-primary stripe" id="pay" href="") Give with Card now
 
 							// div.row
 							// 	a(href="/contact").pull-right or donate differently
@@ -170,7 +171,7 @@ block content
 									
 
 		
-		<script src="https://checkout.stripe.com/checkout.js"></script>
+		
 
 
 		script.
@@ -184,24 +185,26 @@ block content
 			  }
 			});
 
-			document.getElementById('pay').addEventListener('click', function(e) {
-			  // Open Checkout with further options:
-			  handler.open({
-			    name: 'giftlab.io',
-			    description: '2 widgets',
-			    amount: 2000
-			  });
-			  e.preventDefault();
-			});
+			document.querySelectorAll('.stripe').forEach(function(selector) {
 
-			// Close Checkout on page navigation:
-			window.addEventListener('popstate', function() {
-			  handler.close();
-			});
+				document.getElementById(selector).addEventListener('click', function(e) {
+				  // Open Checkout with further options:
+				  handler.open({
+				    name: 'giftlab.io',
+				    description: '2 widgets',
+				    amount: 2000
+				  });
+				  e.preventDefault();
+				});
 
+				// Close Checkout on page navigation:
+				window.addEventListener('popstate', function() {
+				  handler.close();
+				});
 
-			 			//-  document.querySelectorAll('.stripe-button').forEach(function(selector) {
-						 //- }, selector);
+			}, selector);
+			 			
+						 
 				
 
 				
