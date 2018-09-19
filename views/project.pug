@@ -178,20 +178,13 @@ block content
 					// Set up the payment:
 					// 1. Add a payment callback
 
-					$( "#target" ).click(() => {
-					  	payment: function(data, actions) {
+					$( ".paypal-button" ).click(() => {
 					  		// 2. Make a request to your server
 					  		// console.log(document.getElementsByClassName(selector.dataset.sku)[0].value)
 					  		mixpanel.track('paypal_clicked');
 					  		
-					  		return actions.request.post('/paypal/create-payment/'+selector.dataset.sku+'/'+document.getElementsByClassName(selector.dataset.sku)[0].value)
-					  			.then(function(res) {
-					  				console.log(res)
-					  			// 3. Return res.id from the response
-					  				return res.id;
-					  			});
-					  	},
-					})
+					  		$.post('/paypal/create-payment/'+selector.dataset.sku+'/'+document.getElementsByClassName(selector.dataset.sku)[0].value)
+					  	})
 
 					// .then(function(res) {
 					// 		// 3. Show the buyer a confirmation message.
