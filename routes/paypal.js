@@ -12,10 +12,10 @@ client.connect();
 var stripe = require("stripe")("sk_test_FufIvJxq2f94m1QAt1T12wMR");
 
 
-  router.post('/charge', (req, res) => {
+  router.post('/charge/:sku/:amount/', (req, res) => {
     let token = req.body.stripeToken
     console.assert(token)
-    const amount = CHARGE_AMOUNT * 100
+    const amount = req.params.amount * 100
     stripe.charges.create({
       amount: amount,
       currency: 'usd',
