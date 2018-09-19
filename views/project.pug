@@ -186,26 +186,25 @@ block content
 			  }
 			});
 
+			document.getElementById(selector.dataset.sku).addEventListener('click', function(e) {
+			  // Open Checkout with further options:
+			  handler.open({
+			    name: 'giftlab.io',
+			    description: '2 widgets',
+			    amount: 2000
+			  });
+			  e.preventDefault();
+			});
+
+			// Close Checkout on page navigation:
+			window.addEventListener('popstate', function() {
+			  handler.close();
+			});
 			
 
 			document.querySelectorAll('.stripe').forEach(function(selector) {
 
 				console.log(selector.dataset.sku)
-
-				document.getElementById(selector.dataset.sku).addEventListener('click', function(e) {
-				  // Open Checkout with further options:
-				  handler.open({
-				    name: 'giftlab.io',
-				    description: '2 widgets',
-				    amount: 2000
-				  });
-				  e.preventDefault();
-				});
-
-				// Close Checkout on page navigation:
-				window.addEventListener('popstate', function() {
-				  handler.close();
-				});
 
 			});
 			 			
