@@ -139,18 +139,8 @@ block content
 									input.myInput(type="number" name="amount" value="20" min="0" max=val['total_need'] class=val['sku'])
 							br
 							div.row
-								<form action="/paypal/charge/asdfasdf" method="POST">
-									<script
-										src="https://checkout.stripe.com/checkout.js" 
-										class="stripe-button"
-										data-key="pk_test_ydRKo3Vg1C9THBrpoftH1HbD"
-										data-amount="999"
-										data-name="giftlab.io"
-										data-description="Widget"
-										data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-										data-locale="auto">
-									</script>
-								</form>
+								form(action="/paypal/charge/asdfasdf" method="POST")
+									script(src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="pk_test_ydRKo3Vg1C9THBrpoftH1HbD" data-amount="999" data-name="giftlab.io" data-description="Widget" data-image="https://stripe.com/img/documentation/checkout/marketplace.png" data-locale="auto")
 
 							// div.row
 							// 	a(href="/contact").pull-right or donate differently
