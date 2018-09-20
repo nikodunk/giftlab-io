@@ -13,7 +13,6 @@ var stripe = require("stripe")("sk_test_FufIvJxq2f94m1QAt1T12wMR");
 
 
   router.post('/charge/:sku/:amount/', (req, res) => {
-
     let token = req.body.stripeToken
     console.assert(token)
     const amount = req.params.amount * 100
@@ -30,7 +29,8 @@ var stripe = require("stripe")("sk_test_FufIvJxq2f94m1QAt1T12wMR");
         console.log('Charged successful')
         console.log('charge', charge)
         console.log('SAVE TO DATABASE:' + req.params.sku, charge.amount, charge.source.name)
-        // res.redirect('/stripe/payment-success/' + charge.id)
+        // res.redirect('/payment/payment-success/' + charge.id)
+        mixpanel.track('stripe completed');
       }
     })
   })
