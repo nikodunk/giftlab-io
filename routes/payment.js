@@ -14,10 +14,11 @@ var stripe = require("stripe")("sk_test_FufIvJxq2f94m1QAt1T12wMR");
 
   router.post('/charge/:sku/', (req, res) => {
     let token = req.body.stripeToken
+    let amount = req.body.stripeAmount
     console.assert(token)
 
     stripe.charges.create({
-      amount: 1200,
+      amount: amount,
       currency: 'usd',
       source: token,
       description: 'Stripe experiment testing charge'

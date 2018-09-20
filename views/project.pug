@@ -138,26 +138,13 @@ block content
 						div.col-md-4(style="text-align: right")
 							div.row
 								div.test
-									// input.myInput(type="number" name="amount"  class=val['sku'])
+									
 									form( id="myForm" action="/payment/charge/"+val['sku'] method="POST")
 										input( type="hidden" id="stripeToken" name="stripeToken" )
 										input( type="hidden" id="stripeEmail" name="stripeEmail" )
-										input( type="hidden" id="amountInCents" name="amountInCents" )
+										input( type="hidden" id="stripeAmount" name="stripeAmount" )
 									input.myInput( type="number" id=val['sku'] name="amountInDollars" value="20" min="0" max=val['total_need'])
 									input(type="button" class="stripe" data-sku=val['sku'] class=val['sku'] value="Pay")
-							//br
-							// div.row
-								// form( action="/payment/charge/"+val['sku']+"/"+"19" method="POST")
-								// 	script(
-								// 	src="https://checkout.stripe.com/checkout.js" 
-								// 	class="stripe-button"
-								// 	data-key="pk_test_ydRKo3Vg1C9THBrpoftH1HbD"
-								// 	data-amount="19"
-								// 	data-name="giftlab.io"
-								// 	data-description="Widget"
-								// 	data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-								// 	data-locale="auto")
-
 								
 
 
@@ -192,6 +179,26 @@ block content
 				mixpanel.track('project_page_loaded', {project: window.location.pathname.substr(10)});
 			});
 
+			document.querySelectorAll('.stripe').forEach(function(selector) {
+				console.log(selector.dataset.sku)
+
+				$("."+selector.dataset.sku).on('click', function(e) {
+					var amountInCents = Math.floor($("#"+selector.dataset.sku).val() * 100);
+					mixpanel.track('stripe clicked');
+
+					// Pass amount to backend: set (hidden) form stripeAmount on ALL forms (for now)
+					$("#stripeAmount").val(amountInCents);
+
+					// Open Checkout with further options
+					handler.open({
+						name: 'Gift Lab',
+						description: 'Donation to '+ selector.dataset.sku,
+						amount: amountInCents,
+					});
+					e.preventDefault();
+				});
+			});
+
 			var handler = StripeCheckout.configure({
 				key: 'pk_test_ydRKo3Vg1C9THBrpoftH1HbD',
 				image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
@@ -202,34 +209,11 @@ block content
 				}
 			});
 
-			document.querySelectorAll('.stripe').forEach(function(selector) {
-				console.log(selector.dataset.sku)
-
-				$("."+selector.dataset.sku).on('click', function(e) {
-					var amountInCents = Math.floor($("#"+selector.dataset.sku).val() * 100);
-					mixpanel.track('stripe clicked');
-					
-					// Open Checkout with further options
-					handler.open({
-						name: 'Demo Site',
-						description: 'Giftlab donation to '+ selector.dataset.sku,
-						amount: amountInCents,
-					});
-					e.preventDefault();
-				});
-			});
-
 			// Close Checkout on page navigation
 			$(window).on('popstate', function() {
 				handler.close();
 			});
 						
-			//- document.body.addEventListener("click", function (event) {    
-			//-   if (event.target.previousElementSibling.classList.contains("stripe-button")) {    
-			//-     var data = event.target.previousElementSibling.dataset;
-			//-     
-			//-   }    
-			//- }); 
 
 
 			
