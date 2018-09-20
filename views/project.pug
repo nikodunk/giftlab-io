@@ -206,7 +206,7 @@ block content
 					}
 				});
 
-				$(selector.dataset.sku).on('click', function(e) {
+				$("."+selector.dataset.sku).on('click', function(e) {
 					var amountInCents = Math.floor($("#"+selector.dataset.sku).val() * 100);
 					var displayAmount = parseFloat(Math.floor($("#"+selector.dataset.sku).val() * 100) / 100).toFixed(2);
 					// Open Checkout with further options
