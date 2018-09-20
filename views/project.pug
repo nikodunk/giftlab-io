@@ -153,7 +153,7 @@ block content
 								// 	data-locale="auto")
 
 								form( id="myForm" action="/payment/charge/" method="POST")
-									input( type="text" id=val['sku'] )
+									input( type="number" id=val['sku'] name="amountInDollars" )
 									input( type="hidden" id="stripeToken" name="stripeToken" )
 									input( type="hidden" id="stripeEmail" name="stripeEmail" )
 									input( type="hidden" id="amountInCents" name="amountInCents" )
@@ -206,16 +206,16 @@ block content
 					}
 				});
 
-				console.log($("#"+selector.dataset.sku).val())
+				
 
 				$("."+selector.dataset.sku).on('click', function(e) {
 					var amountInCents = Math.floor($("#"+selector.dataset.sku).val() * 100);
-					var displayAmount = parseFloat(Math.floor($("#"+selector.dataset.sku).val() * 100) / 100).toFixed(2);
+
 					// Open Checkout with further options
 					handler.open({
 						name: 'Demo Site',
-						description: 'Custom amount ($' + displayAmount + ')',
-						amount: Math.floor($("#"+selector.dataset.sku).val() * 100),
+						description: 'Giftlab donation to '+ selector.dataset.sku,
+						amount: amountInCents,
 					});
 					e.preventDefault();
 				});
