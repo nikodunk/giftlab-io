@@ -199,10 +199,10 @@ block content
 					key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
 					image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
 						token: function(token) {
-						$("#stripeToken").val(token.id);
-						$("#stripeEmail").val(token.email);
-						$("#"+selector.dataset.sku).val(Math.floor($("#"+selector.dataset.sku).val() * 100));
-						$("#myForm").submit();
+							$("#stripeToken").val(token.id);
+							$("#stripeEmail").val(token.email);
+							$("#"+selector.dataset.sku).val(Math.floor($("#"+selector.dataset.sku).val() * 100));
+							$("#myForm").submit();
 					}
 				});
 
@@ -213,7 +213,7 @@ block content
 					handler.open({
 						name: 'Demo Site',
 						description: 'Custom amount ($' + displayAmount + ')',
-						amount: $("#"+selector.dataset.sku).val(Math.floor($("#"+selector.dataset.sku).val() * 100)),
+						amount: $("#"+selector.dataset.sku).val(Math.floor($("#"+selector.dataset.sku).val() * 100)).toInt(),
 					});
 					e.preventDefault();
 				});
