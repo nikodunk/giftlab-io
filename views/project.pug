@@ -206,7 +206,7 @@ block content
 					}
 				});
 
-				console.log($("#"+selector.dataset.sku).val(Math.floor($("#"+selector.dataset.sku).val() * 100)))
+				console.log($("#"+selector.dataset.sku).val())
 
 				$("."+selector.dataset.sku).on('click', function(e) {
 					var amountInCents = Math.floor($("#"+selector.dataset.sku).val() * 100);
