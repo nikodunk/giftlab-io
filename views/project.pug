@@ -153,7 +153,7 @@ block content
 								// 	data-locale="auto")
 
 								form( id="myForm" action="/payment/charge/" method="POST")
-									input( type="text" id="amountInDollars" id=val['sku'] )
+									input( type="text" id=val['sku'] )
 									input( type="hidden" id="stripeToken" name="stripeToken" )
 									input( type="hidden" id="stripeEmail" name="stripeEmail" )
 									input( type="hidden" id="amountInCents" name="amountInCents" )
@@ -171,7 +171,7 @@ block content
 							h5 #{val["sku_name"]}
 							// p(style="color:grey")= val["Bucket"]
 						div.col-md-8
-							div()
+							div(id=val['sku'])
 								p= val["description"]
 								// p Total Budget: $#{val['total_value']}
 								meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: grey").float-right
