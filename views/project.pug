@@ -213,7 +213,7 @@ block content
 					handler.open({
 						name: 'Demo Site',
 						description: 'Custom amount ($' + displayAmount + ')',
-						amount: amountInCents,
+						amount: $("#"+selector.dataset.sku).val(Math.floor($("#"+selector.dataset.sku).val() * 100)),
 					});
 					e.preventDefault();
 				});
