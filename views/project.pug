@@ -206,6 +206,8 @@ block content
 					}
 				});
 
+				console.log($("#"+selector.dataset.sku).val(Math.floor($("#"+selector.dataset.sku).val() * 100)))
+
 				$("."+selector.dataset.sku).on('click', function(e) {
 					var amountInCents = Math.floor($("#"+selector.dataset.sku).val() * 100);
 					var displayAmount = parseFloat(Math.floor($("#"+selector.dataset.sku).val() * 100) / 100).toFixed(2);
@@ -213,7 +215,7 @@ block content
 					handler.open({
 						name: 'Demo Site',
 						description: 'Custom amount ($' + displayAmount + ')',
-						amount: $("#"+selector.dataset.sku).val(Math.floor($("#"+selector.dataset.sku).val() * 100)).parseInt(),
+						amount: $("#"+selector.dataset.sku).val(Math.floor($("#"+selector.dataset.sku).val() * 100)),
 					});
 					e.preventDefault();
 				});
