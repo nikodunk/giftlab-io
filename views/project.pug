@@ -183,10 +183,13 @@ block content
 				console.log(selector.dataset.sku)
 
 				$("."+selector.dataset.sku).on('click', function(e) {
-					var amountInCents = Math.floor($("#"+selector.dataset.sku).val() * 100);
+					//when click record to mixpanel
 					mixpanel.track('stripe clicked');
 
-					// Pass amount to backend: set (hidden) form stripeAmount on ALL forms (for now)
+					// get amount in cents from specific form
+					var amountInCents = Math.floor($("#"+selector.dataset.sku).val() * 100);
+
+					// Get amount ready to pass to backend: set (hidden) form stripeAmount on ALL forms (for now)
 					$("#stripeAmount").val(amountInCents);
 
 					// Open Checkout with further options
@@ -205,6 +208,7 @@ block content
 				token: function(token) {
 					$("#stripeToken").val(token.id);
 					$("#stripeEmail").val(token.email);
+					mixpanel.track('stripe completed');
 					$("#myForm").submit();
 				}
 			});
