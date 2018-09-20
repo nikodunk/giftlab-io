@@ -106,7 +106,7 @@ block content
 
 		
 	
-	// PAYPAL DONATION PART					
+	// CASH DONATION 					
 	section.container(id="budgets")
 		br
 		br
@@ -141,7 +141,7 @@ block content
 									input.myInput(type="number" name="amount" value="20" min="0" max=val['total_need'] class=val['sku'])
 							br
 							div.row
-								form( action="/paypal/charge/"+val['sku']+"/"+"19" method="POST")
+								form( action="/payment/charge/"+val['sku']+"/"+"19" method="POST")
 									script(
 									src="https://checkout.stripe.com/checkout.js" 
 									class="stripe-button"
@@ -189,6 +189,10 @@ block content
 
 				console.log(selector.dataset.sku)
 
+			});
+
+			$( document ).ready(function() {
+			    mixpanel.track("homepage_loaded");
 			});
 			 			
 						 

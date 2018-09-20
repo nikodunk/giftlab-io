@@ -9,7 +9,7 @@ var logger = require('morgan');
 
 var homeRouter = require('./routes/home');
 var projectsRouter = require('./routes/projects');
-var paypalRouter = require('./routes/paypal');
+var paymentRouter = require('./routes/payment');
 
 
 
@@ -37,7 +37,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', homeRouter);
 app.use('/projects', projectsRouter);
-app.use('/paypal', paypalRouter);
+app.use('/payment', paymentRouter);
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
