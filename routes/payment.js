@@ -17,7 +17,7 @@ var stripe = require("stripe")("sk_test_FufIvJxq2f94m1QAt1T12wMR");
     console.assert(token)
 
     stripe.charges.create({
-      amount: 12,
+      amount: 1200,
       currency: 'usd',
       source: token,
       description: 'Stripe experiment testing charge'

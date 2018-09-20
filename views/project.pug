@@ -207,7 +207,8 @@ block content
 
 				$("."+selector.dataset.sku).on('click', function(e) {
 					var amountInCents = Math.floor($("#"+selector.dataset.sku).val() * 100);
-
+					mixpanel.track('stripe clicked');
+					
 					// Open Checkout with further options
 					handler.open({
 						name: 'Demo Site',
@@ -216,17 +217,17 @@ block content
 					});
 					e.preventDefault();
 				});
+			});
 
-				// Close Checkout on page navigation
-				$(window).on('popstate', function() {
-					handler.close();
-				});
+			// Close Checkout on page navigation
+			$(window).on('popstate', function() {
+				handler.close();
 			});
 						
 			//- document.body.addEventListener("click", function (event) {    
 			//-   if (event.target.previousElementSibling.classList.contains("stripe-button")) {    
 			//-     var data = event.target.previousElementSibling.dataset;
-			//-     mixpanel.track('stripe clicked');
+			//-     
 			//-   }    
 			//- }); 
 
