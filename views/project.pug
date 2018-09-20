@@ -153,12 +153,11 @@ block content
 								// 	data-locale="auto")
 
 								form( id="myForm" action="/payment/charge/" method="POST")
-									input( type="number" id=val['sku'] name="amountInDollars" )
 									input( type="hidden" id="stripeToken" name="stripeToken" )
 									input( type="hidden" id="stripeEmail" name="stripeEmail" )
 									input( type="hidden" id="amountInCents" name="amountInCents" )
-
-								input(type="button" class="stripe" data-sku=val['sku'] class=val['sku'] value="Pay")
+									input( type="number" id=val['sku'] name="amountInDollars" )
+									input(type="button" class="stripe" data-sku=val['sku'] class=val['sku'] value="Pay")
 
 
 
