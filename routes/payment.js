@@ -29,6 +29,7 @@ var stripe = require("stripe")("sk_test_FufIvJxq2f94m1QAt1T12wMR");
         console.log('Charged successful')
         console.log('charge', charge)
         console.log('SAVE TO DATABASE:' + req.params.sku, charge.amount, charge.source.name)
+        res.send('successful')
         // res.redirect('/payment/payment-success/' + charge.id)
       }
     })
