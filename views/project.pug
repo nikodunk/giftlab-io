@@ -143,7 +143,7 @@ block content
 										input( type="hidden" id="stripeToken" name="stripeToken" )
 										input( type="hidden" id="stripeEmail" name="stripeEmail" )
 										input( type="hidden" id="amountInCents" name="amountInCents" )
-									input( type="number" id=val['sku'] name="amountInDollars" value="20" min="0" max=val['total_need'])
+									input.myInput( type="number" id=val['sku'] name="amountInDollars" value="20" min="0" max=val['total_need'])
 									input(type="button" class="stripe" data-sku=val['sku'] class=val['sku'] value="Pay")
 							//br
 							// div.row
