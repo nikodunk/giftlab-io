@@ -212,13 +212,9 @@ block content
 					mixpanel.track('stripe completed');
 					// $("#myForm").submit();
 					$('#myForm')
-					    .ajaxForm({
-					        url : '/payment/charge/', 
-					        dataType : 'json',
-					        success : function (response) {
+					    .ajaxForm(function (response) {
 					            console.log("The server says: " + response);
-					        }
-					    })
+					        })
 					;
 				}
 			});
