@@ -139,7 +139,7 @@ block content
 							div.row
 								div.test
 									// input.myInput(type="number" name="amount"  class=val['sku'])
-									form( id="myForm" action="/payment/charge/" method="POST")
+									form( id="myForm" action="/payment/charge/"+val['sku'] method="POST")
 										input( type="hidden" id="stripeToken" name="stripeToken" )
 										input( type="hidden" id="stripeEmail" name="stripeEmail" )
 										input( type="hidden" id="amountInCents" name="amountInCents" )
