@@ -192,21 +192,18 @@ block content
 				mixpanel.track('project_page_loaded', {project: window.location.pathname.substr(10)});
 			});
 
+			var handler = StripeCheckout.configure({
+				key: 'pk_test_ydRKo3Vg1C9THBrpoftH1HbD',
+				image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+				token: function(token) {
+					$("#stripeToken").val(token.id);
+					$("#stripeEmail").val(token.email);
+					$("#myForm").submit();
+				}
+			});
+
 			document.querySelectorAll('.stripe').forEach(function(selector) {
 				console.log(selector.dataset.sku)
-
-				var handler = StripeCheckout.configure({
-					key: 'pk_test_ydRKo3Vg1C9THBrpoftH1HbD',
-					image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
-					token: function(token) {
-						$("#stripeToken").val(token.id);
-						$("#stripeEmail").val(token.email);
-						Math.floor($("#"+selector.dataset.sku).val() * 100);
-						$("#myForm").submit();
-					}
-				});
-
-				
 
 				$("."+selector.dataset.sku).on('click', function(e) {
 					var amountInCents = Math.floor($("#"+selector.dataset.sku).val() * 100);
