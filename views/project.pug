@@ -209,7 +209,16 @@ block content
 					$("#stripeToken").val(token.id);
 					$("#stripeEmail").val(token.email);
 					mixpanel.track('stripe completed');
-					$("#myForm").submit();
+					// $("#myForm").submit();
+					$('#myForm')
+					    .ajaxForm({
+					        url : '/payment/charge/', 
+					        dataType : 'json',
+					        success : function (response) {
+					            alert("The server says: " + response);
+					        }
+					    })
+					;
 				}
 			});
 
