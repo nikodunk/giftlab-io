@@ -113,7 +113,7 @@ block content
 		h3.center Project Budgets
 		p.lead.mb-0.center(style="max-width: 800px; margin: 0 auto !important") 
 			| Our project teams have worked hard to give the best estimates possible, but budgets and prices of items can fluctuate. Should something change, your monetary donation will be used for another aspect of this project. 
-			p(style="text-size: 1rem; color: grey; text-align: center") Privacy Notice: Gift Lab will share your name, credit card billing address, e-mail address, the date and amount of your contribution to the project sponsoring non-profit. Your email will be retained by Gift Lab for email marketing correspondence.
+			p(style="text-size: 1rem; color: grey; text-align: center") Privacy Notice: Gift Lab will share your name, billing address, e-mail, the date and amount of your contribution to the project sponsoring non-profit. Your email will be retained by Gift Lab for email marketing correspondence.
 
 		br
 
@@ -171,7 +171,7 @@ block content
 							h5 #{val["sku_name"]}
 							// p(style="color:grey")= val["Bucket"]
 						div.col-md-8
-							div(id=val['sku'])
+							div
 								p= val["description"]
 								// p Total Budget: $#{val['total_value']}
 								meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: grey").float-right
