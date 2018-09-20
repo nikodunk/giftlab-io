@@ -152,14 +152,13 @@ block content
 								// 	data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
 								// 	data-locale="auto")
 
-								<form id="myForm" action="/payment/charge/" method="POST">
-									<input type="text" id="amountInDollars" />
-									<input type="hidden" id="stripeToken" name="stripeToken" />
-									<input type="hidden" id="stripeEmail" name="stripeEmail" />
-									<input type="hidden" id="amountInCents" name="amountInCents" />
-								</form>
+								form( id="myForm" action="/payment/charge/" method="POST")
+									input( type="text" id="amountInDollars" id=val['sku'] )
+									input( type="hidden" id="stripeToken" name="stripeToken" )
+									input( type="hidden" id="stripeEmail" name="stripeEmail" )
+									input( type="hidden" id="amountInCents" name="amountInCents" )
 
-								input(type="button" class="stripe" data-sku=val['sku'] id="customButton" value="Pay")
+								input(type="button" class="stripe" data-sku=val['sku'] class=val['sku'] value="Pay")
 
 
 
@@ -195,6 +194,34 @@ block content
 
 			document.querySelectorAll('.stripe').forEach(function(selector) {
 				console.log(selector.dataset.sku)
+
+				var handler = StripeCheckout.configure({
+					key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
+					image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+						token: function(token) {
+						$("#stripeToken").val(token.id);
+						$("#stripeEmail").val(token.email);
+						$("#"+selector.dataset.sku).val(Math.floor($("#amountInDollars").val() * 100));
+						$("#myForm").submit();
+					}
+				});
+
+				$(selector.dataset.sku).on('click', function(e) {
+					var amountInCents = Math.floor($("#"+selector.dataset.sku).val() * 100);
+					var displayAmount = parseFloat(Math.floor($("#"+selector.dataset.sku).val() * 100) / 100).toFixed(2);
+					// Open Checkout with further options
+					handler.open({
+						name: 'Demo Site',
+						description: 'Custom amount ($' + displayAmount + ')',
+						amount: amountInCents,
+					});
+					e.preventDefault();
+				});
+
+				// Close Checkout on page navigation
+				$(window).on('popstate', function() {
+					handler.close();
+				});
 			});
 						
 			//- document.body.addEventListener("click", function (event) {    
@@ -205,33 +232,7 @@ block content
 			//- }); 
 
 
-			var handler = StripeCheckout.configure({
-				key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
-				image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
-					token: function(token) {
-					$("#stripeToken").val(token.id);
-					$("#stripeEmail").val(token.email);
-					$("#amountInCents").val(Math.floor($("#amountInDollars").val() * 100));
-					$("#myForm").submit();
-				}
-			});
-
-			$('#customButton').on('click', function(e) {
-				var amountInCents = Math.floor($("#amountInDollars").val() * 100);
-				var displayAmount = parseFloat(Math.floor($("#amountInDollars").val() * 100) / 100).toFixed(2);
-				// Open Checkout with further options
-				handler.open({
-					name: 'Demo Site',
-					description: 'Custom amount ($' + displayAmount + ')',
-					amount: amountInCents,
-				});
-				e.preventDefault();
-			});
-
-			// Close Checkout on page navigation
-			$(window).on('popstate', function() {
-				handler.close();
-			});
+			
 
 
 			
