@@ -137,10 +137,7 @@ block content
 									p(style="text-align: right") Gifted: $#{val['donatedsofar_pretty']} | Remaining: $#{val['remaining_pretty']}
 						div.col-md-4(style="text-align: right")
 							div.row
-								div.test
-									input.myInput(type="number" name="amount" value="20" min="0" max=val['total_need'] class=val['sku'])
-							br
-							div.row
+								
 								// form( action="/payment/charge/"+val['sku']+"/"+"19" method="POST")
 								// 	script(
 								// 	src="https://checkout.stripe.com/checkout.js" 
@@ -156,8 +153,8 @@ block content
 									input( type="hidden" id="stripeToken" name="stripeToken" )
 									input( type="hidden" id="stripeEmail" name="stripeEmail" )
 									input( type="hidden" id="amountInCents" name="amountInCents" )
-									input( type="number" id=val['sku'] name="amountInDollars" )
-									input(type="button" class="stripe" data-sku=val['sku'] class=val['sku'] value="Pay")
+									input( type="number" id=val['sku'] name="amountInDollars" min="0" max=val['total_need'] value="20")
+									input(type="button"  class="stripe" data-sku=val['sku'] class=val['sku'] value="Pay" )
 
 
 
