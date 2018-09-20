@@ -196,13 +196,13 @@ block content
 				console.log(selector.dataset.sku)
 
 				var handler = StripeCheckout.configure({
-					key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
+					key: 'pk_test_ydRKo3Vg1C9THBrpoftH1HbD',
 					image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
-						token: function(token) {
-							$("#stripeToken").val(token.id);
-							$("#stripeEmail").val(token.email);
-							$("#"+selector.dataset.sku).val(Math.floor($("#"+selector.dataset.sku).val() * 100));
-							$("#myForm").submit();
+					token: function(token) {
+						//- $("#stripeToken").val(token.id);
+						//- $("#stripeEmail").val(token.email);
+						//- $("#"+selector.dataset.sku).val(Math.floor($("#"+selector.dataset.sku).val() * 100));
+						//- $("#myForm").submit();
 					}
 				});
 
