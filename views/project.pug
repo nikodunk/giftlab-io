@@ -198,7 +198,6 @@ block content
 				token: function(token) {
 					$("#stripeToken").val(token.id);
 					$("#stripeEmail").val(token.email);
-					$("#"+selector.dataset.sku).val(Math.floor($("#"+selector.dataset.sku).val() * 100));
 					$("#myForm").submit();
 				}
 			});
