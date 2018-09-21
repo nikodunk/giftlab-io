@@ -8,15 +8,16 @@ const client = new Client({
 
 client.connect();
 
+var content = require('../public/javascripts/content.json')
+
 // See your keys here: https://dashboard.stripe.com/account/apikeys
 var stripe = require("stripe")("sk_test_FufIvJxq2f94m1QAt1T12wMR");
 
 
-  router.post('/charge/:sku/', (req, res) => {
+  router.post('/charge/:projectid/:sku/', (req, res) => {
     let token = req.body.stripeToken
     let amount = req.body.stripeAmount
-    console.assert(token)
-    
+    // console.assert(token)
 
     stripe.charges.create({
       amount: amount,
@@ -31,9 +32,20 @@ var stripe = require("stripe")("sk_test_FufIvJxq2f94m1QAt1T12wMR");
       if (err) { res.redirect('/charge/payment-failure?err_msg=' + err.message) } 
 
       else {
-        console.log('Charged successful')
-        console.info(charge)
-        console.log('SAVE TO DATABASE:' + req.params.sku, charge.amount, charge.source.name)
+        console.log('Charge successful')
+        // console.info(charge)
+        console.log('SAVED TO DATABASE:',
+                    Date.now(), 
+                    req.params.sku, 
+                    charge.amount, 
+                    charge.source.name,
+                    charge.id,
+                    Date.now(),
+                    'Stripe',
+                    charge.source.country,
+                    charge.currency,
+                    charge.source.address_zip,
+                    charge.destination)
         
         client.query(`INSERT INTO orders VALUES ('`+
                             Date.now()+`','`+
@@ -44,7 +56,7 @@ var stripe = require("stripe")("sk_test_FufIvJxq2f94m1QAt1T12wMR");
                             ''+`','`+ //amazon_orderid
                             '' +`','`+ //first name
                             ''+`','`+ //last name
-                            '' +`','`+ // charge.created.toString()
+                            Date.now() +`','`+
                             'Stripe'+`','`+
                             charge.source.country +`','`+
                             charge.currency +`','`+
@@ -61,16 +73,17 @@ var stripe = require("stripe")("sk_test_FufIvJxq2f94m1QAt1T12wMR");
         //   status: 'success',
         //   response: charge
         // });
-        res.redirect('/payment/success/' + charge.id+'/'+ '1')
+        res.redirect('/payment/success/' + charge.id+'/'+ req.params.projectid)
       }
     })
   })
 
 
-  router.get('/success/:chargeid/:project', function(req, res, next) {
+  router.get('/success/:charge/:projectid', function(req, res, next) {
       res.render('success', 
-          { chargeID: req.params.chargeid,
-            project: req.params.project
+          { charge: req.params.charge,
+            projectid: req.params.projectid,
+            content: content
           }
       );
   });

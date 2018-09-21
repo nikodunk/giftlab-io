@@ -141,7 +141,7 @@ block content
 							div.row
 								div.test
 									
-									form( id="myForm" action="/payment/charge/"+val['sku'] method="POST")
+									form( id="myForm" action="/payment/charge/"+content['ProjectID']+'/'+val['sku'] method="POST")
 										input( type="hidden" id="stripeToken" name="stripeToken" )
 										input( type="hidden" id="stripeEmail" name="stripeEmail" )
 										input( type="hidden" id="stripeAmount" name="stripeAmount" )

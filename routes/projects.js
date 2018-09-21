@@ -23,7 +23,6 @@ const numberWithCommas = (x) => {
 function getData(projectNumber, res){
     
     client.query(` SELECT 
-                      
                       skus.sku, 
                       skus.sku_name, 
                       skus.bucket, 
