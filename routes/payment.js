@@ -23,7 +23,7 @@ var stripe = require("stripe")("sk_test_FufIvJxq2f94m1QAt1T12wMR");
       source: token,
       description: 'Stripe experiment testing charge'
     }, (err, charge) => {
-      if (err) { res.redirect('/stripe/payment-failure?err_msg=' + err.message) } 
+      if (err) { res.redirect('/charge/payment-failure?err_msg=' + err.message) } 
 
       else {
         console.log('Charged successful')
@@ -48,18 +48,24 @@ var stripe = require("stripe")("sk_test_FufIvJxq2f94m1QAt1T12wMR");
         //                     response.body.payer.payer_info.payer_id+`','`+
         //                     response.body.payer.payer_info.shipping_address.postal_code+`','`+
         //                     response.body.transactions[0].payee.email+`');`)
-
-        // 4. Return a success response to the client
-        // mixpanel.track('paypal_finished');
-        res.json(
-        {
-          status: 'success',
-          response: charge
-        });
-        // res.redirect('/payment/payment-success/' + charge.id)
+        // res.json(
+        // {
+        //   status: 'success',
+        //   response: charge
+        // });
+        res.redirect('/payment/success/' + charge.id+'/'+ '1')
       }
     })
   })
+
+
+  router.get('/success/:chargeid/:project', function(req, res, next) {
+      res.render('success', 
+          { chargeID: req.params.chargeid,
+            project: req.params.project
+          }
+      );
+  });
 
 
 module.exports = router;

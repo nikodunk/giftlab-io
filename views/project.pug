@@ -4,7 +4,6 @@ block content
 	
 	<script src="https://checkout.stripe.com/checkout.js"></script>
 	<script src="http://malsup.github.com/jquery.form.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
 
 
 
@@ -212,12 +211,12 @@ block content
 					$("#stripeToken").val(token.id);
 					$("#stripeEmail").val(token.email);
 					mixpanel.track('stripe completed');
-					// $("#myForm").submit();
-					$('#myForm')
-					    .ajaxForm(function (response) {
-					            console.log("The server says: " + response);
-					        })
-					;
+					$("#myForm").submit();
+					//- $('#myForm')
+					//-     .ajaxForm(function (response) {
+					//-             console.log("The server says: " + response);
+					//-         })
+					//- ;
 				}
 			});
 
