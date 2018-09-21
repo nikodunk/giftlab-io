@@ -47,6 +47,19 @@ var stripe = require("stripe")("sk_test_FufIvJxq2f94m1QAt1T12wMR");
                     charge.source.address_zip,
                     charge.destination)
         
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1; //January is 0!
+
+        var yyyy = today.getFullYear();
+        if(dd<10){
+            dd='0'+dd;
+        } 
+        if(mm<10){
+            mm='0'+mm;
+        } 
+        var today = dd+'/'+mm+'/'+yyyy;
+
         client.query(`INSERT INTO orders VALUES ('`+
                             Date.now()+`','`+
                             req.params.sku+`',`+
@@ -56,7 +69,7 @@ var stripe = require("stripe")("sk_test_FufIvJxq2f94m1QAt1T12wMR");
                             ''+`','`+ //amazon_orderid
                             '' +`','`+ //first name
                             ''+`','`+ //last name
-                            Date.now().toString() +`','`+
+                            today +`','`+
                             'Stripe'+`','`+
                             charge.source.country +`','`+
                             charge.currency +`','`+
