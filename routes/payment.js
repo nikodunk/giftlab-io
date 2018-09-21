@@ -27,13 +27,13 @@ var stripe = require("stripe")("sk_test_FufIvJxq2f94m1QAt1T12wMR");
 
       else {
         console.log('Charged successful')
-        console.log(charge, {depth: null, colors: true})
+        console.info(charge)
         console.log('SAVE TO DATABASE:' + req.params.sku, charge.amount, charge.source.name)
         
         // client.query(`INSERT INTO orders VALUES ('`+
         //                     Date.now()+`','`+
         //                     response.body.transactions[0].item_list.items[0].sku+`',`+
-        //                     response.body.transactions[0].amount.total+`,'`+
+        //                     charge.amount+`,'`+
         //                     response.body.payer.payer_info.email+`','`+
         //                     response.body.id+`','`+
         //                     ''+`','`+ //amazon_orderid
