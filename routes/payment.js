@@ -27,6 +27,7 @@ var stripe = require("stripe")("sk_test_FufIvJxq2f94m1QAt1T12wMR");
 
       else {
         console.log('Charged successful')
+        console.dir(charge, {depth: null, colors: true})
         console.log('SAVE TO DATABASE:' + req.params.sku, charge.amount, charge.source.name)
         
         // client.query(`INSERT INTO orders VALUES ('`+
