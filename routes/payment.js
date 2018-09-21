@@ -44,7 +44,7 @@ var stripe = require("stripe")("sk_test_FufIvJxq2f94m1QAt1T12wMR");
                             ''+`','`+ //amazon_orderid
                             '' +`','`+ //first name
                             ''+`','`+ //last name
-                            charge.created +`','`+
+                            charge.created.toString() +`','`+
                             'Stripe'+`','`+
                             charge.source.country +`','`+
                             charge.currency +`','`+
