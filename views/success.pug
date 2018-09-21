@@ -21,12 +21,13 @@ block content
 	section.features-icons.padding.bg-white
 			.container
 				.row
-					.col-lg-12
+					.col-lg-12.center
 						h3 Thank you for your donation!
 						p Please sign up for the mailing list below to get updates on this project and your donation.
+						h3 👇
 
 
 	script.
 		$( document ).ready(function() {
-		    mixpanel.track('stripe_success');
+		    mixpanel.track('stripe completed');
 		});
