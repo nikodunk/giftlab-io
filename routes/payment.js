@@ -16,12 +16,17 @@ var stripe = require("stripe")("sk_test_FufIvJxq2f94m1QAt1T12wMR");
     let token = req.body.stripeToken
     let amount = req.body.stripeAmount
     console.assert(token)
+    
 
     stripe.charges.create({
       amount: amount,
       currency: 'usd',
       source: token,
-      description: 'Stripe experiment testing charge'
+      description: 'Giftlab Charge for '+ req.params.sku,
+      // destination: {
+      //          amount: amount - 1,
+      //          account: "{CONNECTED_STRIPE_ACCOUNT_ID}",
+      //         }
     }, (err, charge) => {
       if (err) { res.redirect('/charge/payment-failure?err_msg=' + err.message) } 
 
@@ -30,25 +35,27 @@ var stripe = require("stripe")("sk_test_FufIvJxq2f94m1QAt1T12wMR");
         console.info(charge)
         console.log('SAVE TO DATABASE:' + req.params.sku, charge.amount, charge.source.name)
         
-        // client.query(`INSERT INTO orders VALUES ('`+
-        //                     Date.now()+`','`+
-        //                     response.body.transactions[0].item_list.items[0].sku+`',`+
-        //                     charge.amount+`,'`+
-        //                     response.body.payer.payer_info.email+`','`+
-        //                     response.body.id+`','`+
-        //                     ''+`','`+ //amazon_orderid
-        //                     response.body.payer.payer_info.first_name+`','`+
-        //                     response.body.payer.payer_info.last_name+`','`+
-        //                     response.body.create_time+`','`+
-        //                     'Paypal'+`','`+
-        //                     response.body.payer.payer_info.shipping_address.country_code+`','`+
-        //                     response.body.transactions[0].amount.currency+`','`+
-        //                     ''+`','`+ //thankyou_link
-        //                     ''+`','`+ //donation_receipt
-        //                     response.body.create_time+`','`+
-        //                     response.body.payer.payer_info.payer_id+`','`+
-        //                     response.body.payer.payer_info.shipping_address.postal_code+`','`+
-        //                     response.body.transactions[0].payee.email+`');`)
+        client.query(`INSERT INTO orders VALUES ('`+
+                            Date.now()+`','`+
+                            req.params.sku+`',`+
+                            charge.amount +`,'`+
+                            charge.source.name +`','`+
+                            charge.id +`','`+
+                            ''+`','`+ //amazon_orderid
+                            '' +`','`+ //first name
+                            ''+`','`+ //last name
+                            charge.created +`','`+
+                            'Stripe'+`','`+
+                            charge.source.country +`','`+
+                            charge.currency +`','`+
+                            ''+`','`+ //thankyou_link
+                            ''+`','`+ //donation_receipt
+                            '' +`','`+ //payer id paypal
+                            ''+`','`+ //create time paypal
+                            charge.source.address_zip+`','`+
+                            charge.destination +`');`)
+
+
         // res.json(
         // {
         //   status: 'success',
