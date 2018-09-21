@@ -58,7 +58,7 @@ var stripe = require("stripe")("sk_test_FufIvJxq2f94m1QAt1T12wMR");
         if(mm<10){
             mm='0'+mm;
         } 
-        var today = dd+'/'+mm+'/'+yyyy;
+        var today = yyyy+'/'+mm+'/'+dd;
 
         client.query(`INSERT INTO orders VALUES ('`+
                             Date.now()+`','`+
