@@ -6,9 +6,9 @@ extends _layout
 
 block content
 
-	<script src="https://plny.it/embed/giftlab.io" data-columns="6" data-limit="12" data-paginate="false"></script>
-
 	
+
+
 	// Image Showcases
 	section.showcase
 		.container-fluid.p-0
@@ -104,12 +104,20 @@ block content
 									//- p Status: 
 									//- 	span(style="color: lightgreen") #{val["Status"]}
 									p(style="color: grey; padding-left: 20px; padding-right: 20px") #{val["Project Description - Short"]}
-
+	
 	section.showcase.bg-white
 		div.container.padding
 			section.row
 				h3(id="projects") Project Updates
-	div( id="planoly-shoppable-widget")
+			section.row
+				br
+			<div id="planoly-shoppable-widget"><script src="https://plny.it/embed/giftlab.io" data-columns="12" data-limit="12" data-paginate="true"></script></div>
+
+	section.showcase.bg-white
+		div.container.padding
+			section.row
+				
+			
 	
 	script.
 		$( document ).ready(function() {
