@@ -70,7 +70,7 @@ hr {
 }
 
 .panel {
-  background-image: linear-gradient(#00AFE1, #0C3C83) !important;
+  background-color: #00AFE1 !important;
   /*text-align: right;*/
   color: white;
   margin: 0;
