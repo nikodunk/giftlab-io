@@ -48,20 +48,44 @@ hr {
 .orange {
   background-color: orange !important;
   border: none !important;
+  padding: 3px !important;
+  width: 100% !important;
+  margin: 4px !important;
 }
 
 .blue {
-  background-color: #7ED321 !important;
+  background-color: #009cde !important;
   border: none !important;
+  padding: 3px !important;
+  width: 100% !important;
+  margin: 4px !important;
 }
 
 .green {
-  background-color: #009cde !important;
+  background-color: #7ED321 !important;
   border: none !important;
+  padding: 3px !important;
+  width: 100% !important;
+  margin: 4px !important;
+}
+
+.jumbotronbutton{
+  background-color: rgba(0,0,0,0) !important;
+  border: 1px solid rgba(255,255,255,1) !important;
+  padding: 3px !important;
+  width: 100% !important;
+  margin: 4px !important;
+}
+
+.jumbotronbutton:hover{
+  background-color: rgba(0,0,0,0) !important;
+  border: 1px solid rgba(255,255,255,.6) !important;
+  color: rgba(255,255,255,.6) !important;
+  
 }
 
 .padding{
-  padding: 50px !important;
+  padding: 30px !important;
 }
 
 
@@ -145,16 +169,7 @@ hr {
 }
 
 
-.jumbotronbutton{
-  background-color: rgba(0,0,0,0) !important;
-  border: 2px solid rgba(255,255,255,1) !important;
-}
 
-.jumbotronbutton:hover{
-  background-color: rgba(0,0,0,0) !important;
-  border: 2px solid rgba(255,255,255,.6) !important;
-  color: rgba(255,255,255,.6) !important;
-}
 
 .bg-white{
   background-color: white !important;

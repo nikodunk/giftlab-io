@@ -13,94 +13,81 @@ block content
 	section.showcase
 		.container-fluid.p-0
 			.row.no-gutters.panel
-				.col-lg-4.my-auto.padding
-					h2 Donate differently to non profits
-					p.lead.mb-0 Know exactly where your money is going and stay updated with their progress
-					br
-					a.btn.btn-lg.btn-primary.orange(href="/#howitworks") EXPLORE AMAZON WISHLISTS
-					br
-					br
-					a.btn.btn-lg.btn-primary.green(href="/#howitworks") DONATE MONEY DIRECTLY
+				.col-lg-4.my-auto.padding.center
+					h5 Donate differently to non profit causes you love
+					p(style="font-size: .8rem") Know exactly where your money is going and stay updated with their progress
+					a.btn.btn-lg.btn-primary.orange(href="/#howitworks") 
+						small DONATE VIA
+						h5 WISHLISTS
+					a.btn.btn-lg.btn-primary(href="/#howitworks").jumbotronbutton
+						small SEE ALL
+						h5 PROJECTS
 				.col-lg-8(style="background-image: url('/images/0_home/Main_About.jpg'); background-position: center;  background-size: cover; min-height:200px")
 	
 	//- EMAIL SIGNUP
-	section.call-to-action.text-center(id="signup" ).bg-white
+	section(id="signup").bg-white.padding.center
 		//- .overlay
 		.container
 			.row( id="signupform")
 				.col-xl-9.mx-auto
-					h2.mb-4 Subscribe to our newsletter for all the best updates
+					h4.mb-4 STAY UPDATED
+					p Connect with us for the latest updates, including new non profit listings and Gift Lab feature updates.
+
 				.col-md-10.col-lg-8.col-xl-7.mx-auto
 					form(id="asdf" action="/signup" method="post")
-						.form-row
-							.col-12.col-md-9.mb-2.mb-md-0
-								input.form-control.form-control-lg(type='email', placeholder='Enter your email', name='email' id="email")
-							.col-12.col-md-3
-								button.btn.btn-lg.btn-primary( id="register") SUBMIT
+						div(class="input-group mb-3")
+							input(class="form-control" type='email' placeholder='Enter your email' name='email' id="email")
+							div(class="input-group-append")
+								input(class="btn btn-primary" type="submit" id="register" value='SUBMIT')
+
+						//- .form-row
+						//- 	.col-12.col-md-9.mb-2.mb-md-0
+						//- 		input.form-control.form-control-lg()
+							
 	
 
+	//- SOCIAL FEED
+	section(id="social").bg-white.padding.center
+		//- .overlay
+		.container
+			.row
+				.col-xl-9.mx-auto
+					h4.mb-4 SEE YOUR IMPACT
+					a.btn.btn-lg.btn-primary.blue.col-md-5(href="/#howitworks") 
+						small FOLLOW ON FACEBOOK
+					a.btn.btn-lg.btn-primary.blue.col-md-5(href="/#howitworks") 
+						small FOLLOW ON INSTAGRAM
+		.container
+			.row(style="width: 100%; margin: 0 auto !important")
+			br
 
-	//- UPDATES                            			
+			.row(style="width: 100%;")
+			script(src="https://plny.it/embed/giftlab.io" data-columns="6" data-limit="12" data-paginate="false")
+			div(id="planoly-shoppable-widget" ) 
+			br
+
 	section.showcase.bg-white
-		div.container.padding
-			section.row
-				h3(id="projects") Project Updates
-			<div id="planoly-shoppable-widget"><script src="https://plny.it/embed/giftlab.io" data-columns="6" data-limit="12" data-paginate="false"></script></div>
-			section.row
-			
+		.container
+			.row(style="width: 100%")
+				p
+			.row
+				p
+	
 
-	//- Icons Grid
-	//- section.features-icons.bg-light.text-center(id="howitworks").bg-white
-	//- 		div(style="margin-left: 70px !important; margin-right: 70px !important;")
-	//- 			h3.center How it works
-	//- 			br
-	//- 			p.lead.mb-0 At Gift Lab we're empowering you to be in full control of your donations. Our platform connects non-profit projects and donors, using itemized lists to provide transparency, flexibility, and confidence to our users. Our vision is to inspire donors to give creatively: donate money directly to a project's budget, purchase a needed item for a team, or give differently by recycling your own unused items or by gifting airline miles.
-	//- 		br
-	//- 		.container
-	//- 			.row
-	//- 				.col-lg-4
-	//- 					.features-icons-item.mx-auto.mb-5.mb-lg-0.mb-lg-3
-	//- 						img.img-fluid(src="./images/0_home/FindProject.png")
-	//- 						br
-	//- 						br
-	//- 						h3 Find a project
-	//- 						p.lead.mb-0 Pick a project you’d like to support. These are not-for-profits, so your gifts are tax-deductible.
-
-	//- 				.col-lg-4
-	//- 					.features-icons-item.mx-auto.mb-5.mb-lg-0.mb-lg-3
-	//- 						img.img-fluid(src="./images/0_home/GiveDirectly.png")
-	//- 						br
-	//- 						br
-	//- 						h3 Donate differently
-	//- 						p.lead.mb-0 Be in control of how you're gifting: 1) purchase an item, 2) donate to a budget, or 3) recycle an item.
-
-	//- 				.col-lg-4
-	//- 					.features-icons-item.mx-auto.mb-0.mb-lg-3
-	//- 						img.img-fluid(src="./images/0_home/Thanks.png")
-	//- 						br
-	//- 						br
-	//- 						h3 Stay updated
-	//- 						p.lead.mb-0 We’ll keep you informed of your donation's impact, sending you updates as your chosen team puts it to use.
-
-
-	// Image Showcases
+	//- PROJECTS
 	section.showcase
-		.container-fluid.p-0
-			.row.no-gutters.panel
-				.col-lg-8.order-lg-2.text-white(style="background-image: url('/images/0_home/Main_Projects.jpg'); background-position: center;  background-size: cover; min-height:200px")
+		.container
+			.row.panel
 				.col-lg-4.order-lg-1.my-auto.padding
-					h2 Find a project
-					p.lead.mb-0 that you're passionate about and help it achieve success
+					h2 Current Projects
+					p.lead.mb-0 Find a project that you're passionate about and help it achieve success
 					br
-					a.btn.btn-lg.btn-primary(href="/#projects").jumbotronbutton SEE PROJECTS
-
-
+				.col-lg-8.order-lg-2.text-white(style="background-image: url('/images/0_home/Main_Projects.jpg'); background-position: center;  background-size: cover; min-height:200px")
+				
 
 
 	section.showcase.bg-white
 		div.container.padding
-			section.row
-				h3(id="projects") Current Projects
 			section.row.row-eq-height
 				each val in content
 					if val.Status === "Active"
@@ -111,8 +98,6 @@ block content
 									br
 									br
 									h5(style="padding-left: 20px; padding-right: 20px") #{val.ProjectName}
-									//- p Status: 
-									//- 	span(style="color: lightgreen") #{val["Status"]}
 									p(style="color: grey; padding-left: 20px; padding-right: 20px") #{val["Project Description - Short"]}
 
 			br
@@ -140,8 +125,24 @@ block content
 			section.row
 				
 			
-	
 	script.
 		$( document ).ready(function() {
 		    mixpanel.track("homepage_loaded");
 		});
+
+		$('#asdf').submit(function(e) {
+			var form = $(this);
+			var url = form.attr('action');
+			console.log(url, $('#email').val())
+			$.ajax({
+					type: "POST",
+					url: url,
+					data: {email: $('#email').val()}, // serializes the form's elements.
+					success: function(data)
+					{
+						$( "#signupform" ).replaceWith( "<br><br><h3 >Successfully signed up!</h3><br><br><br>" )
+					}
+				});
+			e.preventDefault(); // avoid to execute the actual submit of the form.
+		});
+	
