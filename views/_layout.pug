@@ -137,8 +137,8 @@ html
 
 
 
-        div(style="max-width: 1150px; margin: 0 auto ")
-            block content
+        
+        block content
         
 
     //- Email signup
@@ -167,7 +167,7 @@ html
                    data: {email: $('#email').val()}, // serializes the form's elements.
                    success: function(data)
                    {
-                       $( "#signupform" ).replaceWith( "<br><br><h3 style='color: white'>Successfully signed up!</h3><br><br><br>" )
+                       $( "#signupform" ).replaceWith( "<br><br><h3 >Successfully signed up!</h3><br><br><br>" )
                     
                    }
                  });
