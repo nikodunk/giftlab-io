@@ -51,23 +51,6 @@ block content
 	
 	section.container
 		div.row
-			//- PROFILE
-			div.col-md-3
-				section
-					div.padding.center
-							img.thumbnail(src=content.researcherimage alt="Image Title").center
-							br
-					div.panel.padding
-						h3= content["Researcher"]
-						p= content["Researcher profile"]
-						hr
-						p.lead #{content["Project Description - Long"]}
-						hr
-						p Learn more about the 
-							a(href="https://seaturtles.org" target="_blank" style="color: white; text-decoration: underline;") Turtle Island Restoration Network
-			
-
-
 			div.col-md-8
 				//- AMAZON DONATION PART
 				section(id="items")
@@ -114,10 +97,7 @@ block content
 										// br
 										// br
 										// a(href="/contact").pull-right or donate directly
-
-				
-		
-				// CASH DONATION 					
+				// CASH DONATION PART					
 				section(id="budgets")
 					br
 					br
@@ -180,7 +160,20 @@ block content
 											p(style="text-align: right") Gifted: $#{val['donatedsofar_pretty']} | Remaining: $#{val['remaining_pretty']}
 								div.col-md-4
 									// div.row
-								
+				//- PROFILE
+				div.col-md-3
+					section
+						div.padding.center
+								img.thumbnail(src=content.researcherimage alt="Image Title").center
+								br
+						div.panel.padding
+							h3= content["Researcher"]
+							p= content["Researcher profile"]
+							hr
+							p.lead #{content["Project Description - Long"]}
+							hr
+							p Learn more about the 
+								a(href="https://seaturtles.org" target="_blank" style="color: white; text-decoration: underline;") Turtle Island Restoration Network				
 			
 		
 
