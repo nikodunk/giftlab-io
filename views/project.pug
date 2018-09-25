@@ -11,10 +11,10 @@ block content
 			.row.panel
 				.col-lg-4.my-auto.padding.center
 					h4 #{content.ProjectName}
-					p.lead #{content["Project Description - Long"]}
+					p.lead #{content["Project Description - Short"]}
 					a.btn.btn-lg.btn-primary.orange(href="/#howitworks") 
 						h5 AMAZON WISHLIST
-					a.btn.btn-lg.btn-primary(href="/#howitworks").jumbotronbutton
+					a.btn.btn-lg.btn-primary(href="/#howitworks").orange
 						h5 DONATE MONEY
 				.col-lg-8.text-white(style="background-image: url(' "+content.image+" '); background-position: center;  background-size: cover; min-height:200px")
 				
@@ -60,6 +60,7 @@ block content
 					div.panel.padding
 						h3= content["Researcher"]
 						p= content["Researcher profile"]
+						p.lead #{content["Project Description - Long"]}
 						p Learn more about the 
 							a(href="https://seaturtles.org" target="_blank" style="color: white; text-decoration: underline;") Turtle Island Restoration Network
 			
