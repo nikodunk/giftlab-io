@@ -6,16 +6,13 @@ extends _layout
 
 block content
 
-	
-
-
 	// Image Showcases
 	section.showcase
 		.container-fluid.p-0
 			.row.no-gutters.panel
 				.col-lg-4.my-auto.padding.center
-					h5 Donate differently to non profit causes you love
-					p(style="font-size: .8rem") Know exactly where your money is going and stay updated with their progress
+					h4 Donate differently to non profit causes you love
+					p.lead Know exactly where your money is going and stay updated with their progress
 					a.btn.btn-lg.btn-primary.orange(href="/#howitworks") 
 						small DONATE VIA
 						h5 WISHLISTS
@@ -28,34 +25,31 @@ block content
 	section(id="signup").bg-white.padding.center
 		//- .overlay
 		.container
-			.row( id="signupform")
+			.row.signupform
 				.col-xl-9.mx-auto
 					h4.mb-4 STAY UPDATED
-					p Connect with us for the latest updates, including new non profit listings and Gift Lab feature updates.
+					p.lead Connect with us for the latest updates, including new non profit listings and Gift Lab feature updates.
 
 				.col-md-10.col-lg-8.col-xl-7.mx-auto
-					form(id="asdf" action="/signup" method="post")
+					form(id="niko" action="/signup" method="post")
 						div(class="input-group mb-3")
 							input(class="form-control" type='email' placeholder='Enter your email' name='email' id="email")
 							div(class="input-group-append")
-								input(class="btn btn-primary" type="submit" id="register" value='SUBMIT')
+								input(type="submit" id="register" value='SUBSCRIBE').btn.btn-primary.titleButton
 
-						//- .form-row
-						//- 	.col-12.col-md-9.mb-2.mb-md-0
-						//- 		input.form-control.form-control-lg()
 							
 	
 
-	//- SOCIAL FEED
+	//- INSTAGRAM, FACEBOOK, SOCIAL FEED
 	section(id="social").bg-white.padding.center
 		//- .overlay
 		.container
 			.row
 				.col-xl-9.mx-auto
 					h4.mb-4 SEE YOUR IMPACT
-					a.btn.btn-lg.btn-primary.blue.col-md-5(href="/#howitworks") 
+					a.btn.btn-lg.btn-primary.blue.col-md-5.titleButton(href="/#howitworks") 
 						small FOLLOW ON FACEBOOK
-					a.btn.btn-lg.btn-primary.blue.col-md-5(href="/#howitworks") 
+					a.btn.btn-lg.btn-primary.blue.col-md-5.titleButton(href="/#howitworks") 
 						small FOLLOW ON INSTAGRAM
 		.container
 			.row(style="width: 100%; margin: 0 auto !important")
@@ -75,30 +69,35 @@ block content
 	
 
 	//- PROJECTS
-	section.showcase
-		.container
-			.row.panel
-				.col-lg-4.order-lg-1.my-auto.padding
-					h2 Current Projects
-					p.lead.mb-0 Find a project that you're passionate about and help it achieve success
-					br
-				.col-lg-8.order-lg-2.text-white(style="background-image: url('/images/0_home/Main_Projects.jpg'); background-position: center;  background-size: cover; min-height:200px")
+	section
+		.container.padding.title
+			.row
+				h2.center Current Projects
+			.row
+				p.center.lead Find a project that you're passionate about and contribute money or gifts via Amazon Wishlists
+				br
+				
 				
 
 
 	section.showcase.bg-white
-		div.container.padding
+		div.container
 			section.row.row-eq-height
 				each val in content
 					if val.Status === "Active"
-						div.col-md-4(style="padding: 10px")
+						div.col-md-4(style="padding: 0px; ")
 							a(href=val.slug).nolinks
 								div.center.box-home.bg-white
 									img.img-fluid(src=val.image)
 									br
 									br
 									h5(style="padding-left: 20px; padding-right: 20px") #{val.ProjectName}
-									p(style="color: grey; padding-left: 20px; padding-right: 20px") #{val["Project Description - Short"]}
+									p.lead(style="color: grey; padding-left: 20px; padding-right: 20px") Project Title
+									p.lead(style=" padding-left: 20px; padding-right: 20px") #{val["Project Description - Short"]}
+									a.btn.btn-md.btn-primary.bodyButton(href="/#howitworks")
+										span AMAZON WISHLIST
+									a.btn.btn-md.btn-primary.bodyButton(href="/#howitworks")
+										span DONATE MONEY
 
 			br
 			br
@@ -130,5 +129,21 @@ block content
 		    mixpanel.track("homepage_loaded");
 		});
 
-		
-	
+		$("#niko").submit(function(e) {
+		    var form = $(this);
+		    var url = form.attr('action');
+		    console.log(url, $('#email').val())
+		    // e.preventDefault(); // avoid to execute the actual submit of the form.
+		    $.ajax({
+		           type: "POST",
+		           url: url,
+		           data: {email: $('#email').val()}, // serializes the form's elements.
+		           success: function(data)
+		           {
+		               $( ".signupform" ).replaceWith( "<br><br><h3 >Successfully signed up!</h3><br><br><br>" )
+		            
+		           }
+		         });
+
+		    e.preventDefault(); // avoid to execute the actual submit of the form.
+		});

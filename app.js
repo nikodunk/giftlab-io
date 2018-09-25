@@ -3,8 +3,6 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-//var ua = require('universal-analytics');
-
 
 
 var homeRouter = require('./routes/home');
@@ -12,14 +10,8 @@ var projectsRouter = require('./routes/projects');
 var paymentRouter = require('./routes/payment');
 
 
-
-
-
-// var expressGoogleAnalytics = require('express-google-analytics');
-// var analytics = expressGoogleAnalytics('UA-121905544-1');
-
 var app = express();
-// var visitor = ua('UA-121905544-1');
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -31,8 +23,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use(analytics);
-// app.use(expressGa('UA-121905544-1'));
 
 
 app.use('/', homeRouter);

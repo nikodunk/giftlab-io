@@ -1,11 +1,8 @@
 
 body {
-    background-color: #f8f9fa !important;
+    background-color: white /*#f8f9fa !important;*/
   }
 
-.panel{
-  min-height: 500px;
-}
 
 .showcase-img{
   background-position: center !important; /* Center the image */
@@ -85,7 +82,7 @@ hr {
 }
 
 .padding{
-  padding: 30px !important;
+  padding: 20px !important;
 }
 
 
@@ -95,7 +92,13 @@ hr {
 
 .panel {
   background-color: #00AFE1 !important;
-  /*text-align: right;*/
+  color: white;
+  margin: 0;
+  min-height: 500px;
+}
+
+.title{
+  background-color: #00AFE1 !important;
   color: white;
   margin: 0;
 }
@@ -203,4 +206,25 @@ hr {
 .stripe{
   width: 150px;
   margin-left: 10px;
+}
+
+
+.titleButton{
+  background-color: #00AFE1 !important;
+  border-width: 0px !important;
+  padding: 10px !important;
+}
+
+.bodyButton{
+  background-color: orange !important;
+  border-width: 0px !important;
+  width: 90%;
+  padding: 10px !important;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  font-size: 1rem !important;
+}
+
+.lead{
+  font-size: 1rem !important;
 }
