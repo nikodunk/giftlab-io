@@ -19,159 +19,162 @@ block content
 				.col-lg-8.text-white(style="background-image: url(' "+content.image+" '); background-position: center;  background-size: cover; min-height:200px")
 				
 
-	section.row.row-eq-height.bg-white
+	
+		
+
+	
+	//- // CALL-TO-ACTION BUTTONS
+	//- // section.row.row-eq-height.bg-white
+	//- // 		div.container(style="padding: 20px; padding-bottom: 40px;")
+	//- // 			br
+	//- // 			br
+	//- // 			br
+	//- // 			h3.center How to contribute
+	//- // 			br
+	//- // 			p.lead.mb-0.center(style="max-width: 800px; margin: 0 auto !important") All donations to this project are tax deductible, simply select an item you'd like to purchase or a budget you'd like to donate to. If you have another idea on how you can fufill this need, contact us by completing the "give creatively" form.
+	//- // 			br
+
+	//- // 			.row
+	//- // 				.col-lg-4
+	//- // 						a.btn.btn-lg.btn-primary.orange.center(href="#items" style="padding: 20px !important; width: 100%") Gift Items in Need
+	//- // 						br
+	//- // 						br
+	//- // 				.col-lg-4
+	//- // 						a.btn.btn-lg.btn-primary.green.center(href="#budgets"  style="padding: 20px !important; width: 100%") Donate to a Budget
+	//- // 						br
+	//- // 						br
+	//- // 				.col-lg-4
+	//- // 						a.btn.btn-lg.btn-primary.blue.center(href="/contact"  style="padding: 20px !important; width: 100%") Give Differently
+	//- // 						br
+	//- // 						br
+
+	
+	section.container
+		br
 		div.col-md-4
-			div.padding.center
-				img.thumbnail(src=content.researcherimage alt="Image Title").center
+			//- PROFILE
+			section.row.row-eq-height.bg-white
+				div
+					div.padding.center
+						img.thumbnail(src=content.researcherimage alt="Image Title").center
+						br
+				div.panel.padding
+					h3= content["Researcher"]
+					p= content["Researcher profile"]
+					p Learn more about the 
+						a(href="https://seaturtles.org" target="_blank" style="color: white; text-decoration: underline;") Turtle Island Restoration Network
+		div.col-md-8
+			//- AMAZON DONATION PART
+			section(id="items")
+				h3.center Items in Need
 				br
-		div.col-md-8.panel.padding
-			h3= content["Researcher"]
-			p= content["Researcher profile"]
-			p Learn more about the 
-				a(href="https://seaturtles.org" target="_blank" style="color: white; text-decoration: underline;") Turtle Island Restoration Network
-		
+				each val in skus
+					if val.bucket == "Item"
+						if val.status == "Active"
+							div.row.box-project(style="background-color: white") 
+								div.col-12
+									h5 #{val["sku_name"]} ($#{val['unit_cost']} each)
+									// p(style="color:grey")= val["Bucket"]
+								div.col-md-8
+									p= val["description"]
+									// p Need: #{val['quantity_need']}&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Total Cost: #{val['total_value']}
+									meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: lightblue")
+									br
+									if val.donatedsofar == null
+										p(style="text-align: right") Gifted: 0 | Remaining: #{val['remaining_pretty']}
+									else
+										p(style="text-align: right") Gifted: #{val['donatedsofar_pretty']} | Remaining: #{val['remaining_pretty']}
+								div.col-md-4
+									a(href=content.wishlistlink target="_blank").btn.btn-primary.orange.float-right(style="width: 100%; padding: 20px" ) Gift via Amazon
+									br
+									br
+									a(href="/contact" style="color: black").float-right or give creatively
 
+						else
+							div.row.box-project(style="background-color: #f8f9fa") 
+								div.col-12
+									h5 #{val["sku_name"]} ($#{val['unit_cost']} each)
+									// p(style="color:grey")= val["Bucket"]
+								div.col-md-8
+									p= val["description"]
+									// p Need: #{val['quantity_need']}&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Total Cost: #{val['total_value']}
+									meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: grey")
+									br
+									if val.donatedsofar == null
+										p(style="text-align: right") Gifted: 0 | Remaining: #{val['remaining_pretty']}
+									else
+										p(style="text-align: right") Gifted: #{val['donatedsofar_pretty']} | Remaining: #{val['remaining_pretty']}
+								div.col-md-4
+									// a(href=content.wishlistlink target="_blank").btn.btn-primary.orange.pull-right(style="width: 100%; padding: 20px" ) Gift via Amazon
+									// br
+									// br
+									// a(href="/contact").pull-right or donate directly
+
+			
 	
-	// CALL-TO-ACTION BUTTONS
-	section.row.row-eq-height.bg-white
-			div.container(style="padding: 20px; padding-bottom: 40px;")
+			// CASH DONATION 					
+			section(id="budgets")
 				br
 				br
+				h3.center Project Budgets
+				p.lead.mb-0.center(style="max-width: 800px; margin: 0 auto !important") 
+					| Our project teams have worked hard to give the best estimates possible, but budgets and prices of items can fluctuate. Should something change, your monetary donation will be used for another aspect of this project. 
+					p(style="text-size: 1rem; color: grey; text-align: center") Privacy Notice: Gift Lab will share your name, billing address, e-mail, the date and amount of your contribution to the project sponsoring non-profit. Your email will be retained by Gift Lab for email marketing correspondence.
+
 				br
-				h3.center How to contribute
-				br
-				p.lead.mb-0.center(style="max-width: 800px; margin: 0 auto !important") All donations to this project are tax deductible, simply select an item you'd like to purchase or a budget you'd like to donate to. If you have another idea on how you can fufill this need, contact us by completing the "give creatively" form.
-				br
-
-				.row
-					.col-lg-4
-							a.btn.btn-lg.btn-primary.orange.center(href="#items" style="padding: 20px !important; width: 100%") Gift Items in Need
-							br
-							br
-					.col-lg-4
-							a.btn.btn-lg.btn-primary.green.center(href="#budgets"  style="padding: 20px !important; width: 100%") Donate to a Budget
-							br
-							br
-					.col-lg-4
-							a.btn.btn-lg.btn-primary.blue.center(href="/contact"  style="padding: 20px !important; width: 100%") Give Differently
-							br
-							br
-
-	
-	// AMAZON DONATION PART
-	section.container(id="items")
-		br
-		br
-		br
-		h3.center Items in Need
-		br
-		each val in skus
-			if val.bucket == "Item"
-				if val.status == "Active"
-					div.row.box-project(style="background-color: white") 
-						div.col-12
-							h5 #{val["sku_name"]} ($#{val['unit_cost']} each)
-							// p(style="color:grey")= val["Bucket"]
-						div.col-md-8
-							p= val["description"]
-							// p Need: #{val['quantity_need']}&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Total Cost: #{val['total_value']}
-							meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: lightblue")
-							br
-							if val.donatedsofar == null
-								p(style="text-align: right") Gifted: 0 | Remaining: #{val['remaining_pretty']}
-							else
-								p(style="text-align: right") Gifted: #{val['donatedsofar_pretty']} | Remaining: #{val['remaining_pretty']}
-						div.col-md-4
-							a(href=content.wishlistlink target="_blank").btn.btn-primary.orange.float-right(style="width: 100%; padding: 20px" ) Gift via Amazon
-							br
-							br
-							a(href="/contact" style="color: black").float-right or give creatively
-
-				else
-					div.row.box-project(style="background-color: #f8f9fa") 
-						div.col-12
-							h5 #{val["sku_name"]} ($#{val['unit_cost']} each)
-							// p(style="color:grey")= val["Bucket"]
-						div.col-md-8
-							p= val["description"]
-							// p Need: #{val['quantity_need']}&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Total Cost: #{val['total_value']}
-							meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: grey")
-							br
-							if val.donatedsofar == null
-								p(style="text-align: right") Gifted: 0 | Remaining: #{val['remaining_pretty']}
-							else
-								p(style="text-align: right") Gifted: #{val['donatedsofar_pretty']} | Remaining: #{val['remaining_pretty']}
-						div.col-md-4
-							// a(href=content.wishlistlink target="_blank").btn.btn-primary.orange.pull-right(style="width: 100%; padding: 20px" ) Gift via Amazon
-							// br
-							// br
-							// a(href="/contact").pull-right or donate directly
-
-		
-	
-	// CASH DONATION 					
-	section.container(id="budgets")
-		br
-		br
-		h3.center Project Budgets
-		p.lead.mb-0.center(style="max-width: 800px; margin: 0 auto !important") 
-			| Our project teams have worked hard to give the best estimates possible, but budgets and prices of items can fluctuate. Should something change, your monetary donation will be used for another aspect of this project. 
-			p(style="text-size: 1rem; color: grey; text-align: center") Privacy Notice: Gift Lab will share your name, billing address, e-mail, the date and amount of your contribution to the project sponsoring non-profit. Your email will be retained by Gift Lab for email marketing correspondence.
-
-		br
 
 
-		each val in skus
-			if val.bucket == "Budget"
-				if val.status == "Active"
-					div.row.box-project(style="background-color: white")
-						div.col-12
-							h5 #{val["sku_name"]}
-							// p(style="color:grey")= val["Bucket"]
-						div.col-md-8
-							div
-								p= val["description"]
-								// p Total Budget: $#{val['total_value']}
-								meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: lightblue").float-right
-								br
-								if val.donatedsofar == null
-									p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining_pretty']}
-								else
-									p(style="text-align: right") Gifted: $#{val['donatedsofar_pretty']} | Remaining: $#{val['remaining_pretty']}
-						div.col-md-4(style="text-align: right")
-							div.row
-								div.test
+				each val in skus
+					if val.bucket == "Budget"
+						if val.status == "Active"
+							div.row.box-project(style="background-color: white")
+								div.col-12
+									h5 #{val["sku_name"]}
+									// p(style="color:grey")= val["Bucket"]
+								div.col-md-8
+									div
+										p= val["description"]
+										// p Total Budget: $#{val['total_value']}
+										meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: lightblue").float-right
+										br
+										if val.donatedsofar == null
+											p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining_pretty']}
+										else
+											p(style="text-align: right") Gifted: $#{val['donatedsofar_pretty']} | Remaining: $#{val['remaining_pretty']}
+								div.col-md-4(style="text-align: right")
+									div.row
+										div.test
+											
+											form( id="myForm" action="/payment/charge/"+content['ProjectID']+'/'+val['sku'] method="POST")
+												input( type="hidden" id="stripeToken" name="stripeToken" )
+												input( type="hidden" id="stripeEmail" name="stripeEmail" )
+												input( type="hidden" id="stripeAmount" name="stripeAmount" )
+											input.myInput( type="number" id=val['sku'] name="amountInDollars" value="20" min="0" max=val['total_need'])
+											input.btn.btn-md.btn-primary.green(type="button" class="stripe" data-sku=val['sku'] class=val['sku'] value="Donate Now")
 									
-									form( id="myForm" action="/payment/charge/"+content['ProjectID']+'/'+val['sku'] method="POST")
-										input( type="hidden" id="stripeToken" name="stripeToken" )
-										input( type="hidden" id="stripeEmail" name="stripeEmail" )
-										input( type="hidden" id="stripeAmount" name="stripeAmount" )
-									input.myInput( type="number" id=val['sku'] name="amountInDollars" value="20" min="0" max=val['total_need'])
-									input.btn.btn-md.btn-primary.green(type="button" class="stripe" data-sku=val['sku'] class=val['sku'] value="Donate Now")
-								
 
 
 
-							// div.row
-							// 	a(href="/contact").pull-right or donate differently
+								// div.row
+								// 	a(href="/contact").pull-right or donate differently
 
-				else
-					div.row.box-project(style="background-color: #f8f9fa")
-						div.col-12
-							h5 #{val["sku_name"]}
-							// p(style="color:grey")= val["Bucket"]
-						div.col-md-8
-							div
-								p= val["description"]
-								// p Total Budget: $#{val['total_value']}
-								meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: grey").float-right
-								br
-								if val.donatedsofar == null
-									p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining_pretty']}
-								else
-									p(style="text-align: right") Gifted: $#{val['donatedsofar_pretty']} | Remaining: $#{val['remaining_pretty']}
-						div.col-md-4
-							// div.row
+					else
+						div.row.box-project(style="background-color: #f8f9fa")
+							div.col-12
+								h5 #{val["sku_name"]}
+								// p(style="color:grey")= val["Bucket"]
+							div.col-md-8
+								div
+									p= val["description"]
+									// p Total Budget: $#{val['total_value']}
+									meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: grey").float-right
+									br
+									if val.donatedsofar == null
+										p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining_pretty']}
+									else
+										p(style="text-align: right") Gifted: $#{val['donatedsofar_pretty']} | Remaining: $#{val['remaining_pretty']}
+							div.col-md-4
+								// div.row
 							
 		
 		
