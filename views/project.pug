@@ -44,9 +44,7 @@ block content
 
 
 				//- AMAZON
-				div.row(id="items")
-					br
-					br
+				div.row(id="items" style="margin-top: 20px")
 					h3.center Items in Need
 					br
 				div.row
@@ -57,7 +55,7 @@ block content
 
 							//- AMAZON ITEM ACTIVE
 							if val.status == "Active"
-								div.col-12.col-md-6.col-lg-4
+								div.col-md-6.col-lg-4
 									div.box-project(style="background-color: white")
 										div
 											h5 #{val["sku_name"]} ($#{val['unit_cost']} each)
@@ -79,7 +77,7 @@ block content
 
 							//- AMAZON ITEM COMPLETE
 							else
-								div.col-12.col-md-6.col-lg-4
+								div.col-md-6.col-lg-4
 									div.box-project(style="background-color: #f8f9fa") 
 										div
 											h5 #{val["sku_name"]} ($#{val['unit_cost']} each)
@@ -97,11 +95,9 @@ block content
 									
 				
 				// STRIPE
-				div.row(id="budgets")
-					br
-					br
+				div.row(id="budgets" style="margin-top: 20px")
 					h3.center Project Budgets
-					p.lead.mb-0.center(style="max-width: 800px; margin: 0 auto !important") 
+					p.lead.mb-0.center(style="max-width: 800px; margin: 0 auto !important")
 						| Our project teams have worked hard to give the best estimates possible, but budgets and prices of items can fluctuate. Should something change, your monetary donation will be used for another aspect of this project. 
 						p(style="text-size: 1rem; color: grey; text-align: center") Privacy Notice: Gift Lab will share your name, billing address, e-mail, the date and amount of your contribution to the project sponsoring non-profit. Your email will be retained by Gift Lab for email marketing correspondence.
 
@@ -114,7 +110,7 @@ block content
 					
 								//- STRIPE ITEM ACTIVE
 								if val.status == "Active"
-									div.col-12.col-md-6.col-lg-4
+									div.col-md-6.col-lg-4
 										div.box-project(style="background-color: white")
 											div
 												h5 #{val["sku_name"]}
@@ -142,7 +138,7 @@ block content
 
 								//- STRIPE ITEM COMPLETE
 								else
-									div.col-12.col-md-6.col-lg-4
+									div.col-md-6.col-lg-4
 										div.box-project(style="background-color: #f8f9fa")
 											div
 												h5 #{val["sku_name"]}
