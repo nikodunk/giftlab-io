@@ -44,7 +44,7 @@ block content
 
 
 				//- AMAZON
-				section(id="items")
+				div.row(id="items")
 					br
 					br
 					h3.center Items in Need
@@ -56,11 +56,11 @@ block content
 
 							//- AMAZON ITEM ACTIVE
 							if val.status == "Active"
-								div.col-sm-6.col-md-3.box-project(style="background-color: white") 
-									div.row
+								div.col-sm-6.col-md-3.box-project(style="background-color: white")
+									div
 										h5 #{val["sku_name"]} ($#{val['unit_cost']} each)
 										// p(style="color:grey")= val["Bucket"]
-									div.row
+									div
 										p= val["description"]
 										// p Need: #{val['quantity_need']}&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Total Cost: #{val['total_value']}
 										meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: lightblue")
@@ -69,7 +69,7 @@ block content
 											p(style="text-align: right") Gifted: 0 | Remaining: #{val['remaining_pretty']}
 										else
 											p(style="text-align: right") Gifted: #{val['donatedsofar_pretty']} | Remaining: #{val['remaining_pretty']}
-									div.row
+									div
 										a(href=content.wishlistlink target="_blank").btn.btn-primary.orange.float-right(style="width: 100%; padding: 20px" ) AMAZON WISHLIST
 										br
 										br
@@ -78,10 +78,10 @@ block content
 							//- AMAZON ITEM COMPLETE
 							else
 								div.col-sm-6.col-md-3.box-project(style="background-color: #f8f9fa") 
-									div.row
+									div
 										h5 #{val["sku_name"]} ($#{val['unit_cost']} each)
 										// p(style="color:grey")= val["Bucket"]
-									div.row
+									div
 										p= val["description"]
 										// p Need: #{val['quantity_need']}&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Total Cost: #{val['total_value']}
 										meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: grey")
@@ -90,11 +90,11 @@ block content
 											p(style="text-align: right") Gifted: 0 | Remaining: #{val['remaining_pretty']}
 										else
 											p(style="text-align: right") Gifted: #{val['donatedsofar_pretty']} | Remaining: #{val['remaining_pretty']}
-									div.row
+									div
 									
 				
 				// STRIPE
-				section(id="budgets")
+				div.row(id="budgets")
 					br
 					br
 					h3.center Project Budgets
@@ -113,10 +113,10 @@ block content
 							//- STRIPE ITEM ACTIVE
 							if val.status == "Active"
 								div.col-sm-6.col-md-3.box-project(style="background-color: white")
-									div.row
+									div
 										h5 #{val["sku_name"]}
 										// p(style="color:grey")= val["Bucket"]
-									div.row
+									div
 										div
 											p= val["description"]
 											// p Total Budget: $#{val['total_value']}
@@ -126,7 +126,7 @@ block content
 												p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining_pretty']}
 											else
 												p(style="text-align: right") Gifted: $#{val['donatedsofar_pretty']} | Remaining: $#{val['remaining_pretty']}
-									div.row(style="text-align: right")
+									div
 										div.test
 											form( id="myForm" action="/payment/charge/"+content['ProjectID']+'/'+val['sku'] method="POST")
 												input( type="hidden" id="stripeToken" name="stripeToken" )
@@ -140,10 +140,10 @@ block content
 							//- STRIPE ITEM COMPLETE
 							else
 								div.col-sm-6.col-md-3.box-project(style="background-color: #f8f9fa")
-									div.row
+									div
 										h5 #{val["sku_name"]}
 										// p(style="color:grey")= val["Bucket"]
-									div.row
+									div
 										div
 											p= val["description"]
 											// p Total Budget: $#{val['total_value']}
@@ -153,7 +153,7 @@ block content
 												p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining_pretty']}
 											else
 												p(style="text-align: right") Gifted: $#{val['donatedsofar_pretty']} | Remaining: $#{val['remaining_pretty']}
-									div.col-12
+									div
 										h5.center(style="color:grey") COMPLETE!
 			
 
