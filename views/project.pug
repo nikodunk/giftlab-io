@@ -19,7 +19,7 @@ block content
 					a.btn.btn-sm.btn-primary.orange(href="http://betagift.herokuapp.com/projects/leatherbacks/#items")
 						div.row
 							div.row(style="margin: 0 auto")
-								i.fa.fa-amazon.fa-2x.fa-fw(style="margin-top: 12px; margin-right: 5px")
+								i.fa.fa-amazon.fa-2x.fa-fw(style="margin-right: 5px")
 								span
 									h5 AMAZON WISHLIST
 					
@@ -27,7 +27,7 @@ block content
 					a.btn.btn-sm.btn-primary.orange(href="/#budgets")
 						div.row
 							div.row(style="margin: 0 auto")
-								i.fa.dollar-sign.fa-2x.fa-fw(style="margin-top: 12px; margin-right: 5px")
+								i.fa.fa-dollar-sign.fa-2x.fa-fw(style="margin-right: 5px")
 								span
 									h5 DONATE MONEY
 				.col-lg-8.text-white(style="background-image: url(' "+content.image+" '); background-position: center;  background-size: cover; min-height:200px")
@@ -57,7 +57,7 @@ block content
 
 							//- AMAZON ITEM ACTIVE
 							if val.status == "Active"
-								div.col-6.col-md-4
+								div.col-12.col-md-6.col-lg-4
 									div.box-project(style="background-color: white")
 										div
 											h5 #{val["sku_name"]} ($#{val['unit_cost']} each)
@@ -79,7 +79,7 @@ block content
 
 							//- AMAZON ITEM COMPLETE
 							else
-								div.col-6.col-md-4
+								div.col-12.col-md-6.col-lg-4
 									div.box-project(style="background-color: #f8f9fa") 
 										div
 											h5 #{val["sku_name"]} ($#{val['unit_cost']} each)
@@ -115,7 +115,7 @@ block content
 
 							//- STRIPE ITEM ACTIVE
 							if val.status == "Active"
-								div.col-6.col-md-4
+								div.col-12.col-md-6.col-lg-4
 									div.box-project(style="background-color: white")
 										div
 											h5 #{val["sku_name"]}
@@ -143,7 +143,7 @@ block content
 
 							//- STRIPE ITEM COMPLETE
 							else
-								div.col-6.col-md-4
+								div.col-12.col-md-6.col-lg-4
 									div.box-project(style="background-color: #f8f9fa")
 										div
 											h5 #{val["sku_name"]}
