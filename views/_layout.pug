@@ -67,37 +67,10 @@ html
 
     body
     
-        //- Navigation
-        //- nav.navbar.navbar-light.bg-light.static-top(id="home" style="padding: 15px;").bg-white
-            .container
-
-                //normal layout
-                div.col-sm-4.d-none.d-sm-block
-                    a.navbar-brand(href='/#home')
-                        img.img-fluid(src="../images/GiftLab_Logo.png" style="max-height: 30px; max-width: 100% !important").brand
-                div.col-sm-8.d-none.d-sm-block
-                    a.float-right(href='/#projects' style="color: black; padding: 15px") PROJECTS
-                    a.float-right(href='/#howitworks' style="color: black; padding: 15px") HOW IT WORKS
-                    a.float-right(href='/about' style="color: black; padding: 15px") ABOUT
-                    
-
-                //mobile layout
-                div.d-xs-block.d-sm-none.center
-                    div.col-12.center
-                        a.navbar-brand(href='/#home').center
-                            img.img-fluid(src="../images/GiftLab_Logo.png" style="max-height: 30px; max-width: 100% !important").brand
-                        br
-                        br
-                        a.center(href='/about' style="color: black; padding: 15px") ABOUT
-                        br
-                        a.center(href='/#howitworks' style="color: black; padding: 15px") HOW IT WORKS
-                        br
-                        a.center(href='/#projects' style="color: black; padding: 15px") PROJECTS
-
 
         <nav class="navbar navbar-expand-lg navbar-light bg-white">
           <a class="navbar-brand" href="/">
-            <img class="img-fluid brand" src="../images/GiftLab_Logo.png" style="max-height: 30px; max-width: 100% !important") />
+            <img class="img-fluid brand" src="/images/GiftLab_Logo.png" style="max-height: 30px; max-width: 100% !important") />
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -166,8 +139,7 @@ html
                       input(class="form-control" type='email' placeholder='Enter your email' name='email' id="email")
                       div(class="input-group-append")
                         button(type="submit" id="register").btn.btn-primary.titleButton
-                          i.fa.fa-envelope.fa-1x.fa-fw
-                          span &nbsp;SUBSCRIBE
+                          span SUBSCRIBE
 
                         
 
