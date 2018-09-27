@@ -14,10 +14,22 @@ block content
 				.col-lg-4.my-auto.padding
 					h4 #{content.ProjectName}
 					p.lead #{content["Project Description - Short"]}
-					a.btn.btn-lg.btn-primary.orange(href="/#howitworks") 
-						h5 AMAZON WISHLIST
-					a.btn.btn-lg.btn-primary(href="/#howitworks").orange
-						h5 DONATE MONEY
+					
+
+					a.btn.btn-sm.btn-primary.orange(href="http://betagift.herokuapp.com/projects/leatherbacks/#items")
+						div.row
+							div.row(style="margin: 0 auto")
+								i.fa.fa-amazon.fa-2x.fa-fw(style="margin-top: 12px; margin-right: 5px")
+								span
+									h5 AMAZON WISHLIST
+					
+
+					a.btn.btn-sm.btn-primary.orange(href="/#budgets")
+						div.row
+							div.row(style="margin: 0 auto")
+								i.fa.dollar-sign.fa-2x.fa-fw(style="margin-top: 12px; margin-right: 5px")
+								span
+									h5 DONATE MONEY
 				.col-lg-8.text-white(style="background-image: url(' "+content.image+" '); background-position: center;  background-size: cover; min-height:200px")
 	
 
