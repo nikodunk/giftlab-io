@@ -108,59 +108,58 @@ block content
 					br
 
 				div.row
-				each val in skus
-						if val.bucket == "Budget"
+					each val in skus
+							if val.bucket == "Budget"
 
-				
-
-							//- STRIPE ITEM ACTIVE
-							if val.status == "Active"
-								div.col-12.col-md-6.col-lg-4
-									div.box-project(style="background-color: white")
-										div
-											h5 #{val["sku_name"]}
-											// p(style="color:grey")= val["Bucket"]
-										div
+					
+								//- STRIPE ITEM ACTIVE
+								if val.status == "Active"
+									div.col-12.col-md-6.col-lg-4
+										div.box-project(style="background-color: white")
 											div
-												p= val["description"]
-												// p Total Budget: $#{val['total_value']}
-												meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: lightblue").float-right
-												br
-												if val.donatedsofar == null
-													p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining_pretty']}
-												else
-													p(style="text-align: right") Gifted: $#{val['donatedsofar_pretty']} | Remaining: $#{val['remaining_pretty']}
-										div
-											div.test
-												form( id="myForm" action="/payment/charge/"+content['ProjectID']+'/'+val['sku'] method="POST")
-													input( type="hidden" id="stripeToken" name="stripeToken" )
-													input( type="hidden" id="stripeEmail" name="stripeEmail" )
-													input( type="hidden" id="stripeAmount" name="stripeAmount" )
-												input.myInput( type="number" id=val['sku'] name="amountInDollars" value="20" min="0" max=val['total_need'])
-												input.btn.btn-md.btn-primary.orange(type="button" class="stripe" data-sku=val['sku'] class=val['sku'] value="DONATE MONEY")
-											
-
-
-							//- STRIPE ITEM COMPLETE
-							else
-								div.col-12.col-md-6.col-lg-4
-									div.box-project(style="background-color: #f8f9fa")
-										div
-											h5 #{val["sku_name"]}
-											// p(style="color:grey")= val["Bucket"]
-										div
+												h5 #{val["sku_name"]}
+												// p(style="color:grey")= val["Bucket"]
 											div
-												p= val["description"]
-												// p Total Budget: $#{val['total_value']}
-												meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: grey").float-right
-												br
-												if val.donatedsofar == null
-													p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining_pretty']}
-												else
-													p(style="text-align: right") Gifted: $#{val['donatedsofar_pretty']} | Remaining: $#{val['remaining_pretty']}
-										div
-											h5.center(style="color:grey") COMPLETE!
-				
+												div
+													p= val["description"]
+													// p Total Budget: $#{val['total_value']}
+													meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: lightblue").float-right
+													br
+													if val.donatedsofar == null
+														p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining_pretty']}
+													else
+														p(style="text-align: right") Gifted: $#{val['donatedsofar_pretty']} | Remaining: $#{val['remaining_pretty']}
+											div
+												div.test
+													form( id="myForm" action="/payment/charge/"+content['ProjectID']+'/'+val['sku'] method="POST")
+														input( type="hidden" id="stripeToken" name="stripeToken" )
+														input( type="hidden" id="stripeEmail" name="stripeEmail" )
+														input( type="hidden" id="stripeAmount" name="stripeAmount" )
+													input.myInput( type="number" id=val['sku'] name="amountInDollars" value="20" min="0" max=val['total_need'])
+													input.btn.btn-md.btn-primary.orange(type="button" class="stripe" data-sku=val['sku'] class=val['sku'] value="DONATE MONEY")
+												
+
+
+								//- STRIPE ITEM COMPLETE
+								else
+									div.col-12.col-md-6.col-lg-4
+										div.box-project(style="background-color: #f8f9fa")
+											div
+												h5 #{val["sku_name"]}
+												// p(style="color:grey")= val["Bucket"]
+											div
+												div
+													p= val["description"]
+													// p Total Budget: $#{val['total_value']}
+													meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: grey").float-right
+													br
+													if val.donatedsofar == null
+														p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining_pretty']}
+													else
+														p(style="text-align: right") Gifted: $#{val['donatedsofar_pretty']} | Remaining: $#{val['remaining_pretty']}
+											div
+												h5.center(style="color:grey") COMPLETE!
+					
 
 
 

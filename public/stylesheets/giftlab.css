@@ -136,13 +136,13 @@ hr {
 
 .input{
   padding: 10;
-  border: 1px solid lightgrey;
+  border: 1px solid #lightgrey;
   border-radius: 5px;
 }
 
 
 .box-home{
-  border: 1px solid lightgrey;
+  border: 1px solid #efefef;
   /*padding: 20px;*/
   height: 100%;
   max-width: 900px;
@@ -152,11 +152,11 @@ hr {
 }
 
 .box-project{
-  border: 1px solid lightgrey;
+  border: 1px solid #efefef;
   padding: 20px;
   height: 100%;
   max-width: 900px;
-  margin: 5px auto !important;
+  margin: 5px !important;
   background-image: white !important;
   /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3)*/
 }
@@ -195,7 +195,7 @@ hr {
 
 .myInput{
   padding: 5px;
-  border: 1px solid lightgrey;
+  border: 1px solid #efefef;
   border-radius: 3px;
   padding-left: 25px;
   width: 120px;
