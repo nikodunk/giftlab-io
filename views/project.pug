@@ -27,7 +27,7 @@ block content
 					a.btn.btn-sm.btn-primary.orange(href="/#budgets")
 						div.row
 							div.row(style="margin: 0 auto")
-								i.fa.fa-dollar-sign.fa-2x.fa-fw(style="margin-right: 5px")
+								i.fa.fa-usd.fa-2x.fa-fw(style="margin-right: 5px")
 								span
 									h5 DONATE MONEY
 				.col-lg-8.text-white(style="background-image: url(' "+content.image+" '); background-position: center;  background-size: cover; min-height:200px")
@@ -70,7 +70,10 @@ block content
 											else
 												p(style="text-align: right") Gifted: #{val['donatedsofar_pretty']} | Remaining: #{val['remaining_pretty']}
 										div
-											a(href=content.wishlistlink target="_blank").btn.btn-primary.orange.float-right(style="width: 100%; padding: 20px" ) AMAZON WISHLIST
+											a(href=content.wishlistlink target="_blank").btn.btn-primary.orange.float-right(style="width: 100%; padding: 20px" ) 
+												i.fa.fa-amazon.fa-2x.fa-fw(style="margin-right: 5px")
+												span 
+													h5 AMAZON WISHLIST
 											br
 											br
 											a(href="/contact").float-right Or recycle this item
@@ -132,7 +135,10 @@ block content
 														input( type="hidden" id="stripeEmail" name="stripeEmail" )
 														input( type="hidden" id="stripeAmount" name="stripeAmount" )
 													input.myInput( type="number" id=val['sku'] name="amountInDollars" value="20" min="0" max=val['total_need'])
-													input.btn.btn-md.btn-primary.orange(type="button" class="stripe" data-sku=val['sku'] class=val['sku'] value="DONATE MONEY")
+													button.btn.btn-md.btn-primary.orange( class="stripe" data-sku=val['sku'] class=val['sku'])
+														i.fa.fa-usd.fa-1x.fa-fw(style="margin-right: 5px")
+														span 
+															h5 DONATE MONEY
 												
 
 
