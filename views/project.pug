@@ -5,7 +5,10 @@ block content
 	<script src="https://checkout.stripe.com/checkout.js"></script>
 	<script src="http://malsup.github.com/jquery.form.js"></script>
 
-	//- PROJECT TITLE 
+	
+
+
+	//- PROJECT HEADER
 	section.showcase
 			.row.panel
 				.col-lg-4.my-auto.padding
@@ -17,10 +20,18 @@ block content
 						h5 DONATE MONEY
 				.col-lg-8.text-white(style="background-image: url(' "+content.image+" '); background-position: center;  background-size: cover; min-height:200px")
 	
+
+
+
+
+
+
 	section.container
 		div.row
 			div.col-md-8
-				//- AMAZON DONATION PART
+
+
+				//- AMAZON
 				section(id="items")
 					br
 					br
@@ -28,12 +39,16 @@ block content
 					br
 					each val in skus
 						if val.bucket == "Item"
+				
+
+
+				//- AMAZON ITEM ACTIVE
 							if val.status == "Active"
 								div.row.box-project(style="background-color: white") 
 									div.col-12
 										h5 #{val["sku_name"]} ($#{val['unit_cost']} each)
 										// p(style="color:grey")= val["Bucket"]
-									div.col-md-8
+									div.col-12
 										p= val["description"]
 										// p Need: #{val['quantity_need']}&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Total Cost: #{val['total_value']}
 										meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: lightblue")
@@ -42,18 +57,19 @@ block content
 											p(style="text-align: right") Gifted: 0 | Remaining: #{val['remaining_pretty']}
 										else
 											p(style="text-align: right") Gifted: #{val['donatedsofar_pretty']} | Remaining: #{val['remaining_pretty']}
-									div.col-md-4
+									div.col-12
 										a(href=content.wishlistlink target="_blank").btn.btn-primary.orange.float-right(style="width: 100%; padding: 20px" ) AMAZON WISHLIST
 										br
 										br
-										a(href="/contact" style="color: black").float-right or give creatively
+										a(href="/contact" style="color: black").float-right or Or Recycle this item
 
+				//- AMAZON ITEM COMPLETE
 							else
 								div.row.box-project(style="background-color: #f8f9fa") 
 									div.col-12
 										h5 #{val["sku_name"]} ($#{val['unit_cost']} each)
 										// p(style="color:grey")= val["Bucket"]
-									div.col-md-8
+									div.col-12
 										p= val["description"]
 										// p Need: #{val['quantity_need']}&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Total Cost: #{val['total_value']}
 										meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: grey")
@@ -62,12 +78,10 @@ block content
 											p(style="text-align: right") Gifted: 0 | Remaining: #{val['remaining_pretty']}
 										else
 											p(style="text-align: right") Gifted: #{val['donatedsofar_pretty']} | Remaining: #{val['remaining_pretty']}
-									div.col-md-4
-										// a(href=content.wishlistlink target="_blank").btn.btn-primary.orange.pull-right(style="width: 100%; padding: 20px" ) Gift via Amazon
-										// br
-										// br
-										// a(href="/contact").pull-right or donate directly
-				// CASH DONATION PART					
+									div.col-12
+									
+				
+				// STRIPE
 				section(id="budgets")
 					br
 					br
@@ -81,12 +95,16 @@ block content
 
 					each val in skus
 						if val.bucket == "Budget"
+
+				
+
+				//- STRIPE ITEM ACTIVE
 							if val.status == "Active"
 								div.row.box-project(style="background-color: white")
 									div.col-12
 										h5 #{val["sku_name"]}
 										// p(style="color:grey")= val["Bucket"]
-									div.col-md-8
+									div.col-12
 										div
 											p= val["description"]
 											// p Total Budget: $#{val['total_value']}
@@ -96,7 +114,7 @@ block content
 												p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining_pretty']}
 											else
 												p(style="text-align: right") Gifted: $#{val['donatedsofar_pretty']} | Remaining: $#{val['remaining_pretty']}
-									div.col-md-4(style="text-align: right")
+									div.col-12(style="text-align: right")
 										div.row
 											div.test
 												
@@ -109,13 +127,13 @@ block content
 										
 
 
-							//- if the ITEM IS COMPLETE
+				//- STRIPE ITEM COMPLETE
 							else
 								div.row.box-project(style="background-color: #f8f9fa")
 									div.col-12
 										h5 #{val["sku_name"]}
 										// p(style="color:grey")= val["Bucket"]
-									div.col-md-8
+									div.col-12
 										div
 											p= val["description"]
 											// p Total Budget: $#{val['total_value']}
@@ -125,9 +143,13 @@ block content
 												p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining_pretty']}
 											else
 												p(style="text-align: right") Gifted: $#{val['donatedsofar_pretty']} | Remaining: $#{val['remaining_pretty']}
-								div.row
-									h5.center(style="color:grey") COMPLETE!
-			//- PROFILE
+									div.col-12
+										h5.center(style="color:grey") COMPLETE!
+			
+
+
+
+			//- PROJECT PROFILE
 			div.col-md-3
 				section.panel
 					div.padding
