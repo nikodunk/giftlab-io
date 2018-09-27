@@ -9,7 +9,6 @@ body {
   background-repeat: no-repeat !important; /* Do not repeat the image */
   background-size: cover !important; /
   
-
 }
 
 
@@ -227,4 +226,10 @@ hr {
 
 .lead{
   font-size: 1rem !important;
+}
+
+
+.planoly-feed{
+  margin: 0 auto !important;
+  margin-left: 15% !important;
 }
