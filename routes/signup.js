@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
 
 
 
-router.get('/success/', function(req, res, next) {
+router.get('/success/?scope=read_write&code=:authcode', function(req, res, next) {
     console.log(req.params.authcode)
     res.render('signup_success');
 });
