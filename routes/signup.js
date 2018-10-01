@@ -14,8 +14,8 @@ router.get('/', function(req, res, next) {
 });
 
 
-router.get('/success/:authcode', function(req, res, next) {
-    console.log('THIS IS THE AUTH CODE: ----> '+req.params.authcode)
+router.get('/success/', function(req, res, next) {
+    console.log('THIS IS THE AUTH CODE: ----> '+req.query.scope, req.query.code)
     res.render('signup_success');
 });
 
