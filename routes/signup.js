@@ -15,7 +15,15 @@ router.get('/', function(req, res, next) {
 
 
 router.get('/success/', function(req, res, next) {
-    console.log('THIS IS THE AUTH CODE: ----> '+req.query.scope, req.query.code)
+    console.log('THIS IS THE AUTH CODE: ----> '+ req.query.code)
+
+
+    // curl https://connect.stripe.com/oauth/token \
+    //    -d client_secret=sk_test_FufIvJxq2f94m1QAt1T12wMR \
+    //    -d code="{AUTHORIZATION_CODE}" \
+    //    -d grant_type=authorization_code
+
+    // client.query(`INSERT INTO marketing VALUES ('`+req.body.email+`');`); 
     res.render('signup_success');
 });
 
