@@ -1,15 +1,15 @@
 extends _layout
 
 block content
-	// Image Showcases
-	section.showcase
-		.container-fluid.p-0
+	
+	section
+		.container.padding
 			.row
 				h2 Stripe Connect
 			.row
 				p.lead.mb-0 Please connect your stripe account below so we can route payments to you.
 			.row
-				a(href="https://connect.stripe.com/oauth/authorize?response_type=code&client_id=ca_Dcj8reHZ6xjlEBfDVn4Zl07ergfiWVCG&scope=read_write")
+				a(href="https://connect.stripe.com/oauth/authorize?response_type=code&client_id=ca_Dcj8reHZ6xjlEBfDVn4Zl07ergfiWVCG&scope=read_write") Connect Stripe Account
 
 
 	script.
