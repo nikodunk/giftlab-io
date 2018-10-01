@@ -9,13 +9,13 @@ const client = new Client({
 client.connect();
 
 
-router.get('/signup/', function(req, res, next) {
+router.get('/', function(req, res, next) {
     res.render('signup');
 });
 
 
 
-router.get('/signup_success/?scope=read_write&code=:authcode', function(req, res, next) {
+router.get('/success/?scope=read_write&code=:authcode', function(req, res, next) {
     console.log(req.params.authcode)
     res.render('signup_success');
 });
