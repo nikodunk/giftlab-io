@@ -24,7 +24,7 @@ var stripe = require("stripe")("sk_test_FufIvJxq2f94m1QAt1T12wMR");
       currency: 'usd',
       source: token,
       description: 'Giftlab Charge for '+ req.params.sku,
-      // application_fee: 123,
+      application_fee: 1,
     },{
       stripe_account: req.params.destination,
     }, (err, charge) => {
@@ -32,7 +32,7 @@ var stripe = require("stripe")("sk_test_FufIvJxq2f94m1QAt1T12wMR");
 
       else {
         console.log('Charge successful')
-        // console.info(charge)
+        console.info(charge)
         console.log('SAVED TO DATABASE:',
                     Date.now(), 
                     req.params.sku, 
