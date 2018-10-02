@@ -14,7 +14,7 @@ var content = require('../public/javascripts/content.json')
 var stripe = require("stripe")("sk_test_FufIvJxq2f94m1QAt1T12wMR");
 
 
-  router.post('/charge/:projectid/:sku/', (req, res) => {
+  router.post('/charge/:projectid/:sku/:destination', (req, res) => {
     let token = req.body.stripeToken
     let amount = req.body.stripeAmount
     // console.assert(token)
@@ -24,10 +24,9 @@ var stripe = require("stripe")("sk_test_FufIvJxq2f94m1QAt1T12wMR");
       currency: 'usd',
       source: token,
       description: 'Giftlab Charge for '+ req.params.sku,
-      // destination: {
-      //          amount: amount - 1,
-      //          account: "{CONNECTED_STRIPE_ACCOUNT_ID}",
-      //         }
+      // application_fee: 123,
+    },{
+      stripe_account: req.params.destination,
     }, (err, charge) => {
       if (err) { res.redirect('/charge/payment-failure?err_msg=' + err.message) } 
 
