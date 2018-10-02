@@ -32,7 +32,16 @@ router.get('/success/', function(req, res, next) {
         function (error, response, body) {
             if (!error && response.statusCode == 200) {
                 console.log(body)
-                // client.query(`INSERT INTO stripe_codes VALUES ('`+body.stripe_user_id+`');`); 
+                // {   access_token: 'sk_test_MT8oFzoO0bueRVD7RhUzv0ly',
+                //     livemode: false,
+                //     refresh_token: 'rt_DiKx9vMinOryfTydAAQ3YZtPa1L3fWZuuPLvMVeoQv7wYdQQ',
+                //     stripe_publishable_key: 'pk_test_c6zNMHrvJfulaC62g5dpXERJ',
+                //     token_type: 'bearer',
+                //     stripe_user_id: 'acct_1C6kxuBuE7X95lZn',
+                //     scope: 'read_write' 
+                // }
+
+                client.query(`INSERT INTO stripe_codes VALUES ('`+body.stripe_user_id+`','`+body.stripe_publishable_key+`', '`+body.access_token+`', '`+body.refresh_token+`' );`); 
             }
         }
     );
