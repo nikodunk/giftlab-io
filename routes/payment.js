@@ -24,7 +24,7 @@ var stripe = require("stripe")("sk_test_FufIvJxq2f94m1QAt1T12wMR");
       currency: 'usd',
       source: token,
       description: 'Giftlab Charge for '+ req.params.sku,
-      application_fee: 1,
+      // application_fee: 1,
     },{
       stripe_account: req.params.destination,
     }, (err, charge) => {
