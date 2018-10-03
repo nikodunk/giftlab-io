@@ -55,7 +55,7 @@ block content
 
 							//- AMAZON ITEM ACTIVE
 							if val.status == "Active"
-								div.col-md-6.col-xl-4
+								div.col-md-6
 									div.box-project(style="background-color: white")
 										div
 											h5 #{val["sku_name"]} ($#{val['unit_cost']} each)
@@ -84,7 +84,7 @@ block content
 
 							//- AMAZON ITEM COMPLETE
 							else
-								div.col-md-6.col-xl-4
+								div.col-md-6
 									div.box-project(style="background-color: #f8f9fa") 
 										div
 											h5 #{val["sku_name"]} ($#{val['unit_cost']} each)
@@ -117,7 +117,7 @@ block content
 					
 								//- STRIPE ITEM ACTIVE
 								if val.status == "Active"
-									div.col-md-6.col-xl-4
+									div.col-md-6
 										div.box-project(style="background-color: white")
 											div
 												h5 #{val["sku_name"]}
@@ -149,7 +149,7 @@ block content
 
 								//- STRIPE ITEM COMPLETE
 								else
-									div.col-md-6.col-xl-4
+									div.col-md-6
 										div.box-project(style="background-color: #f8f9fa")
 											div
 												h5 #{val["sku_name"]}
