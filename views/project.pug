@@ -44,7 +44,7 @@ block content
 
 
 				//- AMAZON
-				div.row(id="items" style="margin-top:40px")
+				div.row(id="items" style="margin-top: 40px !important")
 					h3.center Items in Need
 					br
 				div.row
@@ -56,7 +56,7 @@ block content
 							//- AMAZON ITEM ACTIVE
 							if val.status == "Active"
 								div.col-md-6
-									div.box-project.padding(style="background-color: white")
+									div.box-project(style="background-color: white")
 										div
 											h5 #{val["sku_name"]} ($#{val['unit_cost']} each)
 											// p(style="color:grey")= val["Bucket"]
@@ -85,7 +85,7 @@ block content
 							//- AMAZON ITEM COMPLETE
 							else
 								div.col-md-6
-									div.box-project.padding(style="background-color: #f8f9fa") 
+									div.box-project(style="background-color: #f8f9fa") 
 										div
 											h5 #{val["sku_name"]} ($#{val['unit_cost']} each)
 											// p(style="color:grey")= val["Bucket"]
@@ -102,7 +102,7 @@ block content
 									
 				
 				// STRIPE
-				div.row(id="budgets" style="margin-top: 20px")
+				div.row(id="budgets" style="margin-top: 40px !important")
 					h3.center Project Budgets
 					p.lead.mb-0.center(style="max-width: 800px; margin: 0 auto !important")
 						| Our project teams have worked hard to give the best estimates possible, but budgets and prices of items can fluctuate. Should something change, your monetary donation will be used for another aspect of this project. 
@@ -118,7 +118,7 @@ block content
 								//- STRIPE ITEM ACTIVE
 								if val.status == "Active"
 									div.col-md-6
-										div.box-project.padding(style="background-color: white")
+										div.box-project(style="background-color: white")
 											div
 												h5 #{val["sku_name"]}
 												// p(style="color:grey")= val["Bucket"]
@@ -150,7 +150,7 @@ block content
 								//- STRIPE ITEM COMPLETE
 								else
 									div.col-md-6
-										div.box-project.padding(style="background-color: #f8f9fa")
+										div.box-project(style="background-color: #f8f9fa")
 											div
 												h5 #{val["sku_name"]}
 												// p(style="color:grey")= val["Bucket"]
