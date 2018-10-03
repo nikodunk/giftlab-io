@@ -24,7 +24,7 @@ router.get('/success/', function(req, res, next) {
     
     request.post( 'https://connect.stripe.com/oauth/token', {
 	    	json: { 
-	        	client_secret: 'sk_test_FufIvJxq2f94m1QAt1T12wMR', 
+	        	client_secret: 'sk_live_5o0KHsbbVoPkjNPizsYvtHQ3', 
 	        	code: req.query.code, 
 	        	grant_type: 'authorization_code'  
 	        }
