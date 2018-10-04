@@ -22,11 +22,11 @@ block content
 		    		           url: url,
 		    		           data: {email: $('#email').val()},
 		    		           success: function(data){
-		    		               $( ".signupform" ).replaceWith( "<br><br><h3 >Successfully signed up!</h3><br><br><br>" )} // serializes the form's elements.
+		    		           		console.log(data)
+		    		               	$( ".signupform" ).replaceWith( "<br><br><h3 >Successfully signed up!</h3><br><br><br>" )} // serializes the form's elements.
 		    		         })
 
 		    		    e.preventDefault(); 
-		    		    return false
 		    		});
 		});
 		
