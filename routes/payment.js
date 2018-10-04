@@ -17,6 +17,7 @@ var stripe = require("stripe")(process.env.STRIPE_LIVE);
   router.post('/charge/:projectid/:sku/:destination', (req, res) => {
     let token = req.body.stripeToken
     let amount = req.body.stripeAmount
+    let email = req.body.stripeEmail
     // console.assert(token)
 
     stripe.charges.create({
@@ -24,7 +25,7 @@ var stripe = require("stripe")(process.env.STRIPE_LIVE);
       currency: 'usd',
       source: token,
       description: 'Giftlab Charge for '+ req.params.sku,
-      // receipt_email: 'jenny.rosen@example.com',
+      receipt_email: email,
       // application_fee: 1,
     },{
       stripe_account: req.params.destination,
