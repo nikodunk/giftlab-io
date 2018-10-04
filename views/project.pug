@@ -33,9 +33,12 @@ block content
 								span
 									small OR
 									h5 DONATE MONEY
+					a.btn.btn-sm.btn-primary.jumbotronbutton(href="#budgets")
+						div.row
+							div.row(style="margin: 0 auto")
+								h5 Learn More About This Project
 				.col-lg-8.text-white(style="background-image: url(' "+content.image+" '); background-position: center;  background-size: cover; min-height:200px")
-	
-
+				
 
 
 
@@ -173,7 +176,7 @@ block content
 
 
 		//- PROJECT PROFILE
-		div.row
+		div.row(id="project")
 			section
 				div.padding
 					img.thumbnail(src=content.businessimage alt="Image Title" style="max-width: 100% !important").center
