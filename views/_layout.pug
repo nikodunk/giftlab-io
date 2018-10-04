@@ -166,12 +166,10 @@ html
                        type: "POST",
                        url: url,
                        data: {email: $('#email').val()}, // serializes the form's elements.
-                       success: function(results)
-                       {
-                          console.log(results)
-                          //- $( "#signupform" ).replaceWith( "<br><br><h3 style='color: white'>Successfully signed up!</h3><br><br><br>" )
-                       }
-                     });
+                     })
+                  .done(function( data ) {
+                      $( "#signupform" ).replaceWith( "<br><br><h3 style='color: white'>Successfully signed up!</h3><br><br><br>" )
+                    });
 
                 e.preventDefault(); // avoid to execute the actual submit of the form.
             });
