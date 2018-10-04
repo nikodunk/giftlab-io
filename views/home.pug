@@ -14,7 +14,7 @@ block content
 
 		$("#niko").submit(function(e) {
 			alert( "Handler for .submit() called." );
-			event.preventDefault();
+			e.preventDefault();
 		    var form = $(this);
 		    var url = form.attr('action');
 		    console.log(url, $('#email').val())
