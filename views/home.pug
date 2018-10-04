@@ -12,7 +12,7 @@ block content
 		});
 
 		$(document).ready(function(){
-		    $("#niko").submit(function(event) {			
+		    $("#niko").click(function(event) {			
 		    		    var form = $(this);
 		    		    var url = form.attr('action');
 		    		    console.log(url, $('#email').val())
@@ -24,9 +24,8 @@ block content
 		    		           success: function(data){
 		    		           		console.log(data)
 		    		               	$( ".signupform" ).replaceWith( "<br><br><h3 >Successfully signed up!</h3><br><br><br>" )} // serializes the form's elements.
+
 		    		         })
-		    		    return false
-		    		    event.preventDefault(); 
 		    		});
 		});
 		
@@ -85,11 +84,11 @@ block content
 					p.lead Connect with us for the latest updates, including new non profit listings and Gift Lab feature updates.
 
 				.col-md-10.col-lg-8.col-xl-7.mx-auto
-					form(id="niko" action="/signup" method="post").signupform
+					form(action="/signup" method="post").signupform
 						div(class="input-group mb-3")
 							input(class="form-control" type='email' placeholder='Enter your email' name='email' id="email")
 							div(class="input-group-append")
-								input(type="submit" id="register" value="SUBSCRIBE" style="background-color: #00AFE1 !important;").btn.btn-primary.titleButton
+								input(type="submit" id="niko" value="SUBSCRIBE" style="background-color: #00AFE1 !important;").btn.btn-primary.titleButton
 
 		
 
