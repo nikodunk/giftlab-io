@@ -16,25 +16,28 @@ block content
 					p.lead #{content.BusinessName}
 					p.lead #{content["Project Description - Short"]}
 
-
-					a.btn.btn-sm.btn-primary.orange(href=content.wishlistlink target="_blank" style="padding: 10px !important")
-						div.row
-							div.row(style="margin: 0 auto")
-								i.fa.fa-amazon.fa-2x.fa-fw
-								span
-									h5 AMAZON WISHLIST
-
-					a.btn.btn-sm.btn-primary.orange(href="#budgets" style="padding: 10px !important")
-						div.row
-							div.row(style="margin: 0 auto")
-								i.fa.fa-usd.fa-2x.fa-fw
-								span
-									h5 DONATE MONEY
-					a.btn.btn-sm.btn-primary.jumbotronbutton(href="#project" style="padding: 10px !important")
-						div.row
-							div.row(style="margin: 0 auto")
-								span
-									h5 LEARN MORE
+					div.row
+						a.btn.btn-sm.btn-primary.orange(href=content.wishlistlink target="_blank" style="padding: 10px !important")
+							div.row
+								div.row(style="margin: 0 auto")
+									i.fa.fa-amazon.fa-2x.fa-fw
+									span
+										h5 AMAZON WISHLIST
+					
+					div.row
+						a.btn.btn-sm.btn-primary.orange(href="#budgets" style="padding: 10px !important")
+							div.row
+								div.row(style="margin: 0 auto")
+									i.fa.fa-usd.fa-2x.fa-fw
+									span
+										h5 DONATE MONEY
+					
+					div.row
+						a.btn.btn-sm.btn-primary.jumbotronbutton(href="#project" style="padding: 10px !important")
+							div.row
+								div.row(style="margin: 0 auto")
+									span
+										h5 LEARN MORE
 				.col-lg-8.text-white(style="background-image: url(' "+content.image+" '); background-position: center;  background-size: cover; min-height:200px")
 				
 
