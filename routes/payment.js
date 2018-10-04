@@ -11,7 +11,7 @@ client.connect();
 var content = require('../public/javascripts/content.json')
 
 // See your keys here: https://dashboard.stripe.com/account/apikeys
-var stripe = require("stripe")("sk_live_5o0KHsbbVoPkjNPizsYvtHQ3");
+var stripe = require("stripe")(process.env.STRIPE_LIVE);
 
 
   router.post('/charge/:projectid/:sku/:destination', (req, res) => {
@@ -24,6 +24,7 @@ var stripe = require("stripe")("sk_live_5o0KHsbbVoPkjNPizsYvtHQ3");
       currency: 'usd',
       source: token,
       description: 'Giftlab Charge for '+ req.params.sku,
+      // receipt_email: 'jenny.rosen@example.com',
       // application_fee: 1,
     },{
       stripe_account: req.params.destination,
