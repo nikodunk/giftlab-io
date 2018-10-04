@@ -175,26 +175,34 @@ block content
 		//- PROJECT PROFILE
 		div.row(id="project")
 			section
-				div.padding
-					img.thumbnail(src=content.businessimage alt="Image Title" style="max-width: 100% !important").center
-					br
-				div.padding
-					h4 #{content.BusinessName}
-					p.lead #{content.BusinessDescription}
-				div.padding
-					a.btn.btn-sm.btn-primary(href=content.BusinessWebsite) VISIT OUR WEBSITE
-					a.btn.btn-sm.btn-primary(href=content.BusinessFacebook) FACEBOOK PAGE
-					a.btn.btn-sm.btn-primary(href=content.BusinessInstagram) INSTAGRAM PAGE
+				div.row
+					div.col-md-3.padding
+						img.thumbnail(src=content.businessimage alt="Image Title" style="max-width: 100% !important").center
+						br
+					div.col-md-8.padding
+						h4 #{content.BusinessName}
+						p.lead #{content.BusinessDescription}
+				
+				div.row
+					div.col-4.padding
+						a.btn.btn-sm.btn-primary(href=content.BusinessWebsite) VISIT OUR WEBSITE
+					div.col-4.padding
+						a.btn.btn-sm.btn-primary(href=content.BusinessFacebook) FACEBOOK PAGE
+					div.col-4.padding
+						a.btn.btn-sm.btn-primary(href=content.BusinessInstagram) INSTAGRAM PAGE
 
-				div.padding
+				div.row.padding
 					h3 ABOUT THIS PROJECT
 					p.lead #{content["Project Description - Long"]}
-				div.padding.center
+				
+				
+				div.row
+					div.padding.center.col-md-3
 						img.thumbnail(src=content.researcherimage alt="Image Title").center
 						br
-				div.padding
-					h3= content["Researcher"]
-					p.lead= content["Researcher profile"]
+					div.padding.col-md-8
+						h3= content["Researcher"]
+						p.lead= content["Researcher profile"]
 					
 					
 						
