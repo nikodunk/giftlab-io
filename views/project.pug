@@ -171,38 +171,38 @@ block content
 		//- PROJECT PROFILE
 		div.row(id="project")
 			section(style="margin-top: 40px !important")
-				
-				div.col-md-2
-					div.row.padding
-						img.thumbnail(src=content.businessimage alt="Image Title" style="max-width: 100% !important").center
-						br
-					div.row.padding
-						h4 #{content.BusinessName}
-						p.lead #{content.BusinessDescription}
-				
-
-
-				div.col-md-8
-					div.row.padding
-						h3 ABOUT THIS PROJECT
-						p.lead #{content["Project Description - Long"]}
-				
-					div.row
-						div.col-4.padding
-							a.btn.btn-sm.btn-primary(href=content.BusinessWebsite) VISIT OUR WEBSITE
-						div.col-4.padding
-							a.btn.btn-sm.btn-primary(href=content.BusinessFacebook) FACEBOOK PAGE
-						div.col-4.padding
-							a.btn.btn-sm.btn-primary(href=content.BusinessInstagram) INSTAGRAM PAGE
-
-					div.row
-						div.padding.center.col-md-3
-							img.thumbnail(src=content.researcherimage alt="Image Title").center
+				div.row
+					div.col-md-2
+						div.row.padding
+							img.thumbnail(src=content.businessimage alt="Image Title" style="max-width: 100% !important").center
 							br
-						div.padding.col-md-9
-							h3= content["Researcher"]
-							p.lead= content["Researcher profile"]
+						div.row.padding
+							h4 #{content.BusinessName}
+							p.lead #{content.BusinessDescription}
 					
+
+
+					div.col-md-8
+						div.row.padding
+							h3 ABOUT THIS PROJECT
+							p.lead #{content["Project Description - Long"]}
+					
+						div.row
+							div.col-4.padding
+								a.btn.btn-sm.btn-primary(href=content.BusinessWebsite) VISIT OUR WEBSITE
+							div.col-4.padding
+								a.btn.btn-sm.btn-primary(href=content.BusinessFacebook) FACEBOOK PAGE
+							div.col-4.padding
+								a.btn.btn-sm.btn-primary(href=content.BusinessInstagram) INSTAGRAM PAGE
+
+						div.row
+							div.padding.center.col-md-3
+								img.thumbnail(src=content.researcherimage alt="Image Title").center
+								br
+							div.padding.col-md-9
+								h3= content["Researcher"]
+								p.lead= content["Researcher profile"]
+						
 					
 						
 										
