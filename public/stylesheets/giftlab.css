@@ -141,7 +141,7 @@ hr {
 
 
 .box-home{
-  border: 1px solid #efefef;
+  border: 1px solid #efefef !important;
   /*padding: 20px;*/
   height: 100%;
   max-width: 900px;
