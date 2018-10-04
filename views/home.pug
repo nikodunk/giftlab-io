@@ -12,7 +12,7 @@ block content
 		});
 
 		$(document).ready(function(){
-		    $("#niko").submit(function(e) {			
+		    $("#niko").submit(function(event) {			
 		    		    var form = $(this);
 		    		    var url = form.attr('action');
 		    		    console.log(url, $('#email').val())
@@ -25,8 +25,8 @@ block content
 		    		           		console.log(data)
 		    		               	$( ".signupform" ).replaceWith( "<br><br><h3 >Successfully signed up!</h3><br><br><br>" )} // serializes the form's elements.
 		    		         })
-
-		    		    e.preventDefault(); 
+		    		    return false
+		    		    event.preventDefault(); 
 		    		});
 		});
 		
