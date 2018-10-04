@@ -234,3 +234,9 @@ hr {
 .lead{
   font-size: 1rem !important;
 }
+
+
+
+meter::-webkit-meter-optimum-value {
+    background: #00AFE1
+}
