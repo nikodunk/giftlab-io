@@ -11,7 +11,7 @@ client.connect();
 var content = require('../public/javascripts/content.json')
 
 // See your keys here: https://dashboard.stripe.com/account/apikeys
-var stripe = require("stripe")("sk_test_FufIvJxq2f94m1QAt1T12wMR");
+var stripe = require("stripe")("sk_live_5o0KHsbbVoPkjNPizsYvtHQ3");
 
 
   router.post('/charge/:projectid/:sku/:destination', (req, res) => {
