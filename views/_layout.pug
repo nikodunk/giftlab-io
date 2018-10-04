@@ -124,7 +124,7 @@ html
     // Footer
     footer.footer.bg-light.center(style="")
 
-        Email signup
+        //- Email signup
         section(id="signup").padding.center
             //- .overlay
             .container
@@ -162,7 +162,7 @@ html
                 var form = $(this);
                 var url = form.attr('action');
                 console.log(url, $('#email').val())
-                $.ajax({
+                jQuery.ajax({
                        type: "POST",
                        url: url,
                        data: {email: $('#email').val()}, // serializes the form's elements.
