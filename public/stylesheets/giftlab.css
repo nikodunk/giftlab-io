@@ -188,7 +188,7 @@ hr {
 .test:before {
     content: '$';
     position: absolute;
-    top: 10px;
+    top: 15px;
     left: 10px;
     z-index: 1;
 }
