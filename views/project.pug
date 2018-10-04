@@ -140,12 +140,11 @@ block content
 														input( type="hidden" id="stripeToken" name="stripeToken" )
 														input( type="hidden" id="stripeEmail" name="stripeEmail" )
 														input( type="hidden" id="stripeAmount" name="stripeAmount" )
-													input.myInput( type="number" id=val['sku'] name="amountInDollars" value="20" min="0" max=val['total_need'])
-													button.btn.btn-md.btn-primary.bodyButton( class="stripe" data-sku=val['sku'] class=val['sku'])
-														div.row
-															div.row(style="margin: 0 auto")
-																i.fa.fa-usd.fa-1x.fa-fw(style="margin-right: 5px; margin-top: 5px")
-																span DONATE MONEY
+													div.row
+														input.myInput( type="number" id=val['sku'] name="amountInDollars" value="20" min="0" max=val['total_need'])
+														button.btn.btn-md.btn-primary.bodyButton( class="stripe" data-sku=val['sku'] class=val['sku'])
+															i.fa.fa-usd.fa-1x.fa-fw(style="margin-right: 5px; margin-top: 5px")
+															span DONATE
 												
 
 
@@ -169,7 +168,7 @@ block content
 											div
 												h5.center(style="color:grey") COMPLETE!
 					
-				
+
 				.row(style="width: 100%")
 					p
 				.row
