@@ -186,8 +186,10 @@ block content
 
 		//- PROJECT PROFILE
 		div.row(id="project")
-			section(style="margin-top: 40px !important; margin: 0 auto")
+			section(style="margin-top: 40px !important;")
 				div.row
+					div.col-2
+						div
 					div.col-2
 						div.row.padding
 							img.thumbnail(src=content.businessimage alt="Image Title" style="max-width: 100% !important").center
@@ -199,13 +201,17 @@ block content
 					
 
 				div.row.padding
+					div.col-2
+						div
 					div.col-10
 						h3 This Project
 						p.lead #{content["Project Description - Long"]}
 				
 				.container
 					.row
-						.col-xl-9.mx-auto
+						div.col-2
+							div
+						div.col-10
 							a.btn.btn-lg.btn-primary.blue.col-md-4.titleButton(href=content.BusinessWebsite target="_blank")
 								i.fa.fa-globe.fa-1x.fa-fw
 								small &nbsp; VISIT OUR WEBSITE
@@ -217,6 +223,8 @@ block content
 								small &nbsp; INSTAGRAM PAGE
 
 				div.row
+					div.col-2
+						div
 					div.col-2
 						div.row.padding
 							img.thumbnail(src=content.researcherimage alt="Image Title").center
