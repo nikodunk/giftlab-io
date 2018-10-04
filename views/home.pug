@@ -11,20 +11,23 @@ block content
 		    mixpanel.track("homepage_loaded");
 		});
 
-		$("#niko").submit(function(e) {			
-		    var form = $(this);
-		    var url = form.attr('action');
-		    console.log(url, $('#email').val())
-		    
-		    $.ajax({
-		           type: "POST",
-		           url: url,
-		           data: {email: $('#email').val()}, // serializes the form's elements.
-		         }).then(() => {$( ".signupform" ).replaceWith( "<br><br><h3 >Successfully signed up!</h3><br><br><br>" )});
+		$(document).ready(function(){
+		    $("#niko").submit(function(e) {			
+		    		    var form = $(this);
+		    		    var url = form.attr('action');
+		    		    console.log(url, $('#email').val())
+		    		    
+		    		    $.ajax({
+		    		           type: "POST",
+		    		           url: url,
+		    		           data: {email: $('#email').val()}, // serializes the form's elements.
+		    		         }).then(() => {$( ".signupform" ).replaceWith( "<br><br><h3 >Successfully signed up!</h3><br><br><br>" )});
 
-		    e.preventDefault(); 
-		    return false
+		    		    e.preventDefault(); 
+		    		    return false
+		    		});
 		});
+		
 
 	// Image Showcases
 	section.showcase
@@ -75,7 +78,7 @@ block content
 		.container.padding
 			.row
 				h2.center See Your Impact
-			.row.signupform
+			.row
 				.col-xl-9.mx-auto
 					p.lead Connect with us for the latest updates, including new non profit listings and Gift Lab feature updates.
 
