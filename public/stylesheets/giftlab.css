@@ -49,7 +49,7 @@ hr {
 }
 
 .blue {
-  background-color: #009cde !important;
+  background-color: #00AFE1 !important;
   border: none !important;
   padding: 3px !important;
   width: 100% !important;
@@ -210,7 +210,6 @@ hr {
 
 
 .titleButton{
-  background-color: #00AFE1 !important;
   border-width: 0px !important;
   padding: 10px !important;
 }
@@ -222,14 +221,18 @@ hr {
   margin: 0 auto;
   margin-bottom: 5px;
   font-size: 1rem !important;
+  width: 90%;
+}
+
+.stripeButton{
+  background-color: orange !important;
+  border-width: 0px !important;
+  padding: 10px !important;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  font-size: 1rem !important;
 }
 
 .lead{
   font-size: 1rem !important;
-}
-
-
-.planoly-feed{
-  margin: 0 auto !important;
-  margin-left: 15% !important;
 }

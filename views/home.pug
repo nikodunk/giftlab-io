@@ -62,7 +62,7 @@ block content
 						div(class="input-group mb-3")
 							input(class="form-control" type='email' placeholder='Enter your email' name='email' id="email")
 							div(class="input-group-append")
-								button(type="submit" id="register").btn.btn-primary.titleButton
+								button(type="submit" id="register" style="background-color: #00AFE1 !important").btn.btn-primary.titleButton
 									span SUBSCRIBE
 
 		
@@ -70,10 +70,10 @@ block content
 		.container
 			.row
 				.col-xl-9.mx-auto
-					a.btn.btn-lg.btn-primary.blue.col-md-5.titleButton(href="https://www.facebook.com/giftlab.io/")
+					a.btn.btn-lg.btn-primary.blue.col-md-4.titleButton(href="https://www.facebook.com/giftlab.io/")
 						i.fa.fa-facebook.fa-1x.fa-fw
 						small &nbsp; FOLLOW ON FACEBOOK
-					a.btn.btn-lg.btn-primary.blue.col-md-5.titleButton(href="https://www.instagram.com/giftlab.io/")
+					a.btn.btn-lg.btn-primary.blue.col-md-4.titleButton(href="https://www.instagram.com/giftlab.io/")
 						i.fa.fa-instagram.fa-1x.fa-fw
 						small &nbsp; FOLLOW ON INSTAGRAM
 						
@@ -82,7 +82,7 @@ block content
 			br
 
 			.row(style="width: 100% !important; margin: 0 auto !important")
-			script(src="https://plny.it/embed/giftlab.io" data-columns="4" data-limit="12" data-paginate="false")
+			script(src="https://plny.it/embed/giftlab.io" data-columns="6" data-limit="12" data-paginate="false")
 			div(id="planoly-shoppable-widget" ) 
 			br
 
@@ -122,16 +122,16 @@ block content
 									h5(style="padding-left: 40px; padding-right: 40px") #{val.ProjectName}
 									p.lead(style="color: grey; padding-left: 20px; padding-right: 20px") #{val.BusinessName}
 									p.lead(style=" padding-left: 20px; padding-right: 20px") #{val["Project Description - Short"]}
-									a.btn.btn-md.btn-primary.bodyButton(href=val.wishlistlink target="_blank")
+									a.btn.btn-lg.btn-primary.col-11.titleButton.orange(href=val.wishlistlink target="_blank")
 										div.row
 											div.row(style="margin: 0 auto")
 												i.fa.fa-amazon.fa-1x.fa-fw(style="margin-top: 5px; margin-right: 5px")
-												span AMAZON WISHLIST
-									a.btn.btn-md.btn-primary.bodyButton(href=val.slug+"/#budgets")
+												small AMAZON WISHLIST
+									a.btn.btn-lg.btn-primary.col-11.titleButton.orange(href=val.slug+"/#budgets")
 										div.row
 											div.row(style="margin: 0 auto")
 												i.fa.fa-usd.fa-1x.fa-fw(style="margin-top: 5px; margin-right: 5px")
-												span DONATE MONEY
+												small DONATE MONEY
 
 			br
 			br
