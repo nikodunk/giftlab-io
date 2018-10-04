@@ -15,12 +15,12 @@ block content
 		    $("#niko").click(function(event) {			
 		    		    var form = $(this);
 		    		    var url = form.attr('action');
-		    		    console.log(url, $('#email').val())
+		    		    console.log(url, $('#email2').val())
 		    		    
 		    		    $.ajax({
 		    		           type: "POST",
 		    		           url: '/signup',
-		    		           data: {email: $('#email').val()},
+		    		           data: {email: $('#email2').val()},
 		    		           success: function(data){
 		    		           		console.log(data)
 		    		               	$( ".signupform" ).replaceWith( "<br><br><h3 >Successfully signed up!</h3><br><br><br>" )} // serializes the form's elements.
@@ -86,7 +86,7 @@ block content
 				.col-md-10.col-lg-8.col-xl-7.mx-auto
 					form(action="/signup" method="post").signupform
 						div(class="input-group mb-3")
-							input(class="form-control" type='email' placeholder='Enter your email' name='email' id="email")
+							input(class="form-control" type='email' placeholder='Enter your email' name='email2' id="email2")
 							div(class="input-group-append")
 								input(type="submit" id="niko" value="SUBSCRIBE" style="background-color: #00AFE1 !important;").btn.btn-primary.titleButton
 
