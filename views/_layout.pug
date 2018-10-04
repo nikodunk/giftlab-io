@@ -26,7 +26,7 @@ html
           var form = $(this);
           var url = form.attr('action');
           console.log(url, $('#email').val())
-          // e.preventDefault(); // avoid to execute the actual submit of the form.
+          e.preventDefault(); // avoid to execute the actual submit of the form.
           $.ajax({
                  type: "POST",
                  url: url,
