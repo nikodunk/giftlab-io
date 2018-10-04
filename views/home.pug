@@ -43,14 +43,18 @@ block content
 						
 				.col-lg-8(style="background-image: url('/images/0_home/Main_About.jpg'); background-position: center;  background-size: cover; min-height:200px")
 	
+
+
+
 	//- TRANSPARENCY
 	section(id="signup").bg-white.padding.center
 		
 		//- EMAIL
-		.container
+		.container.padding
+			.row
+				h2.center See Your Impact
 			.row.signupform
 				.col-xl-9.mx-auto
-					h4.mb-4 SEE YOUR IMPACT
 					p.lead Connect with us for the latest updates, including new non profit listings and Gift Lab feature updates.
 
 				.col-md-10.col-lg-8.col-xl-7.mx-auto
@@ -94,7 +98,7 @@ block content
 	//- NEW DONATION METHODS
 	//- PROJECTS
 	section(id="projects")
-		.container.padding.title
+		.container.padding
 			.row
 				h2.center Current Projects
 			.row
@@ -115,7 +119,7 @@ block content
 									img.img-fluid(src=val.image)
 									br
 									br
-									h5(style="padding-left: 20px; padding-right: 20px") #{val.ProjectName}
+									h5(style="padding-left: 40px; padding-right: 40px") #{val.ProjectName}
 									p.lead(style="color: grey; padding-left: 20px; padding-right: 20px") #{val.BusinessName}
 									p.lead(style=" padding-left: 20px; padding-right: 20px") #{val["Project Description - Short"]}
 									a.btn.btn-md.btn-primary.bodyButton(href=val.wishlistlink)
@@ -126,13 +130,16 @@ block content
 									a.btn.btn-md.btn-primary.bodyButton(href=val.slug+"/#budgets")
 										div.row
 											div.row(style="margin: 0 auto")
-												i.fa.fa-heart.fa-1x.fa-fw(style="margin-top: 5px; margin-right: 5px")
+												i.fa.fa-usd.fa-1x.fa-fw(style="margin-top: 5px; margin-right: 5px")
 												span DONATE MONEY
 
 			br
 			br
-			section.row
-				h3(id="projects") Complete
+			section.row.padding
+					h2.center Completed Projects
+			.row.signupform
+				.col-xl-9.mx-auto
+					p.lead.center See projects we’ve successfully funded.
 			section.row.row-eq-height
 				each val in content
 					if val.Status === "Complete"
@@ -142,10 +149,9 @@ block content
 									img.img-fluid(src=val.image)
 									br
 									br
-									h5(style="padding-left: 20px; padding-right: 20px") #{val.ProjectName}
-									//- p Status: 
-									//- 	span(style="color: lightgreen") #{val["Status"]}
-									p(style="color: grey; padding-left: 20px; padding-right: 20px") #{val["Project Description - Short"]}
+									h5(style="padding-left: 40px; padding-right: 40px") #{val.ProjectName}
+									p.lead(style="color: grey; padding-left: 20px; padding-right: 20px") #{val.BusinessName}
+									p(style="color: grey; padding-left: 40px; padding-right: 40px") #{val["Project Description - Short"]}
 	
 	
 
