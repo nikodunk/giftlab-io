@@ -43,9 +43,6 @@ block content
 
 	section.container
 		div.row
-			div.col-md-8
-
-
 				//- AMAZON
 				div.row(id="items" )
 					h3.center(style="margin-top: 40px !important") Items in Need
@@ -175,31 +172,31 @@ block content
 					p
 
 
-			//- PROJECT PROFILE
-			div.col-md-3
-				section
-					div.padding
-						img.thumbnail(src=content.businessimage alt="Image Title" style="max-width: 100% !important").center
-						br
-					div.padding
-						h4 #{content.BusinessName}
-						p.lead #{content.BusinessDescription}
-					div.padding
-						a.btn.btn-sm.btn-primary.jumbotronbutton(href=content.BusinessWebsite) VISIT OUR WEBSITE
-						a.btn.btn-sm.btn-primary.jumbotronbutton(href=content.BusinessFacebook) FACEBOOK PAGE
-						a.btn.btn-sm.btn-primary.jumbotronbutton(href=content.BusinessInstagram) INSTAGRAM PAGE
+		//- PROJECT PROFILE
+		div.row
+			section
+				div.padding
+					img.thumbnail(src=content.businessimage alt="Image Title" style="max-width: 100% !important").center
+					br
+				div.padding
+					h4 #{content.BusinessName}
+					p.lead #{content.BusinessDescription}
+				div.padding
+					a.btn.btn-sm.btn-primary(href=content.BusinessWebsite) VISIT OUR WEBSITE
+					a.btn.btn-sm.btn-primary(href=content.BusinessFacebook) FACEBOOK PAGE
+					a.btn.btn-sm.btn-primary(href=content.BusinessInstagram) INSTAGRAM PAGE
 
-					div.padding
-						h3 ABOUT THIS PROJECT
-						p.lead #{content["Project Description - Long"]}
-					div.padding.center
-							img.thumbnail(src=content.researcherimage alt="Image Title").center
-							br
-					div.padding
-						h3= content["Researcher"]
-						p= content["Researcher profile"]
-						
-						
+				div.padding
+					h3 ABOUT THIS PROJECT
+					p.lead #{content["Project Description - Long"]}
+				div.padding.center
+						img.thumbnail(src=content.researcherimage alt="Image Title").center
+						br
+				div.padding
+					h3= content["Researcher"]
+					p.lead= content["Researcher profile"]
+					
+					
 						
 										
 			
