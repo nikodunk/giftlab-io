@@ -179,7 +179,11 @@ block content
 				section.panel
 					div.padding
 						h4 #{content.BusinessName}
-						p #{content.BusinessDescription}
+						p.lead #{content.BusinessDescription}
+						a.btn.btn-sm.btn-primary.jumbotronbutton(href=content.BusinessWebsite) VISIT OUR WEBSITE
+						a.btn.btn-sm.btn-primary.jumbotronbutton(href=content.BusinessFacebook) FACEBOOK PAGE
+						a.btn.btn-sm.btn-primary.jumbotronbutton(href=content.BusinessInstagram) INSTAGRAM PAGE
+
 					div.padding
 						h3 ABOUT THIS PROJECT
 						p.lead #{content["Project Description - Long"]}
