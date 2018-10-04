@@ -43,7 +43,7 @@ router.post( '/signup', function (req, result) {
   console.log(req.body.email)
   client.query(`INSERT INTO marketing VALUES ('`+req.body.email+`');`); 
   //mixpanel.track('signup_clicked');
-	// client.query(`SELECT * FROM marketing WHERE email = '`+req.body.email+`';`, (err, res) => {
+  // client.query(`SELECT * FROM marketing WHERE email = '`+req.body.email+`';`, (err, res) => {
  //      if (err) throw err;
  //      console.log(res)
  //      console.log(res.rows.length)
@@ -57,7 +57,7 @@ router.post( '/signup', function (req, result) {
  //      }
  //      client.end();
  //  }); 
-  result.send(false)
+  result.send('done')
 })
 
 
