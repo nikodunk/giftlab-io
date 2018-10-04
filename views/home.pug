@@ -20,8 +20,10 @@ block content
 		    		    $.ajax({
 		    		           type: "POST",
 		    		           url: url,
-		    		           data: {email: $('#email').val()}, // serializes the form's elements.
-		    		         }).then(() => {$( ".signupform" ).replaceWith( "<br><br><h3 >Successfully signed up!</h3><br><br><br>" )});
+		    		           data: {email: $('#email').val()},
+		    		           success: function(data){
+		    		               $( ".signupform" ).replaceWith( "<br><br><h3 >Successfully signed up!</h3><br><br><br>" )} // serializes the form's elements.
+		    		         })
 
 		    		    e.preventDefault(); 
 		    		    return false
@@ -83,7 +85,7 @@ block content
 					p.lead Connect with us for the latest updates, including new non profit listings and Gift Lab feature updates.
 
 				.col-md-10.col-lg-8.col-xl-7.mx-auto
-					form(id="niko" action="/signup" method="post")
+					form(id="niko" action="/signup" method="post").signupform
 						div(class="input-group mb-3")
 							input(class="form-control" type='email' placeholder='Enter your email' name='email' id="email")
 							div(class="input-group-append")
