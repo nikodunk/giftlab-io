@@ -53,6 +53,7 @@ block content
 			//- AMAZON
 			div.row(id="items" style="width: 100%")
 				h3.center(style="margin-top: 40px !important") Items in Need
+				p.lead.mb-0.center Purchase items and ship them directly using Amazon Wishlists
 				br
 			div.row
 				each val in skus
@@ -65,8 +66,8 @@ block content
 							div.col-lg-4(style="margin-top: 20px !important")
 								div.box-project(style="background-color: white")
 									div
-										h5 #{val["sku_name"]} ($#{val['unit_cost']} each)
-										// p(style="color:grey")= val["Bucket"]
+										h5 #{val["sku_name"]}
+										p $#{val['unit_cost']}
 									div
 										p= val["description"]
 										// p Need: #{val['quantity_need']}&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Total Cost: #{val['total_value']}

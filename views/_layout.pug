@@ -21,6 +21,26 @@ html
         for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);
         mixpanel.init("bba2c237fccc04b19cec51dee15cf123");
 
+    script.
+      $("#asdf").submit(function(e) {
+          var form = $(this);
+          var url = form.attr('action');
+          console.log(url, $('#email').val())
+          // e.preventDefault(); // avoid to execute the actual submit of the form.
+          $.ajax({
+                 type: "POST",
+                 url: url,
+                 data: {email: $('#email').val()}, // serializes the form's elements.
+                 success: function(data)
+                 {
+                     $( ".signupform" ).replaceWith( "<br><br><h3 >Successfully signed up!</h3><br><br><br>" )
+                  
+                 }
+               });
+
+          e.preventDefault(); // avoid to execute the actual submit of the form.
+      });
+
     <!-- Bootstrap core CSS -->
     //- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -177,24 +197,6 @@ html
 
          
 
-    script.
-      $("#asdf").submit(function(e) {
-          var form = $(this);
-          var url = form.attr('action');
-          console.log(url, $('#email').val())
-          // e.preventDefault(); // avoid to execute the actual submit of the form.
-          $.ajax({
-                 type: "POST",
-                 url: url,
-                 data: {email: $('#email').val()}, // serializes the form's elements.
-                 success: function(data)
-                 {
-                     $( ".signupform" ).replaceWith( "<br><br><h3 >Successfully signed up!</h3><br><br><br>" )
-                  
-                 }
-               });
-
-          e.preventDefault(); // avoid to execute the actual submit of the form.
-      });
+    
 
 
