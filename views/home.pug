@@ -6,28 +6,7 @@ extends _layout
 
 block content
 
-	script.
-		$( document ).ready(function() {
-		    mixpanel.track("homepage_loaded");
-		});
-
-		$(document).ready(function(){
-		    $("#niko").click(function(event) {			
-		    		    var form = $(this);
-		    		    var url = form.attr('action');
-		    		    console.log(url, $('#email2').val())
-		    		    
-		    		    $.ajax({
-		    		           type: "POST",
-		    		           url: '/signup',
-		    		           data: {email: $('#email2').val()},
-		    		           success: function(data){
-		    		           		console.log(data)
-		    		               	$( ".signupform" ).replaceWith( "<br><br><h3 >Successfully signed up!</h3><br><br><br>" )} // serializes the form's elements.
-
-		    		         })
-		    		});
-		});
+	
 		
 
 	// Image Showcases
@@ -76,19 +55,19 @@ block content
 	section(id="signup").bg-white.padding.center
 		
 		//- EMAIL
-		.container.padding
-			.row
-				h2.center See Your Impact
-			.row
-				.col-xl-9.mx-auto
-					p.lead Connect with us for the latest updates, including new non profit listings and Gift Lab feature updates.
+		//- .container.padding
+		//- 	.row
+		//- 		h2.center See Your Impact
+		//- 	.row
+		//- 		.col-xl-9.mx-auto
+		//- 			p.lead Connect with us for the latest updates, including new non profit listings and Gift Lab feature updates.
 
-				.col-md-10.col-lg-8.col-xl-7.mx-auto
-					form(action="/signup" method="post").signupform
-						div(class="input-group mb-3")
-							input(class="form-control" type='email' placeholder='Enter your email' name='email2' id="email2")
-							div(class="input-group-append")
-								input(type="submit" id="niko" value="SUBSCRIBE" style="background-color: #00AFE1 !important;").btn.btn-primary.titleButton
+		//- 		.col-md-10.col-lg-8.col-xl-7.mx-auto
+		//- 			form(action="/signup" method="post").signupform
+		//- 				div(class="input-group mb-3")
+		//- 					input(class="form-control" type='email' placeholder='Enter your email' name='email2' id="email2")
+		//- 					div(class="input-group-append")
+		//- 						input(type="submit" id="niko" value="SUBSCRIBE" style="background-color: #00AFE1 !important;").btn.btn-primary.titleButton
 
 		
 
