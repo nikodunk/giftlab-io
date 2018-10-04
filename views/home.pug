@@ -11,9 +11,7 @@ block content
 		    mixpanel.track("homepage_loaded");
 		});
 
-		$("#niko").submit(function(e) {
-			alert( "Handler for .submit() called." );
-			
+		$("#niko").submit(function(e) {			
 		    var form = $(this);
 		    var url = form.attr('action');
 		    console.log(url, $('#email').val())
@@ -25,7 +23,9 @@ block content
 		         }, 
 		         () => {$( ".signupform" ).replaceWith( "<br><br><h3 >Successfully signed up!</h3><br><br><br>" )}
 		         );
+		         
 		    e.preventDefault(); 
+		    return false
 		});
 
 	// Image Showcases
