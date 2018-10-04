@@ -39,7 +39,7 @@ router.get('/contact', function(req, res, next) {
 
 
 
-router.post( '/signup', function (req, result) {
+router.post( '/email', function (req, result) {
   console.log(req.body.email)
   client.query(`INSERT INTO marketing VALUES ('`+req.body.email+`');`); 
   //mixpanel.track('signup_clicked');
