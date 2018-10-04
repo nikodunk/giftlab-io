@@ -57,7 +57,7 @@ router.post( '/signup', function (req, result) {
  //      }
  //      client.end();
  //  }); 
-  result.send('done')
+  result.send(false)
 })
 
 
