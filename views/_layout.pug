@@ -21,26 +21,6 @@ html
         for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);
         mixpanel.init("bba2c237fccc04b19cec51dee15cf123");
 
-    script.
-      $("#asdf").submit(function(e) {
-          var form = $(this);
-          var url = form.attr('action');
-          console.log(url, $('#email').val())
-          e.preventDefault(); // avoid to execute the actual submit of the form.
-          $.ajax({
-                 type: "POST",
-                 url: url,
-                 data: {email: $('#email').val()}, // serializes the form's elements.
-                 success: function(data)
-                 {
-                     $( ".signupform" ).replaceWith( "<br><br><h3 >Successfully signed up!</h3><br><br><br>" )
-                  
-                 }
-               });
-
-          e.preventDefault(); // avoid to execute the actual submit of the form.
-      });
-
     <!-- Bootstrap core CSS -->
     //- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -159,6 +139,44 @@ html
                       input(class="form-control" type='email' placeholder='Enter your email' name='email' id="email")
                       div(class="input-group-append")
                         input(type="submit" id="register" value="SUBSCRIBE" style="background-color: #00AFE1 !important;").btn.btn-primary.titleButton
+
+
+
+
+
+                // Call to Action
+                section.call-to-action.text-white.text-center(id="signup" style="background: url('/images/0_home/Subscribe.jpeg') no-repeat center center !important; margin-top: 30px !important;")
+                    //- .overlay
+                    .container
+                        .row( id="signupform")
+                            .col-xl-9.mx-auto
+                                h2.mb-4 Subscribe to our newsletter for all the best updates
+                            .col-md-10.col-lg-8.col-xl-7.mx-auto
+                                form(id="asdf" action="/signup" method="post")
+                                    .form-row
+                                        .col-12.col-md-9.mb-2.mb-md-0
+                                            input.form-control.form-control-lg(type='email', placeholder='Enter your email', name='email' id="email")
+                                        .col-12.col-md-3
+                                            button.btn.btn-lg.btn-primary( id="register").jumbotronbutton SUBMIT
+
+                script.
+                    $("#asdf").submit(function(e) {
+                        var form = $(this);
+                        var url = form.attr('action');
+                        console.log(url, $('#email').val())
+                        $.ajax({
+                               type: "POST",
+                               url: url,
+                               data: {email: $('#email').val()}, // serializes the form's elements.
+                               success: function(data)
+                               {
+                                   $( "#signupform" ).replaceWith( "<br><br><h3 style='color: white'>Successfully signed up!</h3><br><br><br>" )
+                                
+                               }
+                             });
+
+                        e.preventDefault(); // avoid to execute the actual submit of the form.
+                    });
 
                         
 
