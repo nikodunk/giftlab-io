@@ -198,12 +198,14 @@ block content
 						a.btn.btn-sm.btn-primary(href=content.BusinessInstagram) INSTAGRAM PAGE
 
 				div.row
-					div.padding.center.col-md-2
-						img.thumbnail(src=content.researcherimage alt="Image Title").center
-						br
-					div.padding.col-md-8
-						h3= content["Researcher"]
-						p.lead= content["Researcher profile"]
+					div.col-2
+						div.row.padding
+							img.thumbnail(src=content.researcherimage alt="Image Title").center
+							br
+					div.col-8
+						div.padding
+							h3= content["Researcher"]
+							p.lead= content["Researcher profile"]
 						
 					
 						
