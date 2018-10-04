@@ -10,7 +10,7 @@ block content
 
 	//- PROJECT HEADER
 	section.showcase
-			.row.panel.padding
+			.row.panel
 				.col-lg-4.my-auto.padding
 					h4 #{content.ProjectName}
 					p.lead #{content.BusinessName}
@@ -105,14 +105,13 @@ block content
 											p(style="text-align: right") Gifted: #{val['donatedsofar_pretty']} | Remaining: #{val['remaining_pretty']}
 									div
 								
-			div.row
-				p asdf
+			
 
 			// STRIPE
-			div.row(id="budgets" style="margin-top: 40px!important")
-				h3.center(style="margin-top: 40px !important") Project Budgets
+			div.row(id="budgets" style="margin-top: 40px!important; max-width: 800px !important" )
+				h3.center(style="margin-top: 40px !important" ) Project Budgets
 				p.lead.mb-0.center Our project teams have worked hard to give the best estimates possible, but budgets and prices of items can fluctuate. Should something change, your monetary donation will be used for another aspect of this project. 
-					i Privacy Notice: Gift Lab will share your name, billing address, e-mail, the date and amount of your contribution to the project sponsoring non-profit. Your email will be retained by Gift Lab for email marketing correspondence.
+					small Privacy Notice: Gift Lab will share your name, billing address, e-mail, the date and amount of your contribution to the project sponsoring non-profit. Your email will be retained by Gift Lab for email marketing correspondence.
 
 				br
 
