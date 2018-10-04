@@ -185,8 +185,9 @@ block content
 					
 
 				div.row.padding
-					h3 ABOUT THIS PROJECT
-					p.lead #{content["Project Description - Long"]}
+					div.col-10
+						h3 ABOUT THIS PROJECT
+						p.lead #{content["Project Description - Long"]}
 			
 				div.row
 					div.col-4.padding
@@ -197,10 +198,10 @@ block content
 						a.btn.btn-sm.btn-primary(href=content.BusinessInstagram) INSTAGRAM PAGE
 
 				div.row
-					div.padding.center.col-md-3
+					div.padding.center.col-md-2
 						img.thumbnail(src=content.researcherimage alt="Image Title").center
 						br
-					div.padding.col-md-9
+					div.padding.col-md-8
 						h3= content["Researcher"]
 						p.lead= content["Researcher profile"]
 						
