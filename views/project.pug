@@ -71,11 +71,11 @@ block content
 										else
 											p(style="text-align: right") Gifted: #{val['donatedsofar_pretty']} | Remaining: #{val['remaining_pretty']}
 									div
-										a.btn.btn-lg.btn-primary.col-11.titleButton.orange(href=content.wishlistlink target="_blank") 
+										a.btn.btn-lg.btn-primary.col-11.titleButton.orange(href=content.wishlistlink target="_blank")
 											div.row
 												div.row(style="margin: 0 auto")
 													i.fa.fa-amazon.fa-1x.fa-fw(style="margin-right: 5px; margin-top: 5px")
-													span AMAZON WISHLIST
+													small AMAZON WISHLIST
 
 			
 
@@ -140,9 +140,9 @@ block content
 													input( type="hidden" id="stripeEmail" name="stripeEmail" )
 													input( type="hidden" id="stripeAmount" name="stripeAmount" )
 												input.myInput( type="number" id=val['sku'] name="amountInDollars" value="20" min="0" max=val['total_need'])
-											button.btn.btn-md.btn-primary.bodyButton( class="stripe" data-sku=val['sku'] class=val['sku'])
+											a.btn.btn-lg.btn-primary.col-5.titleButton.orange( class="stripe" data-sku=val['sku'] class=val['sku'])
 												i.fa.fa-usd.fa-1x.fa-fw(style="margin-right: 5px; margin-top: 5px")
-												span DONATE
+												small DONATE
 											
 
 
