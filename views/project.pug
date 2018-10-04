@@ -10,7 +10,7 @@ block content
 
 	//- PROJECT HEADER
 	section.showcase
-			.row.panel
+			.row.panel.padding
 				.col-lg-4.my-auto.padding
 					h4 #{content.ProjectName}
 					p.lead #{content.BusinessName}
@@ -33,10 +33,12 @@ block content
 								span
 									small OR
 									h5 DONATE MONEY
-					a.btn.btn-sm.btn-primary.jumbotronbutton(href="#budgets")
+					a.btn.btn-sm.btn-primary.jumbotronbutton(href="#project")
 						div.row
 							div.row(style="margin: 0 auto")
+								span
 								h5 Learn More About This Project
+								span
 				.col-lg-8.text-white(style="background-image: url(' "+content.image+" '); background-position: center;  background-size: cover; min-height:200px")
 				
 
@@ -103,7 +105,9 @@ block content
 											p(style="text-align: right") Gifted: #{val['donatedsofar_pretty']} | Remaining: #{val['remaining_pretty']}
 									div
 								
-			
+			div.row
+				p asdf
+
 			// STRIPE
 			div.row(id="budgets" )
 				h3.center(style="margin-top: 40px !important") Project Budgets
