@@ -11,14 +11,13 @@ block content
 		    mixpanel.track("homepage_loaded");
 		});
 
-
 		$("#niko").submit(function(e) {
 			alert( "Handler for .submit() called." );
-			e.preventDefault();
+			
 		    var form = $(this);
 		    var url = form.attr('action');
 		    console.log(url, $('#email').val())
-		    e.preventDefault(); 
+		    
 		    $.ajax({
 		           type: "POST",
 		           url: url,
@@ -29,7 +28,6 @@ block content
 		            
 		           }
 		         });
-
 		    e.preventDefault(); 
 		});
 

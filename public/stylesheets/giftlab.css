@@ -144,7 +144,7 @@ hr {
   border: 1px solid #efefef !important;
   /*padding: 20px;*/
   height: 100%;
-  max-width: 900px;
+  /*max-width: 900px;*/
   margin: 5px !important;
   background-image: white !important;
   /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3)*/
@@ -154,7 +154,7 @@ hr {
   border: 1px solid #efefef;
   padding: 20px;
   height: 100%;
-  max-width: 900px;
+  /*max-width: 900px;*/
   margin: 5px !important;
   margin-top: 30px !important;
   margin-bottom: 5px !important;
