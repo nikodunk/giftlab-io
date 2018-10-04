@@ -55,19 +55,37 @@ block content
 	section(id="signup").bg-white.padding.center
 		
 		//- EMAIL
-		//- .container.padding
-		//- 	.row
-		//- 		h2.center See Your Impact
-		//- 	.row
-		//- 		.col-xl-9.mx-auto
-		//- 			p.lead Connect with us for the latest updates, including new non profit listings and Gift Lab feature updates.
+		.container.padding
+			.row
+				h2.center See Your Impact
+			.row
+				.col-xl-9.mx-auto
+					p.lead Connect with us for the latest updates, including new non profit listings and Gift Lab feature updates.
+					
+			.row(id="signupform2")
+				.col-md-10.col-lg-8.col-xl-7.mx-auto
+					form(action="/email" id="asdf2" method="post")
+						div(class="input-group mb-3")
+							input(class="form-control" type='email' placeholder='Enter your email' name='email2' id="email2")
+							div(class="input-group-append")
+								input(type="submit" id="niko" value="SUBSCRIBE" style="background-color: #00AFE1 !important;").btn.btn-primary.titleButton
 
-		//- 		.col-md-10.col-lg-8.col-xl-7.mx-auto
-		//- 			form(action="/signup" method="post").signupform
-		//- 				div(class="input-group mb-3")
-		//- 					input(class="form-control" type='email' placeholder='Enter your email' name='email2' id="email2")
-		//- 					div(class="input-group-append")
-		//- 						input(type="submit" id="niko" value="SUBSCRIBE" style="background-color: #00AFE1 !important;").btn.btn-primary.titleButton
+		script.
+			$("#asdf2").submit(function(e) {
+				var form = $(this);
+				var url = form.attr('action');
+				console.log(url, $('#email').val())
+				
+				$.ajax({
+					type: "POST",
+					url: url,
+					data: {email: $('#email').val()}, // serializes the form's elements.
+					success: function(results){
+						$( "#signupform2" ).replaceWith( "<br><br><h3>Successfully signed up!</h3><br><br><br>" )
+					}
+				});				
+				e.preventDefault(); // avoid to execute the actual submit of the form.
+			});
 
 		
 

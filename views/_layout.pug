@@ -9,7 +9,7 @@ html
 
     <link rel="shortcut icon" type="image/png" href="./images/favicon.png"/>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" ></script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     
@@ -141,12 +141,22 @@ html
                         input(type="submit" id="register" value="SUBSCRIBE" style="background-color: #00AFE1 !important;").btn.btn-primary.titleButton
 
         script.
-            $("#asdf").submit(function(e) {
-                var form = $(this);
-                var url = form.attr('action');
-                console.log(url, $('#email').val())
-                e.preventDefault(); // avoid to execute the actual submit of the form.                 
-            });
+                $("#asdf").submit(function(e) {
+                    var form = $(this);
+                    var url = form.attr('action');
+                    console.log(url, $('#email').val())
+                    $.ajax({
+                           type: "POST",
+                           url: url,
+                           data: {email: $('#email').val()}, // serializes the form's elements.
+                           success: function(results)
+                           {
+                               $( "#signupform" ).replaceWith( "<br><br><h3>Successfully signed up!</h3><br><br><br>" )
+                            
+                           }
+                         });
+                 e.preventDefault(); // avoid to execute the actual submit of the form.
+                });
                         
 
         div.container
