@@ -141,24 +141,24 @@ html
                         input(type="submit" id="register" value="SUBSCRIBE" style="background-color: #00AFE1 !important;").btn.btn-primary.titleButton
 
 
-                script.
-                    $("#asdf").submit(function(e) {
-                        var form = $(this);
-                        var url = form.attr('action');
-                        console.log(url, $('#email').val())
-                        $.ajax({
-                               type: "POST",
-                               url: url,
-                               data: {email: $('#email').val()}, // serializes the form's elements.
-                               success: function(data)
-                               {
-                                   $( ".signupform" ).replaceWith( "<br><br><h3 style='color: white'>Successfully signed up!</h3><br><br><br>" )
-                                
-                               }
-                             });
+        script.
+            $("#asdf").submit(function(e) {
+                var form = $(this);
+                var url = form.attr('action');
+                console.log(url, $('#email').val())
+                $.ajax({
+                       type: "POST",
+                       url: url,
+                       data: {email: $('#email').val()}, // serializes the form's elements.
+                       success: function(data)
+                       {
+                           $( ".signupform" ).replaceWith( "<br><br><h3 style='color: white'>Successfully signed up!</h3><br><br><br>" )
+                        
+                       }
+                     });
 
-                        e.preventDefault(); // avoid to execute the actual submit of the form.
-                    });
+                e.preventDefault(); // avoid to execute the actual submit of the form.
+            });
 
                         
 
