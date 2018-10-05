@@ -20,15 +20,13 @@ var stripe = require("stripe")(process.env.STRIPE_LIVE);
     let email = req.body.stripeEmail
     let sku = req.body.stripeSku
 
-    console.log('THIS IS THE NEW SKUL' + sku)
-
     // console.assert(token)
 
     stripe.charges.create({
       amount: amount,
       currency: 'usd',
       source: token,
-      description: 'Giftlab Charge for '+ req.params.sku,
+      description: 'Giftlab Charge for '+ sku,
       receipt_email: email,
       // application_fee: 1,
     },{
@@ -43,7 +41,7 @@ var stripe = require("stripe")(process.env.STRIPE_LIVE);
         var amountInDollars = amountInCents / 100
         console.log('SAVED TO DATABASE:',
                     Date.now(), 
-                    req.params.sku, 
+                    sku, 
                     amountInDollars.toString(),
                     charge.source.name,
                     charge.id,
@@ -69,7 +67,7 @@ var stripe = require("stripe")(process.env.STRIPE_LIVE);
 
         client.query(`INSERT INTO orders VALUES ('`+
                             Date.now()+`','`+
-                            req.params.sku+`',`+
+                            sku+`',`+
                             amountInDollars.toString() +`,'`+
                             charge.source.name +`','`+
                             charge.id +`','`+
