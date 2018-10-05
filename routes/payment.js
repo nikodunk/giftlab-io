@@ -18,6 +18,7 @@ var stripe = require("stripe")(process.env.STRIPE_LIVE);
     let token = req.body.stripeToken
     let amount = req.body.stripeAmount
     let email = req.body.stripeEmail
+    console.log(req.params.sku)
     // console.assert(token)
 
     stripe.charges.create({
