@@ -144,7 +144,7 @@ block content
 										
 										div.test
 											//- BOILERPLATE FOR STRIPE SUBMIT
-											form( id="myForm" action="/payment/charge/"+content['ProjectID']+'/'+val['sku']+'/'+content['stripe_user_id'] method="POST")
+											form( id="myForm" action="/payment/charge/"+content['ProjectID']+'/'+#{val['sku']}+'/'+content['stripe_user_id'] method="POST")
 												input( type="hidden" id="stripeToken" name="stripeToken" )
 												input( type="hidden" id="stripeEmail" name="stripeEmail" )
 												input( type="hidden" id="stripeAmount" name="stripeAmount" )
