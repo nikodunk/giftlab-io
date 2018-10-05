@@ -15,9 +15,8 @@ block content
 				.col-lg-4.my-auto.padding
 					h4 #{content.ProjectName}
 					p.lead
-						| #{content.BusinessName}
-						| br
-						| #{content["Project Description - Short"]}
+						#{content.BusinessName}
+						#{content["Project Description - Short"]}
 
 					div.row
 						a.btn.btn-sm.btn-primary.orange(href=content.wishlistlink target="_blank" style="padding: 10px !important; padding-top: 15px !important")
