@@ -96,7 +96,7 @@ function getDataComplete(projectNumber, res){
 
 
 
-function getDataComplete(projectNumber, res){
+function getData(projectNumber, res){
     
     client.query(` SELECT 
                       skus.sku, 
