@@ -1,0 +1,299 @@
+extends _layout 
+
+block content
+	
+	<script src="https://checkout.stripe.com/checkout.js"></script>
+	<script src="http://malsup.github.com/jquery.form.js"></script>
+
+	
+
+
+	//- PROJECT HEADER
+	section.showcase
+		.container-fluid.p-0
+			.row.no-gutters.panel
+				.col-lg-4.my-auto.padding
+					h4 #{content.ProjectName}
+					p.lead 
+						span #{content.BusinessName}
+						br
+						span #{content["Project Description - Short"]}
+
+					//- div.row
+					//- 	a.btn.btn-sm.btn-primary.orange(href=content.wishlistlink target="_blank" style="padding: 10px !important; padding-top: 15px !important")
+					//- 		div.row
+					//- 			div.row(style="margin: 0 auto")
+					//- 				i.fa.fa-amazon.fa-2x.fa-fw
+					//- 				span
+					//- 					h5 AMAZON WISHLIST
+					
+					//- div.row
+					//- 	a.btn.btn-sm.btn-primary.orange(href="#budgets" style="padding: 10px !important; padding-top: 15px !important")
+					//- 		div.row
+					//- 			div.row(style="margin: 0 auto")
+					//- 				i.fa.fa-usd.fa-2x.fa-fw
+					//- 				span
+					//- 					h5 DONATE MONEY
+					
+					div.row
+						a.btn.btn-sm.btn-primary.jumbotronbutton(href="#project" style="padding: 10px !important; padding-top: 15px !important")
+							div.row
+								div.row(style="margin: 0 auto")
+									span
+										h5 LEARN MORE
+				.col-lg-8.text-white(style="background-image: url(' "+content.image+" '); background-position: center;  background-size: cover; min-height:200px")
+				
+
+
+
+
+	section.container
+		//- AMAZON
+		div.row(id="items" style="margin-top: 40px !important; margin: 0 auto !important").padding
+			h3.center Items in Need
+		div.row(style="margin: 0 auto !important").padding
+			p.lead.mb-0.center Purchase items and ship them directly using Amazon Wishlists
+			br
+		div.row
+			each val in skus
+				if val.bucket == "Item"
+		
+
+
+					//- AMAZON ITEM ACTIVE
+					if val.status == "Active"
+						div.col-lg-4(style="margin-top: 20px !important")
+							div.box-project(style="background-color: white")
+								div
+									h5 #{val["sku_name"]}
+									p $#{val['unit_cost']}
+								div
+									p= val["description"]
+									// p Need: #{val['quantity_need']}&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Total Cost: #{val['total_value']}
+									meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: lightblue")
+									br
+									if val.donatedsofar == null
+										p(style="text-align: right") Gifted: 0 | Remaining: #{val['remaining_pretty']}
+									else
+										p(style="text-align: right") Gifted: #{val['donatedsofar_pretty']} | Remaining: #{val['remaining_pretty']}
+								div
+									a.btn.btn-lg.btn-primary.col-11.titleButton.orange(href=content.wishlistlink target="_blank")
+										div.row
+											div.row(style="margin: 0 auto")
+												i.fa.fa-amazon.fa-1x.fa-fw(style="margin-right: 5px; margin-top: 5px")
+												small AMAZON WISHLIST
+
+		
+
+									br
+									br
+									a(href="/contact").float-right Or recycle this item
+
+					//- AMAZON ITEM COMPLETE
+					else
+						div.col-lg-4(style="margin-top: 20px !important")
+							div.box-project(style="background-color: #f8f9fa") 
+								div
+									h5 #{val["sku_name"]} ($#{val['unit_cost']} each)
+									// p(style="color:grey")= val["Bucket"]
+								div
+									p= val["description"]
+									// p Need: #{val['quantity_need']}&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Total Cost: #{val['total_value']}
+									meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: grey")
+									br
+									if val.donatedsofar == null
+										p(style="text-align: right") Gifted: 0 | Remaining: #{val['remaining_pretty']}
+									else
+										p(style="text-align: right") Gifted: #{val['donatedsofar_pretty']} | Remaining: #{val['remaining_pretty']}
+								div
+							
+		
+
+		// STRIPE
+		div.row(id="budgets" style="margin-top: 40px !important; margin: 0 auto !important").padding
+			h3.center(style="margin-top: 40px !important" ) Project Budgets
+		div.row(style="margin: 0 auto !important").padding
+			p.lead.mb-0.center Our project teams have worked hard to give the best estimates possible, but budgets and prices of items can fluctuate. Should something change, your monetary donation will be used for another aspect of this project. 
+			small.mb-0.center(style="color: grey; ") Privacy Notice: Gift Lab will share your name, billing address, e-mail, the date and amount of your contribution to the project sponsoring non-profit. Your email will be retained by Gift Lab for email marketing correspondence.
+
+			br
+
+		div.row
+			each val in skus
+					if val.bucket == "Budget"
+
+			
+						//- STRIPE ITEM ACTIVE
+						if val.status == "Active"
+							div.col-lg-4(style="margin-top: 20px !important")
+								div.box-project(style="background-color: white")
+									div
+										h5 #{val["sku_name"]}
+										// p(style="color:grey")= val["Bucket"]
+									div
+										div
+											p= val["description"]
+											// p Total Budget: $#{val['total_value']}
+											meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: lightblue").float-right
+											br
+											if val.donatedsofar == null
+												p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining_pretty']}
+											else
+												p(style="text-align: right") Gifted: $#{val['donatedsofar_pretty']} | Remaining: $#{val['remaining_pretty']}
+									div.row
+										
+										div.test
+											//- BOILERPLATE FOR STRIPE SUBMIT
+											form( id="myForm" action="/payment/charge/"+content['ProjectID']+'/'+val['sku']+'/'+content['stripe_user_id'] method="POST")
+												input( type="hidden" id="stripeToken" name="stripeToken" )
+												input( type="hidden" id="stripeEmail" name="stripeEmail" )
+												input( type="hidden" id="stripeAmount" name="stripeAmount" )
+												input( type="hidden" id="stripeSku" name="stripeSku" value=val['sku'])
+
+											//- INPUT FIELD
+											input.myInput( type="number" id=val['sku'] name="amountInDollars" value="20" min="0" max=val['total_need'])
+										
+										//- THE DONATE BUTTON
+										a.btn.btn-lg.btn-primary.col-7.titleButton.orange( class="stripe" data-sku=val['sku'] class=val['sku'] style="color: white")
+											div.row
+												div.row(style="margin: 0 auto")
+													i.fa.fa-usd.fa-1x.fa-fw(style="margin-right: 5px; margin-top: 2px")
+													small DONATE
+										
+
+
+						//- STRIPE ITEM COMPLETE
+						else
+							div.col-lg-4(style="margin-top: 20px !important")
+								div.box-project(style="background-color: #f8f9fa")
+									div
+										h5 #{val["sku_name"]}
+										// p(style="color:grey")= val["Bucket"]
+									div
+										div
+											p= val["description"]
+											// p Total Budget: $#{val['total_value']}
+											meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: grey").float-right
+											br
+											if val.donatedsofar == null
+												p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining_pretty']}
+											else
+												p(style="text-align: right") Gifted: $#{val['donatedsofar_pretty']} | Remaining: $#{val['remaining_pretty']}
+									div
+										h5.center(style="color:grey") COMPLETE!
+				
+
+
+		//- PROJECT PROFILE
+		div.row(id="project")
+			section(style="margin-top: 40px !important;")
+				div.row.padding
+					div.col-md-2
+						div
+					div.col-md-2
+						div.row.padding
+							div
+								img.thumbnail(src=content.businessimage alt="Image Title" style="max-width: 100% !important; max-height: auto !important; margin: 0 auto;").center
+							br
+					div.col-md-6
+						div.row.padding
+							h4 #{content.BusinessName}
+							p.lead #{content.BusinessDescription}
+							h4 This Project
+							p.lead #{content["Project Description - Long"]}
+					div.col-md-2
+						div
+					
+				div.row.padding
+					div(style="max-width: 300px; margin: 0 auto")
+						a.btn.btn-lg.btn-primary.blue.titleButton(href=content.BusinessWebsite target="_blank")
+							i.fa.fa-globe.fa-1x.fa-fw
+							small &nbsp; VISIT OUR WEBSITE
+						a.btn.btn-lg.btn-primary.blue.titleButton(href=content.BusinessFacebook target="_blank")
+							i.fa.fa-facebook.fa-1x.fa-fw
+							small &nbsp; FACEBOOK PAGE
+						a.btn.btn-lg.btn-primary.blue.titleButton(href=content.BusinessInstagram target="_blank")
+							i.fa.fa-instagram.fa-1x.fa-fw
+							small &nbsp; INSTAGRAM PAGE
+
+				div.row.padding
+					div.col-md-2
+						div
+					div.col-md-2
+						div.row.padding
+							div.center
+								img.thumbnail.center(src=content.researcherimage alt="Image Title" style="max-width: 100% !important; max-height: auto !important; margin: 0 auto;").center
+							br
+					div.col-md-6
+						div.padding
+							h3= content["Researcher"]
+							p.lead= content["Researcher profile"]
+					div.col-md-2
+						div
+						
+					
+						
+										
+			
+		
+
+
+		script.
+			$( document ).ready(function() {
+				mixpanel.track('project_page_loaded', {project: window.location.pathname.substr(10)});
+			});
+
+			document.querySelectorAll('.stripe').forEach(function(selector) {
+				console.log(selector.dataset.sku)
+
+				$("."+selector.dataset.sku).on('click', function(e) {
+					//when click record to mixpanel
+					mixpanel.track('stripe clicked');
+
+					// get amount in cents from specific form
+					var amountInCents = Math.floor($("#"+selector.dataset.sku).val() * 100);
+
+					// Get amount ready to pass to backend: set (hidden) form stripeAmount on ALL forms (for now)
+					$("#stripeAmount").val(amountInCents);
+					$("#stripeSku").val(selector.dataset.sku);
+
+					// Open Checkout with further options
+					handler.open({
+						name: 'Gift Lab',
+						description: 'Donation to '+ selector.dataset.sku,
+						amount: amountInCents,
+					});
+					e.preventDefault();
+				});
+			});
+
+			var handler = StripeCheckout.configure({
+				key: 'pk_live_nROKLmrb4dhqpT1oWlRdS73J',
+				image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+				token: function(token) {
+					$("#stripeToken").val(token.id);
+					$("#stripeEmail").val(token.email);
+
+					mixpanel.track('stripe completed');
+					$("#myForm").submit();
+					//- $('#myForm')
+					//-     .ajaxForm(function (response) {
+					//-             console.log("The server says: " + response);
+					//-         })
+					//- ;
+				}
+			});
+
+			// Close Checkout on page navigation
+			$(window).on('popstate', function() {
+				handler.close();
+			});
+						
+
+
+			
+
+
+			
+
+				
