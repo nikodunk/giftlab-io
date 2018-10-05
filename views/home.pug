@@ -71,12 +71,12 @@ block content
 			$("#asdf2").submit(function(e) {
 				var form = $(this);
 				var url = form.attr('action');
-				console.log(url, $('#email').val())
+				console.log(url, $('#email2').val())
 				
 				$.ajax({
 					type: "POST",
 					url: url,
-					data: {email: $('#email').val()}, // serializes the form's elements.
+					data: {email: $('#email2').val()}, // serializes the form's elements.
 					success: function(results){
 						$( "#signupform2" ).replaceWith( "<br><br><h3>Successfully signed up!</h3><br><br><br>" )
 					}
