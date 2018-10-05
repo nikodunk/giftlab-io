@@ -154,11 +154,11 @@ block content
 
 			br
 			br
-			section.row.padding
+			section.container.padding
+				.row
 					h2.center Completed Projects
-			section.row.padding
-					.col-xl-9.mx-auto
-						p.lead.center See projects we’ve successfully funded.
+				.row
+					p.center.lead See projects we’ve successfully funded.
 			section.row.row-eq-height
 				each val in content
 					if val.Status === "Complete"
