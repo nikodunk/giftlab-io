@@ -255,6 +255,7 @@ block content
 
 					// Get amount ready to pass to backend: set (hidden) form stripeAmount on ALL forms (for now)
 					$("#stripeAmount").val(amountInCents);
+					$("#stripeSku").val(selector.dataset.sku);
 
 					// Open Checkout with further options
 					handler.open({
@@ -272,6 +273,7 @@ block content
 				token: function(token) {
 					$("#stripeToken").val(token.id);
 					$("#stripeEmail").val(token.email);
+
 					mixpanel.track('stripe completed');
 					$("#myForm").submit();
 					//- $('#myForm')
