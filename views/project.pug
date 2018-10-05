@@ -114,7 +114,7 @@ block content
 			div.row(id="budgets" style="margin-top: 40px!important;" ).padding
 				h3.center(style="margin-top: 40px !important" ) Project Budgets
 				p.lead.mb-0.center Our project teams have worked hard to give the best estimates possible, but budgets and prices of items can fluctuate. Should something change, your monetary donation will be used for another aspect of this project. 
-				p.lead.center(style="color: grey") Privacy Notice: Gift Lab will share your name, billing address, e-mail, the date and amount of your contribution to the project sponsoring non-profit. Your email will be retained by Gift Lab for email marketing correspondence.
+				small.lead.center(style="color: grey") Privacy Notice: Gift Lab will share your name, billing address, e-mail, the date and amount of your contribution to the project sponsoring non-profit. Your email will be retained by Gift Lab for email marketing correspondence.
 
 				br
 
@@ -198,21 +198,12 @@ block content
 						div.row.padding
 							h4 #{content.BusinessName}
 							p.lead #{content.BusinessDescription}
-					div.col-md-2
-						div
-					
-
-				div.row.padding
-					div.col-md-4
-						div
-					div.col-md-6
-						div.row.padding
+							br
 							h4 This Project
 							p.lead #{content["Project Description - Long"]}
 					div.col-md-2
 						div
-				
-				
+					
 				div.row
 					div(style="max-width: 300px; margin: 0 auto")
 						a.btn.btn-lg.btn-primary.blue.titleButton(href=content.BusinessWebsite target="_blank")
@@ -230,7 +221,7 @@ block content
 						div
 					div.col-md-2
 						div.row.padding
-							img.thumbnail(src=content.researcherimage alt="Image Title").center
+							img.thumbnail(src=content.researcherimage alt="Image Title" style="max-width: 100% !important; max-height: auto !important").center
 							br
 					div.col-md-6
 						div.padding
