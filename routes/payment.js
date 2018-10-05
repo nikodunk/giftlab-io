@@ -35,10 +35,12 @@ var stripe = require("stripe")(process.env.STRIPE_LIVE);
       else {
         console.log('Charge successful')
         console.info(charge)
+        var amountInCents = parseInt(charge.amount)
+        var amountInDollars = amountInCents / 100
         console.log('SAVED TO DATABASE:',
                     Date.now(), 
                     req.params.sku, 
-                    charge.amount, 
+                    amountInDollars.toString(),
                     charge.source.name,
                     charge.id,
                     Date.now(),
@@ -64,7 +66,7 @@ var stripe = require("stripe")(process.env.STRIPE_LIVE);
         client.query(`INSERT INTO orders VALUES ('`+
                             Date.now()+`','`+
                             req.params.sku+`',`+
-                            charge.amount +`,'`+
+                            amountInDollars.toString() +`,'`+
                             charge.source.name +`','`+
                             charge.id +`','`+
                             ''+`','`+ //amazon_orderid
