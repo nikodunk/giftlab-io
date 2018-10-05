@@ -84,6 +84,8 @@ block content
 				e.preventDefault(); // avoid to execute the actual submit of the form.
 			});
 
+
+
 		
 		.container
 			.row
@@ -177,5 +179,9 @@ block content
 		div.container.padding
 			section.row
 				
-			
+	
+	script.
+		$( document ).ready(function() {
+		    mixpanel.track('homepage_loaded');
+		});
 	
