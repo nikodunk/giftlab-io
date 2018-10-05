@@ -16,6 +16,7 @@ block content
 					h4 #{content.ProjectName}
 					p.lead 
 						span #{content.BusinessName}
+						br
 						span #{content["Project Description - Short"]}
 
 					div.row
@@ -190,7 +191,7 @@ block content
 						div
 					div.col-md-2
 						div.row.padding
-							img.thumbnail(src=content.businessimage alt="Image Title" style="max-width: 100% !important").center
+							img.thumbnail(src=content.businessimage alt="Image Title").center
 							br
 					div.col-md-6
 						div.row.padding
