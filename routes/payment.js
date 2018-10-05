@@ -20,7 +20,7 @@ var stripe = require("stripe")(process.env.STRIPE_LIVE);
     let email = req.body.stripeEmail
     let sku = req.body.stripeSku
 
-    console.log(sku)
+    console.log('THIS IS THE NEW SKUL' + sku)
 
     // console.assert(token)
 
