@@ -135,23 +135,24 @@ block content
 					if val.Status === "Active"
 						div.col-md-4(style="padding: 0px; ")
 							a(href=val.slug).nolinks
-								div.center.box-home.bg-white
-									img.img-fluid(src=val.image)
-									br
-									br
-									h5(style="padding-left: 40px; padding-right: 40px") #{val.ProjectName}
-									p.lead(style="color: grey; padding-left: 20px; padding-right: 20px") #{val.BusinessName}
-									p.lead(style=" padding-left: 20px; padding-right: 20px") #{val["Project Description - Short"]}
-									a.btn.btn-lg.btn-primary.col-11.titleButton.orange(href=val.wishlistlink target="_blank")
-										div.row
-											div.row(style="margin: 0 auto")
-												i.fa.fa-amazon.fa-1x.fa-fw(style="margin-top: 5px; margin-right: 5px")
-												small AMAZON WISHLIST
-									a.btn.btn-lg.btn-primary.col-11.titleButton.orange(href=val.slug+"/#budgets")
-										div.row
-											div.row(style="margin: 0 auto")
-												i.fa.fa-usd.fa-1x.fa-fw(style="margin-top: 2px; margin-right: 5px")
-												small DONATE MONEY
+								div.center.bg-white
+									div.box-home
+										img.img-fluid(src=val.image)
+										br
+										br
+										h5(style="padding-left: 40px; padding-right: 40px") #{val.ProjectName}
+										p.lead(style="color: grey; padding-left: 20px; padding-right: 20px") #{val.BusinessName}
+										p.lead(style=" padding-left: 20px; padding-right: 20px") #{val["Project Description - Short"]}
+										a.btn.btn-lg.btn-primary.col-11.titleButton.orange(href=val.wishlistlink target="_blank")
+											div.row
+												div.row(style="margin: 0 auto")
+													i.fa.fa-amazon.fa-1x.fa-fw(style="margin-top: 5px; margin-right: 5px")
+													small AMAZON WISHLIST
+										a.btn.btn-lg.btn-primary.col-11.titleButton.orange(href=val.slug+"/#budgets")
+											div.row
+												div.row(style="margin: 0 auto")
+													i.fa.fa-usd.fa-1x.fa-fw(style="margin-top: 2px; margin-right: 5px")
+													small DONATE MONEY
 
 			br
 			br
