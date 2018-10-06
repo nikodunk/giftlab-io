@@ -40,6 +40,15 @@ router.get('/microplastics/', function(req, res, next) {
   // mixpanel.track('microplastics_loaded');
 });
 
+router.get('/projectwreckless/', function(req, res, next) {
+  getData(6, res)
+  // mixpanel.track('microplastics_loaded');
+});
+
+router.get('/citysurfproject/', function(req, res, next) {
+  getData(7, res)
+  // mixpanel.track('microplastics_loaded');
+});
 
 router.get('/tigersharks/', function(req, res, next) {
   getDataComplete(4, res)
