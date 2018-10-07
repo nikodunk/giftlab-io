@@ -10,11 +10,12 @@ client.connect();
 
 var request = require('request');
 
+var content = require('../public/javascripts/content.json')
 
 
 
 router.get('/', function(req, res, next) {
-    res.render('signup');
+    res.render('signup_stripe');
 });
 
 
@@ -64,7 +65,7 @@ router.get('/success/', function(req, res, next) {
     // client.query(`INSERT INTO marketing VALUES ('`+req.body.email+`');`); 
 
 
-    res.render('signup_success');
+    res.render('signup_stripe_success', { content: content });
 });
 
 
