@@ -143,7 +143,7 @@ block content
 										h5(style="padding-left: 40px; padding-right: 40px") #{val.ProjectName}
 										p.lead(style="color: grey; padding-left: 20px; padding-right: 20px") #{val.BusinessName}
 										p.lead(style=" padding-left: 20px; padding-right: 20px") #{val["Project Description - Short"]}
-										a.btn.btn-lg.btn-primary.col-11.titleButton.orange(href=val.wishlistlink target="_blank")
+										a.btn.btn-lg.btn-primary.col-11.titleButton.orange(href=val.wishlistlink target="_blank" id="amazonButton")
 											div.row
 												div.row(style="margin: 0 auto")
 													i.fa.fa-amazon.fa-1x.fa-fw(style="margin-top: 5px; margin-right: 5px")
@@ -184,5 +184,9 @@ block content
 	script.
 		$( document ).ready(function() {
 		    mixpanel.track('homepage_loaded');
+		});
+
+		$( '#amazonButton' ).clicked(function() {
+		    mixpanel.track('amazon_clicked');
 		});
 	
