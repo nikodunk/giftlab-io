@@ -20,7 +20,7 @@ var content = require('../public/javascripts/content.json')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('home', { content: content.reverse() });
+  res.render('home', { content: content });
 });
 
 /* GET about page. */
