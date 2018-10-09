@@ -51,8 +51,7 @@ block content
 
 		//- AMAZON INTRO
 		each val, index in skus
-			if val.bucket == "Item"
-				if index == 0
+			if val.bucket == "Item" && index == 0
 
 					div.row(id="items" style="margin-top: 40px !important; margin: 0 auto !important").padding
 						h3.center Items in Need
@@ -63,8 +62,7 @@ block content
 		//- AMAZON ITEM ACTIVE
 		div.row
 			each val, index in skus
-				if val.bucket == "Item"
-					if val.status == "Active"
+				if val.bucket == "Item" && val.status == "Active"
 
 						div.col-lg-4(style="margin-top: 20px !important")
 							div.box-project(style="background-color: white")
@@ -94,8 +92,8 @@ block content
 										span Or recycle this item
 
 
-					//- AMAZON ITEM COMPLETE
-					else
+				//- AMAZON ITEM COMPLETE
+				if val.bucket == "Item" && val.status == "Complete"
 
 						div.col-lg-4(style="margin-top: 20px !important")
 							div.box-project(style="background-color: #f8f9fa") 
@@ -116,8 +114,7 @@ block content
 
 		// STRIPE
 		each val, index in skus
-			if val.bucket == "Budget"
-				if index == 0
+			if val.bucket == "Budget" && index == 0
 
 					div.row(id="budgets" style="margin-top: 40px !important; margin: 0 auto !important").padding
 						h3.center(style="margin-top: 40px !important" ) Project Budgets
@@ -130,9 +127,7 @@ block content
 		//- STRIPE ITEM ACTIVE
 		div.row
 			each val, index in skus
-				if val.bucket == "Budget"		
-					if val.status == "Active"
-
+				if val.bucket == "Budget" && val.status == "Active"
 
 						div.col-lg-4(style="margin-top: 20px !important")
 							div.box-project(style="background-color: white")
@@ -170,8 +165,9 @@ block content
 												small DONATE
 										
 
-					//- STRIPE ITEM COMPLETE
-					else
+				//- STRIPE ITEM COMPLETE
+				if val.bucket == "Budget" && val.status == "Complete"
+
 						div.col-lg-4(style="margin-top: 20px !important")
 							div.box-project(style="background-color: #f8f9fa")
 								div
