@@ -58,7 +58,7 @@ block content
 					div.row(style="margin: 0 auto !important").padding
 						p.lead.mb-0.center Purchase items and ship them directly using Amazon Wishlists
 						br
-					
+					div.row
 
 				//- AMAZON ITEM ACTIVE
 				if val.status == "Active"
@@ -92,7 +92,7 @@ block content
 
 
 				//- AMAZON ITEM COMPLETE
-				if val.status == "Complete"
+				else
 					div.col-lg-4(style="margin-top: 20px !important")
 						div.box-project(style="background-color: #f8f9fa") 
 							div
@@ -114,77 +114,73 @@ block content
 		// STRIPE
 		each val, index in skus
 			if val.bucket == "Budget"
+				if index == 0
+					div.row(id="budgets" style="margin-top: 40px !important; margin: 0 auto !important").padding
+						h3.center(style="margin-top: 40px !important" ) Project Budgets
+					div.row(style="margin: 0 auto !important").padding
+						p.lead.mb-0.center Our project teams have worked hard to give the best estimates possible, but budgets and prices of items can fluctuate. Should something change, your monetary donation will be used for another aspect of this project. 
+						small.mb-0.center(style="color: grey; ") Privacy Notice: Gift Lab will share your name, billing address, e-mail, the date and amount of your contribution to the project sponsoring non-profit. Your email will be retained by Gift Lab for email marketing correspondence.
+						br
+					div.row
 
 				//- STRIPE ITEM ACTIVE
 				if val.status == "Active"
-					if index == 0
-						div.row(id="budgets" style="margin-top: 40px !important; margin: 0 auto !important").padding
-							h3.center(style="margin-top: 40px !important" ) Project Budgets
-						div.row(style="margin: 0 auto !important").padding
-							p.lead.mb-0.center Our project teams have worked hard to give the best estimates possible, but budgets and prices of items can fluctuate. Should something change, your monetary donation will be used for another aspect of this project. 
-							small.mb-0.center(style="color: grey; ") Privacy Notice: Gift Lab will share your name, billing address, e-mail, the date and amount of your contribution to the project sponsoring non-profit. Your email will be retained by Gift Lab for email marketing correspondence.
+					div.col-lg-4(style="margin-top: 20px !important")
+						div.box-project(style="background-color: white")
+							div
+								h5 #{val["sku_name"]}
+								// p(style="color:grey")= val["Bucket"]
+							div
+								div
+									p= val["description"]
+									// p Total Budget: $#{val['total_value']}
+									meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: lightblue").float-right
+									br
+									if val.donatedsofar == null
+										p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining_pretty']}
+									else
+										p(style="text-align: right") Gifted: $#{val['donatedsofar_pretty']} | Remaining: $#{val['remaining_pretty']}
+							div.row
+								
+								div.test
+									//- BOILERPLATE FOR STRIPE SUBMIT
+									form( id="myForm" action="/payment/charge/"+content['ProjectID']+'/'+val['sku']+'/'+content['stripe_user_id'] method="POST")
+										input( type="hidden" id="stripeToken" name="stripeToken" )
+										input( type="hidden" id="stripeEmail" name="stripeEmail" )
+										input( type="hidden" id="stripeAmount" name="stripeAmount" )
+										input( type="hidden" id="stripeSku" name="stripeSku" value=val['sku'])
 
-							br
-
-					else
-						//- STRIPE ITEM ACTIVE
-						if val.status == "Active"
-							div.col-lg-4(style="margin-top: 20px !important")
-								div.box-project(style="background-color: white")
-									div
-										h5 #{val["sku_name"]}
-										// p(style="color:grey")= val["Bucket"]
-									div
-										div
-											p= val["description"]
-											// p Total Budget: $#{val['total_value']}
-											meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: lightblue").float-right
-											br
-											if val.donatedsofar == null
-												p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining_pretty']}
-											else
-												p(style="text-align: right") Gifted: $#{val['donatedsofar_pretty']} | Remaining: $#{val['remaining_pretty']}
+									//- INPUT FIELD
+									input.myInput( type="number" id=val['sku'] name="amountInDollars" value="20" min="0" max=val['total_need'])
+								
+								//- THE DONATE BUTTON
+								a.btn.btn-lg.btn-primary.col-7.titleButton.orange( class="stripe" data-sku=val['sku'] class=val['sku'] style="color: white")
 									div.row
-										
-										div.test
-											//- BOILERPLATE FOR STRIPE SUBMIT
-											form( id="myForm" action="/payment/charge/"+content['ProjectID']+'/'+val['sku']+'/'+content['stripe_user_id'] method="POST")
-												input( type="hidden" id="stripeToken" name="stripeToken" )
-												input( type="hidden" id="stripeEmail" name="stripeEmail" )
-												input( type="hidden" id="stripeAmount" name="stripeAmount" )
-												input( type="hidden" id="stripeSku" name="stripeSku" value=val['sku'])
-
-											//- INPUT FIELD
-											input.myInput( type="number" id=val['sku'] name="amountInDollars" value="20" min="0" max=val['total_need'])
-										
-										//- THE DONATE BUTTON
-										a.btn.btn-lg.btn-primary.col-7.titleButton.orange( class="stripe" data-sku=val['sku'] class=val['sku'] style="color: white")
-											div.row
-												div.row(style="margin: 0 auto")
-													i.fa.fa-usd.fa-1x.fa-fw(style="margin-right: 5px; margin-top: 2px")
-													small DONATE
+										div.row(style="margin: 0 auto")
+											i.fa.fa-usd.fa-1x.fa-fw(style="margin-right: 5px; margin-top: 2px")
+											small DONATE
 										
 
 
-						//- STRIPE ITEM COMPLETE
-						else
-							div.col-lg-4(style="margin-top: 20px !important")
-								div.box-project(style="background-color: #f8f9fa")
-									div
-										h5 #{val["sku_name"]}
-										// p(style="color:grey")= val["Bucket"]
-									div
-										div
-											p= val["description"]
-											// p Total Budget: $#{val['total_value']}
-											meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: grey").float-right
-											br
-											if val.donatedsofar == null
-												p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining_pretty']}
-											else
-												p(style="text-align: right") Gifted: $#{val['donatedsofar_pretty']} | Remaining: $#{val['remaining_pretty']}
-									div
-										h5.center(style="color:grey") COMPLETE!
+				//- STRIPE ITEM COMPLETE
+				else
+					div.col-lg-4(style="margin-top: 20px !important")
+						div.box-project(style="background-color: #f8f9fa")
+							div
+								h5 #{val["sku_name"]}
+								// p(style="color:grey")= val["Bucket"]
+							div
+								div
+									p= val["description"]
+									// p Total Budget: $#{val['total_value']}
+									meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: grey").float-right
+									br
+									if val.donatedsofar == null
+										p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining_pretty']}
+									else
+										p(style="text-align: right") Gifted: $#{val['donatedsofar_pretty']} | Remaining: $#{val['remaining_pretty']}
+							div
+								h5.center(style="color:grey") COMPLETE!
 				
 
 
