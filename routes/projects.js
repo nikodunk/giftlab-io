@@ -23,23 +23,23 @@ const numberWithCommas = (x) => {
 
 router.get('/leatherbacks/', function(req, res, next) {
     getData(1, res)
-    // mixpanel.track('leatherbacks_loaded');
+    
 });
 
 router.get('/salmon/', function(req, res, next) {
     getData(2, res)
-    // mixpanel.track('salmon_loaded');
+    
 });
 
 
 router.get('/microplastics/', function(req, res, next) {
   getData(3, res)
-  // mixpanel.track('microplastics_loaded');
+  
 });
 
 router.get('/tigersharks/', function(req, res, next) {
   getDataComplete(4, res)
-  // mixpanel.track('tigersharks_loaded');
+  
 });
 
 
@@ -47,12 +47,12 @@ router.get('/tigersharks/', function(req, res, next) {
 
 router.get('/projectwreckless/', function(req, res, next) {
   getData(6, res)
-  // mixpanel.track('microplastics_loaded');
+  
 });
 
 router.get('/citysurfproject/', function(req, res, next) {
   getData(7, res)
-  // mixpanel.track('microplastics_loaded');
+  
 });
 
 
@@ -101,7 +101,7 @@ function getData(projectNumber, res){
                             }
                             // console.log(skuList)
                       res.render('project', 
-                          { content: content[projectNumber-1].reverse(),
+                          { content: content[projectNumber-1],
                             skus: skuList
                           }
                       );
@@ -149,7 +149,7 @@ function getDataComplete(projectNumber, res){
                             }
                             // console.log(skuList)
                       res.render('projectComplete', 
-                          { content: content[projectNumber-1].reverse(),
+                          { content: content[projectNumber-1],
                             skus: skuList
                           }
                       );
