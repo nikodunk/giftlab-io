@@ -59,9 +59,9 @@ block content
 						p.lead.mb-0.center Purchase items and ship them directly using Amazon Wishlists
 						br
 		
-		each val, index in skus
-			if val.bucket == "Item"
-				div.row
+		div.row
+			each val, index in skus
+				if val.bucket == "Item"
 					//- AMAZON ITEM ACTIVE
 					if val.status == "Active"
 						div.col-lg-4(style="margin-top: 20px !important")
@@ -124,9 +124,9 @@ block content
 						small.mb-0.center(style="color: grey; ") Privacy Notice: Gift Lab will share your name, billing address, e-mail, the date and amount of your contribution to the project sponsoring non-profit. Your email will be retained by Gift Lab for email marketing correspondence.
 						br
 
-		each val, index in skus
-			if val.bucket == "Budget"		
-				div.row
+		div.row
+			each val, index in skus
+				if val.bucket == "Budget"		
 					//- STRIPE ITEM ACTIVE
 					if val.status == "Active"
 						div.col-lg-4(style="margin-top: 20px !important")
@@ -163,28 +163,28 @@ block content
 											div.row(style="margin: 0 auto")
 												i.fa.fa-usd.fa-1x.fa-fw(style="margin-right: 5px; margin-top: 2px")
 												small DONATE
-											
+										
 
 
-					//- STRIPE ITEM COMPLETE
-					else
-						div.col-lg-4(style="margin-top: 20px !important")
-							div.box-project(style="background-color: #f8f9fa")
+				//- STRIPE ITEM COMPLETE
+				else
+					div.col-lg-4(style="margin-top: 20px !important")
+						div.box-project(style="background-color: #f8f9fa")
+							div
+								h5 #{val["sku_name"]}
+								// p(style="color:grey")= val["Bucket"]
+							div
 								div
-									h5 #{val["sku_name"]}
-									// p(style="color:grey")= val["Bucket"]
-								div
-									div
-										p= val["description"]
-										// p Total Budget: $#{val['total_value']}
-										meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: grey").float-right
-										br
-										if val.donatedsofar == null
-											p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining_pretty']}
-										else
-											p(style="text-align: right") Gifted: $#{val['donatedsofar_pretty']} | Remaining: $#{val['remaining_pretty']}
-								div
-									h5.center(style="color:grey") COMPLETE!
+									p= val["description"]
+									// p Total Budget: $#{val['total_value']}
+									meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: grey").float-right
+									br
+									if val.donatedsofar == null
+										p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining_pretty']}
+									else
+										p(style="text-align: right") Gifted: $#{val['donatedsofar_pretty']} | Remaining: $#{val['remaining_pretty']}
+							div
+								h5.center(style="color:grey") COMPLETE!
 				
 
 
