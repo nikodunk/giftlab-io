@@ -10,9 +10,6 @@ client.connect();
 
 var content = require('../public/javascripts/content.json')
 
-// var Mixpanel = require('mixpanel');
-// var mixpanel = Mixpanel.init('bba2c237fccc04b19cec51dee15cf123');
-
 
 
 const numberWithCommas = (x) => {
@@ -40,6 +37,14 @@ router.get('/microplastics/', function(req, res, next) {
   // mixpanel.track('microplastics_loaded');
 });
 
+router.get('/tigersharks/', function(req, res, next) {
+  getDataComplete(4, res)
+  // mixpanel.track('tigersharks_loaded');
+});
+
+
+
+
 router.get('/projectwreckless/', function(req, res, next) {
   getData(6, res)
   // mixpanel.track('microplastics_loaded');
@@ -50,10 +55,7 @@ router.get('/citysurfproject/', function(req, res, next) {
   // mixpanel.track('microplastics_loaded');
 });
 
-router.get('/tigersharks/', function(req, res, next) {
-  getDataComplete(4, res)
-  // mixpanel.track('tigersharks_loaded');
-});
+
 
 
 
@@ -99,7 +101,7 @@ function getData(projectNumber, res){
                             }
                             // console.log(skuList)
                       res.render('project', 
-                          { content: content[projectNumber-1],
+                          { content: content[projectNumber-1].reverse(),
                             skus: skuList
                           }
                       );
@@ -147,7 +149,7 @@ function getDataComplete(projectNumber, res){
                             }
                             // console.log(skuList)
                       res.render('projectComplete', 
-                          { content: content[projectNumber-1],
+                          { content: content[projectNumber-1].reverse(),
                             skus: skuList
                           }
                       );
