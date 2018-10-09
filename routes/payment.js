@@ -98,9 +98,12 @@ var stripe = require("stripe")(process.env.STRIPE_LIVE);
 
 
   router.get('/success/:charge/:projectid', function(req, res, next) {
+      var projectNumber = Number(req.params.projectid)
+      var actualProjectNumber = projectNumber - 1
+
       res.render('success', 
           { charge: req.params.charge,
-            projectid: req.params.projectid,
+            projectid: actualProjectNumber,
             content: content
           }
       );
