@@ -92,7 +92,6 @@ block content
 										span Or recycle this item
 
 
-
 					//- AMAZON ITEM COMPLETE
 					else
 						div.col-lg-4(style="margin-top: 20px !important")
@@ -165,26 +164,25 @@ block content
 												small DONATE
 										
 
-
-				//- STRIPE ITEM COMPLETE
-				else
-					div.col-lg-4(style="margin-top: 20px !important")
-						div.box-project(style="background-color: #f8f9fa")
-							div
-								h5 #{val["sku_name"]}
-								// p(style="color:grey")= val["Bucket"]
-							div
+					//- STRIPE ITEM COMPLETE
+					else
+						div.col-lg-4(style="margin-top: 20px !important")
+							div.box-project(style="background-color: #f8f9fa")
 								div
-									p= val["description"]
-									// p Total Budget: $#{val['total_value']}
-									meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: grey").float-right
-									br
-									if val.donatedsofar == null
-										p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining_pretty']}
-									else
-										p(style="text-align: right") Gifted: $#{val['donatedsofar_pretty']} | Remaining: $#{val['remaining_pretty']}
-							div
-								h5.center(style="color:grey") COMPLETE!
+									h5 #{val["sku_name"]}
+									// p(style="color:grey")= val["Bucket"]
+								div
+									div
+										p= val["description"]
+										// p Total Budget: $#{val['total_value']}
+										meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: grey").float-right
+										br
+										if val.donatedsofar == null
+											p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining_pretty']}
+										else
+											p(style="text-align: right") Gifted: $#{val['donatedsofar_pretty']} | Remaining: $#{val['remaining_pretty']}
+								div
+									h5.center(style="color:grey") COMPLETE!
 				
 
 
