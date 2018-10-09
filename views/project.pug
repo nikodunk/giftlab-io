@@ -51,7 +51,7 @@ block content
 
 		//- AMAZON INTRO
 		each val, index in skus
-			if val.bucket == "Item" && index == 0
+			if val.bucket == "Item" && index === 0
 				
 				div.row(id="items" style="margin-top: 40px !important; margin: 0 auto !important").padding
 					h3.center(style="margin-top: 40px !important" ) Items in Need
@@ -117,7 +117,7 @@ block content
 
 		// STRIPE
 		each val, index in skus
-			if val.bucket == "Budget" && index == 0
+			if val.bucket == "Budget" && index === 0
 
 				div.row(id="budgets" style="margin-top: 40px !important; margin: 0 auto !important").padding
 					h3.center(style="margin-top: 40px !important" ) Project Budgets
