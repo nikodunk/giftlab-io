@@ -1,21 +1,6 @@
 extends _layout
 
 block content
-	// Image Showcases
-	//- section.showcase
-	//- 	.container-fluid.p-0
-	//- 		.row.no-gutters.panel
-	//- 			.col-lg-5.my-auto.showcase-text.padding
-	//- 				h2 About
-	//- 				p.lead.mb-0
-	//- 					| At Gift Lab we're empowering you to donate creatively. With itemized project lists and budgets, our platform is promoting transparency between projects and donors.
-	//- 				br
-	//- 				br
-	//- 			.col-lg-7.text-white(style="background-image: url('/images/0_home/Main_Projects.jpg'); background-position: center; background-size: cover; min-height:200px")
-				
-
-
-
 	
 	// Icons Grid
 	section.features-icons.padding.bg-white
@@ -23,8 +8,8 @@ block content
 				.row
 					.col-lg-12.center
 						h3 Thank you for your donation!
-						p An email receipt has been sent to your inbox.
-						a.center.btn.btn-primary.btn-lg(href=content[projectid].slug) Continue back to project page
+						p An email receipt has been sent to your inbox. 
+						a.center.btn.btn-primary.btn-lg(href=content[projectid].slug+'#budgets') Continue back to project page
 						br
 						br
 						p Please sign up for the mailing list below to get updates on this project and your donation.

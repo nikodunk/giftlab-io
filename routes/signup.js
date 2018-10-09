@@ -47,24 +47,6 @@ router.get('/success/', function(req, res, next) {
         }
     );
 
-    // request.post({
-    //   url: 'https://connect.stripe.com/oauth/deauthorize',
-    //   formData: {
-    //     client_id: 'ca_Dcj8reHZ6xjlEBfDVn4Zl07ergfiWVCG',
-    //     stripe_user_id: 'acct_m8CpCJwOdqmHKu',
-    //   },
-    //   headers: {'Authorization': 'Bearer sk_test_FufIvJxq2f94m1QAt1T12wMR'},
-    // });
-
-
-    // curl https://connect.stripe.com/oauth/token \
-    //    -d client_secret=sk_test_FufIvJxq2f94m1QAt1T12wMR \
-    //    -d code="{AUTHORIZATION_CODE}" \
-    //    -d grant_type=authorization_code
-
-    // client.query(`INSERT INTO marketing VALUES ('`+req.body.email+`');`); 
-
-
     res.render('signup_stripe_success', { content: content });
 });
 
