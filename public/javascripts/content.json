@@ -103,6 +103,7 @@
     "slug": "",
     "wishlistlink": "",
     "stripe_user_id": "acct_1DFR6xCB97U4q3pj"
+<<<<<<< HEAD
   },
   {
     "ProjectID": 6,
@@ -145,5 +146,7 @@
     "slug": "/projects/citysurfproject",
     "wishlistlink": "https://amzn.to/2RBTKOQ",
     "stripe_user_id": "acct_1DElTGKMXVNEpjP4"
+=======
+>>>>>>> master
   }
 ]
