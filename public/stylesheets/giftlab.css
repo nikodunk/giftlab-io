@@ -94,6 +94,13 @@ hr {
   margin: 0;
 }
 
+.panel-project {
+  background-color: #00AFE1 !important;
+  color: white;
+  margin: 0;
+  min-height: 500px;
+}
+
 .title{
   background-color: #00AFE1 !important;
   color: white;
