@@ -8,9 +8,6 @@ const client = new Client({
 
 client.connect();
 
-// var Mixpanel = require('mixpanel');
-// var mixpanel = Mixpanel.init('bba2c237fccc04b19cec51dee15cf123');
-
 var content = require('../public/javascripts/content.json')
 
 
@@ -25,7 +22,6 @@ router.get('/', function(req, res, next) {
 
 /* GET about page. */
 router.get('/about', function(req, res, next) {
-  // visitor.pageview("/about", "http://giftlab.io", "Welcome").send();
   res.render('about');
 });
 
