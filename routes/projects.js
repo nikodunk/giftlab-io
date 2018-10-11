@@ -150,7 +150,8 @@ function getDataComplete(projectNumber, res){
                             // console.log(skuList)
                       res.render('projectComplete', 
                           { content: content[projectNumber-1],
-                            skus: skuList
+                            skus: skuList,
+                            meta: content[projectNumber-1].image
                           }
                       );
                 })
