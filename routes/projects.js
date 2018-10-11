@@ -102,10 +102,7 @@ function getData(projectNumber, res){
                             // console.log(skuList)
                       res.render('project', 
                           { content: content[projectNumber-1],
-                            skus: skuList,
-                            meta: content[projectNumber-1].image,
-                            title: content[projectNumber-1].ProjectName
-                          }
+                            skus: skuList }
                       );
                 })
 }
@@ -152,10 +149,7 @@ function getDataComplete(projectNumber, res){
                             // console.log(skuList)
                       res.render('projectComplete', 
                           { content: content[projectNumber-1],
-                            skus: skuList,
-                            image: content[projectNumber-1].image,
-                            title: content[projectNumber-1].ProjectName
-                          }
+                            skus: skuList }
                       );
                 })
 }
