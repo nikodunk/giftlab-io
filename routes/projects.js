@@ -102,7 +102,8 @@ function getData(projectNumber, res){
                             // console.log(skuList)
                       res.render('project', 
                           { content: content[projectNumber-1],
-                            skus: skuList
+                            skus: skuList,
+                            meta: content[projectNumber-1].image
                           }
                       );
                 })
