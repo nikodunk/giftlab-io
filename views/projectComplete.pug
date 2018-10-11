@@ -1,5 +1,12 @@
 extends _layout 
 
+block vars
+	- var title=content.BusinessName + ' on Giftlab'
+	- var image=content.image
+	- var description=content["Project Description - Short"]
+
+	
+
 block content
 	
 	<script src="https://checkout.stripe.com/checkout.js"></script>
