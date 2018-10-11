@@ -13,7 +13,7 @@ var content = require('../public/javascripts/content.json')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('home', { content: content.slice(0).reverse(), meta: content[0].image, title: 'Giftlab' });
+  res.render('home', { content: content.slice(0).reverse(), locals: { meta: content[0].image, title: 'Giftlab' }});
 });
 
 /* GET about page. */
