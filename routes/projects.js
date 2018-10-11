@@ -103,7 +103,8 @@ function getData(projectNumber, res){
                       res.render('project', 
                           { content: content[projectNumber-1],
                             skus: skuList,
-                            meta: content[projectNumber-1].image
+                            meta: content[projectNumber-1].image,
+                            title: content[projectNumber-1].ProjectName
                           }
                       );
                 })
@@ -152,7 +153,8 @@ function getDataComplete(projectNumber, res){
                       res.render('projectComplete', 
                           { content: content[projectNumber-1],
                             skus: skuList,
-                            meta: content[projectNumber-1].image
+                            meta: content[projectNumber-1].image,
+                            title: content[projectNumber-1].ProjectName
                           }
                       );
                 })
