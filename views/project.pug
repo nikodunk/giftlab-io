@@ -272,7 +272,7 @@ block content
 			});
 
 			var handler = StripeCheckout.configure({
-				key: 'pk_test_ydRKo3Vg1C9THBrpoftH1HbD', //pk_live_nROKLmrb4dhqpT1oWlRdS73J 
+				key: 'pk_live_nROKLmrb4dhqpT1oWlRdS73J', // pk_test_ydRKo3Vg1C9THBrpoftH1HbD
 				image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
 				token: function(token) {
 					$("#stripeToken").val(token.id);
