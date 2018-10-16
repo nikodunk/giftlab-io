@@ -70,14 +70,14 @@ block content
 			//- PROJECT PROFILE
 			div.col-lg-4
 				section.container
-					div.row(id="project" style="margin-top: 40px !important;").padding
-						div
+					div.row.padding(id="project" style="margin-top: 40px !important;")
+						div.center
 							img.thumbnail(src=content.businessimage alt="Image Title" style="max-width: 100% !important; max-height: auto !important; margin: 0 auto;").center
 							br
 					div.row.padding
 						div(style="margin-top: 40px !important;")
-							h4 #{content.BusinessName}
-							// p.lead #{content.BusinessDescription}
+							h4= content.ProjectName
+							p.lead= content["Project Description - Long"]
 							// h4 This Project
 						
 					div.row.padding
@@ -98,9 +98,8 @@ block content
 							img.thumbnail.center(src=content.researcherimage alt="Image Title" style="max-width: 100% !important; max-height: auto !important; margin: 0 auto;").center
 						br
 					div.row.padding
-						div.padding
-							h3= content["Researcher"]
-							p.lead= content["Researcher profile"]
+						h3= content["Researcher"]
+						p.lead= content["Researcher profile"]
 
 
 			//- AMAZON INTRO
