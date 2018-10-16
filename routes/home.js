@@ -18,14 +18,13 @@ router.get('/', function(req, res, next) {
 
 /* GET about page. */
 router.get('/about', function(req, res, next) {
-  res.render('about');
+  res.render('about', { content: content.slice(0).reverse() });
 });
 
 /* GET contact page. */
 router.get('/contact', function(req, res, next) {
   res.render('contact');
 });
-
 
 /* GET contact page. */
 router.get('/new', function(req, res, next) {
