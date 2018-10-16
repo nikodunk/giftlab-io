@@ -28,7 +28,7 @@ var stripe = require("stripe")(process.env.STRIPE_LIVE);
       source: token,
       description: 'Giftlab Charge for '+ sku,
       receipt_email: email,
-      // application_fee: 1,
+      application_fee: 1,
     },{
       stripe_account: req.params.destination,
     }, (err, charge) => {
