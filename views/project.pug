@@ -124,7 +124,7 @@ block content
 						each val, index in skus
 							if val.bucket == "Item" && val.status == "Active"
 
-									div.col-lg-6(style="margin-top: 20px !important")
+									div.col-sm-6(style="margin-top: 20px !important")
 										div.box-project(style="background-color: white")
 											div
 												h5 #{val["sku_name"]}
@@ -155,7 +155,7 @@ block content
 							//- AMAZON ITEM COMPLETE
 							if val.bucket == "Item" && val.status == "Complete"
 
-									div.col-lg-6(style="margin-top: 20px !important")
+									div.col-sm-6(style="margin-top: 20px !important")
 										div.box-project(style="background-color: #f8f9fa") 
 											div
 												h5 #{val["sku_name"]} ($#{val['unit_cost']} each)
@@ -192,7 +192,7 @@ block content
 						each val, index in skus
 							if val.bucket == "Budget" && val.status == "Active"
 
-									div.col-lg-6(style="margin-top: 20px !important")
+									div.col-sm-6(style="margin-top: 20px !important")
 										div.box-project(style="background-color: white")
 											div
 												h5 #{val["sku_name"]}
@@ -231,7 +231,7 @@ block content
 							//- STRIPE ITEM COMPLETE
 							if val.bucket == "Budget" && val.status == "Complete"
 
-									div.col-lg-6(style="margin-top: 20px !important")
+									div.col-sm-6(style="margin-top: 20px !important")
 										div.box-project(style="background-color: #f8f9fa")
 											div
 												h5 #{val["sku_name"]}
