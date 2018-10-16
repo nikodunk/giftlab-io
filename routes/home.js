@@ -26,6 +26,13 @@ router.get('/contact', function(req, res, next) {
   res.render('contact');
 });
 
+
+/* GET contact page. */
+router.get('/new', function(req, res, next) {
+  res.render('list');
+});
+
+
 /* POST to save new email to postgres. */
 router.post( '/email', function (req, result) {
   console.log(req.body.email)

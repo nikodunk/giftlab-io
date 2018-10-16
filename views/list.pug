@@ -1,0 +1,40 @@
+extends _layout
+
+block content
+	div.container
+		br
+		br
+		section.text-center(id="signup")
+				.overlay
+				.container
+					.row
+						.col-xl-9.mx-auto
+							h2.mb-4 List your nonprofit
+							p.lead.mb-0(style="max-width: 800px; margin: 0 auto;") Are you a 501(c)3 nonprofit and would like to list your nonprofit on giftlab? Get in touch! It's super simple.
+							br
+							br
+						.col-md-10.col-lg-8.col-xl-7.mx-auto
+							form(action="https://formspree.io/elisa@giftlab.io" method="POST")
+								.row
+									.col-md-6
+										input.form-control.form-input-lg(placeholder="Your name" type="text" name="name")
+									br
+									br
+									.col-md-6
+										input.form-control.form-input-lg(placeholder="Your email" type="email" name="_replyto")
+								br
+								.row
+									.col-md-12
+										textarea.form-control.form-input-lg(placeholder="Your message" type="text" name="message" style="height: 200px")
+								br
+								.row
+									.col-md-12
+										button.btn.btn-block.btn-lg.btn-primary.blue(type='submit') Send
+		br
+		br
+
+
+	script.
+		$( document ).ready(function() {
+		    mixpanel.track('contact loaded');
+		});
