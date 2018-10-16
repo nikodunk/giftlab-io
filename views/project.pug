@@ -81,7 +81,7 @@ block content
 
 					div.row.padding
 						div.center
-							img.thumbnail.center(src=content.researcherimage alt="Image Title" style="max-width: 300px !important; max-height: auto !important; margin: 0 auto;").center
+							img.thumbnail.center.rounded-circle(src=content.researcherimage alt="Image Title" style="max-width: 300px !important; max-height: auto !important; margin: 0 auto;").center
 						br
 					div.row.padding
 						h3= content["Researcher"]
@@ -90,7 +90,7 @@ block content
 
 			
 			div.col-lg-8
-			
+
 				//- SPECIAL OFFER
 				section.container
 					if content.ProjectName == "Transforming lives, one wave at a time"
