@@ -130,14 +130,14 @@ block content
 												h5 #{val["sku_name"]}
 												p $#{val['unit_cost']}
 											div
-												p= val["description"]
+												p.lead= val["description"]
 												// p Need: #{val['quantity_need']}&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Total Cost: #{val['total_value']}
 												meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: lightblue")
 												br
 												if val.donatedsofar == null
-													p(style="text-align: right") Gifted: 0 | Remaining: #{val['remaining_pretty']}
+													p.lead(style="text-align: right") Gifted: 0 | Remaining: #{val['remaining_pretty']}
 												else
-													p(style="text-align: right") Gifted: #{val['donatedsofar_pretty']} | Remaining: #{val['remaining_pretty']}
+													p.lead(style="text-align: right") Gifted: #{val['donatedsofar_pretty']} | Remaining: #{val['remaining_pretty']}
 											div
 												a.btn.btn-lg.btn-primary.col-11.titleButton.orange(href=content.wishlistlink target="_blank" id="amazonButton")
 													div.row
@@ -161,14 +161,14 @@ block content
 												h5 #{val["sku_name"]} ($#{val['unit_cost']} each)
 												// p(style="color:grey")= val["Bucket"]
 											div
-												p= val["description"]
+												p.lead= val["description"]
 												// p Need: #{val['quantity_need']}&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;Total Cost: #{val['total_value']}
 												meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: grey")
 												br
 												if val.donatedsofar == null
-													p(style="text-align: right") Gifted: 0 | Remaining: #{val['remaining_pretty']}
+													p.lead(style="text-align: right") Gifted: 0 | Remaining: #{val['remaining_pretty']}
 												else
-													p(style="text-align: right") Gifted: #{val['donatedsofar_pretty']} | Remaining: #{val['remaining_pretty']}
+													p.lead(style="text-align: right") Gifted: #{val['donatedsofar_pretty']} | Remaining: #{val['remaining_pretty']}
 											div
 
 
@@ -199,14 +199,14 @@ block content
 												// p(style="color:grey")= val["Bucket"]
 											div
 												div
-													p= val["description"]
+													p.lead= val["description"]
 													// p Total Budget: $#{val['total_value']}
 													meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: lightblue").float-right
 													br
 													if val.donatedsofar == null
-														p(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining_pretty']}
+														p.lead(style="text-align: right") Gifted: $0 | Remaining: $#{val['remaining_pretty']}
 													else
-														p(style="text-align: right") Gifted: $#{val['donatedsofar_pretty']} | Remaining: $#{val['remaining_pretty']}
+														p.lead(style="text-align: right") Gifted: $#{val['donatedsofar_pretty']} | Remaining: $#{val['remaining_pretty']}
 											div.row
 												
 												div.test
@@ -238,7 +238,7 @@ block content
 												// p(style="color:grey")= val["Bucket"]
 											div
 												div
-													p= val["description"]
+													p.lead= val["description"]
 													// p Total Budget: $#{val['total_value']}
 													meter(min="0" value=val['donatedsofar'] max=val['total_need'] style="width: 100%; background-color: grey").float-right
 													br
