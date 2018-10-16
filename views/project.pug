@@ -49,20 +49,6 @@ block content
 										h5 LEARN MORE
 				.col-lg-8.text-white(style="background-image: url(' "+content.image+" '); background-position: center;  background-size: cover; min-height:200px")
 	
-	//- SPECIAL OFFER
-	section.container
-		if content.ProjectName == "Transforming lives, one wave at a time"
-			div.row(style="max-width: 800px; margin: 0 auto !important")
-				div.container.box-project(style="border-color: #00AFE1 !important")
-					div.row
-						div.col-md-3.padding
-							img.thumbnail(src="/images/7_citysurfproject/CSP_Fundraise.jpeg" alt="Image Title" style="max-width: 100% !important; max-height: auto !important; margin: 0 auto; max-height: 200px").center
-						div.col-md-9.padding
-								h5(style="color: #00AFE1") LIMITED TIME OFFER
-								p(style="color: #00AFE1") For any donations (items or cash) over $100 in value you will receive one free entry to our annual fundraiser
-								a.btn.btn-lg.btn-primary.blue.titleButton(href="https://www.eventbrite.com/e/share-the-stoke-city-surf-projects-4th-annual-celebration-fundraiser-tickets-50139596884?aff=eac2" target="_blank")
-									i.fa.fa-globe.fa-1x.fa-fw
-									small &nbsp; FUNDRAISER DETAILS
 
 	section.container
 		div.row
@@ -102,8 +88,25 @@ block content
 						p.lead= content["Researcher profile"]
 
 
-			//- AMAZON INTRO
+			
 			div.col-lg-8
+			
+				//- SPECIAL OFFER
+				section.container
+					if content.ProjectName == "Transforming lives, one wave at a time"
+						div.row(style="max-width: 800px; margin: 0 auto !important")
+							div.container.box-project(style="border-color: #00AFE1 !important")
+								div.row
+									div.col-md-3.padding
+										img.thumbnail(src="/images/7_citysurfproject/CSP_Fundraise.jpeg" alt="Image Title" style="max-width: 100% !important; max-height: auto !important; margin: 0 auto; max-height: 200px").center
+									div.col-md-9.padding
+											h5(style="color: #00AFE1") LIMITED TIME OFFER
+											p(style="color: #00AFE1") For any donations (items or cash) over $100 in value you will receive one free entry to our annual fundraiser
+											a.btn.btn-lg.btn-primary.blue.titleButton(href="https://www.eventbrite.com/e/share-the-stoke-city-surf-projects-4th-annual-celebration-fundraiser-tickets-50139596884?aff=eac2" target="_blank")
+												i.fa.fa-globe.fa-1x.fa-fw
+												small &nbsp; FUNDRAISER DETAILS
+
+				//- AMAZON INTRO
 				section.container
 					//- each val, index in skus
 					//- 	if val.bucket == "Item" && index === 0
