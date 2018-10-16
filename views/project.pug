@@ -218,21 +218,12 @@ block content
 					div.row(id="project")
 						section(style="margin-top: 40px !important;")
 							div.row.padding
-								div.col-md-2
-									div
-								div.col-md-2
-									div.row.padding
-										div
-											img.thumbnail(src=content.businessimage alt="Image Title" style="max-width: 100% !important; max-height: auto !important; margin: 0 auto;").center
-										br
-								div.col-md-6
-									div.row.padding
-										h4 #{content.BusinessName}
-										// p.lead #{content.BusinessDescription}
-										// h4 This Project
-										p.lead #{content["Project Description - Long"]}
-								div.col-md-2
-									div
+								div
+									img.thumbnail(src=content.businessimage alt="Image Title" style="max-width: 100% !important; max-height: auto !important; margin: 0 auto;").center
+							div.row.padding
+								h4 #{content.BusinessName}
+								// p.lead #{content.BusinessDescription}
+								// h4 This Project
 								
 							div.row.padding
 								div(style="max-width: 300px; margin: 0 auto")
@@ -246,21 +237,16 @@ block content
 										i.fa.fa-instagram.fa-1x.fa-fw
 										small &nbsp; INSTAGRAM PAGE
 
+
 							div.row.padding
-								div.col-md-2
-									div
-								div.col-md-2
-									div.row.padding
-										div.center
-											img.thumbnail.center(src=content.researcherimage alt="Image Title" style="max-width: 100% !important; max-height: auto !important; margin: 0 auto;").center
-										br
-								div.col-md-6
-									div.padding
-										h3= content["Researcher"]
-										p.lead= content["Researcher profile"]
-								div.col-md-2
-									div
-									
+								div.center
+									img.thumbnail.center(src=content.researcherimage alt="Image Title" style="max-width: 100% !important; max-height: auto !important; margin: 0 auto;").center
+								br
+							div.col-md-6
+								div.padding
+									h3= content["Researcher"]
+									p.lead= content["Researcher profile"]
+								
 								
 									
 													
