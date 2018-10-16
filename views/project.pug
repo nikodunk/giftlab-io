@@ -66,8 +66,45 @@ block content
 
 	section.container
 		div.row
-			div.col-md-8
-				//- AMAZON INTRO
+
+			//- PROJECT PROFILE
+			div.col-lg-4
+				section.container
+					div.row(id="project" style="margin-top: 40px !important;").padding
+						div
+							img.thumbnail(src=content.businessimage alt="Image Title" style="max-width: 100% !important; max-height: auto !important; margin: 0 auto;").center
+							br
+					div.row.padding
+						div
+							h4 #{content.BusinessName}
+							// p.lead #{content.BusinessDescription}
+							// h4 This Project
+						
+					div.row.padding
+						div(style="max-width: 300px; margin: 0 auto")
+							a.btn.btn-lg.btn-primary.blue.titleButton(href=content.BusinessWebsite target="_blank")
+								i.fa.fa-globe.fa-1x.fa-fw
+								small &nbsp; VISIT OUR WEBSITE
+							a.btn.btn-lg.btn-primary.blue.titleButton(href=content.BusinessFacebook target="_blank")
+								i.fa.fa-facebook.fa-1x.fa-fw
+								small &nbsp; FACEBOOK PAGE
+							a.btn.btn-lg.btn-primary.blue.titleButton(href=content.BusinessInstagram target="_blank")
+								i.fa.fa-instagram.fa-1x.fa-fw
+								small &nbsp; INSTAGRAM PAGE
+
+
+					div.row.padding
+						div.center
+							img.thumbnail.center(src=content.researcherimage alt="Image Title" style="max-width: 100% !important; max-height: auto !important; margin: 0 auto;").center
+						br
+					div.row.padding
+						div.padding
+							h3= content["Researcher"]
+							p.lead= content["Researcher profile"]
+
+
+			//- AMAZON INTRO
+			div.col-lg-8
 				section.container
 					//- each val, index in skus
 					//- 	if val.bucket == "Item" && index === 0
@@ -85,7 +122,7 @@ block content
 						each val, index in skus
 							if val.bucket == "Item" && val.status == "Active"
 
-									div.col-lg-4(style="margin-top: 20px !important")
+									div.col-lg-6(style="margin-top: 20px !important")
 										div.box-project(style="background-color: white")
 											div
 												h5 #{val["sku_name"]}
@@ -116,7 +153,7 @@ block content
 							//- AMAZON ITEM COMPLETE
 							if val.bucket == "Item" && val.status == "Complete"
 
-									div.col-lg-4(style="margin-top: 20px !important")
+									div.col-lg-6(style="margin-top: 20px !important")
 										div.box-project(style="background-color: #f8f9fa") 
 											div
 												h5 #{val["sku_name"]} ($#{val['unit_cost']} each)
@@ -153,7 +190,7 @@ block content
 						each val, index in skus
 							if val.bucket == "Budget" && val.status == "Active"
 
-									div.col-lg-4(style="margin-top: 20px !important")
+									div.col-lg-6(style="margin-top: 20px !important")
 										div.box-project(style="background-color: white")
 											div
 												h5 #{val["sku_name"]}
@@ -192,7 +229,7 @@ block content
 							//- STRIPE ITEM COMPLETE
 							if val.bucket == "Budget" && val.status == "Complete"
 
-									div.col-lg-4(style="margin-top: 20px !important")
+									div.col-lg-6(style="margin-top: 20px !important")
 										div.box-project(style="background-color: #f8f9fa")
 											div
 												h5 #{val["sku_name"]}
@@ -212,40 +249,7 @@ block content
 							
 
 		
-			div.col-md-4
-				//- PROJECT PROFILE
-				section.container
-					div.row(id="project" style="margin-top: 40px !important;").padding
-						div
-							img.thumbnail(src=content.businessimage alt="Image Title" style="max-width: 100% !important; max-height: auto !important; margin: 0 auto;").center
-							br
-					div.row.padding
-						div
-							h4 #{content.BusinessName}
-							// p.lead #{content.BusinessDescription}
-							// h4 This Project
-						
-					div.row.padding
-						div(style="max-width: 300px; margin: 0 auto")
-							a.btn.btn-lg.btn-primary.blue.titleButton(href=content.BusinessWebsite target="_blank")
-								i.fa.fa-globe.fa-1x.fa-fw
-								small &nbsp; VISIT OUR WEBSITE
-							a.btn.btn-lg.btn-primary.blue.titleButton(href=content.BusinessFacebook target="_blank")
-								i.fa.fa-facebook.fa-1x.fa-fw
-								small &nbsp; FACEBOOK PAGE
-							a.btn.btn-lg.btn-primary.blue.titleButton(href=content.BusinessInstagram target="_blank")
-								i.fa.fa-instagram.fa-1x.fa-fw
-								small &nbsp; INSTAGRAM PAGE
 
-
-					div.row.padding
-						div.center
-							img.thumbnail.center(src=content.researcherimage alt="Image Title" style="max-width: 100% !important; max-height: auto !important; margin: 0 auto;").center
-						br
-					div.row.padding
-						div.padding
-							h3= content["Researcher"]
-							p.lead= content["Researcher profile"]
 						
 								
 									
