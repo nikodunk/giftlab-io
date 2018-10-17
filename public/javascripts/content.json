@@ -145,5 +145,26 @@
     "slug": "/projects/citysurfproject",
     "wishlistlink": "https://amzn.to/2RBTKOQ",
     "stripe_user_id": "acct_1DElTGKMXVNEpjP4"
+  },
+  {
+    "ProjectID": 8,
+    "BusinessName": "Business Name",
+    "BusinessDescription": "Your business description here.",
+    "BusinessWebsite": "http://businesswebsite.com",
+    "BusinessInstagram": "https://www.instagram.com",
+    "BusinessFacebook": "https://www.facebook.com/",
+    "ProjectName": "Project Name",
+    "Researcher": "Jane Researcher",
+    "Project Description - Short": "This is an example project description",
+    "Project Description - Long": "This is the long project description that describes why your project is worthwhile to fund.",
+    "Researcher profile": "This is a paragraph about the researcher to explain how trustworthy they are",
+    "Project Deadline": "",
+    "Status": "Active",
+    "image": "/images/8_example/project.jpg",
+    "businessimage": "/images/8_example/logo.jpg",
+    "researcherimage": "/images/8_example/head.jpg",
+    "slug": "/projects/new",
+    "wishlistlink": "",
+    "stripe_user_id": ""
   }
 ]

@@ -56,6 +56,12 @@ router.get('/citysurfproject/', function(req, res, next) {
 });
 
 
+router.get('/new/', function(req, res, next) {
+  getData(8, res)
+  
+});
+
+
 
 
 
