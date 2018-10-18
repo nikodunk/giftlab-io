@@ -148,9 +148,9 @@
   },
   {
     "ProjectID": 8,
-    "BusinessName": "Add Business",
-    "BusinessDescription": "Add your business description here.",
-    "BusinessWebsite": "http://businesswebsite.com",
+    "BusinessName": "Add Nonprofit",
+    "BusinessDescription": "Add your nonprofit description here.",
+    "BusinessWebsite": "http://nonprofit.com",
     "BusinessInstagram": "https://www.instagram.com",
     "BusinessFacebook": "https://www.facebook.com/",
     "ProjectName": "New Project",
