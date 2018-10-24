@@ -51,17 +51,17 @@ block content
 							li(data-target="#carouselExampleIndicators" data-slide-to="2")
 						div(class="carousel-inner")
 							div(class="carousel-item active")
+								a(href=content[2].slug)
+									img(class="d-block w-100" src=content[2].image alt="First slide")
+									div(class="carousel-caption")
+										h5.shadow=content[2].ProjectName
+										p.shadow=content[2].BusinessName
+							div(class="carousel-item")
 								a(href=content[1].slug)
-									img(class="d-block w-100" src=content[1].image alt="First slide")
+									img( class="d-block w-100" src=content[1].image alt="Second slide")
 									div(class="carousel-caption")
 										h5.shadow=content[1].ProjectName
 										p.shadow=content[1].BusinessName
-							div(class="carousel-item")
-								a(href=content[5].slug)
-									img( class="d-block w-100" src=content[5].image alt="Second slide")
-									div(class="carousel-caption")
-										h5.shadow=content[5].ProjectName
-										p.shadow=content[5].BusinessName
 							div(class="carousel-item")
 								a(href=content[7].slug)
 									img( class="d-block w-100" src=content[7].image alt="Third slide")
