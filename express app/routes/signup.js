@@ -33,7 +33,7 @@ router.get('/success/', function(req, res, next) {
         function (error, response, body) {
             if (!error && response.statusCode == 200) {
                 console.log(body)
-                // {   access_token: 'sk_test_MT8oFzoO0bueRVD7RhUzv0ly',
+                // {   access_token: 'sk_test_XXXX',
                 //     livemode: false,
                 //     refresh_token: 'rt_DiKx9vMinOryfTydAAQ3YZtPa1L3fWZuuPLvMVeoQv7wYdQQ',
                 //     stripe_publishable_key: 'pk_test_c6zNMHrvJfulaC62g5dpXERJ',
