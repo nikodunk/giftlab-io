@@ -1,8 +1,6 @@
 # giftlab-express
 
-
-[Go To Site](https://giftlab.io) 
-
+Node/Express/Postgres Marketplace Web App w/ Stripe Connect at [Giftlab.io](https://giftlab.io) 
 
 ![](demo.png)
 
