@@ -13,6 +13,8 @@ var signupRouter = require('./routes/signup');
 
 var app = express();
 
+var redirectToHTTPS = require('express-http-to-https').redirectToHTTPS
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -24,6 +26,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+app.use(redirectToHTTPS([/localhost:(\d{4})/], [/\/insecure/], 301));
 
 
 app.use('/', homeRouter);
